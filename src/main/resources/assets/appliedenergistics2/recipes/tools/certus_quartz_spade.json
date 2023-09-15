@@ -1,0 +1,27 @@
+{
+    "conditions": [
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:certus_quartz_spade"
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:certus_quartz_spade"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "a",
+        "b",
+        "b"
+    ],
+    "key": {
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "crystalCertusQuartz"
+        },
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "stickWood"
+        }
+    }
+}

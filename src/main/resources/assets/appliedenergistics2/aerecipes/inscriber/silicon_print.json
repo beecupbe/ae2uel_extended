@@ -1,0 +1,32 @@
+{
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "appliedenergistics2:material_exists",
+					"material": "material.silicon_print"
+				},
+				{
+					"type": "appliedenergistics2:material_exists",
+					"material": "material.silicon_press"
+				}
+			]
+		}
+	],
+	"type": "appliedenergistics2:inscriber",
+	"mode": "inscribe",
+	"result": {
+		"part": "material.silicon_print"
+	},
+	"ingredients": {
+		"top": {
+			"type": "appliedenergistics2:part",
+			"part": "material.silicon_press"
+		},
+		"middle": {
+			"type": "forge:ore_dict",
+			"ore": "itemSilicon"
+		}
+	}
+}

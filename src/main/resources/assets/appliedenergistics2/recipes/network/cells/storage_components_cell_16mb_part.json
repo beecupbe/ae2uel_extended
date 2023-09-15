@@ -1,0 +1,60 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:quartz_glass"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.cell16mb_part"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.calculation_processor"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.cell4mb_part"
+                },
+				{
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.cell1mb_part"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "material.cell16mb_part"
+    },
+    "type": "appliedenergistics2:part_shaped",
+    "pattern": [
+        "aba",
+        "cqc",
+        "ada"
+    ],
+    "key": {
+        "b": {
+            "type": "appliedenergistics2:part",
+            "part": "material.calculation_processor"
+        },
+        "c": {
+            "type": "appliedenergistics2:part",
+            "part": "material.cell4mb_part"
+        },
+        "q": {
+            "item": "appliedenergistics2:quartz_glass"
+        },
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "dustGlowstone"
+        },
+		"d": {
+			"type": "appliedenergistics2:part",
+			"part": "material.cell1mb_part"
+		}
+    }
+}

@@ -1,0 +1,24 @@
+{
+	"conditions": [
+		{
+			"type": "appliedenergistics2:material_exists",
+			"material": "material.silicon"
+		}
+	],
+	"type": "appliedenergistics2:smelt",
+	"result": {
+		"part": "material.silicon"
+	},
+	"input": 
+	[
+		{
+			"type": "forge:ore_dict",
+			"ore": "dustNetherQuartz"	
+		},
+		{
+			"type": "forge:ore_dict",
+			"ore": "dustCertusQuartz"	
+		}
+	],
+	"xp" : 0.0
+}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "variant=default": {
+            "model": "appliedenergistics2:fluix_block"
+        }
+    }
+}

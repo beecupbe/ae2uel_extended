@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "appliedenergistics2:blocks/controller_column",
+        "end": "appliedenergistics2:blocks/controller"
+    }
+}

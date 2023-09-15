@@ -1,0 +1,23 @@
+{
+	"conditions": [
+		{
+			"type": "appliedenergistics2:material_exists",
+			"material": "material.engineering_processor_press"
+		}
+	],
+	"type": "appliedenergistics2:inscriber",
+	"mode": "inscribe",
+	"result": {
+		"part": "material.engineering_processor_press"
+	},
+	"ingredients": {
+		"top": {
+			"type": "appliedenergistics2:part",
+			"part": "material.engineering_processor_press"
+		},
+		"middle": {
+			"type": "forge:ore_dict",
+			"ore": "blockIron"
+		}
+	}
+}

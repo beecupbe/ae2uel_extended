@@ -1,0 +1,42 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:charger"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 1
+                }
+            ]
+        }
+    ],
+    "display": {
+        "icon": {
+            "item": "appliedenergistics2:charger"
+        },
+        "title": {
+            "translate": "achievement.ae2.Charger"
+        },
+        "description": {
+            "translate": "achievement.ae2.Charger.desc"
+        }
+    },
+    "parent": "appliedenergistics2:main/charged_quartz",
+    "criteria": {
+        "certus": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "appliedenergistics2:charger"
+                    }
+                ]
+            }
+        }
+    }
+}

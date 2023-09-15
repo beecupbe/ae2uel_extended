@@ -1,0 +1,42 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:crafting_accelerator_16x"
+                },
+				{
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:crafting_unit"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:crafting_accelerator_4x"
+                }
+            ]
+        }
+    ],
+	"result": {
+		"item": "appliedenergistics2:crafting_accelerator_16x"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "gug",
+        "aaa",
+        "gug"
+    ],
+    "key": {
+        "g": {
+            "type": "forge:ore_dict",
+            "ore": "dustGlowstone"
+        },
+        "u": {
+            "item": "appliedenergistics2:crafting_unit"
+        },
+        "a": {
+			"item": "appliedenergistics2:crafting_accelerator_4x"
+        }
+    }
+}

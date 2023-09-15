@@ -1,0 +1,18 @@
+{
+    "conditions": [
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:fluid_interface"
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.fluid_interface"
+    },
+    "type": "appliedenergistics2:part_shapeless",
+    "ingredients": [
+        {
+            "item": "appliedenergistics2:fluid_interface"
+        }
+    ]
+}

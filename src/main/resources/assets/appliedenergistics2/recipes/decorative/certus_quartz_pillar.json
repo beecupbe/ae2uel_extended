@@ -1,0 +1,31 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:quartz_pillar"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:quartz_block"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:quartz_pillar",
+        "count": 2
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "a",
+        "a"
+    ],
+    "key": {
+        "a": {
+            "item": "appliedenergistics2:quartz_block"
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:charger"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 7
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:quartz_growth_accelerator"
+                }
+            ]
+        }
+    ],
+    "display": {
+        "icon": {
+            "item": "appliedenergistics2:quartz_growth_accelerator"
+        },
+        "title": {
+            "translate": "achievement.ae2.CrystalGrowthAccelerator"
+        },
+        "description": {
+            "translate": "achievement.ae2.CrystalGrowthAccelerator.desc"
+        }
+    },
+    "parent": "appliedenergistics2:main/fluix",
+    "criteria": {
+        "certus": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "appliedenergistics2:quartz_growth_accelerator"
+                    }
+                ]
+            }
+        }
+    }
+}

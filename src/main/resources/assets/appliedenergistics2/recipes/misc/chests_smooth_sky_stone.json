@@ -1,0 +1,31 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:smooth_sky_stone_block"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:smooth_sky_stone_chest"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:smooth_sky_stone_chest"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "aaa",
+        "a a",
+        "aaa"
+    ],
+    "key": {
+        "a": {
+            "item": "appliedenergistics2:smooth_sky_stone_block"
+        }
+    }
+}

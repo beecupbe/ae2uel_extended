@@ -1,0 +1,26 @@
+{
+    "conditions": [
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:quartz_glass"
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:quartz_glass",
+        "count": 5
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "bab",
+        "aba",
+        "bab"
+    ],
+    "key": {
+        "b": {
+            "item": "#appliedenergistics2:glass"
+        },
+        "a": {
+            "item": "#appliedenergistics2:dustQuartz"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "cable_dense_smart"
+                },
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "cable_dense_smart.fluix"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "cable_dense_smart.fluix"
+    },
+    "type": "appliedenergistics2:part_shapeless",
+    "ingredients": [
+        {
+            "type": "appliedenergistics2:part",
+            "part": "cable_dense_smart"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "appliedenergistics2:item/part/cable_x128_base",
+    "textures": {
+        "base": "appliedenergistics2:parts/cable/covered/orange"
+    }
+}

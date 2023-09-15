@@ -1,0 +1,40 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.formation_plane"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.formation_core"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.formation_plane"
+    },
+    "type": "appliedenergistics2:part_shaped",
+    "pattern": [
+        "ab",
+        "cb",
+        "ab"
+    ],
+    "key": {
+        "c": {
+            "type": "appliedenergistics2:part",
+            "part": "material.formation_core"
+        },
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        },
+        "b": {
+            "item": "#appliedenergistics2:fluixCrystal"
+        }
+    }
+}

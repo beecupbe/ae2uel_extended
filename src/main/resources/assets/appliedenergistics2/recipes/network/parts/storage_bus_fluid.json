@@ -1,0 +1,37 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.fluid_storage_bus"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:fluid_interface"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.fluid_storage_bus"
+    },
+    "type": "appliedenergistics2:part_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:sticky_piston"
+        },
+        {
+            "item": "#appliedenergistics2:fluid_interface"
+        },
+        {
+            "item": "minecraft:piston"
+        },
+        {
+            "item": "minecraft:dye",
+            "data": 4
+        }
+    ]
+}

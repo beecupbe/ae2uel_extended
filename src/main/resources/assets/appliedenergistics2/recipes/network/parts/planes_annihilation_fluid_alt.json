@@ -1,0 +1,44 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.fluid_annihilation_plane"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.annihilation_core"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.fluid_annihilation_plane"
+    },
+    "type": "appliedenergistics2:part_shaped",
+    "pattern": [
+        "adb",
+        "cdb",
+        "adb"
+    ],
+    "key": {
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        },
+        "b": {
+            "item": "#appliedenergistics2:fluixCrystal"
+        },
+        "c": {
+            "type": "appliedenergistics2:part",
+            "part": "material.annihilation_core"
+        },
+        "d": {
+  			"type": "forge:ore_dict",
+            "ore": "dyeBlue"
+        }
+    }
+}

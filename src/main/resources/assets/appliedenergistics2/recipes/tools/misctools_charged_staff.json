@@ -1,0 +1,36 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:charged_staff"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.certus_quartz_crystal_charged"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:charged_staff"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "a  ",
+        " b ",
+        "  b"
+    ],
+    "key": {
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        },
+        "a": {
+            "type": "appliedenergistics2:part",
+            "part": "material.certus_quartz_crystal_charged"
+        }
+    }
+}

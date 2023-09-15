@@ -1,0 +1,40 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.cell1k_part"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.logic_processor"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "material.cell1k_part"
+    },
+    "type": "appliedenergistics2:part_shaped",
+    "pattern": [
+        "aba",
+        "bcb",
+        "aba"
+    ],
+    "key": {
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "dustRedstone"
+        },
+        "b": {
+            "item": "#appliedenergistics2:certusCrystal"
+        },
+        "c": {
+            "type": "appliedenergistics2:part",
+            "part": "material.logic_processor"
+        }
+    }
+}

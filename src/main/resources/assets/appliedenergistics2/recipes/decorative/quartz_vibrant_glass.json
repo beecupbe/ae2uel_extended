@@ -1,0 +1,32 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:quartz_vibrant_glass"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:quartz_glass"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:quartz_vibrant_glass"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "aba"
+    ],
+    "key": {
+        "a": {
+            "item": "minecraft:glowstone_dust"
+        },
+        "b": {
+            "item": "appliedenergistics2:quartz_glass"
+        }
+    }
+}

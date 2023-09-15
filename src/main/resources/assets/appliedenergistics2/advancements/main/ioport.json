@@ -1,0 +1,72 @@
+{
+    "conditions": [
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:storage_cell_1k"
+        },
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:storage_cell_4k"
+        },
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:storage_cell_16k"
+        },
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:storage_cell_64k"
+        },
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:material",
+            "data": 13
+        },
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:material",
+            "data": 14
+        },
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:material",
+            "data": 15
+        },
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:material",
+            "data": 19
+        },
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:controller"
+        },
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:io_port"
+        }
+    ],
+    "display": {
+        "icon": {
+            "item": "appliedenergistics2:io_port"
+        },
+        "title": {
+            "translate": "achievement.ae2.IOPort"
+        },
+        "description": {
+            "translate": "achievement.ae2.IOPort.desc"
+        }
+    },
+    "parent": "appliedenergistics2:main/storage_cell",
+    "criteria": {
+        "certus": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "appliedenergistics2:io_port"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.monitor"
+                },
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.semi_dark_monitor"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.monitor"
+    },
+    "type": "appliedenergistics2:part_shapeless",
+    "ingredients": [
+        {
+            "type": "appliedenergistics2:part",
+            "part": "part.semi_dark_monitor"
+        }
+    ]
+}

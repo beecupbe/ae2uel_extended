@@ -1,0 +1,74 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:storage_cell_1k"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:storage_cell_4k"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:storage_cell_16k"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:storage_cell_64k"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 13
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 14
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 15
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 19
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:controller"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:io_port"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:spatial_io_port"
+                }
+            ]
+        }
+    ],
+    "display": {
+        "icon": {
+            "item": "appliedenergistics2:spatial_storage_cell_128_cubed"
+        },
+        "title": {
+            "translate": "achievement.ae2.SpatialIOExplorer"
+        },
+        "description": {
+            "translate": "achievement.ae2.SpatialIOExplorer.desc"
+        }
+    },
+    "parent": "appliedenergistics2:main/spatial_ioport",
+    "criteria": {
+        "explorer": {
+            "trigger": "appliedenergistics2:spatial_explorer"
+        }
+    }
+}

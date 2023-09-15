@@ -1,0 +1,64 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 13
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 14
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 15
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 19
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:controller"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:part",
+                    "data": 360
+                }
+            ]
+        }
+    ],
+    "display": {
+        "icon": {
+            "item": "appliedenergistics2:part",
+            "data": 360
+        },
+        "title": {
+            "translate": "achievement.ae2.CraftingTerminal"
+        },
+        "description": {
+            "translate": "achievement.ae2.CraftingTerminal.desc"
+        }
+    },
+    "parent": "appliedenergistics2:main/controller",
+    "criteria": {
+        "certus": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "type": "appliedenergistics2:part",
+                        "part": "CRAFTING_TERMINAL"
+                    }
+                ]
+            }
+        }
+    }
+}

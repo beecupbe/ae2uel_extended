@@ -1,0 +1,59 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:quantum_ring"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:energy_cell"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.engineering_processor"
+                },
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "cable_dense_smart.fluix"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.logic_processor"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:quantum_ring"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "aba",
+        "cde",
+        "aba"
+    ],
+    "key": {
+        "c": {
+            "type": "appliedenergistics2:part",
+            "part": "material.engineering_processor"
+        },
+        "e": {
+            "type": "appliedenergistics2:part",
+            "part": "cable_dense_smart.fluix"
+        },
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        },
+        "d": {
+            "item": "appliedenergistics2:energy_cell"
+        },
+        "b": {
+            "type": "appliedenergistics2:part",
+            "part": "material.logic_processor"
+        }
+    }
+}

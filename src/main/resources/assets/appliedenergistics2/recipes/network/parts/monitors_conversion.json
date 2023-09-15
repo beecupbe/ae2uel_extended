@@ -1,0 +1,44 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.conversion_monitor"
+                },
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.storage_monitor"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.annihilation_core"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.formation_core"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.conversion_monitor"
+    },
+    "type": "appliedenergistics2:part_shapeless",
+    "ingredients": [
+        {
+            "type": "appliedenergistics2:part",
+            "part": "material.formation_core"
+        },
+        {
+            "type": "appliedenergistics2:part",
+            "part": "part.storage_monitor"
+        },
+        {
+            "type": "appliedenergistics2:part",
+            "part": "material.annihilation_core"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 13
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 14
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 15
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:material",
+                    "data": 19
+                }
+            ]
+        }
+    ],
+    "display": {
+        "icon": {
+            "item": "appliedenergistics2:material",
+            "data": 15
+        },
+        "title": {
+            "translate": "achievement.ae2.Presses"
+        },
+        "description": {
+            "translate": "achievement.ae2.Presses.desc"
+        }
+    },
+    "parent": "appliedenergistics2:main/root",
+    "criteria": {
+        "calc": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "appliedenergistics2:material",
+                        "data": 13
+                    }
+                ]
+            }
+        },
+        "eng": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "appliedenergistics2:material",
+                        "data": 14
+                    }
+                ]
+            }
+        },
+        "logic": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "appliedenergistics2:material",
+                        "data": 15
+                    }
+                ]
+            }
+        },
+        "silicon": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "appliedenergistics2:material",
+                        "data": 19
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "calc",
+            "eng",
+            "logic",
+            "silicon"
+        ]
+    ]
+}
