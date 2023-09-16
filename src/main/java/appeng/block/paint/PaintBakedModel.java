@@ -53,7 +53,7 @@ class PaintBakedModel implements IBakedModel {
             return Collections.emptyList();
         }
 
-        if (!(state instanceof IExtendedBlockState)) {
+        if (!(state instanceof IExtendedBlockState extendedBlockState)) {
             // This is the inventory model which should usually not be used other than in special cases
             List<BakedQuad> quads = new ArrayList<>(1);
             CubeBuilder builder = new CubeBuilder(this.vertexFormat, quads);
@@ -62,7 +62,6 @@ class PaintBakedModel implements IBakedModel {
             return quads;
         }
 
-        IExtendedBlockState extendedBlockState = (IExtendedBlockState) state;
         PaintSplotches splotchesState = extendedBlockState.getValue(BlockPaint.SPLOTCHES);
 
         if (splotchesState == null) {

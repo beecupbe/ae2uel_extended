@@ -308,9 +308,8 @@ public class TileMolecularAssembler extends AENetworkInvTile implements IUpgrade
         if (data.hasKey("myPlan")) {
             final ItemStack myPat = stackFromNBT(data.getCompoundTag("myPlan"));
 
-            if (!myPat.isEmpty() && myPat.getItem() instanceof ItemEncodedPattern) {
+            if (!myPat.isEmpty() && myPat.getItem() instanceof final ItemEncodedPattern iep) {
                 final World w = this.getWorld();
-                final ItemEncodedPattern iep = (ItemEncodedPattern) myPat.getItem();
                 final ICraftingPatternDetails ph = iep.getPatternForItem(myPat, w);
                 if (ph != null && ph.isCraftable()) {
                     this.forcePlan = true;
@@ -466,13 +465,13 @@ public class TileMolecularAssembler extends AENetworkInvTile implements IUpgrade
                 this.progress += this.userPower(ticksSinceLastCall, speed = 10, 1.0);
                 break;
             case 1:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 13, 1.3);
+                this.progress += this.userPower(ticksSinceLastCall, speed = 15, 1.3);
                 break;
             case 2:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 17, 1.7);
+                this.progress += this.userPower(ticksSinceLastCall, speed = 20, 1.7);
                 break;
             case 3:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 20, 2.0);
+                this.progress += this.userPower(ticksSinceLastCall, speed = 35, 2.0);
                 break;
             case 4:
                 this.progress += this.userPower(ticksSinceLastCall, speed = 50, 2.5);
@@ -571,9 +570,8 @@ public class TileMolecularAssembler extends AENetworkInvTile implements IUpgrade
         }
 
         Object capability = neighbors.get(d);
-        if (capability instanceof IStorageMonitorable) {
+        if (capability instanceof IStorageMonitorable inventory) {
             // Prioritize a handler to directly link to another ME network
-            IStorageMonitorable inventory = (IStorageMonitorable) capability;
             IAEItemStack toInsert = AEItemStack.fromItemStack(output);
             IMEMonitor<IAEItemStack> inv = inventory.getInventory(AEApi.instance().storage().getStorageChannel(IItemStorageChannel.class));
             IAEItemStack remainder = inv.injectItems(toInsert, Actionable.SIMULATE, this.mySrc);
@@ -588,8 +586,7 @@ public class TileMolecularAssembler extends AENetworkInvTile implements IUpgrade
                 this.saveChanges();
                 return remainder.createItemStack();
             }
-        } else if (capability instanceof InventoryAdaptor) {
-            InventoryAdaptor adaptor = (InventoryAdaptor) capability;
+        } else if (capability instanceof InventoryAdaptor adaptor) {
 
             final int size = output.getCount();
             output = adaptor.addItems(output);

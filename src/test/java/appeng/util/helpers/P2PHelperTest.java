@@ -30,7 +30,7 @@ import appeng.api.util.AEColor;
 public class P2PHelperTest
 {
 
-	private P2PHelper unitUnderTest = new P2PHelper();
+	private final P2PHelper unitUnderTest = new P2PHelper();
 
 	private static final short WHITE_FREQUENCY = 0;
 	private static final AEColor[] WHITE_COLORS = new AEColor[] { AEColor.WHITE, AEColor.WHITE, AEColor.WHITE, AEColor.WHITE };

@@ -234,11 +234,10 @@ abstract class CraftingCubeBakedModel implements IBakedModel {
     // Retrieve the cube connection state from the block state
     // If none is present, just assume there are no adjacent crafting cube blocks
     private static EnumSet<EnumFacing> getConnections(@Nullable IBlockState state) {
-        if (!(state instanceof IExtendedBlockState)) {
+        if (!(state instanceof IExtendedBlockState extState)) {
             return EnumSet.noneOf(EnumFacing.class);
         }
 
-        IExtendedBlockState extState = (IExtendedBlockState) state;
         CraftingCubeState cubeState = extState.getValue(BlockCraftingUnit.STATE);
         if (cubeState == null) {
             return EnumSet.noneOf(EnumFacing.class);

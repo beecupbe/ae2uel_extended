@@ -29,7 +29,7 @@ public class CellConfig extends AppEngInternalInventory {
     private final ItemStack is;
 
     public CellConfig(final ItemStack is) {
-        super(null, 63);
+        super(null, 127);
         this.is = is;
         this.readFromNBT(Platform.openNbtData(is), "list");
     }

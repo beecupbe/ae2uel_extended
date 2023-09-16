@@ -116,7 +116,7 @@ public class AEFluidInventory implements IAEFluidTank {
 
     public FluidStack drain(final int slot, final FluidStack resource, final boolean doDrain) {
         final IAEFluidStack fluid = this.fluids[slot];
-        if (resource == null || fluid == null || !fluid.equals(resource)) {
+        if (fluid == null || !fluid.equals(resource)) {
             return null;
         }
         return this.drain(slot, resource.amount, doDrain);

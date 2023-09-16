@@ -312,8 +312,7 @@ public class PatternHelper implements ICraftingPatternDetails, Comparable<Patter
      */
     private Ingredient getRecipeIngredient(int slot) {
 
-        if (standardRecipe instanceof IShapedRecipe) {
-            IShapedRecipe shapedRecipe = (IShapedRecipe) standardRecipe;
+        if (standardRecipe instanceof IShapedRecipe shapedRecipe) {
 
             return getShapedRecipeIngredient(slot, shapedRecipe.getRecipeWidth());
         } else {
@@ -486,8 +485,7 @@ public class PatternHelper implements ICraftingPatternDetails, Comparable<Patter
         public boolean equals(final Object obj) {
             final boolean equality;
 
-            if (obj instanceof TestLookup) {
-                final TestLookup b = (TestLookup) obj;
+            if (obj instanceof final TestLookup b) {
 
                 equality = b.slot == this.slot && b.ref == this.ref;
             } else {

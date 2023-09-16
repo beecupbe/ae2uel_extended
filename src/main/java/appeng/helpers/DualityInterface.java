@@ -483,8 +483,7 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
             return;
         }
 
-        if (is.getItem() instanceof ICraftingPatternItem) {
-            final ICraftingPatternItem cpi = (ICraftingPatternItem) is.getItem();
+        if (is.getItem() instanceof final ICraftingPatternItem cpi) {
             final ICraftingPatternDetails details = cpi.getPatternForItem(is, this.iHost.getTileEntity().getWorld());
 
             if (details != null) {
@@ -1006,8 +1005,7 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
                 continue;
             }
 
-            if (te instanceof ICraftingMachine) {
-                final ICraftingMachine cm = (ICraftingMachine) te;
+            if (te instanceof final ICraftingMachine cm) {
                 if (cm.acceptsPlans()) {
                     visitedFaces.remove(s);
                     if (cm.pushPattern(patternDetails, table, s.getOpposite())) {
@@ -1109,8 +1107,7 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
 
                 final InventoryAdaptor ad = InventoryAdaptor.getAdaptor(te, s.getOpposite());
                 if (ad != null) {
-                    if (Loader.isModLoaded("actuallyadditions") && Platform.GTLoaded && te instanceof IPhantomTile) {
-                        IPhantomTile phantomTE = ((IPhantomTile) te);
+                    if (Loader.isModLoaded("actuallyadditions") && Platform.GTLoaded && te instanceof IPhantomTile phantomTE) {
                         if (phantomTE.hasBoundPosition()) {
                             TileEntity phantom = w.getTileEntity(phantomTE.getBoundPosition());
                             if (NonBlockingItems.INSTANCE.getMap().containsKey(w.getBlockState(phantomTE.getBoundPosition()).getBlock().getRegistryName().getResourceDomain())) {
@@ -1331,7 +1328,7 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
 
     public long getSortValue() {
         final TileEntity te = this.iHost.getTileEntity();
-        return (te.getPos().getZ() << 24) ^ (te.getPos().getX() << 8) ^ te.getPos().getY();
+        return ((long) te.getPos().getZ() << 24) ^ ((long) te.getPos().getX() << 8) ^ te.getPos().getY();
     }
 
     public void initialize() {

@@ -82,8 +82,7 @@ public class AEGuiHandler implements IAdvancedGuiHandler<AEBaseGui>, IGhostIngre
     @Nonnull
     public <I> List<Target<I>> getTargets(@Nonnull AEBaseGui gui, @Nonnull I ingredient, boolean doStart) {
         ArrayList<Target<I>> targets = new ArrayList<>();
-        if (gui instanceof IJEIGhostIngredients) {
-            IJEIGhostIngredients g = (IJEIGhostIngredients) gui;
+        if (gui instanceof IJEIGhostIngredients g) {
             List<Target<?>> phantomTargets = g.getPhantomTargets(ingredient);
             targets.addAll((List<Target<I>>) (Object) phantomTargets);
         }

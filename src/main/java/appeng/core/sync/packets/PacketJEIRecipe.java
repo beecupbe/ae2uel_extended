@@ -127,11 +127,10 @@ public class PacketJEIRecipe extends AppEngPacket {
         final EntityPlayerMP pmp = (EntityPlayerMP) player;
         final Container con = pmp.openContainer;
 
-        if (!(con instanceof IContainerCraftingPacket)) {
+        if (!(con instanceof final IContainerCraftingPacket cct)) {
             return;
         }
 
-        final IContainerCraftingPacket cct = (IContainerCraftingPacket) con;
         final IGridNode node = cct.getNetworkNode();
 
         if (node == null) {

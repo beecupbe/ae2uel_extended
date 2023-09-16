@@ -77,25 +77,25 @@ public final class VersionTest
 	@Test
 	public void testEqualsNonVersion()
 	{
-		Assert.assertFalse( DEFAULT_VERSION_RV2_ALPHA_8.equals( new Object() ) );
+        Assert.assertNotEquals(DEFAULT_VERSION_RV2_ALPHA_8, new Object());
 	}
 
 	@Test
 	public void testEqualsUnequalBuild()
 	{
-		Assert.assertFalse( DEFAULT_VERSION_RV2_BETA_8.equals( DEFAULT_VERSION_RV2_BETA_9 ) );
+        Assert.assertNotEquals(DEFAULT_VERSION_RV2_BETA_8, DEFAULT_VERSION_RV2_BETA_9);
 	}
 
 	@Test
 	public void testEqualsUnequalChannel()
 	{
-		Assert.assertFalse( DEFAULT_VERSION_RV2_BETA_8.equals( DEFAULT_VERSION_RV2_ALPHA_8 ) );
+        Assert.assertNotEquals(DEFAULT_VERSION_RV2_BETA_8, DEFAULT_VERSION_RV2_ALPHA_8);
 	}
 
 	@Test
 	public void testEqualsUnequalRevision()
 	{
-		Assert.assertFalse( DEFAULT_VERSION_RV2_BETA_8.equals( DEFAULT_VERSION_RV3_BETA_8 ) );
+        Assert.assertNotEquals(DEFAULT_VERSION_RV2_BETA_8, DEFAULT_VERSION_RV3_BETA_8);
 	}
 
 	@Test

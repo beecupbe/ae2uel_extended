@@ -58,21 +58,18 @@ public class PacketSwitchGuis extends AppEngPacket {
     @Override
     public void serverPacketData(final INetworkInfo manager, final AppEngPacket packet, final EntityPlayer player) {
         final Container c = player.openContainer;
-        if (c instanceof AEBaseContainer) {
-            final AEBaseContainer bc = (AEBaseContainer) c;
+        if (c instanceof final AEBaseContainer bc) {
             final ContainerOpenContext context = bc.getOpenContext();
             if (context != null) {
                 final Object target = bc.getTarget();
-                if (target instanceof IActionHost) {
-                    final IActionHost ah = (IActionHost) target;
+                if (target instanceof final IActionHost ah) {
 
                     final TileEntity te = context.getTile();
 
                     if (te != null) {
                         Platform.openGUI(player, te, bc.getOpenContext().getSide(), this.newGui);
                     } else {
-                        if (ah instanceof IInventorySlotAware) {
-                            IInventorySlotAware i = ((IInventorySlotAware) ah);
+                        if (ah instanceof IInventorySlotAware i) {
                             Platform.openGUI(player, i.getInventorySlot(), this.newGui, i.isBaubleSlot());
                         }
                     }

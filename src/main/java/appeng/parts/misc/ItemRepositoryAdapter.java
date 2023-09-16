@@ -44,8 +44,7 @@ class ItemRepositoryAdapter implements IMEInventory<IAEItemStack>, IBaseMonitor<
         this.itemRepository = itemRepository;
         this.proxyable = proxy;
         this.cache = new InventoryCache(this.itemRepository);
-        if (this.proxyable instanceof PartStorageBus) {
-            PartStorageBus partStorageBus = (PartStorageBus) this.proxyable;
+        if (this.proxyable instanceof PartStorageBus partStorageBus) {
             this.access = ((AccessRestriction) partStorageBus.getConfigManager().getSetting(Settings.ACCESS));
         }
         this.cache.update();

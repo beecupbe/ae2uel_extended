@@ -290,8 +290,7 @@ public enum GuiBridge implements IGuiHandler {
     }
 
     private Object updateGui(final Object newContainer, final World w, final int x, final int y, final int z, final AEPartLocation side, final Object myItem) {
-        if (newContainer instanceof AEBaseContainer) {
-            final AEBaseContainer bc = (AEBaseContainer) newContainer;
+        if (newContainer instanceof final AEBaseContainer bc) {
             bc.setOpenContext(new ContainerOpenContext(myItem));
             bc.getOpenContext().setWorld(w);
             bc.getOpenContext().setX(x);

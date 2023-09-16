@@ -105,15 +105,15 @@ public abstract class PartSharedItemBus extends PartUpgradeable implements IGrid
         switch (this.getInstalledUpgrades(Upgrades.SPEED)) {
             default:
             case 0:
-                return 1;
+                return 4;
             case 1:
-                return 8;
-            case 2:
                 return 32;
-            case 3:
+            case 2:
                 return 64;
+            case 3:
+                return 128;
             case 4:
-                return 96;
+                return 256;
         }
     }
 

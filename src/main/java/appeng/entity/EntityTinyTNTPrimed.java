@@ -154,7 +154,7 @@ public final class EntityTinyTNTPrimed extends EntityTNTPrimed implements IEntit
                             if (strength > 0.01) {
                                 if (block.getMaterial(state) != Material.AIR) {
                                     if (block.canDropFromExplosion(ex)) {
-                                        block.dropBlockAsItemWithChance(this.world, point, state, 1.0F / 1.0f, 0);
+                                        block.dropBlockAsItemWithChance(this.world, point, state, 1.0F, 0);
                                     }
 
                                     block.onBlockExploded(this.world, point, ex);

@@ -100,11 +100,9 @@ public class InscriberRecipe implements IInscriberRecipe {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof IInscriberRecipe)) {
+        if (!(o instanceof final IInscriberRecipe that)) {
             return false;
         }
-
-        final IInscriberRecipe that = (IInscriberRecipe) o;
 
         if (!this.inputs.equals(that.getInputs())) {
             return false;

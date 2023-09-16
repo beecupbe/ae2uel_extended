@@ -152,8 +152,7 @@ public class GuiMEPortableFluidCell extends AEBaseMEGui implements ISortSource, 
     protected void renderHoveredToolTip(int mouseX, int mouseY) {
         final Slot slot = this.getSlot(mouseX, mouseY);
 
-        if (slot != null && slot instanceof IMEFluidSlot && slot.isEnabled()) {
-            final IMEFluidSlot fluidSlot = (IMEFluidSlot) slot;
+        if (slot != null && slot instanceof final IMEFluidSlot fluidSlot && slot.isEnabled()) {
 
             if (fluidSlot.getAEFluidStack() != null && fluidSlot.shouldRenderAsFluid()) {
                 final IAEFluidStack fluidStack = fluidSlot.getAEFluidStack();
@@ -180,9 +179,8 @@ public class GuiMEPortableFluidCell extends AEBaseMEGui implements ISortSource, 
 
     @Override
     protected void actionPerformed(GuiButton btn) throws IOException {
-        if (btn instanceof GuiImgButton) {
+        if (btn instanceof final GuiImgButton iBtn) {
             final boolean backwards = Mouse.isButtonDown(1);
-            final GuiImgButton iBtn = (GuiImgButton) btn;
 
             if (iBtn.getSetting() != Settings.ACTIONS) {
                 final Enum cv = iBtn.getCurrentValue();
@@ -201,8 +199,7 @@ public class GuiMEPortableFluidCell extends AEBaseMEGui implements ISortSource, 
 
     @Override
     protected void handleMouseClick(Slot slot, int slotIdx, int mouseButton, ClickType clickType) {
-        if (slot instanceof SlotFluidME) {
-            final SlotFluidME meSlot = (SlotFluidME) slot;
+        if (slot instanceof final SlotFluidME meSlot) {
 
             if (clickType == ClickType.PICKUP) {
                 // TODO: Allow more options

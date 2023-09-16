@@ -92,8 +92,7 @@ class MonitorBakedModel extends CraftingCubeBakedModel {
     }
 
     private static AEColor getColor(IBlockState state) {
-        if (state instanceof IExtendedBlockState) {
-            IExtendedBlockState extState = (IExtendedBlockState) state;
+        if (state instanceof IExtendedBlockState extState) {
             AEColor color = extState.getValue(BlockCraftingMonitor.COLOR);
             if (color != null) {
                 return color;
@@ -104,8 +103,7 @@ class MonitorBakedModel extends CraftingCubeBakedModel {
     }
 
     private static EnumFacing getForward(IBlockState state) {
-        if (state instanceof IExtendedBlockState) {
-            IExtendedBlockState extState = (IExtendedBlockState) state;
+        if (state instanceof IExtendedBlockState extState) {
             EnumFacing forward = extState.getValue(BlockCraftingMonitor.FORWARD);
             if (forward != null) {
                 return forward;

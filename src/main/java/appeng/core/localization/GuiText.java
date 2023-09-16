@@ -22,7 +22,7 @@ package appeng.core.localization;
 import net.minecraft.util.text.translation.I18n;
 
 
-public enum GuiText {
+public enum  GuiText {
     inventory("container"), // mc's default Inventory localization.
 
     Chest,

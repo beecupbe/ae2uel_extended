@@ -159,8 +159,7 @@ public class CraftingGridCache implements ICraftingGrid, ICraftingProviderHelper
 
     @Override
     public void addNode(final IGridNode gridNode, final IGridHost machine) {
-        if (machine instanceof ICraftingWatcherHost) {
-            final ICraftingWatcherHost watcherHost = (ICraftingWatcherHost) machine;
+        if (machine instanceof final ICraftingWatcherHost watcherHost) {
             final CraftingWatcher watcher = new CraftingWatcher(this, watcherHost);
             this.craftingWatchers.put(gridNode, watcher);
             watcherHost.updateWatcher(watcher);

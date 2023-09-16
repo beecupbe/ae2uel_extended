@@ -27,11 +27,10 @@ public class ChiselBlockSpeedHandler {
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void speedupPlayer(TickEvent.PlayerTickEvent event) {
-        if (event.phase == TickEvent.Phase.START && event.side.isClient() && event.player.onGround && event.player instanceof EntityPlayerSP) {
+        if (event.phase == TickEvent.Phase.START && event.side.isClient() && event.player.onGround && event.player instanceof EntityPlayerSP player) {
             if (manualInputCheck == null) {
                 manualInputCheck = new MovementInputFromOptions(Minecraft.getMinecraft().gameSettings);
             }
-            EntityPlayerSP player = (EntityPlayerSP) event.player;
             BlockPos blockPosBelow = new BlockPos(player.posX, player.posY - (1 / 16D), player.posZ);
             IBlockState below = player.getEntityWorld().getBlockState(blockPosBelow);
             if (below.getBlock() instanceof BlockCableBus) {

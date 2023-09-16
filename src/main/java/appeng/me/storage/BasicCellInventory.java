@@ -62,8 +62,7 @@ public class BasicCellInventory<T extends IAEStack<T>> extends AbstractCellInven
     }
 
     private boolean isStorageCell(final T input) {
-        if (input instanceof IAEItemStack) {
-            final IAEItemStack stack = (IAEItemStack) input;
+        if (input instanceof final IAEItemStack stack) {
             final IStorageCell<?> type = getStorageCell(stack.getDefinition());
 
             return type != null && !type.storableInStorageCell();

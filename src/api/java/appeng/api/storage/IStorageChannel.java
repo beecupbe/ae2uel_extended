@@ -52,7 +52,7 @@ public interface IStorageChannel<T extends IAEStack<T>>
 	 */
 	default int transferFactor()
 	{
-		return 1;
+		return 4;
 	}
 
 	/**

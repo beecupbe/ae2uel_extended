@@ -155,7 +155,7 @@ public class ApiStorage implements IStorageHelper {
 
         @Override
         public int transferFactor() {
-            return 1000;
+            return 4000;
         }
 
         @Override
@@ -175,8 +175,7 @@ public class ApiStorage implements IStorageHelper {
             if (input instanceof FluidStack) {
                 return AEFluidStack.fromFluidStack((FluidStack) input);
             }
-            if (input instanceof ItemStack) {
-                final ItemStack is = (ItemStack) input;
+            if (input instanceof final ItemStack is) {
                 if (is.getItem() instanceof FluidDummyItem) {
                     return AEFluidStack.fromFluidStack(((FluidDummyItem) is.getItem()).getFluidStack(is));
                 } else {

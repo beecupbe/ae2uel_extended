@@ -159,16 +159,14 @@ public class PacketInventoryAction extends AppEngPacket {
     @Override
     public void serverPacketData(final INetworkInfo manager, final AppEngPacket packet, final EntityPlayer player) {
         final EntityPlayerMP sender = (EntityPlayerMP) player;
-        if (sender.openContainer instanceof AEBaseContainer) {
-            final AEBaseContainer baseContainer = (AEBaseContainer) sender.openContainer;
+        if (sender.openContainer instanceof final AEBaseContainer baseContainer) {
             if (this.action == InventoryAction.AUTO_CRAFT) {
                 final ContainerOpenContext context = baseContainer.getOpenContext();
                 if (context != null) {
                     final TileEntity te = context.getTile();
                     Platform.openGUI(sender, te, baseContainer.getOpenContext().getSide(), GuiBridge.GUI_CRAFTING_AMOUNT);
 
-                    if (sender.openContainer instanceof ContainerCraftAmount) {
-                        final ContainerCraftAmount cca = (ContainerCraftAmount) sender.openContainer;
+                    if (sender.openContainer instanceof final ContainerCraftAmount cca) {
 
                         if (baseContainer.getTargetStack() != null) {
                             cca.getCraftingItem().putStack(baseContainer.getTargetStack().asItemStackRepresentation());

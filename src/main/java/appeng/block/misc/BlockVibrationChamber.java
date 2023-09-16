@@ -92,8 +92,7 @@ public final class BlockVibrationChamber extends AEBaseTileBlock {
         }
 
         final AEBaseTile tile = this.getTileEntity(w, pos);
-        if (tile instanceof TileVibrationChamber) {
-            final TileVibrationChamber tc = (TileVibrationChamber) tile;
+        if (tile instanceof final TileVibrationChamber tc) {
             if (tc.isOn) {
                 float f1 = pos.getX() + 0.5F;
                 float f2 = pos.getY() + 0.5F;

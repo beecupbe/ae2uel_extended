@@ -56,8 +56,7 @@ public class SlotDisconnected extends AppEngSlot implements IJEITargetSlot {
     public ItemStack getDisplayStack() {
         if (Platform.isClient()) {
             final ItemStack is = super.getStack();
-            if (!is.isEmpty() && is.getItem() instanceof ItemEncodedPattern) {
-                final ItemEncodedPattern iep = (ItemEncodedPattern) is.getItem();
+            if (!is.isEmpty() && is.getItem() instanceof final ItemEncodedPattern iep) {
                 final ItemStack out = iep.getOutput(is);
                 if (!out.isEmpty()) {
                     return out;

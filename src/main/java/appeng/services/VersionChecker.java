@@ -82,7 +82,7 @@ public final class VersionChecker implements Runnable {
             final long lastCheck = Long.parseLong(rawLastCheck);
             final Date now = new Date();
             final long nowInMs = now.getTime();
-            final long intervalInMs = this.config.interval() * SEC_TO_HOUR * MS_TO_SEC;
+            final long intervalInMs = (long) this.config.interval() * SEC_TO_HOUR * MS_TO_SEC;
             final long lastAfterInterval = lastCheck + intervalInMs;
 
             this.processInterval(nowInMs, lastAfterInterval);

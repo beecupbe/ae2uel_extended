@@ -326,8 +326,7 @@ public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContain
 
         final List<Slot> slots = this.getInventorySlots();
         for (final Slot slot : slots) {
-            if (slot instanceof IOptionalSlot) {
-                final IOptionalSlot optionalSlot = (IOptionalSlot) slot;
+            if (slot instanceof final IOptionalSlot optionalSlot) {
                 if (optionalSlot.isRenderDisabled()) {
                     final AppEngSlot aeSlot = (AppEngSlot) slot;
                     if (aeSlot.isSlotEnabled()) {
@@ -806,8 +805,7 @@ public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContain
             }
 
             return;
-        } else if (s instanceof IMEFluidSlot && ((IMEFluidSlot) s).shouldRenderAsFluid()) {
-            final IMEFluidSlot slot = (IMEFluidSlot) s;
+        } else if (s instanceof final IMEFluidSlot slot && ((IMEFluidSlot) s).shouldRenderAsFluid()) {
             final IAEFluidStack fs = slot.getAEFluidStack();
 
             if (fs != null && this.isPowered()) {
@@ -837,8 +835,7 @@ public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContain
         } else {
             try {
                 final ItemStack is = s.getStack();
-                if (s instanceof AppEngSlot && (((AppEngSlot) s).renderIconWithItem() || is.isEmpty()) && (((AppEngSlot) s).shouldDisplay())) {
-                    final AppEngSlot aes = (AppEngSlot) s;
+                if (s instanceof final AppEngSlot aes && (((AppEngSlot) s).renderIconWithItem() || is.isEmpty()) && (((AppEngSlot) s).shouldDisplay())) {
                     if (aes.getIcon() >= 0) {
                         this.bindTexture("guis/states.png");
 
@@ -902,8 +899,7 @@ public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContain
                     }
                 }
                 if (s instanceof SlotPlayerInv || s instanceof SlotPlayerHotBar) {
-                    if (!is.isEmpty() && is.getItem() instanceof ItemEncodedPattern) {
-                        final ItemEncodedPattern iep = (ItemEncodedPattern) is.getItem();
+                    if (!is.isEmpty() && is.getItem() instanceof final ItemEncodedPattern iep) {
                         final ItemStack out = iep.getOutput(is);
                         if (!out.isEmpty()) {
                             AppEngSlot appEngSlot = ((AppEngSlot) s);
@@ -933,8 +929,7 @@ public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContain
                     } else {
                         super.drawSlot(s);
                     }
-                } else if (s instanceof AppEngSlot) {
-                    AppEngSlot appEngSlot = ((AppEngSlot) s);
+                } else if (s instanceof AppEngSlot appEngSlot) {
                     appEngSlot.setDisplay(true);
                     appEngSlot.setReturnAsSingleStack(true);
 

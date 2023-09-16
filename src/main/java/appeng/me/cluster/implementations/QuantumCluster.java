@@ -103,9 +103,8 @@ public class QuantumCluster implements ILocatable, IAECluster {
 
         boolean shutdown = false;
 
-        if (myOtherSide instanceof QuantumCluster) {
+        if (myOtherSide instanceof final QuantumCluster sideB) {
             final QuantumCluster sideA = this;
-            final QuantumCluster sideB = (QuantumCluster) myOtherSide;
 
             if (sideA.isActive() && sideB.isActive()) {
                 if (this.connection != null && this.connection.getConnection() != null) {

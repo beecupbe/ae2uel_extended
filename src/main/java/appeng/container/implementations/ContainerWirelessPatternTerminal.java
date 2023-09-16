@@ -256,8 +256,7 @@ public class ContainerWirelessPatternTerminal extends ContainerPatternEncoder im
     public void onChangeInventory(final IItemHandler inv, final int slot, final InvOperation mc, final ItemStack removedStack, final ItemStack newStack) {
         if (inv == this.pattern && slot == 1) {
             final ItemStack is = this.pattern.getStackInSlot(1);
-            if (!is.isEmpty() && is.getItem() instanceof ICraftingPatternItem) {
-                final ICraftingPatternItem pattern = (ICraftingPatternItem) is.getItem();
+            if (!is.isEmpty() && is.getItem() instanceof final ICraftingPatternItem pattern) {
                 final ICraftingPatternDetails details = pattern.getPatternForItem(is, this.getPlayerInv().player.world);
                 if (details != null) {
                     this.setCraftingMode(details.isCraftable());

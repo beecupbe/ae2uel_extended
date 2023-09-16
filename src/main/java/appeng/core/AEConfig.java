@@ -124,15 +124,15 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     private int maxControllerSizeZ = 7;
 
     //dont edit
-    private int normalChannelCapacity = 8;
-    private int denseChannelCapacity = 256;
+    private final int normalChannelCapacity = 8;
+    private final int denseChannelCapacity = 256;
 
 
     private int smallCableCap = 8;
     private int denseCableCap = 256;
-    private int x64CableCap = 64;
-    private int x128CableCap = 128;
-    private int x256CableCap = 256;
+    private final int x64CableCap = 64;
+    private final int x128CableCap = 128;
+    private final int x256CableCap = 256;
 
 
     private AEConfig(final File configFile) {

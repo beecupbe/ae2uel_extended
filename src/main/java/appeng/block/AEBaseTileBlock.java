@@ -79,7 +79,7 @@ public abstract class AEBaseTileBlock extends AEBaseBlock implements ITileEntity
     @Override
     public IBlockState getExtendedState(IBlockState state, IBlockAccess world, BlockPos pos) {
         // A subclass may decide it doesn't want extended block state for whatever reason
-        if (!(state instanceof IExtendedBlockState)) {
+        if (!(state instanceof IExtendedBlockState extState)) {
             return state;
         }
 
@@ -88,7 +88,6 @@ public abstract class AEBaseTileBlock extends AEBaseBlock implements ITileEntity
             return state; // No info available
         }
 
-        IExtendedBlockState extState = (IExtendedBlockState) state;
         return extState.withProperty(FORWARD, tile.getForward()).withProperty(UP, tile.getUp());
     }
 
@@ -191,8 +190,7 @@ public abstract class AEBaseTileBlock extends AEBaseBlock implements ITileEntity
     public boolean recolorBlock(final World world, final BlockPos pos, final EnumFacing side, final EnumDyeColor color) {
         final TileEntity te = this.getTileEntity(world, pos);
 
-        if (te instanceof IColorableTile) {
-            final IColorableTile ct = (IColorableTile) te;
+        if (te instanceof final IColorableTile ct) {
             final AEColor c = ct.getColor();
             final AEColor newColor = AEColor.values()[color.getMetadata()];
 
@@ -209,8 +207,7 @@ public abstract class AEBaseTileBlock extends AEBaseBlock implements ITileEntity
     @Override
     public int getComparatorInputOverride(IBlockState state, final World w, final BlockPos pos) {
         final TileEntity te = this.getTileEntity(w, pos);
-        if (te instanceof AEBaseInvTile) {
-            AEBaseInvTile invTile = (AEBaseInvTile) te;
+        if (te instanceof AEBaseInvTile invTile) {
             if (invTile.getInternalInventory().getSlots() > 0) {
                 return ItemHandlerHelper.calcRedstoneFromInventory(invTile.getInternalInventory());
             }
@@ -280,8 +277,7 @@ public abstract class AEBaseTileBlock extends AEBaseBlock implements ITileEntity
                 return false;
             }
 
-            if (heldItem.getItem() instanceof IMemoryCard && !(this instanceof BlockCableBus)) {
-                final IMemoryCard memoryCard = (IMemoryCard) heldItem.getItem();
+            if (heldItem.getItem() instanceof final IMemoryCard memoryCard && !(this instanceof BlockCableBus)) {
                 final AEBaseTile tileEntity = this.getTileEntity(world, pos);
 
                 if (tileEntity == null) {

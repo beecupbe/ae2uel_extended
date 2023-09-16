@@ -41,8 +41,7 @@ public class P2PStateInfoProvider implements IPartProbInfoProvider {
 
     @Override
     public void addProbeInfo(IPart part, ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
-        if (part instanceof PartP2PTunnel) {
-            final PartP2PTunnel tunnel = (PartP2PTunnel) part;
+        if (part instanceof final PartP2PTunnel tunnel) {
 
             if (!tunnel.isPowered()) {
                 return;

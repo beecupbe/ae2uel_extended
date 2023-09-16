@@ -48,7 +48,7 @@ public class TileController extends AENetworkPowerTile {
     private boolean isValid = false;
 
     public TileController() {
-        this.setInternalMaxPower(8000);
+        this.setInternalMaxPower(12000);
         this.setInternalPublicPowerStorage(true);
         this.getProxy().setIdlePowerUsage(3);
         this.getProxy().setFlags(GridFlags.CANNOT_CARRY, GridFlags.DENSE_CAPACITY);

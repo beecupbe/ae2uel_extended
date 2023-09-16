@@ -77,8 +77,7 @@ public final class PowerStorageWailaDataProvider extends BaseWailaDataProvider {
         ((ITaggedList<String, String>) currentToolTip).removeEntries("RFEnergyStorage");
 
         final TileEntity te = accessor.getTileEntity();
-        if (te instanceof IAEPowerStorage) {
-            final IAEPowerStorage storage = (IAEPowerStorage) te;
+        if (te instanceof final IAEPowerStorage storage) {
 
             final double maxPower = storage.getAEMaxPower();
             if (maxPower > 0) {
@@ -115,8 +114,7 @@ public final class PowerStorageWailaDataProvider extends BaseWailaDataProvider {
      */
     @Override
     public NBTTagCompound getNBTData(EntityPlayerMP player, TileEntity te, NBTTagCompound tag, World world, BlockPos pos) {
-        if (te instanceof IAEPowerStorage) {
-            final IAEPowerStorage storage = (IAEPowerStorage) te;
+        if (te instanceof final IAEPowerStorage storage) {
 
             if (storage.getAEMaxPower() > 0) {
                 final long internalCurrentPower = (long) (100 * storage.getAECurrentPower());

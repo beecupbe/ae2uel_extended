@@ -21,7 +21,6 @@ package appeng.block.grindstone;
 
 import appeng.api.implementations.tiles.ICrankable;
 import appeng.block.AEBaseTileBlock;
-import appeng.core.stats.Stats;
 import appeng.tile.AEBaseTile;
 import appeng.tile.grindstone.TileCrank;
 import net.minecraft.block.Block;
@@ -58,13 +57,6 @@ public class BlockCrank extends AEBaseTileBlock {
         if (player instanceof FakePlayer || player == null) {
             this.dropCrank(w, pos);
             return true;
-        }
-
-        final AEBaseTile tile = this.getTileEntity(w, pos);
-        if (tile instanceof TileCrank) {
-            if (((TileCrank) tile).power()) {
-                Stats.TurnedCranks.addToPlayer(player, 1);
-            }
         }
 
         return true;

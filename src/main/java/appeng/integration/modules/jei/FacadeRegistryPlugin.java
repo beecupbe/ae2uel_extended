@@ -43,15 +43,13 @@ class FacadeRegistryPlugin implements IRecipeRegistryPlugin {
 
     @Override
     public <V> List<String> getRecipeCategoryUids(IFocus<V> focus) {
-        if (focus.getMode() == IFocus.Mode.OUTPUT && focus.getValue() instanceof ItemStack) {
+        if (focus.getMode() == IFocus.Mode.OUTPUT && focus.getValue() instanceof ItemStack itemStack) {
             // Looking up how a certain facade is crafted
-            ItemStack itemStack = (ItemStack) focus.getValue();
             if (itemStack.getItem() instanceof ItemFacade) {
                 return Collections.singletonList(VanillaRecipeCategoryUid.CRAFTING);
             }
-        } else if (focus.getMode() == IFocus.Mode.INPUT && focus.getValue() instanceof ItemStack) {
+        } else if (focus.getMode() == IFocus.Mode.INPUT && focus.getValue() instanceof ItemStack itemStack) {
             // Looking up if a certain block can be used to make a facade
-            ItemStack itemStack = (ItemStack) focus.getValue();
 
             if (!this.itemFacade.createFacadeForItem(itemStack, true).isEmpty()) {
                 return Collections.singletonList(VanillaRecipeCategoryUid.CRAFTING);
@@ -68,18 +66,15 @@ class FacadeRegistryPlugin implements IRecipeRegistryPlugin {
             return Collections.emptyList();
         }
 
-        if (focus.getMode() == IFocus.Mode.OUTPUT && focus.getValue() instanceof ItemStack) {
+        if (focus.getMode() == IFocus.Mode.OUTPUT && focus.getValue() instanceof ItemStack itemStack) {
             // Looking up how a certain facade is crafted
-            ItemStack itemStack = (ItemStack) focus.getValue();
-            if (itemStack.getItem() instanceof ItemFacade) {
-                ItemFacade facadeItem = (ItemFacade) itemStack.getItem();
+            if (itemStack.getItem() instanceof ItemFacade facadeItem) {
                 ItemStack textureItem = facadeItem.getTextureItem(itemStack);
                 return Collections.singletonList((T) new FacadeRecipeWrapper(textureItem, this.cableAnchor, itemStack));
             }
-        } else if (focus.getMode() == IFocus.Mode.INPUT && focus.getValue() instanceof ItemStack) {
+        } else if (focus.getMode() == IFocus.Mode.INPUT && focus.getValue() instanceof ItemStack itemStack) {
             // Looking up if a certain block can be used to make a facade
 
-            ItemStack itemStack = (ItemStack) focus.getValue();
             ItemStack facade = this.itemFacade.createFacadeForItem(itemStack, false);
 
             if (!facade.isEmpty()) {

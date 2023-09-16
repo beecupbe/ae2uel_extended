@@ -36,7 +36,7 @@ import java.util.List;
 
 public class ToolEraser extends AEBaseItem {
 
-    private static final int BLOCK_ERASE_LIMIT = 90000;
+    private static final int BLOCK_ERASE_LIMIT = 128000;
 
     @Override
     public EnumActionResult onItemUseFirst(final EntityPlayer player, final World world, final BlockPos pos, final EnumFacing side, final float hitX, final float hitY, final float hitZ, final EnumHand hand) {

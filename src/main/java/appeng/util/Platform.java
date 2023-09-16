@@ -50,7 +50,6 @@ import appeng.core.AEConfig;
 import appeng.core.AELog;
 import appeng.core.AppEng;
 import appeng.core.features.AEFeature;
-import appeng.core.stats.Stats;
 import appeng.core.sync.GuiBridge;
 import appeng.core.sync.GuiHostType;
 import appeng.fluids.util.AEFluidStack;
@@ -518,8 +517,7 @@ public class Platform {
         }
 
         ItemStack itemStack = ItemStack.EMPTY;
-        if (o instanceof AEItemStack) {
-            final AEItemStack ais = (AEItemStack) o;
+        if (o instanceof final AEItemStack ais) {
             return ais.getToolTip();
         } else if (o instanceof ItemStack) {
             itemStack = (ItemStack) o;
@@ -622,8 +620,7 @@ public class Platform {
 
             }
 
-            if (eq.getItem() instanceof IAEWrench) {
-                final IAEWrench wrench = (IAEWrench) eq.getItem();
+            if (eq.getItem() instanceof final IAEWrench wrench) {
                 return wrench.canWrench(eq, player, pos);
             }
         }
@@ -1043,9 +1040,6 @@ public class Platform {
                 possible.setStackSize(itemToExtract);
                 final T ret = cell.extractItems(possible, Actionable.MODULATE, src);
 
-                if (ret != null) {
-                    src.player().ifPresent(player -> Stats.ItemsExtracted.addToPlayer(player, (int) ret.getStackSize()));
-                }
                 return ret;
             } else {
                 return possible.setStackSize(itemToExtract);
@@ -1092,7 +1086,6 @@ public class Platform {
                     src.player().ifPresent(player ->
                     {
                         final long diff = original - leftover.getStackSize();
-                        Stats.ItemsInserted.addToPlayer(player, (int) diff);
                     });
 
                     return leftover;
@@ -1103,7 +1096,6 @@ public class Platform {
                 src.player().ifPresent(player ->
                 {
                     final long diff = ret == null ? input.getStackSize() : input.getStackSize() - ret.getStackSize();
-                    Stats.ItemsInserted.addToPlayer(player, (int) diff);
                 });
 
                 return ret;

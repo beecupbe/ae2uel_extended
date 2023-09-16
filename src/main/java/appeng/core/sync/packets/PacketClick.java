@@ -111,8 +111,7 @@ public class PacketClick extends AppEngPacket {
             }
         } else {
             if (!is.isEmpty()) {
-                if (is.getItem() instanceof ToolNetworkTool) {
-                    final ToolNetworkTool tnt = (ToolNetworkTool) is.getItem();
+                if (is.getItem() instanceof final ToolNetworkTool tnt) {
                     tnt.serverSideToolLogic(is, player, this.hand, player.world, pos, this.side, this.hitX, this.hitY,
                             this.hitZ);
                 } else if (maybeMemoryCard.isSameAs(is)) {

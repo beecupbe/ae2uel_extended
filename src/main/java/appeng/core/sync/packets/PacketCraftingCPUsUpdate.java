@@ -45,8 +45,7 @@ public class PacketCraftingCPUsUpdate extends AppEngPacket {
     public void clientPacketData(final INetworkInfo network, final AppEngPacket packet, final EntityPlayer player) {
         final GuiScreen gs = Minecraft.getMinecraft().currentScreen;
 
-        if (gs instanceof GuiCraftingStatus) {
-            GuiCraftingStatus gui = (GuiCraftingStatus) gs;
+        if (gs instanceof GuiCraftingStatus gui) {
             gui.postCPUUpdate(this.cpus);
         }
 

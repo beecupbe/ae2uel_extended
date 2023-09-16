@@ -24,31 +24,31 @@ import appeng.core.AEConfig;
 
 public enum TickRates {
 
-    Interface(5, 120),
+    Interface(5, 60),
 
-    ImportBus(5, 40),
+    ImportBus(2, 30),
 
-    FluidImportBus(5, 40),
+    FluidImportBus(2, 30),
 
-    ExportBus(5, 60),
+    ExportBus(2, 30),
 
-    FluidExportBus(5, 60),
+    FluidExportBus(2, 35),
 
-    AnnihilationPlane(2, 120),
+    AnnihilationPlane(3, 80),
 
     METunnel(5, 20),
 
     Inscriber(1, 1),
 
-    Charger(10, 120),
+    Charger(1, 15),
 
-    IOPort(1, 5),
+    IOPort(1, 1),
 
     VibrationChamber(10, 40),
 
-    StorageBus(5, 60),
+    StorageBus(2, 45),
 
-    FluidStorageBus(5, 60),
+    FluidStorageBus(2, 45),
 
     ItemTunnel(5, 60),
 

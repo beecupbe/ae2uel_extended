@@ -57,8 +57,7 @@ public class JEIMissingItem implements IRecipeTransferError {
                 if (i.isInput() && !i.getAllIngredients().isEmpty()) {
                     List<?> allIngredients = i.getAllIngredients();
                     for (Object allIngredient : allIngredients) {
-                        if (allIngredient instanceof ItemStack) {
-                            ItemStack stack = (ItemStack) allIngredient;
+                        if (allIngredient instanceof ItemStack stack) {
                             if (!stack.isEmpty()) {
                                 IAEItemStack search = AEItemStack.fromItemStack(stack);
                                 if (stack.getItem().isDamageable() || Platform.isGTDamageableItem(stack.getItem())) {

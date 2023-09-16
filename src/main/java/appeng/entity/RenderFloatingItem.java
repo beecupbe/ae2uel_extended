@@ -39,8 +39,7 @@ public class RenderFloatingItem extends RenderEntityItem {
 
     @Override
     public void doRender(final EntityItem entityItem, final double x, final double y, final double z, final float yaw, final float partialTick) {
-        if (entityItem instanceof EntityFloatingItem) {
-            final EntityFloatingItem efi = (EntityFloatingItem) entityItem;
+        if (entityItem instanceof final EntityFloatingItem efi) {
             if (efi.getProgress() > 0.0) {
                 GlStateManager.pushMatrix();
 

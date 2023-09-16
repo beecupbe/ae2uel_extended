@@ -76,8 +76,7 @@ public class ToolReplicatorCard extends AEBaseItem {
                 final World src_w = DimensionManager.getWorld(dimid);
 
                 final TileEntity te = src_w.getTileEntity(new BlockPos(src_x, src_y, src_z));
-                if (te instanceof IGridHost) {
-                    final IGridHost gh = (IGridHost) te;
+                if (te instanceof final IGridHost gh) {
                     final EnumFacing sideOff = EnumFacing.VALUES[src_side];
                     final EnumFacing currentSideOff = side;
                     final IGridNode n = gh.getGridNode(AEPartLocation.fromFacing(sideOff));

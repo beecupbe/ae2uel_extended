@@ -72,7 +72,7 @@ public enum AEPartLocation
 
 	public static final AEPartLocation[] SIDE_LOCATIONS = { DOWN, UP, NORTH, SOUTH, WEST, EAST };
 
-	private AEPartLocation( final int x, final int y, final int z )
+	AEPartLocation( final int x, final int y, final int z )
 	{
 		this.xOffset = x;
 		this.yOffset = y;

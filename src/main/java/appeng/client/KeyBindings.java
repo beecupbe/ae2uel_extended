@@ -14,13 +14,11 @@ public enum KeyBindings {
     WPT(new KeyBinding("key.open_wireless_pattern_terminal.desc", KeyConflictContext.UNIVERSAL, KeyModifier.SHIFT, Keyboard.KEY_R, KEY_CATEGORY)),
     WFT(new KeyBinding("key.open_wireless_fluid_terminal.desc", KeyConflictContext.UNIVERSAL, KeyModifier.SHIFT, Keyboard.KEY_F, KEY_CATEGORY));
 
-    private KeyBinding keyBinding;
+    private final KeyBinding keyBinding;
 
     KeyBindings(KeyBinding keyBinding) {
         this.keyBinding = keyBinding;
     }
-
-    ;
 
     public KeyBinding getKeyBinding() {
         return keyBinding;

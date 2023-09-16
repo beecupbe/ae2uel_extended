@@ -66,7 +66,7 @@ public final class AppEng {
     public static CommonHelper proxy;
 
     public static final String MOD_ID = "appliedenergistics2";
-    public static final String MOD_NAME = "Applied Energistics 2";
+    public static final String MOD_NAME = "AE2 UEL: Extended";
 
     public static final String ASSETS = "appliedenergistics2:";
 
@@ -122,21 +122,18 @@ public final class AppEng {
     @EventHandler
     private void preInit(final FMLPreInitializationEvent event) {
         final Stopwatch watch = Stopwatch.createStarted();
+        AELog.info("Pre Initialization - started");
         this.configDirectory = new File(event.getModConfigurationDirectory().getPath(), "AppliedEnergistics2");
 
         final File configFile = new File(this.configDirectory, "AppliedEnergistics2.cfg");
         final File facadeFile = new File(this.configDirectory, "Facades.cfg");
-        final File versionFile = new File(this.configDirectory, "VersionChecker.cfg");
         final File recipeFile = new File(this.configDirectory, "CustomRecipes.cfg");
         final Configuration recipeConfiguration = new Configuration(recipeFile);
 
         AEConfig.init(configFile);
         FacadeConfig.init(facadeFile);
 
-        final VersionCheckerConfig versionCheckerConfig = new VersionCheckerConfig(versionFile);
         this.exportConfig = new ForgeExportConfig(recipeConfiguration);
-
-        AELog.info("Pre Initialization ( started )");
 
         CreativeTab.init();
         if (AEConfig.instance().isFeatureEnabled(AEFeature.FACADES)) {
@@ -155,11 +152,11 @@ public final class AppEng {
 
         IntegrationRegistry.INSTANCE.preInit();
 
-        AELog.info("Pre Initialization ( ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms )");
-
         // Instantiate all Plugins
         List<Object> injectables = Lists.newArrayList(AEApi.instance());
         new PluginLoader().loadPlugins(injectables, event.getAsmData());
+        AELog.info("Pre Initialization - ended after " + watch.elapsed(TimeUnit.MILLISECONDS) + "ms");
+        watch.stop();
     }
 
     private void startService(final String serviceName, final Thread thread) {
@@ -173,7 +170,7 @@ public final class AppEng {
     @EventHandler
     private void init(final FMLInitializationEvent event) {
         final Stopwatch start = Stopwatch.createStarted();
-        AELog.info("Initialization ( started )");
+        AELog.info("Initialization - started");
 
         AppEng.proxy.init();
 
@@ -192,12 +189,13 @@ public final class AppEng {
         IntegrationRegistry.INSTANCE.init();
 
         AELog.info("Initialization ( ended after " + start.elapsed(TimeUnit.MILLISECONDS) + "ms )");
+        start.stop();
     }
 
     @EventHandler
     private void postInit(final FMLPostInitializationEvent event) {
         final Stopwatch start = Stopwatch.createStarted();
-        AELog.info("Post Initialization ( started )");
+        AELog.info("Post Initialization - started");
 
         this.registration.postInit(event);
         IntegrationRegistry.INSTANCE.postInit();
@@ -212,6 +210,7 @@ public final class AppEng {
         NetworkHandler.init("AE2");
 
         AELog.info("Post Initialization ( ended after " + start.elapsed(TimeUnit.MILLISECONDS) + "ms )");
+        start.stop();
     }
 
     @EventHandler

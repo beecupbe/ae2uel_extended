@@ -36,8 +36,7 @@ public class ChargerInfoProvider implements ITileProbInfoProvider {
 
     @Override
     public void addProbeInfo(AEBaseTile tile, ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
-        if (tile instanceof TileCharger) {
-            final TileCharger charger = (TileCharger) tile;
+        if (tile instanceof final TileCharger charger) {
             final IItemHandler chargerInventory = charger.getInternalInventory();
             final ItemStack chargingItem = chargerInventory.getStackInSlot(0);
 

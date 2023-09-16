@@ -80,11 +80,9 @@ public class DummyFluidDispatcherBakedModel extends DelegateBakedModel {
         return new ItemOverrideList(Collections.emptyList()) {
             @Override
             public IBakedModel handleItemState(IBakedModel originalModel, ItemStack stack, World world, EntityLivingBase entity) {
-                if (!(stack.getItem() instanceof FluidDummyItem)) {
+                if (!(stack.getItem() instanceof FluidDummyItem itemFacade)) {
                     return originalModel;
                 }
-
-                FluidDummyItem itemFacade = (FluidDummyItem) stack.getItem();
 
                 FluidStack fluidStack = itemFacade.getFluidStack(stack);
                 if (fluidStack == null) {

@@ -56,8 +56,7 @@ public final class TileInfoProvider implements IProbeInfoProvider {
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
         final TileEntity tile = world.getTileEntity(data.getPos());
 
-        if (tile instanceof AEBaseTile) {
-            final AEBaseTile aeBaseTile = (AEBaseTile) tile;
+        if (tile instanceof final AEBaseTile aeBaseTile) {
 
             for (final ITileProbInfoProvider provider : this.providers) {
                 provider.addProbeInfo(aeBaseTile, mode, probeInfo, player, world, blockState, data);

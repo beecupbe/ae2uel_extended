@@ -48,11 +48,8 @@ public final class CreativeTab extends CreativeTabs {
     public ItemStack getIconItemStack() {
         final IDefinitions definitions = AEApi.instance().definitions();
         final IBlocks blocks = definitions.blocks();
-        final IItems items = definitions.items();
-        final IMaterials materials = definitions.materials();
 
-        return this.findFirst(blocks.controller(), blocks.chest(), blocks.cellWorkbench(), blocks.fluixBlock(), items.cell1k(), items.networkTool(),
-                materials.fluixCrystal(), materials.certusQuartzCrystal(), materials.skyDust());
+        return this.findFirst(blocks.controller());
     }
 
     private ItemStack findFirst(final IItemDefinition... choices) {

@@ -140,8 +140,7 @@ public class TickManagerCache implements ITickManager {
 
     @Override
     public void addNode(final IGridNode gridNode, final IGridHost machine) {
-        if (machine instanceof IGridTickable) {
-            final IGridTickable tickable = ((IGridTickable) machine);
+        if (machine instanceof final IGridTickable tickable) {
             final TickingRequest tr = tickable.getTickingRequest(gridNode);
 
             Preconditions.checkNotNull(tr);

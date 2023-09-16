@@ -147,7 +147,7 @@ gui.appliedenergistics2.WirelessTerminal=Wireless Term
 gui.appliedenergistics2.NoPermissions=No Permissions Selected
 gui.appliedenergistics2.SecurityCardEditor=Biometric Card Editor
 gui.appliedenergistics2.Encoded=Encoded
-gui.appliedenergistics2.Priority=Priority
+gui.appliedenergistics2.Priority=Priority settings
 gui.appliedenergistics2.StorageBus=Storage Bus
 gui.appliedenergistics2.OreDictStorageBus=Ore Dictionary Storage Bus
 gui.appliedenergistics2.StorageBusFluids=Fluid Storage Bus
@@ -461,11 +461,11 @@ item.appliedenergistics2.storage_cell_4k.name=§e4k§r ME Storage Cell
 item.appliedenergistics2.storage_cell_16k.name=§a16k§r ME Storage Cell
 item.appliedenergistics2.storage_cell_64k.name=§b64k§r ME Storage Cell
 
-item.appliedenergistics2.storage_cell_1mb.name=§b1mb§r ME Storage Cell
-item.appliedenergistics2.storage_cell_4mb.name=§b4mb§r ME Storage Cell
-item.appliedenergistics2.storage_cell_16mb.name=§b16mb§r ME Storage Cell
-item.appliedenergistics2.storage_cell_64mb.name=§b64mb§r ME Storage Cell
-item.appliedenergistics2.storage_cell_256mb.name=§b256mb§r ME Storage Cell
+item.appliedenergistics2.storage_cell_1mb.name=§d1mb§r ME Storage Cell
+item.appliedenergistics2.storage_cell_4mb.name=§54mb§r ME Storage Cell
+item.appliedenergistics2.storage_cell_16mb.name=§916mb§r ME Storage Cell
+item.appliedenergistics2.storage_cell_64mb.name=§364mb§r ME Storage Cell
+item.appliedenergistics2.storage_cell_256mb.name=§a256mb§r ME Storage Cell
 
 item.appliedenergistics2.fluid_storage_cell_1k.name=§61k§r ME Fluid Storage Cell
 item.appliedenergistics2.fluid_storage_cell_4k.name=§e4k§r ME Fluid Storage Cell
@@ -503,13 +503,13 @@ item.appliedenergistics2.material.cell4k_part.name=§e4k§r ME Storage Component
 item.appliedenergistics2.material.cell16k_part.name=§a16k§r ME Storage Component
 item.appliedenergistics2.material.cell64k_part.name=§b64k§r ME Storage Component
 
-item.appliedenergistics2.material.cell1mb_part.name=§b1mb§r ME Storage Component
-item.appliedenergistics2.material.cell4mb_part.name=§b4mb§r ME Storage Component
-item.appliedenergistics2.material.cell16mb_part.name=§b16mb§r ME Storage Component
-item.appliedenergistics2.material.cell64mb_part.name=§b64mb§r ME Storage Component
-item.appliedenergistics2.material.cell256mb_part.name=§b256mb§r ME Storage Component
-item.appliedenergistics2.material.cell1gb_part.name=§d1gb§r ME Storage Component
-item.appliedenergistics2.material.cell2gb_part.name=§a2gb§r ME Storage Component
+item.appliedenergistics2.material.cell1mb_part.name=§d1mb§r ME Storage Component
+item.appliedenergistics2.material.cell4mb_part.name=§54mb§r ME Storage Component
+item.appliedenergistics2.material.cell16mb_part.name=§916mb§r ME Storage Component
+item.appliedenergistics2.material.cell64mb_part.name=§364mb§r ME Storage Component
+item.appliedenergistics2.material.cell256mb_part.name=§a256mb§r ME Storage Component
+item.appliedenergistics2.material.cell1gb_part.name=§61gb§r ME Storage Component
+item.appliedenergistics2.material.cell2gb_part.name=§42gb§r ME Storage Component
 
 item.appliedenergistics2.material.fluid_cell1k_part.name=§61k§r ME Fluid Storage Component
 item.appliedenergistics2.material.fluid_cell4k_part.name=§e4k§r ME Fluid Storage Component

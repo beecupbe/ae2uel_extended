@@ -61,8 +61,7 @@ public final class PacketConfigButton extends AppEngPacket {
     @Override
     public void serverPacketData(final INetworkInfo manager, final AppEngPacket packet, final EntityPlayer player) {
         final EntityPlayerMP sender = (EntityPlayerMP) player;
-        if (sender.openContainer instanceof AEBaseContainer) {
-            final AEBaseContainer baseContainer = (AEBaseContainer) sender.openContainer;
+        if (sender.openContainer instanceof final AEBaseContainer baseContainer) {
             if (baseContainer.getTarget() instanceof IConfigurableObject) {
                 final IConfigManager cm = ((IConfigurableObject) baseContainer.getTarget()).getConfigManager();
                 final Enum<?> newState = Platform.rotateEnum(cm.getSetting(this.option), this.rotationDirection, this.option.getPossibleValues());

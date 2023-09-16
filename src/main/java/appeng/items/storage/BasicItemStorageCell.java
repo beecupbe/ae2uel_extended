@@ -31,8 +31,8 @@ import net.minecraft.item.ItemStack;
 
 public final class BasicItemStorageCell extends AbstractStorageCell<IAEItemStack> {
 
-    protected final int perType;
-    protected final double idleDrain;
+    private final int perType;
+    private final double idleDrain;
 
     public BasicItemStorageCell(final MaterialType whichCell, final int kilobytes) {
         super(whichCell, kilobytes);

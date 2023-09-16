@@ -174,8 +174,7 @@ public class SlotCraftingTerm extends AppEngCraftingSlot {
 
     // TODO: This is really hacky and NEEDS to be solved with a full container/gui refactoring.
     protected IRecipe findRecipe(InventoryCrafting ic, World world, EntityPlayer player) {
-        if (this.container instanceof ContainerCraftingTerm) {
-            final ContainerCraftingTerm containerTerminal = (ContainerCraftingTerm) this.container;
+        if (this.container instanceof final ContainerCraftingTerm containerTerminal) {
             final IRecipe recipe = containerTerminal.getCurrentRecipe();
 
             if (recipe != null && recipe.matches(ic, world)) {
@@ -189,8 +188,7 @@ public class SlotCraftingTerm extends AppEngCraftingSlot {
     // Returns null in case this recipe is not yet unlocked
     private IRecipe handleRecipe(InventoryCrafting ic, IRecipe recipe, EntityPlayer player) {
         if (Loader.isModLoaded("recipestages")) {
-            if (recipe instanceof RecipeStage) {
-                final RecipeStage staged = (RecipeStage) recipe;
+            if (recipe instanceof final RecipeStage staged) {
                 if (!staged.isGoodForCrafting(ic))
                     return null;
             }
@@ -211,8 +209,7 @@ public class SlotCraftingTerm extends AppEngCraftingSlot {
     // TODO: This is really hacky and NEEDS to be solved with a full container/gui refactoring.
     @Override
     protected NonNullList<ItemStack> getRemainingItems(InventoryCrafting ic, World world) {
-        if (this.container instanceof ContainerCraftingTerm) {
-            final ContainerCraftingTerm containerTerminal = (ContainerCraftingTerm) this.container;
+        if (this.container instanceof final ContainerCraftingTerm containerTerminal) {
             final IRecipe recipe = containerTerminal.getCurrentRecipe();
 
             if (recipe != null && recipe.matches(ic, world)) {

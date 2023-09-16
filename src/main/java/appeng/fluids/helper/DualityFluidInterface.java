@@ -306,7 +306,7 @@ public class DualityFluidInterface implements IGridTickable, IStorageMonitorable
 
     public long getSortValue() {
         final TileEntity te = this.iHost.getTileEntity();
-        return (te.getPos().getZ() << 24) ^ (te.getPos().getX() << 8) ^ te.getPos().getY();
+        return ((long) te.getPos().getZ() << 24) ^ ((long) te.getPos().getX() << 8) ^ te.getPos().getY();
     }
 
     public boolean hasCapability(Capability<?> capabilityClass, EnumFacing facing) {

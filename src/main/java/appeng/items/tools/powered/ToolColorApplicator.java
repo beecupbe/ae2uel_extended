@@ -191,8 +191,7 @@ public class ToolColorApplicator extends AEBasePoweredItem implements IStorageCe
             return AEColor.TRANSPARENT;
         }
 
-        if (paintBall.getItem() instanceof ItemPaintBall) {
-            final ItemPaintBall ipb = (ItemPaintBall) paintBall.getItem();
+        if (paintBall.getItem() instanceof final ItemPaintBall ipb) {
             return ipb.getColor(paintBall);
         } else {
             final int[] id = OreDictionary.getOreIDs(paintBall);

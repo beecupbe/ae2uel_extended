@@ -23,6 +23,8 @@
 
 package appeng.api.util;
 
+import java.util.Objects;
+
 public enum AECableType
 {
 	/**
@@ -75,7 +77,7 @@ public enum AECableType
 	private final AECableVariant variant;
 	private final AECableSize size;
 
-	private AECableType( AECableVariant variant, AECableSize size )
+	AECableType( AECableVariant variant, AECableSize size )
 	{
 		this.variant = variant;
 		this.size = size;
@@ -127,13 +129,9 @@ public enum AECableType
 		switch( variant )
 		{
 			case GLASS:
-				switch( size )
-				{
-					case NORMAL:
-						return GLASS;
-					default:
-						break;
-				}
+                if (Objects.requireNonNull(size) == AECableSize.NORMAL) {
+                    return GLASS;
+                }
 
 				break;
 			case COVERED:

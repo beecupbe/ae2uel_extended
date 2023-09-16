@@ -476,8 +476,7 @@ public class PartAnnihilationPlane extends PartBasicState implements IGridTickab
 
         final AxisAlignedBB box = new AxisAlignedBB(pos).grow(0.2);
         for (final Object ei : w.getEntitiesWithinAABB(EntityItem.class, box)) {
-            if (ei instanceof EntityItem) {
-                final EntityItem entityItem = (EntityItem) ei;
+            if (ei instanceof final EntityItem entityItem) {
                 this.storeEntityItem(entityItem);
             }
         }

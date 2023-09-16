@@ -51,7 +51,6 @@ import appeng.core.localization.GuiText;
 import appeng.core.localization.PlayerMessages;
 import appeng.core.stats.AdvancementTriggers;
 import appeng.core.stats.PartItemPredicate;
-import appeng.core.stats.Stats;
 import appeng.core.worlddata.SpatialDimensionManager;
 import appeng.fluids.registries.BasicFluidCellGuiHandler;
 import appeng.hooks.TickHandler;
@@ -222,7 +221,6 @@ final class Registration {
         });
 
         PartItemPredicate.register();
-        Stats.register();
         this.advancementTriggers = new AdvancementTriggers(new CriterionTrigggerRegistry());
     }
 
@@ -451,12 +449,6 @@ final class Registration {
         items.massCannon().maybeItem().ifPresent(massCannon -> registries.charger().addChargeRate(massCannon, 8000d));
         blocks.energyCell().maybeItem().ifPresent(cell -> registries.charger().addChargeRate(cell, 8000d));
         blocks.energyCellDense().maybeItem().ifPresent(cell -> registries.charger().addChargeRate(cell, 16000d));
-
-        // add villager trading to black smiths for a few basic materials
-        if (AEConfig.instance().isFeatureEnabled(AEFeature.VILLAGER_TRADING)) {
-            // TODO: VILLAGER TRADING
-            // VillagerRegistry.instance().getRegisteredVillagers().registerVillageTradeHandler( 3, new AETrading() );
-        }
 
         if (AEConfig.instance().isFeatureEnabled(AEFeature.CERTUS_QUARTZ_WORLD_GEN)) {
             GameRegistry.registerWorldGenerator(new QuartzWorldGen(), 0);

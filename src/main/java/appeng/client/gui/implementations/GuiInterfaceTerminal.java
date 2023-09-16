@@ -216,8 +216,7 @@ public class GuiInterfaceTerminal extends AEBaseGui {
         int linesDraw = 0;
         for (int x = 0; x < rows && linesDraw < rows && currentScroll + x < this.lines.size(); x++) {
             final Object lineObj = this.lines.get(currentScroll + x);
-            if (lineObj instanceof ClientDCInternalInv) {
-                final ClientDCInternalInv inv = (ClientDCInternalInv) lineObj;
+            if (lineObj instanceof final ClientDCInternalInv inv) {
 
                 GuiButton guiButton = new GuiImgButton(guiLeft + 4, guiTop + offset, Settings.ACTIONS, ActionItems.HIGHLIGHT_INTERFACE);
                 guiButtonHashMap.put(guiButton, inv);
@@ -236,8 +235,7 @@ public class GuiInterfaceTerminal extends AEBaseGui {
                     linesDraw++;
                     offset += 18;
                 }
-            } else if (lineObj instanceof String) {
-                String name = (String) lineObj;
+            } else if (lineObj instanceof String name) {
                 final int rows = this.byName.get(name).size();
                 if (rows > 1) {
                     name = name + " (" + rows + ')';
@@ -299,10 +297,9 @@ public class GuiInterfaceTerminal extends AEBaseGui {
             mc.player.closeScreen();
         }
 
-        if (btn instanceof GuiImgButton) {
+        if (btn instanceof final GuiImgButton iBtn) {
             final boolean backwards = Mouse.isButtonDown(1);
 
-            final GuiImgButton iBtn = (GuiImgButton) btn;
             if (iBtn.getSetting() != Settings.ACTIONS) {
                 final Enum cv = iBtn.getCurrentValue();
                 final Enum next = Platform.rotateEnum(cv, backwards, iBtn.getSetting().getPossibleValues());

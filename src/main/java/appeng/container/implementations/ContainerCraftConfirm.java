@@ -330,8 +330,7 @@ public class ContainerCraftConfirm extends AEBaseContainer {
                 if (te != null) {
                     Platform.openGUI(this.getInventoryPlayer().player, te, this.getOpenContext().getSide(), originalGui);
                 } else {
-                    if (ah instanceof IInventorySlotAware) {
-                        IInventorySlotAware i = ((IInventorySlotAware) ah);
+                    if (ah instanceof IInventorySlotAware i) {
                         Platform.openGUI(this.getInventoryPlayer().player, i.getInventorySlot(), originalGui, i.isBaubleSlot());
                     }
                 }

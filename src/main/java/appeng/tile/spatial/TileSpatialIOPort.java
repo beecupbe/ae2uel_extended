@@ -104,8 +104,7 @@ public class TileSpatialIOPort extends AENetworkInvTile implements IWorldCallabl
     }
 
     private boolean isSpatialCell(final ItemStack cell) {
-        if (!cell.isEmpty() && cell.getItem() instanceof ISpatialStorageCell) {
-            final ISpatialStorageCell sc = (ISpatialStorageCell) cell.getItem();
+        if (!cell.isEmpty() && cell.getItem() instanceof final ISpatialStorageCell sc) {
             return sc != null && sc.isSpatialStorage(cell);
         }
         return false;
