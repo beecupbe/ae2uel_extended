@@ -1,3 +1,4 @@
+RU:
 
 # AE2 UEL: Extended - Сломай лимиты!
 
