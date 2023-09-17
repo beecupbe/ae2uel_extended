@@ -123,13 +123,13 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     private int maxControllerSizeY = 7;
     private int maxControllerSizeZ = 7;
 
-    //dont edit
+    //shhh!
     private final int normalChannelCapacity = 8;
     private final int denseChannelCapacity = 256;
 
 
     private int smallCableCap = 8;
-    private int denseCableCap = 256;
+    private int denseCableCap = 32;
     private final int x64CableCap = 64;
     private final int x128CableCap = 128;
     private final int x256CableCap = 256;
@@ -152,8 +152,8 @@ public final class AEConfig extends Configuration implements IConfigurableObject
         CondenserOutput.SINGULARITY.requiredPower = this.get("Condenser", "Singularity", 256000).getInt(256000);
 
         this.removeCrashingItemsOnLoad = this.get("general", "removeCrashingItemsOnLoad", false, "Will auto-remove items that crash when being loaded from storage. This will destroy those items instead of crashing the game!").getBoolean();
-        this.smallCableCap = Math.min(this.get("general", "smallCableCapacity", this.smallCableCap, "Channels capacity for small cables").getInt(this.smallCableCap), 2147483647);
-        this.denseCableCap = Math.min(this.get("general", "denseCableCapacity", this.denseCableCap, "Channels capacity for dense cables").getInt(this.denseCableCap), 2147483647);
+        this.smallCableCap = Math.min(this.get("general", "smallCableCapacity", this.normalChannelCapacity, "Channels capacity for small cables").getInt(this.normalChannelCapacity), 2147483647);
+        this.denseCableCap = Math.min(this.get("general", "denseCableCapacity", this.denseChannelCapacity, "Channels capacity for dense cables").getInt(this.denseChannelCapacity), 2147483647);
         this.setCategoryComment("BlockingMode", "Map of items to not block when blockingmode is enabled.\n[modid]\nmodid:item:metadata(optional,default:0)\nSupports more than one modid, so you can block different things between, for example, gregtech or enderio");
         this.nonBlockingItems = this.get("BlockingMode", "nonBlockingItems", nonBlockingItems, "NonBlockingItems").getStringList();
 

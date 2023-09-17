@@ -78,10 +78,7 @@ import appeng.tile.networking.*;
 import appeng.tile.qnb.TileQuantumBridge;
 import appeng.tile.spatial.TileSpatialIOPort;
 import appeng.tile.spatial.TileSpatialPylon;
-import appeng.tile.storage.TileChest;
-import appeng.tile.storage.TileDrive;
-import appeng.tile.storage.TileIOPort;
-import appeng.tile.storage.TileSkyChest;
+import appeng.tile.storage.*;
 import com.google.common.base.Verify;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDispenser;
@@ -132,6 +129,7 @@ public final class ApiBlocks implements IBlocks {
     private final ITileDefinition multiPart;
     private final ITileDefinition controller;
     private final ITileDefinition drive;
+    private final ITileDefinition driveImp;
     private final ITileDefinition chest;
     private final ITileDefinition iface;
     private final ITileDefinition fluidIface;
@@ -143,6 +141,12 @@ public final class ApiBlocks implements IBlocks {
     private final ITileDefinition quartzGrowthAccelerator;
     private final ITileDefinition energyCell;
     private final ITileDefinition energyCellDense;
+
+    private final ITileDefinition energyCellImproved;
+    private final ITileDefinition energyCellAdvanced;
+    private final ITileDefinition energyCellPerfect;
+
+
     private final ITileDefinition energyCellCreative;
     private final ITileDefinition craftingUnit;
     private final ITileDefinition craftingAccelerator;
@@ -345,6 +349,14 @@ public final class ApiBlocks implements IBlocks {
                 .useCustomItemModel()
                 .rendering(new DriveRendering())
                 .build();
+
+        this.driveImp = registry.block("driveImp", BlockDriveImproved::new)
+                .features(AEFeature.STORAGE_CELLS, AEFeature.ME_DRIVE)
+                .tileEntity(new TileEntityDefinition(TileDriveImproved.class))
+                .useCustomItemModel()
+                .rendering(new DriveRendering())
+                .build();
+
         this.chest = registry.block("chest", BlockChest::new)
                 .features(AEFeature.STORAGE_CELLS, AEFeature.ME_CHEST)
                 .tileEntity(new TileEntityDefinition(TileChest.class))
@@ -395,6 +407,27 @@ public final class ApiBlocks implements IBlocks {
                 .tileEntity(new TileEntityDefinition(TileDenseEnergyCell.class))
                 .rendering(new BlockEnergyCellRendering(new ResourceLocation(AppEng.MOD_ID, "dense_energy_cell")))
                 .build();
+
+        this.energyCellImproved = registry.block("improved_energy_cell", BlockImprovedEnergyCell::new)
+                .features(AEFeature.ENERGY_CELLS, AEFeature.DENSE_ENERGY_CELLS)
+                .item(AEBaseItemBlockChargeable::new)
+                .tileEntity(new TileEntityDefinition(TileImprovedEnergyCell.class))
+                .rendering(new BlockEnergyCellRendering(new ResourceLocation(AppEng.MOD_ID, "improved_energy_cell")))
+                .build();
+        this.energyCellAdvanced = registry.block("advanced_energy_cell", BlockAdvancedEnergyCell::new)
+                .features(AEFeature.ENERGY_CELLS, AEFeature.DENSE_ENERGY_CELLS)
+                .item(AEBaseItemBlockChargeable::new)
+                .tileEntity(new TileEntityDefinition(TileAdvancedEnergyCell.class))
+                .rendering(new BlockEnergyCellRendering(new ResourceLocation(AppEng.MOD_ID, "advanced_energy_cell")))
+                .build();
+        this.energyCellPerfect = registry.block("perfect_energy_cell", BlockPerfectEnergyCell::new)
+                .features(AEFeature.ENERGY_CELLS, AEFeature.DENSE_ENERGY_CELLS)
+                .item(AEBaseItemBlockChargeable::new)
+                .tileEntity(new TileEntityDefinition(TilePerfectEnergyCell.class))
+                .rendering(new BlockEnergyCellRendering(new ResourceLocation(AppEng.MOD_ID, "perfect_energy_cell")))
+                .build();
+
+
         this.energyCellCreative = registry.block("creative_energy_cell", BlockCreativeEnergyCell::new)
                 .features(AEFeature.CREATIVE)
                 .tileEntity(new TileEntityDefinition(TileCreativeEnergyCell.class))
@@ -873,6 +906,12 @@ public final class ApiBlocks implements IBlocks {
     }
 
     @Override
+    public ITileDefinition driveImp() {
+        return this.driveImp;
+    }
+
+
+    @Override
     public ITileDefinition chest() {
         return this.chest;
     }
@@ -926,6 +965,20 @@ public final class ApiBlocks implements IBlocks {
     public ITileDefinition energyCellDense() {
         return this.energyCellDense;
     }
+
+    @Override
+    public ITileDefinition energyCellImproved() {
+        return this.energyCellImproved;
+    }
+    @Override
+    public ITileDefinition energyCellAdvanced() {
+        return this.energyCellAdvanced;
+    }
+    @Override
+    public ITileDefinition energyCellPerfect() {
+        return this.energyCellPerfect;
+    }
+
 
     @Override
     public ITileDefinition energyCellCreative() {

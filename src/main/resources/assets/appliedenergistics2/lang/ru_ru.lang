@@ -8,8 +8,15 @@ tile.appliedenergistics2.controller.name=МЭ Контроллер
 tile.appliedenergistics2.crank.name=Деревянная рукоятка
 tile.appliedenergistics2.creative_energy_cell.name=Творческая энергетическая ячейка
 tile.appliedenergistics2.dense_energy_cell.name=Плотная энергетическая ячейка
+
+tile.appliedenergistics2.improved_energy_cell.name=Улучшенная энергетическая ячейка
+tile.appliedenergistics2.advanced_energy_cell.name=Продвинутая энергетическая ячейка
+tile.appliedenergistics2.perfect_energy_cell.name=Совершенная энергетическая ячейка
+
 tile.appliedenergistics2.energy_cell.name=Энергетическая ячейка
+
 tile.appliedenergistics2.drive.name=МЭ Накопитель
+tile.appliedenergistics2.driveImp.name=Улучшеннный МЭ Накопитель
 tile.appliedenergistics2.energy_acceptor.name=Приёмщик энергии
 tile.appliedenergistics2.grindstone.name=Кварцевый дробитель
 tile.appliedenergistics2.matrix_frame.name=Каркас матрицы
@@ -165,6 +172,7 @@ gui.appliedenergistics2.Chest=МЭ Сундук
 gui.appliedenergistics2.Condenser=Конденсатор материи
 gui.appliedenergistics2.Config=Настройки
 gui.appliedenergistics2.Drive=МЭ Накопитель
+gui.appliedenergistics2.DriveImp=Улучешнный МЭ Накопитель
 gui.appliedenergistics2.ExportBus=МЭ Шина экспорта
 gui.appliedenergistics2.ExportBusFluids=МЭ Жидкостная шина экспорта
 gui.appliedenergistics2.GrindStone=Дробитель

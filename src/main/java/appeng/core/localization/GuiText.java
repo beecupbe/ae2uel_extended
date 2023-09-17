@@ -30,6 +30,7 @@ public enum  GuiText {
     Of,
     Condenser,
     Drive,
+    DriveImp,
     GrindStone,
     SkyChest,
 

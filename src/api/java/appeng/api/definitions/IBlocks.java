@@ -143,6 +143,8 @@ public interface IBlocks
 	ITileDefinition controller();
 
 	ITileDefinition drive();
+	ITileDefinition driveImp();
+
 
 	ITileDefinition chest();
 
@@ -165,6 +167,11 @@ public interface IBlocks
 	ITileDefinition energyCell();
 
 	ITileDefinition energyCellDense();
+
+	ITileDefinition energyCellImproved();
+	ITileDefinition energyCellAdvanced();
+	ITileDefinition energyCellPerfect();
+
 
 	ITileDefinition energyCellCreative();
 

@@ -1,0 +1,43 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:drive"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:driveimp"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.engineering_processor"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:driveimp"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "aba",
+        "c c",
+        "aba"
+    ],
+    "key": {
+        "b": {
+            "type": "appliedenergistics2:part",
+            "part": "material.engineering_processor"
+        },
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "blockIron"
+        },
+        "c": {
+            "item": "appliedenergistics2:drive"
+        }
+    }
+}

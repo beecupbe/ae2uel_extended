@@ -8,8 +8,16 @@ tile.appliedenergistics2.controller.name=ME Controller
 tile.appliedenergistics2.crank.name=Wooden Crank
 tile.appliedenergistics2.creative_energy_cell.name=Creative Energy Cell
 tile.appliedenergistics2.dense_energy_cell.name=Dense Energy Cell
+
+tile.appliedenergistics2.improved_energy_cell.name=Improved Energy Cell
+tile.appliedenergistics2.advanced_energy_cell.name=Advanced Energy Cell
+tile.appliedenergistics2.perfect_energy_cell.name=Perfect Energy Cell
+
 tile.appliedenergistics2.energy_cell.name=Energy Cell
 tile.appliedenergistics2.drive.name=ME Drive
+
+tile.appliedenergistics2.driveImp.name=Improved ME Drive
+
 tile.appliedenergistics2.energy_acceptor.name=Energy Acceptor
 tile.appliedenergistics2.grindstone.name=Quartz Grindstone
 tile.appliedenergistics2.matrix_frame.name=Matrix Frame
@@ -165,6 +173,7 @@ gui.appliedenergistics2.Chest=ME Chest
 gui.appliedenergistics2.Condenser=Matter Condenser
 gui.appliedenergistics2.Config=Config
 gui.appliedenergistics2.Drive=ME Drive
+gui.appliedenergistics2.DriveImp=Improved ME Drive
 gui.appliedenergistics2.ExportBus=ME Export Bus
 gui.appliedenergistics2.ExportBusFluids=ME Fluid Export Bus
 gui.appliedenergistics2.GrindStone=Grindstone

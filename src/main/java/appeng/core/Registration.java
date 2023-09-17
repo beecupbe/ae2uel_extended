@@ -450,6 +450,10 @@ final class Registration {
         blocks.energyCell().maybeItem().ifPresent(cell -> registries.charger().addChargeRate(cell, 8000d));
         blocks.energyCellDense().maybeItem().ifPresent(cell -> registries.charger().addChargeRate(cell, 16000d));
 
+        blocks.energyCellImproved().maybeItem().ifPresent(cell -> registries.charger().addChargeRate(cell, 32000d));
+        blocks.energyCellAdvanced().maybeItem().ifPresent(cell -> registries.charger().addChargeRate(cell, 64000d));
+        blocks.energyCellPerfect().maybeItem().ifPresent(cell -> registries.charger().addChargeRate(cell, 128000d));
+
         if (AEConfig.instance().isFeatureEnabled(AEFeature.CERTUS_QUARTZ_WORLD_GEN)) {
             GameRegistry.registerWorldGenerator(new QuartzWorldGen(), 0);
         }

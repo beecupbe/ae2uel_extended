@@ -86,6 +86,12 @@ public final class P2PTunnelRegistry implements IP2PTunnelRegistry {
          */
 
         this.addNewAttunement(blocks.energyCellDense(), TunnelType.FE_POWER);
+
+        this.addNewAttunement(blocks.energyCellImproved(), TunnelType.FE_POWER);
+        this.addNewAttunement(blocks.energyCellAdvanced(), TunnelType.FE_POWER);
+        this.addNewAttunement(blocks.energyCellPerfect(), TunnelType.FE_POWER);
+
+
         this.addNewAttunement(blocks.energyAcceptor(), TunnelType.FE_POWER);
         this.addNewAttunement(blocks.energyCell(), TunnelType.FE_POWER);
         this.addNewAttunement(blocks.energyCellCreative(), TunnelType.FE_POWER);

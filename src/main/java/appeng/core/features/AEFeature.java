@@ -108,6 +108,8 @@ public enum AEFeature {
     STORAGE_CELLS("StorageCells", Constants.CATEGORY_STORAGE),
     ME_CHEST("MEChest", Constants.CATEGORY_STORAGE),
     ME_DRIVE("MEDrive", Constants.CATEGORY_STORAGE),
+    ME_DRIVE_IMP("MEDriveIMP", Constants.CATEGORY_STORAGE),
+
     IO_PORT("IOPort", Constants.CATEGORY_STORAGE),
     CONDENSER("Condenser", Constants.CATEGORY_STORAGE),
 
@@ -118,9 +120,10 @@ public enum AEFeature {
     COVERED_CABLES("CoveredCables", Constants.CATEGORY_CABLES),
     SMART_CABLES("SmartCables", Constants.CATEGORY_CABLES),
     DENSE_CABLES("DenseCables", Constants.CATEGORY_CABLES),
-    DENSE_X64_CABLES("X64Cables", Constants.CATEGORY_CABLES),
-    DENSE_X128_CABLES("X128Cables", Constants.CATEGORY_CABLES),
-    DENSE_X256_CABLES("X256Cables", Constants.CATEGORY_CABLES),
+    //shhh!
+    //DENSE_X64_CABLES("X64Cables", Constants.CATEGORY_CABLES),
+    //DENSE_X128_CABLES("X128Cables", Constants.CATEGORY_CABLES),
+    //DENSE_X256_CABLES("X256Cables", Constants.CATEGORY_CABLES),
 
 
     ENERGY_CELLS("EnergyCells", Constants.CATEGORY_ENERGY),

@@ -24,9 +24,11 @@ import appeng.api.config.Actionable;
 import appeng.api.config.PowerUnits;
 import appeng.api.definitions.IBlockDefinition;
 import appeng.api.implementations.items.IAEItemPowerStorage;
+import appeng.block.networking.BlockImprovedEnergyCell;
 import appeng.core.Api;
 import appeng.core.localization.GuiText;
 import appeng.util.Platform;
+import appeng.block.AEBaseBlock;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -113,11 +115,20 @@ public class AEBaseItemBlockChargeable extends AEBaseItemBlock implements IAEIte
     private double getMaxEnergyCapacity() {
         final Block blockID = Block.getBlockFromItem(this);
         final IBlockDefinition energyCell = Api.INSTANCE.definitions().blocks().energyCell();
+        final IBlockDefinition energyCellImproved = Api.INSTANCE.definitions().blocks().energyCellImproved();
+        final IBlockDefinition energyCellAdvanced = Api.INSTANCE.definitions().blocks().energyCellAdvanced();
+        final IBlockDefinition energyCellPerfect = Api.INSTANCE.definitions().blocks().energyCellPerfect();
 
         return energyCell.maybeBlock().map(block ->
         {
             if (blockID == block) {
                 return 200000;
+            } else if (blockID == energyCellImproved) {
+                return 16 * 200000;
+            } else if (blockID == energyCellAdvanced) {
+                return 32 * 200000;
+            } else if (blockID == energyCellPerfect) {
+                return 64 * 200000;
             } else {
                 return 8 * 200000;
             }
