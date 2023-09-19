@@ -480,6 +480,13 @@ item.appliedenergistics2.fluid_storage_cell_1k.name=§61k§r ME Fluid Storage Ce
 item.appliedenergistics2.fluid_storage_cell_4k.name=§e4k§r ME Fluid Storage Cell
 item.appliedenergistics2.fluid_storage_cell_16k.name=§a16k§r ME Fluid Storage Cell
 item.appliedenergistics2.fluid_storage_cell_64k.name=§b64k§r ME Fluid Storage Cell
+
+item.appliedenergistics2.fluid_storage_cell_1mb.name=§d1mb§r ME Fluid Storage Cell
+item.appliedenergistics2.fluid_storage_cell_4mb.name=§54mb§r ME Fluid Storage Cell
+item.appliedenergistics2.fluid_storage_cell_16mb.name=§916mb§r ME Fluid Storage Cell
+item.appliedenergistics2.fluid_storage_cell_64mb.name=§364mb§r ME Fluid Storage Cell
+item.appliedenergistics2.fluid_storage_cell_256mb.name=§a256mb§r ME Fluid Storage Cell
+
 item.appliedenergistics2.creative_storage_cell.name=Creative ME Storage Cell
 item.appliedenergistics2.encoded_pattern.name=Encoded Pattern
 item.appliedenergistics2.view_cell.name=View Cell
@@ -524,6 +531,13 @@ item.appliedenergistics2.material.fluid_cell1k_part.name=§61k§r ME Fluid Stora
 item.appliedenergistics2.material.fluid_cell4k_part.name=§e4k§r ME Fluid Storage Component
 item.appliedenergistics2.material.fluid_cell16k_part.name=§a16k§r ME Fluid Storage Component
 item.appliedenergistics2.material.fluid_cell64k_part.name=§b64k§r ME Fluid Storage Component
+
+item.appliedenergistics2.material.fluid_cell1mb_part.name=§d1mb§r ME Fluid Storage Component
+item.appliedenergistics2.material.fluid_cell4mb_part.name=§54mb§r ME Fluid Storage Component
+item.appliedenergistics2.material.fluid_cell16mb_part.name=§916mb§r ME Fluid Storage Component
+item.appliedenergistics2.material.fluid_cell64mb_part.name=§364mb§r ME Fluid Storage Component
+item.appliedenergistics2.material.fluid_cell256mb_part.name=§a256mb§r ME Fluid Storage Component
+
 item.appliedenergistics2.material.certus_quartz_crystal.name=Certus Quartz Crystal
 item.appliedenergistics2.material.certus_quartz_crystal_charged.name=Charged Certus Quartz Crystal
 item.appliedenergistics2.material.certus_quartz_dust.name=Certus Quartz Dust

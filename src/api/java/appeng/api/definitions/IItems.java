@@ -106,6 +106,10 @@ public interface IItems {
 
 	IItemDefinition fluidCell64k();
 
+	IItemDefinition fluidCell1mb();
+	IItemDefinition fluidCell4mb();
+	IItemDefinition fluidCell16mb();
+
 
 	IItemDefinition spatialCell2();
 

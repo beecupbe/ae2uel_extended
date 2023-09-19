@@ -476,6 +476,13 @@ item.appliedenergistics2.fluid_storage_cell_1k.name=§61k§r МЭ Жидкост
 item.appliedenergistics2.fluid_storage_cell_4k.name=§e4k§r МЭ Жидкостная ячейка хранения
 item.appliedenergistics2.fluid_storage_cell_16k.name=§a16k§r МЭ Жидкостная ячейка хранения
 item.appliedenergistics2.fluid_storage_cell_64k.name=§b64k§r МЭ Жидкостная ячейка хранения
+
+item.appliedenergistics2.fluid_storage_cell_1mb.name=§b1mb§r МЭ Жидкостная ячейка хранения
+item.appliedenergistics2.fluid_storage_cell_4mb.name=§a4mb§r МЭ Жидкостная ячейка хранения
+item.appliedenergistics2.fluid_storage_cell_16mb.name=§316mb§r МЭ Жидкостная ячейка хранения
+item.appliedenergistics2.fluid_storage_cell_64mb.name=§e64mb§r МЭ Жидкостная ячейка хранения
+item.appliedenergistics2.fluid_storage_cell_256mb.name=§c256mb§r МЭ Жидкостная ячейка хранения
+
 item.appliedenergistics2.creative_storage_cell.name=Творческая МЭ Ячейка хранения
 item.appliedenergistics2.encoded_pattern.name=Кодированный шаблон
 item.appliedenergistics2.view_cell.name=Ячейка представления
@@ -520,6 +527,14 @@ item.appliedenergistics2.material.fluid_cell1k_part.name=§61k§r МЭ Жидк�
 item.appliedenergistics2.material.fluid_cell4k_part.name=§e4k§r МЭ Жидкостный компонент хранения
 item.appliedenergistics2.material.fluid_cell16k_part.name=§a16k§r МЭ Жидкостный компонент хранения
 item.appliedenergistics2.material.fluid_cell64k_part.name=§b64k§r МЭ Жидкостный компонент хранения
+
+item.appliedenergistics2.material.fluid_cell1mb_part.name=§d1mb§r МЭ Жидкостный компонент хранения
+item.appliedenergistics2.material.fluid_cell4mb_part.name=§54mb§r МЭ Жидкостный компонент хранения
+item.appliedenergistics2.material.fluid_cell16mb_part.name=§916mb§r МЭ Жидкостный компонент хранения
+item.appliedenergistics2.material.fluid_cell64mb_part.name=§364mb§r МЭ Жидкостный компонент хранения
+item.appliedenergistics2.material.fluid_cell256mb_part.name=§a256mb§r МЭ Жидкостный компонент хранения
+
+
 item.appliedenergistics2.material.certus_quartz_crystal.name=Кристалл истинного кварца
 item.appliedenergistics2.material.certus_quartz_crystal_charged.name=Заряженный кристалл истинного кварца
 item.appliedenergistics2.material.certus_quartz_dust.name=Пыль истинного кварца

@@ -105,6 +105,10 @@ public final class ApiItems implements IItems {
     private final IItemDefinition fluidCell4k;
     private final IItemDefinition fluidCell16k;
     private final IItemDefinition fluidCell64k;
+    private final IItemDefinition fluidCell1mb;
+    private final IItemDefinition fluidCell4mb;
+    private final IItemDefinition fluidCell16mb;
+
 
 
     private final IItemDefinition spatialCell2;
@@ -233,7 +237,9 @@ public final class ApiItems implements IItems {
         this.fluidCell4k = storageCells.item("fluid_storage_cell_4k", () -> new BasicFluidStorageCell(MaterialType.FLUID_CELL4K_PART, 4)).build();
         this.fluidCell16k = storageCells.item("fluid_storage_cell_16k", () -> new BasicFluidStorageCell(MaterialType.FLUID_CELL16K_PART, 16)).build();
         this.fluidCell64k = storageCells.item("fluid_storage_cell_64k", () -> new BasicFluidStorageCell(MaterialType.FLUID_CELL64K_PART, 64)).build();
-
+        this.fluidCell1mb = storageCells.item("fluid_storage_cell_1mb", () -> new BasicFluidStorageCell(MaterialType.FLUID_CELL1MB_PART, 1024)).build();
+        this.fluidCell4mb = storageCells.item("fluid_storage_cell_4mb", () -> new BasicFluidStorageCell(MaterialType.FLUID_CELL4MB_PART, 4096)).build();
+        this.fluidCell16mb = storageCells.item("fluid_storage_cell_16mb", () -> new BasicFluidStorageCell(MaterialType.FLUID_CELL16MB_PART, 16384)).build();
         FeatureFactory spatialCells = registry.features(AEFeature.SPATIAL_IO);
         this.spatialCell2 = spatialCells.item("spatial_storage_cell_2_cubed", () -> new ItemSpatialStorageCell(2)).build();
         this.spatialCell16 = spatialCells.item("spatial_storage_cell_16_cubed", () -> new ItemSpatialStorageCell(16)).build();
@@ -474,6 +480,22 @@ public final class ApiItems implements IItems {
     public IItemDefinition fluidCell64k() {
         return this.fluidCell64k;
     }
+
+    @Override
+    public IItemDefinition fluidCell1mb() {
+        return this.fluidCell1mb;
+    }
+
+    @Override
+    public IItemDefinition fluidCell4mb() {
+        return this.fluidCell4mb;
+    }
+
+    @Override
+    public IItemDefinition fluidCell16mb() {
+        return this.fluidCell16mb;
+    }
+
 
     @Override
     public IItemDefinition spatialCell2() {
