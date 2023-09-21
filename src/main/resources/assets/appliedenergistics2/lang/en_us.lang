@@ -22,6 +22,7 @@ tile.appliedenergistics2.energy_acceptor.name=Energy Acceptor
 tile.appliedenergistics2.grindstone.name=Quartz Grindstone
 tile.appliedenergistics2.matrix_frame.name=Matrix Frame
 tile.appliedenergistics2.io_port.name=ME IO Port
+tile.appliedenergistics2.io_portimp.name=Improved ME IO Port (WIP)
 tile.appliedenergistics2.inscriber.name=Inscriber
 tile.appliedenergistics2.interface.name=ME Interface
 tile.appliedenergistics2.fluid_interface.name=ME Fluid Interface
@@ -67,9 +68,14 @@ tile.appliedenergistics2.crafting_storage_15gb.name=§42gb§r Crafting Storage
 
 tile.appliedenergistics2.crafting_accelerator.name=Crafting Co-Processing Unit
 
-tile.appliedenergistics2.crafting_accelerator_4x.name=§6Improved§r Crafting Co-Processing Unit (x4)
-tile.appliedenergistics2.crafting_accelerator_16x.name=§eAdvanced§r Crafting Co-Processing Unit (x16)
-tile.appliedenergistics2.crafting_accelerator_64x.name=§aPerfect§r Crafting Co-Processing Unit (x64)
+tile.appliedenergistics2.crafting_accelerator_4x.name=§X4§r Crafting Co-Processing Unit
+tile.appliedenergistics2.crafting_accelerator_16x.name=§eX16§r Crafting Co-Processing Unit
+tile.appliedenergistics2.crafting_accelerator_64x.name=§aX64§r Crafting Co-Processing Unit
+tile.appliedenergistics2.crafting_accelerator_128x.name=§6X128§r Crafting Co-Processing Unit
+tile.appliedenergistics2.crafting_accelerator_256x.name=§bX256§r Crafting Co-Processing Unit
+tile.appliedenergistics2.crafting_accelerator_512x.name=§dX512§r Crafting Co-Processing Unit
+tile.appliedenergistics2.crafting_accelerator_1024x.name=§5X1024§r Crafting Co-Processing Unit
+tile.appliedenergistics2.crafting_accelerator_creative.name=§4Creative§r Crafting Co-Processing Unit
 
 tile.appliedenergistics2.crafting_unit.name=Crafting Unit
 tile.appliedenergistics2.molecular_assembler.name=Molecular Assembler

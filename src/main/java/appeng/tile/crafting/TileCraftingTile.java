@@ -80,6 +80,16 @@ public class TileCraftingTile extends AENetworkTile implements IAEMultiBlock, IP
             is = AEApi.instance().definitions().blocks().craftingAcceleratorx16().maybeStack(1);
         } else if (((TileCraftingTile) obj).isAcceleratorx64()) {
             is = AEApi.instance().definitions().blocks().craftingAcceleratorx64().maybeStack(1);
+        } else if (((TileCraftingTile) obj).isAcceleratorx128()) {
+            is = AEApi.instance().definitions().blocks().craftingAcceleratorx128().maybeStack(1);
+        } else if (((TileCraftingTile) obj).isAcceleratorx256()) {
+            is = AEApi.instance().definitions().blocks().craftingAcceleratorx256().maybeStack(1);
+        } else if (((TileCraftingTile) obj).isAcceleratorx512()) {
+            is = AEApi.instance().definitions().blocks().craftingAcceleratorx512().maybeStack(1);
+        } else if (((TileCraftingTile) obj).isAcceleratorx1024()) {
+            is = AEApi.instance().definitions().blocks().craftingAcceleratorx1024().maybeStack(1);
+        } else if (((TileCraftingTile) obj).isAcceleratorCreative()) {
+            is = AEApi.instance().definitions().blocks().craftingAcceleratorCreative().maybeStack(1);
         } else {
             is = AEApi.instance().definitions().blocks().craftingUnit().maybeStack(1);
         }
@@ -135,6 +145,48 @@ public class TileCraftingTile extends AENetworkTile implements IAEMultiBlock, IP
         final BlockCraftingUnit unit = (BlockCraftingUnit) this.world.getBlockState(this.pos).getBlock();
         return unit.type == CraftingUnitType.ACCELERATOR_64X;
     }
+
+    public boolean isAcceleratorx128() {
+        if (this.world == null) {
+            return false;
+        }
+
+        final BlockCraftingUnit unit = (BlockCraftingUnit) this.world.getBlockState(this.pos).getBlock();
+        return unit.type == CraftingUnitType.ACCELERATOR_128X;
+    }
+    public boolean isAcceleratorx256() {
+        if (this.world == null) {
+            return false;
+        }
+
+        final BlockCraftingUnit unit = (BlockCraftingUnit) this.world.getBlockState(this.pos).getBlock();
+        return unit.type == CraftingUnitType.ACCELERATOR_256X;
+    }
+    public boolean isAcceleratorx512() {
+        if (this.world == null) {
+            return false;
+        }
+
+        final BlockCraftingUnit unit = (BlockCraftingUnit) this.world.getBlockState(this.pos).getBlock();
+        return unit.type == CraftingUnitType.ACCELERATOR_512X;
+    }
+    public boolean isAcceleratorx1024() {
+        if (this.world == null) {
+            return false;
+        }
+
+        final BlockCraftingUnit unit = (BlockCraftingUnit) this.world.getBlockState(this.pos).getBlock();
+        return unit.type == CraftingUnitType.ACCELERATOR_1024X;
+    }
+    public boolean isAcceleratorCreative() {
+        if (this.world == null) {
+            return false;
+        }
+
+        final BlockCraftingUnit unit = (BlockCraftingUnit) this.world.getBlockState(this.pos).getBlock();
+        return unit.type == CraftingUnitType.ACCELERATOR_CREATIVE;
+    }
+
 
     @Override
     public void onReady() {

@@ -135,6 +135,7 @@ public final class ApiBlocks implements IBlocks {
     private final ITileDefinition fluidIface;
     private final ITileDefinition cellWorkbench;
     private final ITileDefinition iOPort;
+    private final ITileDefinition iOPortImp;
     private final ITileDefinition condenser;
     private final ITileDefinition energyAcceptor;
     private final ITileDefinition vibrationChamber;
@@ -153,6 +154,11 @@ public final class ApiBlocks implements IBlocks {
     private final ITileDefinition craftingAccelerator4x;
     private final ITileDefinition craftingAccelerator16x;
     private final ITileDefinition craftingAccelerator64x;
+    private final ITileDefinition craftingAccelerator128x;
+    private final ITileDefinition craftingAccelerator256x;
+    private final ITileDefinition craftingAccelerator512x;
+    private final ITileDefinition craftingAccelerator1024x;
+    private final ITileDefinition craftingAcceleratorCreative;
 
     private final ITileDefinition craftingStorage1k;
     private final ITileDefinition craftingStorage4k;
@@ -379,6 +385,10 @@ public final class ApiBlocks implements IBlocks {
                 .features(AEFeature.STORAGE_CELLS, AEFeature.IO_PORT)
                 .tileEntity(new TileEntityDefinition(TileIOPort.class))
                 .build();
+        this.iOPortImp = registry.block("io_portimp", BlockIOPortImp::new)
+                .features(AEFeature.STORAGE_CELLS, AEFeature.IO_PORTIMP)
+                .tileEntity(new TileEntityDefinition(TileIOPortImp.class))
+                .build();
         this.condenser = registry.block("condenser", BlockCondenser::new)
                 .features(AEFeature.CONDENSER)
                 .tileEntity(new TileEntityDefinition(TileCondenser.class))
@@ -459,6 +469,32 @@ public final class ApiBlocks implements IBlocks {
                 .tileEntity(new TileEntityDefinition(TileCraftingTile.class, "crafting_unit"))
                 .useCustomItemModel()
                 .build();
+        this.craftingAccelerator128x = crafting.block("crafting_accelerator_128x", () -> new BlockCraftingUnit(CraftingUnitType.ACCELERATOR_128X))
+                .rendering(new CraftingCubeRendering("crafting_accelerator_128x", CraftingUnitType.ACCELERATOR_128X))
+                .tileEntity(new TileEntityDefinition(TileCraftingTile.class, "crafting_unit"))
+                .useCustomItemModel()
+                .build();
+        this.craftingAccelerator256x = crafting.block("crafting_accelerator_256x", () -> new BlockCraftingUnit(CraftingUnitType.ACCELERATOR_256X))
+                .rendering(new CraftingCubeRendering("crafting_accelerator_256x", CraftingUnitType.ACCELERATOR_256X))
+                .tileEntity(new TileEntityDefinition(TileCraftingTile.class, "crafting_unit"))
+                .useCustomItemModel()
+                .build();
+        this.craftingAccelerator512x = crafting.block("crafting_accelerator_512x", () -> new BlockCraftingUnit(CraftingUnitType.ACCELERATOR_512X))
+                .rendering(new CraftingCubeRendering("crafting_accelerator_512x", CraftingUnitType.ACCELERATOR_512X))
+                .tileEntity(new TileEntityDefinition(TileCraftingTile.class, "crafting_unit"))
+                .useCustomItemModel()
+                .build();
+        this.craftingAccelerator1024x = crafting.block("crafting_accelerator_1024x", () -> new BlockCraftingUnit(CraftingUnitType.ACCELERATOR_1024X))
+                .rendering(new CraftingCubeRendering("crafting_accelerator_1024x", CraftingUnitType.ACCELERATOR_1024X))
+                .tileEntity(new TileEntityDefinition(TileCraftingTile.class, "crafting_unit"))
+                .useCustomItemModel()
+                .build();
+        this.craftingAcceleratorCreative = crafting.block("crafting_accelerator_creative", () -> new BlockCraftingUnit(CraftingUnitType.ACCELERATOR_CREATIVE))
+                .rendering(new CraftingCubeRendering("crafting_accelerator_creative", CraftingUnitType.ACCELERATOR_CREATIVE))
+                .tileEntity(new TileEntityDefinition(TileCraftingTile.class, "crafting_unit"))
+                .useCustomItemModel()
+                .build();
+
 
         this.craftingStorage1k = crafting.block("crafting_storage_1k", () -> new BlockCraftingStorage(CraftingUnitType.STORAGE_1K))
                 .item(ItemCraftingStorage::new)
@@ -935,6 +971,10 @@ public final class ApiBlocks implements IBlocks {
     public ITileDefinition iOPort() {
         return this.iOPort;
     }
+    @Override
+    public ITileDefinition iOPortImp() {
+        return this.iOPortImp;
+    }
 
     @Override
     public ITileDefinition condenser() {
@@ -1006,6 +1046,28 @@ public final class ApiBlocks implements IBlocks {
     public ITileDefinition craftingAcceleratorx64() {
         return this.craftingAccelerator64x;
     }
+
+    @Override
+    public ITileDefinition craftingAcceleratorx128() {
+        return this.craftingAccelerator128x;
+    }
+    @Override
+    public ITileDefinition craftingAcceleratorx256() {
+        return this.craftingAccelerator256x;
+    }
+    @Override
+    public ITileDefinition craftingAcceleratorx512() {
+        return this.craftingAccelerator512x;
+    }
+    @Override
+    public ITileDefinition craftingAcceleratorx1024() {
+        return this.craftingAccelerator1024x;
+    }
+    @Override
+    public ITileDefinition craftingAcceleratorCreative() {
+        return this.craftingAcceleratorCreative;
+    }
+
 
     @Override
     public ITileDefinition craftingStorage1k() {

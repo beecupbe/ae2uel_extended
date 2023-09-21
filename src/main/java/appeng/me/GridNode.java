@@ -534,15 +534,15 @@ public class GridNode implements IGridNode, IPathItem {
     private int getMaxChannels() {
         final EnumSet<GridFlags> gf = this.gridProxy.getFlags();
         if(gf.contains(GridFlags.X64_CAPACITY)) {
-            return 64;
+            return AEConfig.instance().getX64CableCapacity();
         } else if(gf.contains(GridFlags.X128_CAPACITY)) {
-            return 128;
+            return AEConfig.instance().getX128CableCapacity();
         } else if(gf.contains(GridFlags.X256_CAPACITY)) {
-            return 256;
+            return AEConfig.instance().getX256CableCapacity();
         } else if(gf.contains(GridFlags.DENSE_CAPACITY)) {
-            return 32;
+            return AEConfig.instance().getDenseCableCapacity();
         }
-        return 8;
+        return AEConfig.instance().getSmallCableCapacity();
     }
 
     @Override

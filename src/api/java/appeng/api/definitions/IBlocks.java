@@ -155,6 +155,7 @@ public interface IBlocks
 	ITileDefinition cellWorkbench();
 
 	ITileDefinition iOPort();
+	ITileDefinition iOPortImp();
 
 	ITileDefinition condenser();
 
@@ -182,7 +183,11 @@ public interface IBlocks
 	ITileDefinition craftingAcceleratorx4();
 	ITileDefinition craftingAcceleratorx16();
 	ITileDefinition craftingAcceleratorx64();
-
+	ITileDefinition craftingAcceleratorx128();
+	ITileDefinition craftingAcceleratorx256();
+	ITileDefinition craftingAcceleratorx512();
+	ITileDefinition craftingAcceleratorx1024();
+	ITileDefinition craftingAcceleratorCreative();
 
 	ITileDefinition craftingStorage1k();
 
