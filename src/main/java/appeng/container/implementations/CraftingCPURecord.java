@@ -29,9 +29,9 @@ public class CraftingCPURecord implements Comparable<CraftingCPURecord> {
     private final String myName;
     private final ICraftingCPU cpu;
     private final long size;
-    private final int processors;
+    private final long processors;
 
-    public CraftingCPURecord(final long size, final int coProcessors, final ICraftingCPU server) {
+    public CraftingCPURecord(final long size, final long coProcessors, final ICraftingCPU server) {
         this.size = size;
         this.processors = coProcessors;
         this.cpu = server;
@@ -55,7 +55,7 @@ public class CraftingCPURecord implements Comparable<CraftingCPURecord> {
         return this.myName;
     }
 
-    int getProcessors() {
+    long getProcessors() {
         return this.processors;
     }
 

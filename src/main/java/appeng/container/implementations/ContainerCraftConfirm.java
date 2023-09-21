@@ -79,7 +79,7 @@ public class ContainerCraftConfirm extends AEBaseContainer {
     @GuiSync(1)
     public long cpuBytesAvail;
     @GuiSync(2)
-    public int cpuCoProcessors;
+    public long cpuCoProcessors;
     @GuiSync(3)
     public boolean autoStart = false;
     @GuiSync(4)
@@ -388,11 +388,11 @@ public class ContainerCraftConfirm extends AEBaseContainer {
         this.cpuBytesAvail = cpuBytesAvail;
     }
 
-    public int getCpuCoProcessors() {
+    public long getCpuCoProcessors() {
         return this.cpuCoProcessors;
     }
 
-    private void setCpuCoProcessors(final int cpuCoProcessors) {
+    private void setCpuCoProcessors(final long cpuCoProcessors) {
         this.cpuCoProcessors = cpuCoProcessors;
     }
 

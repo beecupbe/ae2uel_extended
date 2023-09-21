@@ -68,7 +68,7 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
 
     private final WorldCoord min;
     private final WorldCoord max;
-    private final int[] usedOps = new int[3];
+    private final long[] usedOps = new long[3];
     private final Map<ICraftingPatternDetails, TaskProgress> tasks = new HashMap<>();
     // INSTANCE sate
     private final List<TileCraftingTile> tiles = new ArrayList<>();
@@ -88,9 +88,9 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
     private IItemList<IAEItemStack> waitingFor = AEApi.instance().storage().getStorageChannel(IItemStorageChannel.class).createList();
     private long availableStorage = 0;
     private MachineSource machineSrc = null;
-    private int accelerator = 0;
+    private long accelerator = 0;
     private boolean isComplete = true;
-    private int remainingOperations;
+    private long remainingOperations;
     private boolean somethingChanged;
 
     private long lastTime;
@@ -569,7 +569,7 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
         }
 
         this.remainingOperations = this.accelerator + 1 - (this.usedOps[0] + this.usedOps[1] + this.usedOps[2]);
-        final int started = this.remainingOperations;
+        final long started = this.remainingOperations;
 
         if (this.remainingOperations > 0) {
             do {
@@ -877,7 +877,7 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
     }
 
     @Override
-    public int getCoProcessors() {
+    public long getCoProcessors() {
         return this.accelerator;
     }
 
