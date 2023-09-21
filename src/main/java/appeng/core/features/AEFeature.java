@@ -111,6 +111,7 @@ public enum AEFeature {
     ME_DRIVE_IMP("MEDriveIMP", Constants.CATEGORY_STORAGE),
 
     IO_PORT("IOPort", Constants.CATEGORY_STORAGE),
+    IO_PORTIMP("IOPortIMP", Constants.CATEGORY_STORAGE),
     CONDENSER("Condenser", Constants.CATEGORY_STORAGE),
 
     NETWORK_TOOL("NetworkTool", Constants.CATEGORY_NETWORK_TOOL),

@@ -24,7 +24,7 @@ import appeng.core.AEConfig;
 
 public enum TickRates {
 
-    Interface(5, 60),
+    Interface(1, 1),
 
     ImportBus(2, 30),
 

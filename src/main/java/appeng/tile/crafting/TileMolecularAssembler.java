@@ -101,6 +101,7 @@ public class TileMolecularAssembler extends AENetworkInvTile implements IUpgrade
     private boolean isAwake = false;
     private boolean forcePlan = false;
     private boolean reboot = true;
+    private boolean fastTick;
     private final IActionSource mySrc = new MachineSource(this);
 
     public TileMolecularAssembler() {
@@ -463,25 +464,30 @@ public class TileMolecularAssembler extends AENetworkInvTile implements IUpgrade
         switch (this.upgrades.getInstalledUpgrades(Upgrades.SPEED)) {
             case 0:
                 this.progress += this.userPower(ticksSinceLastCall, speed = 10, 1.0);
+                fastTick = false;
                 break;
             case 1:
                 this.progress += this.userPower(ticksSinceLastCall, speed = 15, 1.3);
+                fastTick = false;
                 break;
             case 2:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 20, 1.7);
+                this.progress += this.userPower(ticksSinceLastCall, speed = 25, 1.7);
+                fastTick = false;
                 break;
             case 3:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 35, 2.0);
+                this.progress += this.userPower(ticksSinceLastCall, speed = 50, 2.0);
+                fastTick = false;
                 break;
             case 4:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 50, 2.5);
+                this.progress += this.userPower(ticksSinceLastCall, speed = 100, 2.5);
+                fastTick = false;
                 break;
             case 5:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 100, 5.0);
+                fastTick = true;
                 break;
         }
 
-        if (this.progress >= 100) {
+        if ((this.progress >= 100 || this.fastTick)) {
             for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
                 this.craftingInv.setInventorySlotContents(x, this.gridInv.getStackInSlot(x));
             }

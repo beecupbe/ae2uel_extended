@@ -49,6 +49,12 @@ class CraftingCubeModel implements IModel {
     private final static ResourceLocation ACCELERATOR_4X_LIGHT = texture("accelerator_4x_light");
     private final static ResourceLocation ACCELERATOR_16X_LIGHT = texture("accelerator_16x_light");
     private final static ResourceLocation ACCELERATOR_64X_LIGHT = texture("accelerator_64x_light");
+    private final static ResourceLocation ACCELERATOR_128X_LIGHT = texture("accelerator_128x_light");
+    private final static ResourceLocation ACCELERATOR_256X_LIGHT = texture("accelerator_256x_light");
+    private final static ResourceLocation ACCELERATOR_512X_LIGHT = texture("accelerator_512x_light");
+    private final static ResourceLocation ACCELERATOR_1024X_LIGHT = texture("accelerator_1024x_light");
+    private final static ResourceLocation ACCELERATOR_CREATIVE_LIGHT = texture("accelerator_creative_light");
+
 
     private final static ResourceLocation STORAGE_1K_LIGHT = texture("storage_1k_light");
     private final static ResourceLocation STORAGE_4K_LIGHT = texture("storage_4k_light");
@@ -80,8 +86,8 @@ class CraftingCubeModel implements IModel {
 
     @Override
     public Collection<ResourceLocation> getTextures() {
-        return ImmutableList.of(RING_CORNER, RING_SIDE_HOR, RING_SIDE_VER, UNIT_BASE, LIGHT_BASE, ACCELERATOR_LIGHT, ACCELERATOR_4X_LIGHT, ACCELERATOR_16X_LIGHT, ACCELERATOR_64X_LIGHT, STORAGE_1K_LIGHT, STORAGE_4K_LIGHT,
-                STORAGE_16K_LIGHT, STORAGE_64K_LIGHT, STORAGE_1MB_LIGHT, STORAGE_4MB_LIGHT, STORAGE_16MB_LIGHT, STORAGE_64MB_LIGHT, STORAGE_256MB_LIGHT, STORAGE_1GB_LIGHT, STORAGE_15GB_LIGHT, MONITOR_BASE, MONITOR_LIGHT_DARK, MONITOR_LIGHT_MEDIUM, MONITOR_LIGHT_BRIGHT);
+        return ImmutableList.of(RING_CORNER, RING_SIDE_HOR, RING_SIDE_VER, UNIT_BASE, LIGHT_BASE, ACCELERATOR_LIGHT, ACCELERATOR_4X_LIGHT, ACCELERATOR_16X_LIGHT, ACCELERATOR_64X_LIGHT, ACCELERATOR_128X_LIGHT, ACCELERATOR_256X_LIGHT, ACCELERATOR_512X_LIGHT, ACCELERATOR_1024X_LIGHT, ACCELERATOR_CREATIVE_LIGHT,
+                STORAGE_1K_LIGHT, STORAGE_4K_LIGHT, STORAGE_16K_LIGHT, STORAGE_64K_LIGHT, STORAGE_1MB_LIGHT, STORAGE_4MB_LIGHT, STORAGE_16MB_LIGHT, STORAGE_64MB_LIGHT, STORAGE_256MB_LIGHT, STORAGE_1GB_LIGHT, STORAGE_15GB_LIGHT, MONITOR_BASE, MONITOR_LIGHT_DARK, MONITOR_LIGHT_MEDIUM, MONITOR_LIGHT_BRIGHT);
     }
 
     @Override
@@ -94,11 +100,10 @@ class CraftingCubeModel implements IModel {
         switch (this.type) {
             case UNIT:
                 return new UnitBakedModel(format, ringCorner, ringSideHor, ringSideVer, bakedTextureGetter.apply(UNIT_BASE));
-            case ACCELERATOR, ACCELERATOR_4X, ACCELERATOR_16X, ACCELERATOR_64X:
             case STORAGE_1K:
             case STORAGE_4K:
             case STORAGE_16K:
-            case STORAGE_64K, STORAGE_1MB, STORAGE_4MB, STORAGE_16MB, STORAGE_64MB, STORAGE_256MB, STORAGE_1GB, STORAGE_15GB:
+            case STORAGE_64K, STORAGE_1MB, STORAGE_4MB, STORAGE_16MB, STORAGE_64MB, STORAGE_256MB, STORAGE_1GB, STORAGE_15GB, ACCELERATOR, ACCELERATOR_4X, ACCELERATOR_16X, ACCELERATOR_64X, ACCELERATOR_128X, ACCELERATOR_256X, ACCELERATOR_512X, ACCELERATOR_1024X, ACCELERATOR_CREATIVE:
                 return new LightBakedModel(format, ringCorner, ringSideHor, ringSideVer, bakedTextureGetter
                         .apply(LIGHT_BASE), getLightTexture(bakedTextureGetter, this.type));
             case MONITOR:
@@ -120,6 +125,16 @@ class CraftingCubeModel implements IModel {
                 return textureGetter.apply(ACCELERATOR_16X_LIGHT);
             case ACCELERATOR_64X:
                 return textureGetter.apply(ACCELERATOR_64X_LIGHT);
+            case ACCELERATOR_128X:
+                return textureGetter.apply(ACCELERATOR_128X_LIGHT);
+            case ACCELERATOR_256X:
+                return textureGetter.apply(ACCELERATOR_256X_LIGHT);
+            case ACCELERATOR_512X:
+                return textureGetter.apply(ACCELERATOR_512X_LIGHT);
+            case ACCELERATOR_1024X:
+                return textureGetter.apply(ACCELERATOR_1024X_LIGHT);
+            case ACCELERATOR_CREATIVE:
+                return textureGetter.apply(ACCELERATOR_CREATIVE_LIGHT);
             case STORAGE_1K:
                 return textureGetter.apply(STORAGE_1K_LIGHT);
             case STORAGE_4K:

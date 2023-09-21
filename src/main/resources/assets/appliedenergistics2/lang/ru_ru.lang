@@ -21,6 +21,7 @@ tile.appliedenergistics2.energy_acceptor.name=Приёмщик энергии
 tile.appliedenergistics2.grindstone.name=Кварцевый дробитель
 tile.appliedenergistics2.matrix_frame.name=Каркас матрицы
 tile.appliedenergistics2.io_port.name=МЭ Порт ввода\вывода
+tile.appliedenergistics2.io_portimp.name=Улучшенный МЭ Порт ввода\вывода (В разработке)
 tile.appliedenergistics2.inscriber.name=Высекатель
 tile.appliedenergistics2.interface.name=МЭ Интерфейс
 tile.appliedenergistics2.fluid_interface.name=МЭ Жидкостный интерфейс
@@ -66,9 +67,15 @@ tile.appliedenergistics2.crafting_storage_15gb.name=§42gb§r Хранилище
 
 tile.appliedenergistics2.crafting_accelerator.name=Блок обработки крафта
 
-tile.appliedenergistics2.crafting_accelerator_4x.name=§6Улучшенный§r блок обработки крафта (x4)
-tile.appliedenergistics2.crafting_accelerator_16x.name=§eПродвинутый§r блок обработки крафта (x16)
-tile.appliedenergistics2.crafting_accelerator_64x.name=§aСовершенный§r блок обработки крафта (x64)
+tile.appliedenergistics2.crafting_accelerator_4x.name=§6X4§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_16x.name=§eX16§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_64x.name=§aX64§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_128x.name=§6X128§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_256x.name=§bX256§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_512x.name=§dX512§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_1024x.name=§5X1024§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_creative.name=§4Творческий§r блок обработки крафта
+
 
 tile.appliedenergistics2.crafting_unit.name=Блок крафта
 tile.appliedenergistics2.molecular_assembler.name=Молекулярный сборщик

@@ -132,6 +132,8 @@ public enum GuiBridge implements IGuiHandler {
 
     GUI_IOPORT(ContainerIOPort.class, TileIOPort.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
+    GUI_IOPORTIMP(ContainerIOPortImproved.class, TileIOPortImp.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+
     GUI_STORAGEBUS(ContainerStorageBus.class, PartStorageBus.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
     GUI_OREDICTSTORAGEBUS(ContainerOreDictStorageBus.class, PartOreDicStorageBus.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
