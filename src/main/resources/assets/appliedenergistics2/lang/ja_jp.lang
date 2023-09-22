@@ -1,7 +1,7 @@
 # Japanese translate by GTModpackTeam
 # 日本語ローカライズ担当： GTModpackTeam
-# Corresponding Version: v0.54.20
-# 対応バージョン: v0.54.20
+# Corresponding Version: v0.55.22-0.2.2-rv6-stable-7
+# 対応バージョン: v0.55.22-0.2.2-rv6-stable-7
 
 // Blocks
 tile.appliedenergistics2.cable_bus.name=AE2ケーブル または バス
@@ -13,12 +13,21 @@ tile.appliedenergistics2.controller.name=MEコントローラ
 tile.appliedenergistics2.crank.name=木のクランク
 tile.appliedenergistics2.creative_energy_cell.name=クリエイティブ用エネルギーセル
 tile.appliedenergistics2.dense_energy_cell.name=高密度エネルギーセル
+
+tile.appliedenergistics2.improved_energy_cell.name=発展型エネルギーセル
+tile.appliedenergistics2.advanced_energy_cell.name=精鋭型エネルギーセル
+tile.appliedenergistics2.perfect_energy_cell.name=究極型エネルギーセル
+
 tile.appliedenergistics2.energy_cell.name=エネルギーセル
 tile.appliedenergistics2.drive.name=MEドライブ
+
+tile.appliedenergistics2.driveImp.name=ME発展型ドライブ
+
 tile.appliedenergistics2.energy_acceptor.name=エネルギー受容体
 tile.appliedenergistics2.grindstone.name=手動粉砕機
 tile.appliedenergistics2.matrix_frame.name=マトリクスフレーム
 tile.appliedenergistics2.io_port.name=ME入出力ポート
+tile.appliedenergistics2.io_portimp.name=ME発展型入出力ポート
 tile.appliedenergistics2.inscriber.name=刻印機
 tile.appliedenergistics2.interface.name=MEインターフェース
 tile.appliedenergistics2.fluid_interface.name=ME液体インターフェース
@@ -49,11 +58,30 @@ tile.appliedenergistics2.sky_stone_chest.name=スカイストーンチェスト
 tile.appliedenergistics2.smooth_sky_stone_chest.name=スカイストーンブロックチェスト
 tile.appliedenergistics2.sky_compass.name=隕石探知コンパス
 tile.appliedenergistics2.crafting_monitor.name=クラフティングモニター
-tile.appliedenergistics2.crafting_storage_1k.name=1k クラフティングストレージ
-tile.appliedenergistics2.crafting_storage_4k.name=4k クラフティングストレージ
-tile.appliedenergistics2.crafting_storage_16k.name=16k クラフティングストレージ
-tile.appliedenergistics2.crafting_storage_64k.name=64k クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_1k.name=§61k§r クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_4k.name=§e4k§r クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_16k.name=§a16k§r クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_64k.name=§b64k§r クラフティングストレージ
+
+tile.appliedenergistics2.crafting_storage_1mb.name=§d1mb§r クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_4mb.name=§54mb§r クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_16mb.name=§916mb§r クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_64mb.name=§364mb§r クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_256mb.name=§a256mb§r クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_1gb.name=§61gb§r クラフティングストレージ
+tile.appliedenergistics2.crafting_storage_15gb.name=§42gb§r クラフティングストレージ
+
 tile.appliedenergistics2.crafting_accelerator.name=クラフティング並列処理ユニット
+
+tile.appliedenergistics2.crafting_accelerator_4x.name=§6X4§r クラフティング並列処理ユニット
+tile.appliedenergistics2.crafting_accelerator_16x.name=§eX16§r クラフティング並列処理ユニット
+tile.appliedenergistics2.crafting_accelerator_64x.name=§aX64§r クラフティング並列処理ユニット
+tile.appliedenergistics2.crafting_accelerator_128x.name=§6X128§r クラフティング並列処理ユニット
+tile.appliedenergistics2.crafting_accelerator_256x.name=§bX256§r クラフティング並列処理ユニット
+tile.appliedenergistics2.crafting_accelerator_512x.name=§dX512§r クラフティング並列処理ユニット
+tile.appliedenergistics2.crafting_accelerator_1024x.name=§5X1024§r クラフティング並列処理ユニット
+tile.appliedenergistics2.crafting_accelerator_creative.name=§4Creative§r クラフティング並列処理ユニット
+
 tile.appliedenergistics2.crafting_unit.name=クラフティングユニット
 tile.appliedenergistics2.molecular_assembler.name=分子組立機
 
@@ -156,6 +184,7 @@ gui.appliedenergistics2.Chest=MEチェスト
 gui.appliedenergistics2.Condenser=マターコンデンサ
 gui.appliedenergistics2.Config=設定
 gui.appliedenergistics2.Drive=MEドライブ
+gui.appliedenergistics2.DriveImp=ME発展型ドライブ
 gui.appliedenergistics2.ExportBus=ME出力バス
 gui.appliedenergistics2.ExportBusFluids=ME液体出力バス
 gui.appliedenergistics2.GrindStone=手動粉砕機
@@ -381,6 +410,9 @@ gui.tooltips.appliedenergistics2.ToggleShowFullInterfaces=スロットが一杯�
 gui.tooltips.appliedenergistics2.ToggleShowFullInterfacesOnDesc=全てのインターフェースを表示
 gui.tooltips.appliedenergistics2.ToggleShowFullInterfacesOffDesc=空きがあるインターフェースのみを表示
 gui.tooltips.appliedenergistics2.HighlightInterface=インターフェースを強調表示
+gui.tooltips.appliedenergistics2.PartialTransfer=保存されているアイテムをクラフトグリッドに移動
+gui.tooltips.appliedenergistics2.MissingItem=§c無効アイテム
+gui.tooltips.appliedenergistics2.CraftableItem=§9クラフトアイテム
 
 // Units
 gui.appliedenergistics2.units.appliedenergstics=AE
@@ -448,10 +480,24 @@ item.appliedenergistics2.storage_cell_1k.name=§61k§r MEストレージセル
 item.appliedenergistics2.storage_cell_4k.name=§e4k§r MEストレージセル
 item.appliedenergistics2.storage_cell_16k.name=§a16k§r MEストレージセル
 item.appliedenergistics2.storage_cell_64k.name=§b64k§r MEストレージセル
+
+item.appliedenergistics2.storage_cell_1mb.name=§d1mb§r MEストレージセル
+item.appliedenergistics2.storage_cell_4mb.name=§54mb§r MEストレージセル
+item.appliedenergistics2.storage_cell_16mb.name=§916mb§r MEストレージセル
+item.appliedenergistics2.storage_cell_64mb.name=§364mb§r MEストレージセル
+item.appliedenergistics2.storage_cell_256mb.name=§a256mb§r MEストレージセル
+
 item.appliedenergistics2.fluid_storage_cell_1k.name=§61k§r ME液体セル
 item.appliedenergistics2.fluid_storage_cell_4k.name=§e4k§r ME液体セル
 item.appliedenergistics2.fluid_storage_cell_16k.name=§a16k§r ME液体セル
 item.appliedenergistics2.fluid_storage_cell_64k.name=§b64k§r ME液体セル
+
+item.appliedenergistics2.fluid_storage_cell_1mb.name=§d1mb§r ME液体セル
+item.appliedenergistics2.fluid_storage_cell_4mb.name=§54mb§r ME液体セル
+item.appliedenergistics2.fluid_storage_cell_16mb.name=§916mb§r ME液体セル
+item.appliedenergistics2.fluid_storage_cell_64mb.name=§364mb§r ME液体セル
+item.appliedenergistics2.fluid_storage_cell_256mb.name=§a256mb§r ME液体セル
+
 item.appliedenergistics2.creative_storage_cell.name=クリエイティブ用MEストレージセル
 item.appliedenergistics2.encoded_pattern.name=エンコード済みパターン
 item.appliedenergistics2.view_cell.name=セルを表示
@@ -476,17 +522,33 @@ item.appliedenergistics2.material.card_fuzzy.name=ファジーカード
 item.appliedenergistics2.material.card_inverter.name=反転カード
 item.appliedenergistics2.material.card_redstone.name=レッドストーンカード
 item.appliedenergistics2.material.card_speed.name=加速カード
-item.appliedenergistics2.material.cell2_spatial_part.name=§62³§r空間コンポーネント
-item.appliedenergistics2.material.cell16_spatial_part.name=§916³空間コンポーネント
-item.appliedenergistics2.material.cell128_spatial_part.name=§d128³空間コンポーネント
+item.appliedenergistics2.material.cell2_spatial_part.name=§62³§r ME空間コンポーネント
+item.appliedenergistics2.material.cell16_spatial_part.name=§916³§r ME空間コンポーネント
+item.appliedenergistics2.material.cell128_spatial_part.name=§d128³§r ME空間コンポーネント
 item.appliedenergistics2.material.cell1k_part.name=§61k§r MEストレージコンポーネント
 item.appliedenergistics2.material.cell4k_part.name=§e4k§r MEストレージコンポーネント
 item.appliedenergistics2.material.cell16k_part.name=§a16k§r MEストレージコンポーネント
 item.appliedenergistics2.material.cell64k_part.name=§b64k§r MEストレージコンポーネント
+
+item.appliedenergistics2.material.cell1mb_part.name=§d1mb§r MEストレージコンポーネント
+item.appliedenergistics2.material.cell4mb_part.name=§54mb§r MEストレージコンポーネント
+item.appliedenergistics2.material.cell16mb_part.name=§916mb§r MEストレージコンポーネント
+item.appliedenergistics2.material.cell64mb_part.name=§364mb§r MEストレージコンポーネント
+item.appliedenergistics2.material.cell256mb_part.name=§a256mb§r MEストレージコンポーネント
+item.appliedenergistics2.material.cell1gb_part.name=§61gb§r MEストレージコンポーネント
+item.appliedenergistics2.material.cell2gb_part.name=§42gb§r MEストレージコンポーネント
+
 item.appliedenergistics2.material.fluid_cell1k_part.name=§61k§r ME液体コンポーネント
 item.appliedenergistics2.material.fluid_cell4k_part.name=§e4k§r ME液体コンポーネント
 item.appliedenergistics2.material.fluid_cell16k_part.name=§a16k§r ME液体コンポーネント
 item.appliedenergistics2.material.fluid_cell64k_part.name=§b64k§r ME液体コンポーネント
+
+item.appliedenergistics2.material.fluid_cell1mb_part.name=§d1mb§r ME液体コンポーネント
+item.appliedenergistics2.material.fluid_cell4mb_part.name=§54mb§r ME液体コンポーネント
+item.appliedenergistics2.material.fluid_cell16mb_part.name=§916mb§r ME液体コンポーネント
+item.appliedenergistics2.material.fluid_cell64mb_part.name=§364mb§r ME液体コンポーネント
+item.appliedenergistics2.material.fluid_cell256mb_part.name=§a256mb§r ME液体コンポーネント
+
 item.appliedenergistics2.material.certus_quartz_crystal.name=ケルタスクォーツ
 item.appliedenergistics2.material.certus_quartz_crystal_charged.name=チャージドケルタスクォーツ
 item.appliedenergistics2.material.certus_quartz_dust.name=ケルタスクォーツの粉
@@ -530,6 +592,11 @@ item.appliedenergistics2.multi_part.fluid_annihilation_plane.name=ME液体消滅
 item.appliedenergistics2.multi_part.identity_annihilation_plane.name=ME同一性消滅プレーン
 item.appliedenergistics2.multi_part.cable_anchor.name=ケーブルアンカー
 item.appliedenergistics2.multi_part.cable_covered.name=MEカバーケーブル
+
+item.appliedenergistics2.multi_part.cable_x64.name=ME発展型高密度ケーブル
+item.appliedenergistics2.multi_part.cable_x128.name=ME精鋭型高密度ケーブル
+item.appliedenergistics2.multi_part.cable_x256.name=ME究極型高密度ケーブル
+
 item.appliedenergistics2.multi_part.cable_glass.name=MEガラスケーブル
 item.appliedenergistics2.multi_part.cable_smart.name=MEスマートケーブル
 item.appliedenergistics2.multi_part.cable_dense_covered.name=ME高密度カバーケーブル
@@ -567,9 +634,9 @@ item.appliedenergistics2.multi_part.fluid_interface_configuration_terminal.name=
 item.appliedenergistics2.multi_part.fluid_terminal.name=ME液体ターミナル
 item.appliedenergistics2.multi_part.invalid_type.name=無効アイテム
 
-item.appliedenergistics2.spatial_storage_cell_128_cubed.name=§d128³§r空間ストレージセル
-item.appliedenergistics2.spatial_storage_cell_16_cubed.name=§916³§r空間ストレージセル
-item.appliedenergistics2.spatial_storage_cell_2_cubed.name=§62³§r空間ストレージセル
+item.appliedenergistics2.spatial_storage_cell_128_cubed.name=§d128³§r ME空間ストレージセル
+item.appliedenergistics2.spatial_storage_cell_16_cubed.name=§916³§r ME空間ストレージセル
+item.appliedenergistics2.spatial_storage_cell_2_cubed.name=§62³§r ME空間ストレージセル
 
 item.appliedenergistics2.certus_quartz_axe.name=ケルタスクォーツの斧
 item.appliedenergistics2.certus_quartz_cutting_knife.name=ケルタスクォーツのナイフ
