@@ -88,7 +88,7 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
     private IItemList<IAEItemStack> waitingFor = AEApi.instance().storage().getStorageChannel(IItemStorageChannel.class).createList();
     private long availableStorage = 0;
     private MachineSource machineSrc = null;
-    private long accelerator = 0;
+    private int accelerator = 0;
     private boolean isComplete = true;
     private long remainingOperations;
     private boolean somethingChanged;
@@ -202,7 +202,12 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
         } else if (te.isAcceleratorx1024()) {
             this.accelerator +=1024;
         } else if (te.isAcceleratorCreative()) {
-            this.accelerator +=2147483646;
+            if (this.accelerator <2147483646) {
+                this.accelerator +=2147483646;
+            } else {
+                this.accelerator = 2147483646;
+            }
+
         }
     }
 
@@ -877,8 +882,13 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
     }
 
     @Override
-    public long getCoProcessors() {
-        return this.accelerator;
+    public int getCoProcessors() {
+        if (this.accelerator <= 2147483646) {
+            return this.accelerator;
+        } else {
+            return 2147483646;
+        }
+
     }
 
     @Override

@@ -59,8 +59,9 @@ public class ApiClientHelper implements IClientHelper {
             } else {
                 lines.add("[" + GuiText.Partitioned.getLocal() + "]" + " - " + list + ' ' + GuiText.Precise.getLocal());
             }
+            lines.add(GuiText.ShiftForDetails + "");
 
-            if (Minecraft.getMinecraft().gameSettings.advancedItemTooltips || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
                 IItemHandler inv = cellInventory.getConfigInventory();
                 cellInventory.getAvailableItems((IItemList) itemList);
                 for (int i = 0; i < inv.getSlots(); i++) {
@@ -105,7 +106,7 @@ public class ApiClientHelper implements IClientHelper {
                 }
             }
         } else {
-            if (Minecraft.getMinecraft().gameSettings.advancedItemTooltips || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
                 cellInventory.getAvailableItems((IItemList) itemList);
                 for (IAEStack<?> s : itemList) {
                     if (s instanceof IAEItemStack) {

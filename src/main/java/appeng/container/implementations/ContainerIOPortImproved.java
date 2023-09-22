@@ -66,19 +66,10 @@ public class ContainerIOPortImproved extends ContainerUpgradeable {
         for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 3; x++) {
                 this.addSlotToContainer(
-                        new SlotOutput(cells, 6 + x + y * 3, offX + x * 18, offY + y * 18, SlotRestrictedInput.PlacableItemType.STORAGE_CELLS.IIcon));
+                        new SlotOutput(cells, 12 + x + y * 3, offX + x * 18, offY + y * 18, SlotRestrictedInput.PlacableItemType.STORAGE_CELLS.IIcon));
             }
         }
 
-        final IItemHandler upgrades = this.getUpgradeable().getInventoryByName("upgrades");
-        this.addSlotToContainer((new SlotRestrictedInput(SlotRestrictedInput.PlacableItemType.UPGRADES, upgrades, 0, 187, 8, this.getInventoryPlayer()))
-                .setNotDraggable());
-        this.addSlotToContainer(
-                (new SlotRestrictedInput(SlotRestrictedInput.PlacableItemType.UPGRADES, upgrades, 1, 187, 8 + 18, this.getInventoryPlayer()))
-                        .setNotDraggable());
-        this.addSlotToContainer(
-                (new SlotRestrictedInput(SlotRestrictedInput.PlacableItemType.UPGRADES, upgrades, 2, 187, 8 + 18 * 2, this.getInventoryPlayer()))
-                        .setNotDraggable());
     }
 
     @Override

@@ -202,7 +202,9 @@ public enum  GuiText {
     LargeFontCraft,
 
     // Used in a ME Interface when no appropriate TileEntity was detected near it
-    Nothing;
+    Nothing,
+
+    ShiftForDetails;
 
     private final String root;
 

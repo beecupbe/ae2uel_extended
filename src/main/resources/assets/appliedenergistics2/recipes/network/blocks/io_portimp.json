@@ -33,7 +33,7 @@
         },
         "d": {
             "type": "forge:ore_dict",
-            "ore": "BlockIron"
+            "ore": "blockIron"
         },
         "b": {
             "item": "appliedenergistics2:io_port"

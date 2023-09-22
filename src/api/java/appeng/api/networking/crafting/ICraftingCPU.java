@@ -52,7 +52,7 @@ public interface ICraftingCPU extends IBaseMonitor<IAEItemStack>
 	/**
 	 * @return the number of co-processors in the CPU.
 	 */
-	long getCoProcessors();
+	int getCoProcessors();
 
 	/**
 	 * @return an empty string or the name of the cpu.

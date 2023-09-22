@@ -335,11 +335,11 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     }
 
     public double wireless_getMaxRange(final int boosters) {
-        return this.wirelessBaseRange + this.wirelessBoosterRangeMultiplier * Math.pow(boosters, this.wirelessBoosterExp);
+        return this.wirelessBaseRange + this.wirelessBoosterRangeMultiplier * Math.pow(boosters * 32, this.wirelessBoosterExp);
     }
 
     public double wireless_getPowerDrain(final int boosters) {
-        return this.wirelessBaseCost + this.wirelessCostMultiplier * Math.pow(boosters, 1 + boosters / this.wirelessHighWirelessCount);
+        return this.wirelessBaseCost + this.wirelessCostMultiplier * 3;
     }
 
     @Override

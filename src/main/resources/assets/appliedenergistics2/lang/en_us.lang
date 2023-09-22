@@ -22,7 +22,7 @@ tile.appliedenergistics2.energy_acceptor.name=Energy Acceptor
 tile.appliedenergistics2.grindstone.name=Quartz Grindstone
 tile.appliedenergistics2.matrix_frame.name=Matrix Frame
 tile.appliedenergistics2.io_port.name=ME IO Port
-tile.appliedenergistics2.io_portimp.name=Improved ME IO Port (WIP)
+tile.appliedenergistics2.io_portimp.name=Improved ME IO Port
 tile.appliedenergistics2.inscriber.name=Inscriber
 tile.appliedenergistics2.interface.name=ME Interface
 tile.appliedenergistics2.fluid_interface.name=ME Fluid Interface
@@ -68,7 +68,7 @@ tile.appliedenergistics2.crafting_storage_15gb.name=§42gb§r Crafting Storage
 
 tile.appliedenergistics2.crafting_accelerator.name=Crafting Co-Processing Unit
 
-tile.appliedenergistics2.crafting_accelerator_4x.name=§X4§r Crafting Co-Processing Unit
+tile.appliedenergistics2.crafting_accelerator_4x.name=§6X4§r Crafting Co-Processing Unit
 tile.appliedenergistics2.crafting_accelerator_16x.name=§eX16§r Crafting Co-Processing Unit
 tile.appliedenergistics2.crafting_accelerator_64x.name=§aX64§r Crafting Co-Processing Unit
 tile.appliedenergistics2.crafting_accelerator_128x.name=§6X128§r Crafting Co-Processing Unit
@@ -280,6 +280,7 @@ gui.appliedenergistics2.SmallFontCraft=Craft
 gui.appliedenergistics2.LargeFontCraft=+
 gui.appliedenergistics2.Renamer=Custom Name: (Enter to set)
 gui.appliedenergistics2.Nothing=Nothing
+gui.appliedenergistics2.ShiftForDetails=Hold Shift for details
 
 // GUI Tooltips
 gui.tooltips.appliedenergistics2.Stash=Store Items

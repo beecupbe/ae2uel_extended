@@ -1073,7 +1073,7 @@ public class Platform {
 
         if (itemToAdd > 0) {
             if (mode == Actionable.MODULATE) {
-                energy.extractAEPower(stored / energyFactor, Actionable.MODULATE, PowerMultiplier.CONFIG);
+                energy.extractAEPower(10, Actionable.MODULATE, PowerMultiplier.CONFIG);
                 if (itemToAdd < input.getStackSize()) {
                     final long original = input.getStackSize();
                     final T leftover = input.copy();

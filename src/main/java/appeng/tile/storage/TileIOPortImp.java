@@ -70,7 +70,7 @@ import java.util.Map;
 
 public class TileIOPortImp extends AENetworkInvTile implements IUpgradeableHost, IConfigManagerHost, IGridTickable {
     private static final int NUMBER_OF_CELL_SLOTS = 12;
-    private static final int NUMBER_OF_UPGRADE_SLOTS = 3;
+    private static final int NUMBER_OF_UPGRADE_SLOTS = 0;
 
     private final ConfigManager manager;
 
@@ -81,7 +81,6 @@ public class TileIOPortImp extends AENetworkInvTile implements IUpgradeableHost,
     private final IItemHandler inputCellsExt = new WrapperFilteredItemHandler(this.inputCells, AEItemFilters.INSERT_ONLY);
     private final IItemHandler outputCellsExt = new WrapperFilteredItemHandler(this.outputCells, AEItemFilters.EXTRACT_ONLY);
 
-    private final UpgradeInventory upgrades;
     private final IActionSource mySrc;
     private YesNo lastRedstoneState;
     private ItemStack currentCell;
@@ -97,14 +96,12 @@ public class TileIOPortImp extends AENetworkInvTile implements IUpgradeableHost,
         this.lastRedstoneState = YesNo.UNDECIDED;
 
         final Block ioPortBlock = AEApi.instance().definitions().blocks().iOPortImp().maybeBlock().get();
-        this.upgrades = new BlockUpgradeInventory(ioPortBlock, this, NUMBER_OF_UPGRADE_SLOTS);
     }
 
     @Override
     public NBTTagCompound writeToNBT(final NBTTagCompound data) {
         super.writeToNBT(data);
         this.manager.writeToNBT(data);
-        this.upgrades.writeToNBT(data, "upgrades");
         data.setInteger("lastRedstoneState", this.lastRedstoneState.ordinal());
         return data;
     }
@@ -113,7 +110,6 @@ public class TileIOPortImp extends AENetworkInvTile implements IUpgradeableHost,
     public void readFromNBT(final NBTTagCompound data) {
         super.readFromNBT(data);
         this.manager.readFromNBT(data);
-        this.upgrades.readFromNBT(data, "upgrades");
         if (data.hasKey("lastRedstoneState")) {
             this.lastRedstoneState = YesNo.values()[data.getInteger("lastRedstoneState")];
         }
@@ -176,9 +172,6 @@ public class TileIOPortImp extends AENetworkInvTile implements IUpgradeableHost,
 
     @Override
     public IItemHandler getInventoryByName(final String name) {
-        if (name.equals("upgrades")) {
-            return this.upgrades;
-        }
 
         if (name.equals("cells")) {
             return this.combinedInventory;
@@ -233,19 +226,7 @@ public class TileIOPortImp extends AENetworkInvTile implements IUpgradeableHost,
         }
 
         TickRateModulation ret = TickRateModulation.SLEEP;
-        long itemsToMove = 65536;
-
-        switch (this.getInstalledUpgrades(Upgrades.SPEED)) {
-            case 1:
-                itemsToMove *= 2;
-                break;
-            case 2:
-                itemsToMove *= 3;
-                break;
-            case 3:
-                itemsToMove *= 4;
-                break;
-        }
+        long itemsToMove = 524288;
 
         try {
             final IEnergySource energy = this.getProxy().getEnergy();
@@ -296,7 +277,7 @@ public class TileIOPortImp extends AENetworkInvTile implements IUpgradeableHost,
 
     @Override
     public int getInstalledUpgrades(final Upgrades u) {
-        return this.upgrades.getInstalledUpgrades(u);
+        return 0;
     }
 
     private IMEInventory<?> getInv(final ItemStack is, final IStorageChannel<?> chan) {
@@ -419,14 +400,6 @@ public class TileIOPortImp extends AENetworkInvTile implements IUpgradeableHost,
 
     @Override
     public void getDrops(final World w, final BlockPos pos, final List<ItemStack> drops) {
-        super.getDrops(w, pos, drops);
 
-        for (int upgradeIndex = 0; upgradeIndex < this.upgrades.getSlots(); upgradeIndex++) {
-            final ItemStack stackInSlot = this.upgrades.getStackInSlot(upgradeIndex);
-
-            if (!stackInSlot.isEmpty()) {
-                drops.add(stackInSlot);
-            }
-        }
     }
 }
