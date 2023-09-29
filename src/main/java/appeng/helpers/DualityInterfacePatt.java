@@ -106,8 +106,8 @@ import static appeng.helpers.ItemStackHelper.stackToNBT;
 
 
 public class DualityInterfacePatt implements IGridTickable, IStorageMonitorable, IInventoryDestination, IAEAppEngInventory, IConfigManagerHost, ICraftingProvider, IUpgradeableHost {
-    public static final int NUMBER_OF_STORAGE_SLOTS = 0;
-    public static final int NUMBER_OF_CONFIG_SLOTS = 0;
+    public static final int NUMBER_OF_STORAGE_SLOTS = 9;
+    public static final int NUMBER_OF_CONFIG_SLOTS = 9;
     public static final int NUMBER_OF_PATTERN_SLOTS = 72;
 
     private static final Collection<Block> BAD_BLOCKS = new HashSet<>(100);

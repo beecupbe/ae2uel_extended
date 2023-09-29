@@ -1,7 +1,7 @@
 {
     "ae2_uvl_marker": true,
     "textures": {
-        "indicator": "appliedenergistics2:parts/imp_bus_on"
+        "indicator": "appliedenergistics2:parts/monitor_sides_status_on"
     },
     "elements": [
         {

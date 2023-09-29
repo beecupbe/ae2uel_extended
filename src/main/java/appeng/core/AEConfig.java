@@ -337,11 +337,19 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     }
 
     public double wireless_getMaxRange(final int boosters) {
-        return this.wirelessBaseRange + this.wirelessBoosterRangeMultiplier * Math.pow(boosters * 32, this.wirelessBoosterExp);
+        if (boosters == 64) {
+            return Long.MAX_VALUE;
+        } else {
+            return this.wirelessBaseRange * (boosters * 8);
+        }
     }
 
     public double wireless_getPowerDrain(final int boosters) {
-        return this.wirelessBaseCost + this.wirelessCostMultiplier * 3;
+        if (boosters == 64) {
+            return 1024;
+        } else {
+            return this.wirelessBaseCost + (boosters * 4);
+        }
     }
 
     @Override

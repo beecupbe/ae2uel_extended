@@ -54,11 +54,6 @@ public class ContainerInterfaceImp extends ContainerUpgradeable implements IOpti
         super(ip, te.getInterfaceDualityImp().getHost());
 
         this.myDuality = te.getInterfaceDualityImp();
-        int scalingFactor = 100;
-        int scalingFactor2 = 200;
-        int scalingFactor3 = 300;
-        int scalingFactor4 = 400;
-        int scalingFactor5 = 500;
 
 
         for (int row = 0; row < 4; ++row) {

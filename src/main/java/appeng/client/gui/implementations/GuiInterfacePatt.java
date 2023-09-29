@@ -31,6 +31,7 @@ import appeng.core.sync.network.NetworkHandler;
 import appeng.core.sync.packets.PacketConfigButton;
 import appeng.core.sync.packets.PacketSwitchGuis;
 import appeng.helpers.IInterfaceHost;
+import appeng.tile.misc.TileInterfacePatt;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.entity.player.InventoryPlayer;
 import org.lwjgl.input.Mouse;
@@ -70,6 +71,11 @@ public class GuiInterfacePatt extends GuiUpgradeable {
     @Override
     protected String getBackground() {
         return "guis/interfacepatt.png";
+    }
+
+    @Override
+    protected boolean drawIterfacePattNewSlots() {
+        return true;
     }
 
     @Override

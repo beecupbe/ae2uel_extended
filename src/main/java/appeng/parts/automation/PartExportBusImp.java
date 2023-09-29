@@ -61,16 +61,16 @@ import net.minecraft.util.math.Vec3d;
 
 
 public class PartExportBusImp extends PartSharedItemBusImp implements ICraftingRequester {
-    public static final ResourceLocation MODEL_BASE = new ResourceLocation(AppEng.MOD_ID, "part/export_busimp_base");
+    public static final ResourceLocation MODEL_BASE = new ResourceLocation(AppEng.MOD_ID, "part/export_bus_base_gold");
 
     @PartModels
-    public static final IPartModel MODELS_OFF = new PartModel(MODEL_BASE, new ResourceLocation(AppEng.MOD_ID, "part/export_busimp_off"));
+    public static final IPartModel MODELS_OFF = new PartModel(MODEL_BASE, new ResourceLocation(AppEng.MOD_ID, "part/export_bus_off_gold"));
 
     @PartModels
-    public static final IPartModel MODELS_ON = new PartModel(MODEL_BASE, new ResourceLocation(AppEng.MOD_ID, "part/export_busimp_on"));
+    public static final IPartModel MODELS_ON = new PartModel(MODEL_BASE, new ResourceLocation(AppEng.MOD_ID, "part/export_bus_on_gold"));
 
     @PartModels
-    public static final IPartModel MODELS_HAS_CHANNEL = new PartModel(MODEL_BASE, new ResourceLocation(AppEng.MOD_ID, "part/export_busimp_has_channel"));
+    public static final IPartModel MODELS_HAS_CHANNEL = new PartModel(MODEL_BASE, new ResourceLocation(AppEng.MOD_ID, "part/export_bus_has_channel_gold"));
 
     private final MultiCraftingTracker craftingTracker = new MultiCraftingTracker(this, 9);
     private final IActionSource mySrc;

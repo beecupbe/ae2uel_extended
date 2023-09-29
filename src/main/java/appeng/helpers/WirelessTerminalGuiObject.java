@@ -306,8 +306,6 @@ public class WirelessTerminalGuiObject implements IPortableCell, IActionHost, II
         rangeLimit *= rangeLimit;
 
         final DimensionalCoord dc = wap.getLocation();
-
-        if (dc.getWorld() == this.myPlayer.world) {
             final double offX = dc.x - this.myPlayer.posX;
             final double offY = dc.y - this.myPlayer.posY;
             final double offZ = dc.z - this.myPlayer.posZ;
@@ -320,7 +318,6 @@ public class WirelessTerminalGuiObject implements IPortableCell, IActionHost, II
                     return true;
                 }
             }
-        }
         return false;
     }
 

@@ -61,6 +61,17 @@ public class ContainerInterfacePatt extends ContainerUpgradeable implements IOpt
                         .getPatterns(), this, x + row * 9, 8 + 18 * x, 25 + (18 * row), row, this.getInventoryPlayer()).setStackLimit(1));
             }
         }
+
+        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 0, 186, 92));
+        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 1, 204, 92));
+        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 2, 222, 92));
+        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 3, 186, 92 + 18));
+        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 4, 204, 92 + 18));
+        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 5, 222, 92 + 18));
+        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 6, 186, 92 + 18 * 2));
+        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 7, 204, 92 + 18 * 2));
+        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 8, 222, 92 + 18 * 2));
+
     }
 
     @Override
