@@ -135,6 +135,18 @@ public class PacketValueConfig extends AppEngPacket {
                     cpt.multiply(2);
                 } else if (this.Name.equals("PatternTerminal.MultiplyByThree")) {
                     cpt.multiply(3);
+                } else if (this.Name.equals("PatternTerminal.CraftingMBy2")) {
+                    cpt.multiply(2);
+                } else if (this.Name.equals("PatternTerminal.CraftingMBy3")) {
+                    cpt.multiply(3);
+                } else if (this.Name.equals("PatternTerminal.CraftingMBy4")) {
+                    cpt.multiply(4);
+                } else if (this.Name.equals("PatternTerminal.CraftingMBy8")) {
+                    cpt.multiply(8);
+                } else if (this.Name.equals("PatternTerminal.CraftingMBy16")) {
+                    cpt.multiply(16);
+                } else if (this.Name.equals("PatternTerminal.CraftingMBy64")) {
+                    cpt.multiply(64);
                 } else if (this.Name.equals("PatternTerminal.DivideByTwo")) {
                     cpt.divide(2);
                 } else if (this.Name.equals("PatternTerminal.DivideByThree")) {

@@ -168,7 +168,7 @@ public class GridNode implements IGridNode, IPathItem {
     public void updateState() {
         final EnumSet<GridFlags> set = this.gridProxy.getFlags();
 
-        this.compressedData = set.contains(GridFlags.CANNOT_CARRY) ? 0 : (set.contains(GridFlags.DENSE_CAPACITY) ? 2 : (set.contains(GridFlags.X64_CAPACITY)) ? 3 : (set.contains(GridFlags.X128_CAPACITY)) ? 4 : (set.contains(GridFlags.X256_CAPACITY)) ? 5 : 1);
+        this.compressedData = set.contains(GridFlags.CANNOT_CARRY) ? 0 : (set.contains(GridFlags.DENSE_CAPACITY) ? 2 : (set.contains(GridFlags.X64_CAPACITY)) ? 3 : (set.contains(GridFlags.X128_CAPACITY)) ? 4 : (set.contains(GridFlags.X256_CAPACITY)) ? 5  : (set.contains(GridFlags.CREATIVE_CAPACITY)) ? 6 : 1);
 
         this.compressedData |= (this.gridProxy.getGridColor().ordinal() << 3);
 
@@ -541,6 +541,8 @@ public class GridNode implements IGridNode, IPathItem {
             return AEConfig.instance().getX256CableCapacity();
         } else if(gf.contains(GridFlags.DENSE_CAPACITY)) {
             return AEConfig.instance().getDenseCableCapacity();
+        } else if (gf.contains(GridFlags.CREATIVE_CAPACITY)) {
+            return Integer.MAX_VALUE;
         }
         return AEConfig.instance().getSmallCableCapacity();
     }

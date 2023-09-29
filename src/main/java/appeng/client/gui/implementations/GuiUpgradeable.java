@@ -33,10 +33,15 @@ import appeng.core.sync.network.NetworkHandler;
 import appeng.core.sync.packets.PacketConfigButton;
 import appeng.core.sync.packets.PacketInventoryAction;
 import appeng.fluids.client.gui.widgets.GuiFluidSlot;
+import appeng.fluids.parts.PartFluidExportBusImp;
+import appeng.fluids.parts.PartFluidImportBus;
+import appeng.fluids.parts.PartFluidImportBusImp;
 import appeng.fluids.util.AEFluidStack;
 import appeng.helpers.InventoryAction;
 import appeng.parts.automation.PartExportBus;
+import appeng.parts.automation.PartExportBusImp;
 import appeng.parts.automation.PartImportBus;
+import appeng.parts.automation.PartImportBusImp;
 import appeng.util.item.AEItemStack;
 import mezz.jei.api.gui.IGhostIngredientHandler.Target;
 import net.minecraft.client.gui.GuiButton;
@@ -171,7 +176,7 @@ public class GuiUpgradeable extends AEBaseGui implements IJEIGhostIngredients {
     }
 
     protected GuiText getName() {
-        return this.bc instanceof PartImportBus ? GuiText.ImportBus : GuiText.ExportBus;
+        return this.bc instanceof PartImportBus ? GuiText.ImportBus : this.bc instanceof PartExportBus ? GuiText.ExportBus : this.bc instanceof PartImportBusImp ? GuiText.ImportImp : this.bc instanceof PartExportBusImp ? GuiText.ExportImp : this.bc instanceof PartFluidImportBusImp ? GuiText.ImportImpFluids : this.bc instanceof PartFluidExportBusImp ? GuiText.ExportImpFluids : this.bc instanceof PartFluidImportBus ? GuiText.ImportBusFluids : GuiText.ExportBusFluids;
     }
 
     @Override

@@ -1,0 +1,42 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:interfaceadv"
+                },
+				{
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:interfaceper"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:interfaceper"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "aba",
+        "cec",
+        "aba"
+    ],
+    "key": {
+        "b": {
+            "item": "#appliedenergistics2:glass"
+        },
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        },
+        "c": {
+            "item": "appliedenergistics2:interfaceadv"
+        },
+        "e": {
+            "type": "appliedenergistics2:part",
+            "part": "material.cell16k_part"
+        }
+    }
+}

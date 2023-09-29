@@ -25,6 +25,10 @@ tile.appliedenergistics2.io_port.name=ME IO Port
 tile.appliedenergistics2.io_portimp.name=Improved ME IO Port
 tile.appliedenergistics2.inscriber.name=Inscriber
 tile.appliedenergistics2.interface.name=ME Interface
+tile.appliedenergistics2.interfaceimp.name=ME Delivery interface
+tile.appliedenergistics2.interfaceadv.name=Advanced ME Delivery interface
+tile.appliedenergistics2.interfaceper.name=Perfect ME Delivery interface
+tile.appliedenergistics2.interface_patterns.name=ME Patterns interface
 tile.appliedenergistics2.fluid_interface.name=ME Fluid Interface
 tile.appliedenergistics2.quantum_link.name=ME Quantum Link Chamber
 tile.appliedenergistics2.quantum_ring.name=ME Quantum Ring
@@ -79,6 +83,8 @@ tile.appliedenergistics2.crafting_accelerator_creative.name=§4Creative§r Craft
 
 tile.appliedenergistics2.crafting_unit.name=Crafting Unit
 tile.appliedenergistics2.molecular_assembler.name=Molecular Assembler
+tile.appliedenergistics2.molecular_assemblerimp.name=Improved Molecular Assembler
+tile.appliedenergistics2.molecular_assembler_creative.name=Creative Molecular Assembler
 
 // Stairs
 tile.appliedenergistics2.fluix_stairs.name=Fluix Stairs
@@ -184,6 +190,8 @@ gui.appliedenergistics2.ExportBus=ME Export Bus
 gui.appliedenergistics2.ExportBusFluids=ME Fluid Export Bus
 gui.appliedenergistics2.GrindStone=Grindstone
 gui.appliedenergistics2.ImportBus=ME Import Bus
+gui.appliedenergistics2.ImportImp=Improved ME Import Bus
+gui.appliedenergistics2.ExportImp=Improved ME Export Bus
 gui.appliedenergistics2.ImportBusFluids=ME Fluid Import Bus
 gui.appliedenergistics2.Interface=ME Interface
 gui.appliedenergistics2.FluidInterface=ME Fluid Interface
@@ -281,6 +289,25 @@ gui.appliedenergistics2.LargeFontCraft=+
 gui.appliedenergistics2.Renamer=Custom Name: (Enter to set)
 gui.appliedenergistics2.Nothing=Nothing
 gui.appliedenergistics2.ShiftForDetails=Hold Shift for details
+gui.appliedenergistics2.ClearAll=Clear
+gui.appliedenergistics2.InterfaceImp=ME Delivery interface
+gui.appliedenergistics2.InterfaceAdv=Advanced ME Delivery interface
+gui.appliedenergistics2.InterfacePer=Perfect ME Delivery interface
+gui.appliedenergistics2.InterfacePatt=ME Patterns interface
+gui.appliedenergistics2.IOBusesImp=Improved Import/Export buses
+gui.appliedenergistics2.IOBusesFluidsImp=Improved Fluids Import/Export buses
+
+gui.appliedenergistics2.CreativeCoProcessorJEI=Creative version of the Co-Processor Unit. When installed, it increases the number of crafting co-processors to 2,147,483,646. Not recommended to install more than 1 creative processing block per 1 processor structure.
+gui.appliedenergistics2.DriveImpJEI=Improved version of the ME Drive that can hold up to 30 storage cells.
+gui.appliedenergistics2.IOImpJEI=Improved version of the ME IO Port that can transfer up to 10,485,760 items per second.
+gui.appliedenergistics2.InterfaceImpJEI=Improved version of the ME interface with more slots for item delivery. (18 slots instead of 9)
+gui.appliedenergistics2.InterfaceAdvJEI=Advanced version of the ME Delivery interface with even more slots. (27 slots instead of 18)
+gui.appliedenergistics2.InterfacePerJEI=Perfect version of the ME Delivery interface with the maximum number of slots. (36 slots instead of 27)
+gui.appliedenergistics2.InterfacePattJEI=Improved version of the ME interface that can store up to 72 crafting patterns.
+gui.appliedenergistics2.ImpBusesJEI=Improved version of the previous bus that can transfer up to 20,480 items per second.
+gui.appliedenergistics2.MACCreativeJEI=Creative version of the Molecular assembler that can multiply crafted items by the number specified in the config file. (defaults to doubling)
+gui.appliedenergistics2.MACImpJEI=Improved version of the Molecular assembler that works twice as fast as its predecessor and does not require accelerators.
+gui.appliedenergistics2.ImpBusesFluidJEI=Improved version of the previous bus that can transfer 128 times more fluid per second.
 
 // GUI Tooltips
 gui.tooltips.appliedenergistics2.Stash=Store Items
@@ -608,7 +635,11 @@ item.appliedenergistics2.multi_part.fluid_export_bus.name=ME Fluid Export Bus
 item.appliedenergistics2.multi_part.formation_plane.name=ME Formation Plane
 item.appliedenergistics2.multi_part.fluid_formation_plane.name=ME Fluid Formation Plane
 item.appliedenergistics2.multi_part.import_bus.name=ME Import Bus
+item.appliedenergistics2.multi_part.import_busimp.name=Improved ME Import Bus
+item.appliedenergistics2.multi_part.export_busimp.name=Improved ME Exprot Bus
 item.appliedenergistics2.multi_part.fluid_import_bus.name=ME Fluid Import Bus
+item.appliedenergistics2.multi_part.fluid_import_busimp.name=Improved ME Fluid Import Bus
+item.appliedenergistics2.multi_part.fluid_export_busimp.name=Improved ME Fluid Export Bus
 item.appliedenergistics2.multi_part.interface.name=ME Interface
 item.appliedenergistics2.multi_part.fluid_interface.name=ME Fluid Interface
 item.appliedenergistics2.multi_part.level_emitter.name=ME Level Emitter

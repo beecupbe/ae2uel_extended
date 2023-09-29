@@ -169,12 +169,16 @@ public enum PartType {
     OREDICT_STORAGE_BUS(222, "oredict_storage_bus", EnumSet.of(AEFeature.STORAGE_BUS), EnumSet.noneOf(IntegrationType.class), PartOreDicStorageBus.class),
 
     IMPORT_BUS(240, "import_bus", EnumSet.of(AEFeature.IMPORT_BUS), EnumSet.noneOf(IntegrationType.class), PartImportBus.class),
+    IMPORT_BUSIMP(555, "import_busimp", EnumSet.of(AEFeature.IMPORT_BUSIMP), EnumSet.noneOf(IntegrationType.class), PartImportBusImp.class),
 
     FLUID_IMPORT_BUS(241, "fluid_import_bus", EnumSet.of(AEFeature.FLUID_IMPORT_BUS), EnumSet.noneOf(IntegrationType.class), PartFluidImportBus.class),
+    FLUID_IMPORT_BUSIMP(556, "fluid_import_busimp", EnumSet.of(AEFeature.FLUID_IMPORT_BUSIMP), EnumSet.noneOf(IntegrationType.class), PartFluidImportBusImp.class),
 
     EXPORT_BUS(260, "export_bus", EnumSet.of(AEFeature.EXPORT_BUS), EnumSet.noneOf(IntegrationType.class), PartExportBus.class),
+    EXPORT_BUSIMP(557, "export_bus", EnumSet.of(AEFeature.EXPORT_BUSIMP), EnumSet.noneOf(IntegrationType.class), PartExportBusImp.class),
 
     FLUID_EXPORT_BUS(261, "fluid_export_bus", EnumSet.of(AEFeature.FLUID_EXPORT_BUS), EnumSet.noneOf(IntegrationType.class), PartFluidExportBus.class),
+    FLUID_EXPORT_BUSIMP(558, "fluid_export_busimp", EnumSet.of(AEFeature.FLUID_EXPORT_BUSIMP), EnumSet.noneOf(IntegrationType.class), PartFluidExportBusImp.class),
 
     LEVEL_EMITTER(280, "level_emitter", EnumSet.of(AEFeature.LEVEL_EMITTER), EnumSet.noneOf(IntegrationType.class), PartLevelEmitter.class),
     FLUID_LEVEL_EMITTER(281, "fluid_level_emitter", EnumSet.of(AEFeature.FLUID_LEVEL_EMITTER), EnumSet.noneOf(IntegrationType.class), PartFluidLevelEmitter.class),

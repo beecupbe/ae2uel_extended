@@ -133,6 +133,7 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     private final int x64CableCap = 64;
     private final int x128CableCap = 128;
     private final int x256CableCap = 256;
+    private int macCreativeScale = 2;
 
 
     private AEConfig(final File configFile) {
@@ -202,7 +203,8 @@ public final class AEConfig extends Configuration implements IConfigurableObject
         this.maxControllerSizeX = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeX", this.maxControllerSizeX).getInt(this.maxControllerSizeX), 1), 63);
         this.maxControllerSizeY = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeY", this.maxControllerSizeY).getInt(this.maxControllerSizeY), 1), 63);
         this.maxControllerSizeZ = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeZ", this.maxControllerSizeZ).getInt(this.maxControllerSizeZ), 1), 63);
-
+        this.macCreativeScale = Math.min(this.get("general", "molecularAssemblerCreativeOutputScaling", this.macCreativeScale, "This number multiplies the number of items that comes out after autocrafting the item-s (adjust with care!)")
+                .getInt(this.macCreativeScale), Integer.MAX_VALUE);
 
         this.clientSync();
 
@@ -715,6 +717,9 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     }
     public int getX256CableCapacity() {
         return this.x256CableCap;
+    }
+    public int getMACCreativeScale() {
+        return this.macCreativeScale;
     }
 
 }

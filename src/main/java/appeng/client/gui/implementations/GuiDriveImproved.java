@@ -61,7 +61,7 @@ public class GuiDriveImproved extends AEBaseGui {
 
     @Override
     public void drawFG(final int offsetX, final int offsetY, final int mouseX, final int mouseY) {
-        this.fontRenderer.drawString(this.getGuiDisplayName(GuiText.Drive.getLocal()), 6, 4, 4210752);
+        this.fontRenderer.drawString(this.getGuiDisplayName(GuiText.DriveImp.getLocal()), 6, 4, 4210752);
         this.fontRenderer.drawString(GuiText.inventory.getLocal(), 8, this.ySize - 96 + 3, 4210752);
     }
 

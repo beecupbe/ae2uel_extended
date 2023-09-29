@@ -29,6 +29,7 @@ import appeng.client.gui.widgets.GuiNumberBox;
 import appeng.client.gui.widgets.GuiTabButton;
 import appeng.container.AEBaseContainer;
 import appeng.container.implementations.ContainerCraftAmount;
+import appeng.container.slot.SlotInaccessible;
 import appeng.core.AEConfig;
 import appeng.core.localization.GuiText;
 import appeng.core.sync.GuiBridge;
@@ -41,6 +42,7 @@ import appeng.parts.reporting.PartCraftingTerminal;
 import appeng.parts.reporting.PartExpandedProcessingPatternTerminal;
 import appeng.parts.reporting.PartPatternTerminal;
 import appeng.parts.reporting.PartTerminal;
+import appeng.tile.inventory.AppEngInternalInventory;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
@@ -52,17 +54,29 @@ import java.io.IOException;
 public class GuiCraftAmount extends AEBaseGui {
     private GuiNumberBox amountToCraft;
     private GuiTabButton originalGuiBtn;
-
+    //Button
     private GuiButton next;
-
     private GuiButton plus1;
     private GuiButton plus10;
     private GuiButton plus100;
     private GuiButton plus1000;
+    private GuiButton plus10000;
+    private GuiButton plus5;
+    private GuiButton plus50;
+    private GuiButton plus500;
+    private GuiButton plus5000;
+    private GuiButton plus50000;
     private GuiButton minus1;
     private GuiButton minus10;
     private GuiButton minus100;
     private GuiButton minus1000;
+    private GuiButton minus10000;
+    private GuiButton minus5;
+    private GuiButton minus50;
+    private GuiButton minus500;
+    private GuiButton minus5000;
+    private GuiButton minus50000;
+
 
     private GuiBridge originalGui;
 
@@ -80,17 +94,32 @@ public class GuiCraftAmount extends AEBaseGui {
         final int c = AEConfig.instance().craftItemsByStackAmounts(2);
         final int d = AEConfig.instance().craftItemsByStackAmounts(3);
 
-        this.buttonList.add(this.plus1 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 26, 22, 20, "+" + a));
-        this.buttonList.add(this.plus10 = new GuiButton(0, this.guiLeft + 48, this.guiTop + 26, 28, 20, "+" + b));
-        this.buttonList.add(this.plus100 = new GuiButton(0, this.guiLeft + 82, this.guiTop + 26, 32, 20, "+" + c));
-        this.buttonList.add(this.plus1000 = new GuiButton(0, this.guiLeft + 120, this.guiTop + 26, 38, 20, "+" + d));
-
-        this.buttonList.add(this.minus1 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 75, 22, 20, "-" + a));
-        this.buttonList.add(this.minus10 = new GuiButton(0, this.guiLeft + 48, this.guiTop + 75, 28, 20, "-" + b));
-        this.buttonList.add(this.minus100 = new GuiButton(0, this.guiLeft + 82, this.guiTop + 75, 32, 20, "-" + c));
-        this.buttonList.add(this.minus1000 = new GuiButton(0, this.guiLeft + 120, this.guiTop + 75, 38, 20, "-" + d));
-
-        this.buttonList.add(this.next = new GuiButton(0, this.guiLeft + 128, this.guiTop + 51, 38, 20, GuiText.Next.getLocal()));
+        //Button plus
+        this.buttonList.add(this.plus1 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 35, 35, 20, "+" + a));
+        this.buttonList.add(this.plus10 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 60, 35, 20, "+" + b));
+        this.buttonList.add(this.plus100 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 85, 35, 20, "+" + c));
+        this.buttonList.add(this.plus1000 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 110, 35, 20, "+" + d));
+        this.buttonList.add(this.plus10000 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 135, 35, 20, "+" + 10000));
+        //Button plus
+        this.buttonList.add(this.plus5 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 35, 35, 20, "+" + 5));
+        this.buttonList.add(this.plus50 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 60, 35, 20, "+" + 50));
+        this.buttonList.add(this.plus500 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 85, 35, 20, "+" + 500));
+        this.buttonList.add(this.plus5000 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 110, 35, 20, "+" + 5000));
+        this.buttonList.add(this.plus50000 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 135, 35, 20, "+" + 50000));
+        //Button minus
+        this.buttonList.add(this.minus1 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 35, 35, 20, "-" + a));
+        this.buttonList.add(this.minus10 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 60, 35, 20, "-" + b));
+        this.buttonList.add(this.minus100 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 85, 35, 20, "-" + c));
+        this.buttonList.add(this.minus1000 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 110, 35, 20, "-" + d));
+        this.buttonList.add(this.minus10000 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 135, 35, 20, "-" + 10000));
+        //Button minus
+        this.buttonList.add(this.minus5 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 35, 35, 20, "-" + 5));
+        this.buttonList.add(this.minus50 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 60, 35, 20, "-" + 50));
+        this.buttonList.add(this.minus500 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 85, 35, 20, "-" + 500));
+        this.buttonList.add(this.minus5000 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 110, 35, 20, "-" + 5000));
+        this.buttonList.add(this.minus50000 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 135, 35, 20, "-" + 50000));
+        //Button start and Next
+        this.buttonList.add(this.next = new GuiButton(0, this.guiLeft + 20, this.guiTop + 160, 140, 20, GuiText.Next.getLocal()));
 
         ItemStack myIcon = null;
         final Object target = ((AEBaseContainer) this.inventorySlots).getTarget();
@@ -123,10 +152,11 @@ public class GuiCraftAmount extends AEBaseGui {
         }
 
         if (this.originalGui != null && !myIcon.isEmpty()) {
+            //Button ME
             this.buttonList.add(this.originalGuiBtn = new GuiTabButton(this.guiLeft + 154, this.guiTop, myIcon, myIcon.getDisplayName(), this.itemRender));
         }
-
-        this.amountToCraft = new GuiNumberBox(this.fontRenderer, this.guiLeft + 62, this.guiTop + 57, 59, this.fontRenderer.FONT_HEIGHT, Integer.class);
+        //Button String text
+        this.amountToCraft = new GuiNumberBox(this.fontRenderer, this.guiLeft + 49, this.guiTop + 21, 100, this.fontRenderer.FONT_HEIGHT, Integer.class);
         this.amountToCraft.setEnableBackgroundDrawing(false);
         this.amountToCraft.setMaxStringLength(16);
         this.amountToCraft.setTextColor(0xFFFFFF);
@@ -140,11 +170,12 @@ public class GuiCraftAmount extends AEBaseGui {
     public void drawFG(final int offsetX, final int offsetY, final int mouseX, final int mouseY) {
         this.fontRenderer.drawString(GuiText.SelectAmount.getLocal(), 8, 6, 4210752);
     }
-
+    //GUI
     @Override
     public void drawBG(final int offsetX, final int offsetY, final int mouseX, final int mouseY) {
         this.next.displayString = isShiftKeyDown() ? GuiText.Start.getLocal() : GuiText.Next.getLocal();
-
+        this.ySize = 256;
+        this.xSize = 256;
         this.bindTexture("guis/craft_amt.png");
         this.drawTexturedModalRect(offsetX, offsetY, 0, 0, this.xSize, this.ySize);
 
@@ -213,9 +244,29 @@ public class GuiCraftAmount extends AEBaseGui {
             // nope..
             this.amountToCraft.setText("1");
         }
-
-        final boolean isPlus = btn == this.plus1 || btn == this.plus10 || btn == this.plus100 || btn == this.plus1000;
-        final boolean isMinus = btn == this.minus1 || btn == this.minus10 || btn == this.minus100 || btn == this.minus1000;
+        //Button +-
+        final boolean isPlus =
+                btn == this.plus1 ||
+                        btn == this.plus10 ||
+                        btn == this.plus100 ||
+                        btn == this.plus1000 ||
+                        btn == this.plus10000 ||
+                        btn == this.plus5 ||
+                        btn == this.plus50 ||
+                        btn == this.plus500 ||
+                        btn == this.plus5000 ||
+                        btn == this.plus50000;
+        final boolean isMinus =
+                btn == this.minus1 ||
+                        btn == this.minus10 ||
+                        btn == this.minus100 ||
+                        btn == this.minus1000 ||
+                        btn == this.minus10000 ||
+                        btn == this.minus5 ||
+                        btn == this.minus50 ||
+                        btn == this.minus500 ||
+                        btn == this.minus5000 ||
+                        btn == this.minus50000;
 
         if (isPlus || isMinus) {
             this.addQty(this.getQty(btn));

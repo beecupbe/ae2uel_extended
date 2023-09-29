@@ -149,6 +149,10 @@ public interface IBlocks
 	ITileDefinition chest();
 
 	ITileDefinition iface();
+	ITileDefinition ifaceImp();
+	ITileDefinition ifaceAdv();
+	ITileDefinition ifacePer();
+	ITileDefinition ifacePatterns();
 
 	ITileDefinition fluidIface();
 
@@ -207,6 +211,8 @@ public interface IBlocks
 	ITileDefinition craftingMonitor();
 
 	ITileDefinition molecularAssembler();
+	ITileDefinition molecularAssemblerImp();
+	ITileDefinition molecularAssemblerCreative();
 
 	ITileDefinition lightDetector();
 

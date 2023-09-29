@@ -106,13 +106,22 @@ import static appeng.helpers.ItemStackHelper.*;
 
 public class DualityInterface implements IGridTickable, IStorageMonitorable, IInventoryDestination, IAEAppEngInventory, IConfigManagerHost, ICraftingProvider, IUpgradeableHost {
     public static final int NUMBER_OF_STORAGE_SLOTS = 9;
+    public static final int NUMBER_OF_STORAGE_SLOTSIMP = 18;
+    public static final int NUMBER_OF_STORAGE_SLOTSADV = 27;
+    public static final int NUMBER_OF_STORAGE_SLOTSPER = 36;
+
     public static final int NUMBER_OF_CONFIG_SLOTS = 9;
+    public static final int NUMBER_OF_CONFIG_SLOTSIMP = 18;
+    public static final int NUMBER_OF_CONFIG_SLOTSADV = 27;
+    public static final int NUMBER_OF_CONFIG_SLOTSPER = 36;
+
     public static final int NUMBER_OF_PATTERN_SLOTS = 36;
+    public static final int NUMBER_OF_PATTERN_SLOTS2 = 72;
 
     private static final Collection<Block> BAD_BLOCKS = new HashSet<>(100);
     private final IAEItemStack[] requireWork = {null, null, null, null, null, null, null, null, null};
     private final MultiCraftingTracker craftingTracker;
-    private final AENetworkProxy gridProxy;
+    public final AENetworkProxy gridProxy;
     private final IInterfaceHost iHost;
     private final IActionSource mySource;
     private final IActionSource interfaceRequestSource;
@@ -1140,7 +1149,7 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
         return invIsCustomBlocking(blockingInventoryAdaptor);
     }
 
-    private boolean sameGrid(final IGrid grid) throws GridAccessException {
+    public boolean sameGrid(final IGrid grid) throws GridAccessException {
         return grid == this.gridProxy.getGrid();
     }
 

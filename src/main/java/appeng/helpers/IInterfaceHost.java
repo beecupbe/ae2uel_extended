@@ -31,6 +31,11 @@ import java.util.EnumSet;
 public interface IInterfaceHost extends ICraftingProvider, IUpgradeableHost, ICraftingRequester {
 
     DualityInterface getInterfaceDuality();
+    DualityInterfaceImp getInterfaceDualityImp();
+    DualityInterfaceAdv getInterfaceDualityAdv();
+    DualityInterfacePer getInterfaceDualityPer();
+
+    DualityInterfacePatt getInterfaceDualityPatt();
 
     EnumSet<EnumFacing> getTargets();
 

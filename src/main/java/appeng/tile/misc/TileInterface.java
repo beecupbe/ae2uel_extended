@@ -41,9 +41,7 @@ import appeng.api.util.DimensionalCoord;
 import appeng.api.util.IConfigManager;
 import appeng.core.localization.PlayerMessages;
 import appeng.core.sync.GuiBridge;
-import appeng.helpers.DualityInterface;
-import appeng.helpers.IInterfaceHost;
-import appeng.helpers.IPriorityHost;
+import appeng.helpers.*;
 import appeng.items.misc.ItemEncodedPattern;
 import appeng.tile.grid.AENetworkInvTile;
 import appeng.tile.inventory.AppEngInternalAEInventory;
@@ -224,6 +222,26 @@ public class TileInterface extends AENetworkInvTile implements IGridTickable, II
     @Override
     public DualityInterface getInterfaceDuality() {
         return this.duality;
+    }
+
+    @Override
+    public DualityInterfaceImp getInterfaceDualityImp() {
+        return null;
+    }
+
+    @Override
+    public DualityInterfaceAdv getInterfaceDualityAdv() {
+        return null;
+    }
+
+    @Override
+    public DualityInterfacePer getInterfaceDualityPer() {
+        return null;
+    }
+
+    @Override
+    public DualityInterfacePatt getInterfaceDualityPatt() {
+        return null;
     }
 
     @Override

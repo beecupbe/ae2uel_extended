@@ -220,7 +220,7 @@ public class PartImportBus extends PartSharedItemBus implements IInventoryDestin
     }
 
     private int calculateMaximumAmountToImport(final InventoryAdaptor myAdaptor, final IAEItemStack whatToImport, final IMEMonitor<IAEItemStack> inv, final FuzzyMode fzMode) {
-        final int toSend = Math.min(this.itemsToSend, 64);
+        final int toSend = Math.min(this.itemsToSend, 8);
         final ItemStack itemStackToImport;
 
         if (whatToImport == null) {

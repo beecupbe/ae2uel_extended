@@ -63,6 +63,7 @@ import appeng.parts.misc.PartStorageBus;
 import appeng.parts.reporting.*;
 import appeng.tile.crafting.TileCraftingTile;
 import appeng.tile.crafting.TileMolecularAssembler;
+import appeng.tile.crafting.TileMolecularAssemblerImp;
 import appeng.tile.grindstone.TileGrinder;
 import appeng.tile.misc.*;
 import appeng.tile.networking.TileWireless;
@@ -123,10 +124,15 @@ public enum GuiBridge implements IGuiHandler {
     GUI_CONDENSER(ContainerCondenser.class, TileCondenser.class, GuiHostType.WORLD, null),
 
     GUI_INTERFACE(ContainerInterface.class, IInterfaceHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+    GUI_INTERFACEIMP(ContainerInterfaceImp.class, IInterfaceHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+    GUI_INTERFACEADV(ContainerInterfaceAdv.class, IInterfaceHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+    GUI_INTERFACEPER(ContainerInterfacePer.class, IInterfaceHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+    GUI_INTERFACEPATT(ContainerInterfacePatt.class, IInterfaceHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
     GUI_FLUID_INTERFACE(ContainerFluidInterface.class, IFluidInterfaceHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
     GUI_BUS(ContainerUpgradeable.class, IUpgradeableHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+    GUI_BUSIMP(ContainerUpgradeableImp.class, IUpgradeableHost.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
     GUI_BUS_FLUID(ContainerFluidIO.class, PartSharedFluidBus.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
@@ -168,6 +174,7 @@ public enum GuiBridge implements IGuiHandler {
     GUI_CELL_WORKBENCH(ContainerCellWorkbench.class, TileCellWorkbench.class, GuiHostType.WORLD, null),
 
     GUI_MAC(ContainerMAC.class, TileMolecularAssembler.class, GuiHostType.WORLD, null),
+    GUI_MACIMP(ContainerMACImp.class, TileMolecularAssemblerImp.class, GuiHostType.WORLD, null),
 
     GUI_CRAFTING_AMOUNT(ContainerCraftAmount.class, ITerminalHost.class, GuiHostType.ITEM_OR_WORLD, SecurityPermissions.CRAFT),
 

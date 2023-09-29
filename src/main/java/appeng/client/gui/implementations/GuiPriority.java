@@ -47,10 +47,23 @@ public class GuiPriority extends AEBaseGui {
     private GuiButton plus10;
     private GuiButton plus100;
     private GuiButton plus1000;
+    private GuiButton plus10000;
+    private GuiButton plus5;
+    private GuiButton plus50;
+    private GuiButton plus500;
+    private GuiButton plus5000;
+    private GuiButton plus50000;
     private GuiButton minus1;
     private GuiButton minus10;
     private GuiButton minus100;
     private GuiButton minus1000;
+    private GuiButton minus10000;
+    private GuiButton minus5;
+    private GuiButton minus50;
+    private GuiButton minus500;
+    private GuiButton minus5000;
+    private GuiButton minus50000;
+    private GuiButton clearAll;
 
     private GuiBridge OriginalGui;
 
@@ -67,15 +80,31 @@ public class GuiPriority extends AEBaseGui {
         final int c = AEConfig.instance().priorityByStacksAmounts(2);
         final int d = AEConfig.instance().priorityByStacksAmounts(3);
 
-        this.buttonList.add(this.plus1 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 32, 22, 20, "+" + a));
-        this.buttonList.add(this.plus10 = new GuiButton(0, this.guiLeft + 48, this.guiTop + 32, 28, 20, "+" + b));
-        this.buttonList.add(this.plus100 = new GuiButton(0, this.guiLeft + 82, this.guiTop + 32, 32, 20, "+" + c));
-        this.buttonList.add(this.plus1000 = new GuiButton(0, this.guiLeft + 120, this.guiTop + 32, 38, 20, "+" + d));
-
-        this.buttonList.add(this.minus1 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 69, 22, 20, "-" + a));
-        this.buttonList.add(this.minus10 = new GuiButton(0, this.guiLeft + 48, this.guiTop + 69, 28, 20, "-" + b));
-        this.buttonList.add(this.minus100 = new GuiButton(0, this.guiLeft + 82, this.guiTop + 69, 32, 20, "-" + c));
-        this.buttonList.add(this.minus1000 = new GuiButton(0, this.guiLeft + 120, this.guiTop + 69, 38, 20, "-" + d));
+        //Button plus
+        this.buttonList.add(this.plus1 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 35, 35, 20, "+" + a));
+        this.buttonList.add(this.plus10 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 60, 35, 20, "+" + b));
+        this.buttonList.add(this.plus100 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 85, 35, 20, "+" + c));
+        this.buttonList.add(this.plus1000 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 110, 35, 20, "+" + d));
+        this.buttonList.add(this.plus10000 = new GuiButton(0, this.guiLeft + 20, this.guiTop + 135, 35, 20, "+" + 10000));
+        //Button plus
+        this.buttonList.add(this.plus5 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 35, 35, 20, "+" + 5));
+        this.buttonList.add(this.plus50 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 60, 35, 20, "+" + 50));
+        this.buttonList.add(this.plus500 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 85, 35, 20, "+" + 500));
+        this.buttonList.add(this.plus5000 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 110, 35, 20, "+" + 5000));
+        this.buttonList.add(this.plus50000 = new GuiButton(0, this.guiLeft + 55, this.guiTop + 135, 35, 20, "+" + 50000));
+        //Button minus
+        this.buttonList.add(this.minus1 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 35, 35, 20, "-" + a));
+        this.buttonList.add(this.minus10 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 60, 35, 20, "-" + b));
+        this.buttonList.add(this.minus100 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 85, 35, 20, "-" + c));
+        this.buttonList.add(this.minus1000 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 110, 35, 20, "-" + d));
+        this.buttonList.add(this.minus10000 = new GuiButton(0, this.guiLeft + 90, this.guiTop + 135, 35, 20, "-" + 10000));
+        //Button minus
+        this.buttonList.add(this.minus5 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 35, 35, 20, "-" + 5));
+        this.buttonList.add(this.minus50 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 60, 35, 20, "-" + 50));
+        this.buttonList.add(this.minus500 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 85, 35, 20, "-" + 500));
+        this.buttonList.add(this.minus5000 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 110, 35, 20, "-" + 5000));
+        this.buttonList.add(this.minus50000 = new GuiButton(0, this.guiLeft + 125, this.guiTop + 135, 35, 20, "-" + 50000));
+        this.buttonList.add(this.clearAll = new GuiButton(0, this.guiLeft + 20, this.guiTop + 160, 140, 20, "" + GuiText.ClearAll.getLocal()));
 
         final ContainerPriority con = ((ContainerPriority) this.inventorySlots);
         final ItemStack myIcon = con.getPriorityHost().getItemStackRepresentation();
@@ -85,7 +114,8 @@ public class GuiPriority extends AEBaseGui {
             this.buttonList.add(this.originalGuiBtn = new GuiTabButton(this.guiLeft + 154, this.guiTop, myIcon, myIcon.getDisplayName(), this.itemRender));
         }
 
-        this.priority = new GuiNumberBox(this.fontRenderer, this.guiLeft + 62, this.guiTop + 57, 59, this.fontRenderer.FONT_HEIGHT, Long.class);
+        //Button String
+        this.priority = new GuiNumberBox(this.fontRenderer, this.guiLeft + 57, this.guiTop + 22, 80, this.fontRenderer.FONT_HEIGHT, Long.class);
         this.priority.setEnableBackgroundDrawing(false);
         this.priority.setMaxStringLength(16);
         this.priority.setTextColor(0xFFFFFF);
@@ -102,8 +132,9 @@ public class GuiPriority extends AEBaseGui {
     @Override
     public void drawBG(final int offsetX, final int offsetY, final int mouseX, final int mouseY) {
         this.bindTexture("guis/priority.png");
+        this.xSize = 256;
+        this.ySize = 256;
         this.drawTexturedModalRect(offsetX, offsetY, 0, 0, this.xSize, this.ySize);
-
         this.priority.drawTextBox();
     }
 
@@ -114,15 +145,36 @@ public class GuiPriority extends AEBaseGui {
         if (btn == this.originalGuiBtn) {
             NetworkHandler.instance().sendToServer(new PacketSwitchGuis(this.OriginalGui));
         }
-
-        final boolean isPlus = btn == this.plus1 || btn == this.plus10 || btn == this.plus100 || btn == this.plus1000;
-        final boolean isMinus = btn == this.minus1 || btn == this.minus10 || btn == this.minus100 || btn == this.minus1000;
-
+        //Button +-
+        final boolean isPlus =
+                btn == this.plus1 ||
+                        btn == this.plus10 ||
+                        btn == this.plus100 ||
+                        btn == this.plus1000 ||
+                        btn == this.plus10000 ||
+                        btn == this.plus5 ||
+                        btn == this.plus50 ||
+                        btn == this.plus500 ||
+                        btn == this.plus5000 ||
+                        btn == this.plus50000;
+        final boolean isMinus =
+                btn == this.minus1 ||
+                        btn == this.minus10 ||
+                        btn == this.minus100 ||
+                        btn == this.minus1000 ||
+                        btn == this.minus10000 ||
+                        btn == this.minus5 ||
+                        btn == this.minus50 ||
+                        btn == this.minus500 ||
+                        btn == this.minus5000 ||
+                        btn == this.minus50000;
+        final boolean clear = btn == this.clearAll;
         if (isPlus || isMinus) {
             this.addQty(this.getQty(btn));
+        } else if (clear) {
+            this.clearText();
         }
     }
-
     private void addQty(final int i) {
         try {
             String out = this.priority.getText();
@@ -140,6 +192,9 @@ public class GuiPriority extends AEBaseGui {
             if (out.isEmpty()) {
                 out = "0";
             }
+            if (out.startsWith("-")) {
+                this.priority.setText("0");
+            }
 
             long result = Long.parseLong(out);
             result += i;
@@ -155,6 +210,20 @@ public class GuiPriority extends AEBaseGui {
         }
     }
 
+    private void clearText() {
+        try {
+            String out = this.priority.getText();
+            this.priority.setText("0");
+            out = "0";
+
+            NetworkHandler.instance().sendToServer(new PacketValueConfig("PriorityHost.Priority", out));
+        } catch (final NumberFormatException e) {
+            // :thinking:
+            this.priority.setText("0");
+        } catch (final IOException e) {
+            AELog.debug(e);
+        }
+    }
     @Override
     protected void keyTyped(final char character, final int key) throws IOException {
         if (!this.checkHotbarKeys(key)) {

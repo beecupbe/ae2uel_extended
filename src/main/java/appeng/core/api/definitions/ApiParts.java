@@ -43,18 +43,15 @@ public final class ApiParts implements IParts {
     private final AEColoredItemDefinition cableGlass;
     private final AEColoredItemDefinition cableDenseCovered;
     private final AEColoredItemDefinition cableDenseSmart;
-
-    // private final AEColoredItemDefinition lumenCableSmart;
-    // private final AEColoredItemDefinition lumenCableCovered;
-    // private final AEColoredItemDefinition lumenCableGlass;
-    // private final AEColoredItemDefinition lumenCableDense;
     private final IItemDefinition quartzFiber;
     private final IItemDefinition toggleBus;
     private final IItemDefinition invertedToggleBus;
     private final IItemDefinition storageBus;
     private final IItemDefinition oreDictStorageBus;
     private final IItemDefinition importBus;
+    private final IItemDefinition importBusImp;
     private final IItemDefinition exportBus;
+    private final IItemDefinition exportBusImp;
     private final IItemDefinition iface;
     private final IItemDefinition fluidIface;
     private final IItemDefinition levelEmitter;
@@ -87,7 +84,9 @@ public final class ApiParts implements IParts {
     private final IItemDefinition storageMonitor;
     private final IItemDefinition conversionMonitor;
     private final IItemDefinition fluidImportBus;
+    private final IItemDefinition fluidImportBusImp;
     private final IItemDefinition fluidExportBus;
+    private final IItemDefinition fluidExportBusImp;
     private final IItemDefinition fluidTerminal;
     private final IItemDefinition fluidStorageBus;
 
@@ -117,6 +116,10 @@ public final class ApiParts implements IParts {
         this.oreDictStorageBus = new DamagedItemDefinition("part.bus.oredict_storage", itemPart.createPart(PartType.OREDICT_STORAGE_BUS));
         this.importBus = new DamagedItemDefinition("part.bus.import", itemPart.createPart(PartType.IMPORT_BUS));
         this.exportBus = new DamagedItemDefinition("part.bus.export", itemPart.createPart(PartType.EXPORT_BUS));
+
+        this.importBusImp = new DamagedItemDefinition("part.bus.importimp", itemPart.createPart(PartType.IMPORT_BUSIMP));
+        this.exportBusImp = new DamagedItemDefinition("part.bus.exportimp", itemPart.createPart(PartType.EXPORT_BUSIMP));
+
         this.iface = new DamagedItemDefinition("part.interface", itemPart.createPart(PartType.INTERFACE));
         this.fluidIface = new DamagedItemDefinition("part.fluid_interface", itemPart.createPart(PartType.FLUID_INTERFACE));
         this.levelEmitter = new DamagedItemDefinition("part.level_emitter", itemPart.createPart(PartType.LEVEL_EMITTER));
@@ -151,6 +154,10 @@ public final class ApiParts implements IParts {
         this.conversionMonitor = new DamagedItemDefinition("part.monitor.conversion", itemPart.createPart(PartType.CONVERSION_MONITOR));
         this.fluidImportBus = new DamagedItemDefinition("part.bus.import.fluid", itemPart.createPart(PartType.FLUID_IMPORT_BUS));
         this.fluidExportBus = new DamagedItemDefinition("part.bus.export.fluid", itemPart.createPart(PartType.FLUID_EXPORT_BUS));
+
+        this.fluidImportBusImp = new DamagedItemDefinition("part.bus.import.fluidimp", itemPart.createPart(PartType.FLUID_IMPORT_BUSIMP));
+        this.fluidExportBusImp = new DamagedItemDefinition("part.bus.export.fluidimp", itemPart.createPart(PartType.FLUID_EXPORT_BUSIMP));
+
         this.fluidTerminal = new DamagedItemDefinition("part.terminal.fluid", itemPart.createPart(PartType.FLUID_TERMINAL));
         this.fluidStorageBus = new DamagedItemDefinition("part.bus.storage.fluid", itemPart.createPart(PartType.FLUID_STORAGE_BUS));
     }
@@ -246,8 +253,18 @@ public final class ApiParts implements IParts {
     }
 
     @Override
+    public IItemDefinition importBusImp() {
+        return this.importBusImp;
+    }
+
+    @Override
     public IItemDefinition exportBus() {
         return this.exportBus;
+    }
+
+    @Override
+    public IItemDefinition exportBusImp() {
+        return this.exportBusImp;
     }
 
     @Override
@@ -318,14 +335,6 @@ public final class ApiParts implements IParts {
     public IItemDefinition p2PTunnelLight() {
         return this.p2PTunnelLight;
     }
-
-    /*
-     * @Override
-     * public IItemDefinition p2PTunnelOpenComputers()
-     * {
-     * return this.p2PTunnelOpenComputers;
-     * }
-     */
 
     @Override
     public IItemDefinition cableAnchor() {
@@ -405,6 +414,16 @@ public final class ApiParts implements IParts {
     @Override
     public IItemDefinition fluidExportBus() {
         return this.fluidExportBus;
+    }
+
+    @Override
+    public IItemDefinition fluidImportBusImp() {
+        return this.fluidImportBusImp;
+    }
+
+    @Override
+    public IItemDefinition fluidExportBusImp() {
+        return this.fluidExportBusImp;
     }
 
     @Override

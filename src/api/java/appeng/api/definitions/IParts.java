@@ -61,8 +61,10 @@ public interface IParts {
     IItemDefinition oreDictStorageBus();
 
     IItemDefinition importBus();
+    IItemDefinition importBusImp();
 
     IItemDefinition exportBus();
+    IItemDefinition exportBusImp();
 
     IItemDefinition iface();
 
@@ -123,8 +125,10 @@ public interface IParts {
     IItemDefinition fluidTerminal();
 
     IItemDefinition fluidImportBus();
+    IItemDefinition fluidImportBusImp();
 
     IItemDefinition fluidExportBus();
+    IItemDefinition fluidExportBusImp();
 
     IItemDefinition fluidStorageBus();
 

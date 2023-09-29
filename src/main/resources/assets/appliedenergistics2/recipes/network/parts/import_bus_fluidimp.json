@@ -1,0 +1,36 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.fluid_import_busimp"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.fluid_import_busimp"
+    },
+    "type": "appliedenergistics2:part_shaped",
+    "pattern": [
+        " a ",
+        "bcb"
+    ],
+    "key": {
+        "c": {
+			"type": "appliedenergistics2:part",
+			"part": "part.fluid_import_bus"
+        },
+        "b": {
+            "type": "forge:ore_dict",
+            "ore": "blockIron"
+        },
+        "a": {
+			"type": "appliedenergistics2:part",
+			"part": "material.fluid_cell4k_part"
+        }
+    }
+}

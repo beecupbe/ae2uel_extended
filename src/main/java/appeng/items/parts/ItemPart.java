@@ -235,6 +235,10 @@ public final class ItemPart extends AEBaseItem implements IPartItem, IItemGroup 
         boolean importBusFluids = false;
         boolean exportBus = false;
         boolean exportBusFluids = false;
+        boolean importBusImp = false;
+        boolean exportBusImp = false;
+        boolean importBusFluidImp = false;
+        boolean exportBusFluidImp = false;
         boolean group = false;
 
         final PartType u = this.getTypeByStack(is);
@@ -267,6 +271,26 @@ public final class ItemPart extends AEBaseItem implements IPartItem, IItemGroup 
                             group = true;
                         }
                         break;
+                    case IMPORT_BUSIMP:
+                        importBusImp = true;
+                        if (u == pt) {
+                            group = true;
+                        }
+                    case EXPORT_BUSIMP:
+                        exportBusImp = true;
+                        if (u == pt) {
+                            group = true;
+                        }
+                    case FLUID_IMPORT_BUSIMP:
+                        importBusFluidImp = true;
+                        if (u == pt) {
+                            group = true;
+                        }
+                    case FLUID_EXPORT_BUSIMP:
+                        exportBusFluidImp = true;
+                        if (u == pt) {
+                            group = true;
+                        }
                     default:
                 }
             }
@@ -274,10 +298,15 @@ public final class ItemPart extends AEBaseItem implements IPartItem, IItemGroup 
 
         if (group && importBus && exportBus && (u == PartType.IMPORT_BUS || u == PartType.EXPORT_BUS)) {
             return GuiText.IOBuses.getUnlocalized();
-        }
-        if (group && importBusFluids && exportBusFluids && (u == PartType.FLUID_IMPORT_BUS || u == PartType.FLUID_EXPORT_BUS)) {
+        } else if (group && importBusFluids && exportBusFluids && (u == PartType.FLUID_IMPORT_BUS || u == PartType.FLUID_EXPORT_BUS)) {
             return GuiText.IOBusesFluids.getUnlocalized();
+        } else if (group && importBusImp && exportBusImp && (u == PartType.IMPORT_BUSIMP || u == PartType.EXPORT_BUSIMP)) {
+            return GuiText.IOBusesImp.getUnlocalized();
+        } else if (group && importBusFluidImp && exportBusFluidImp && (u == PartType.FLUID_IMPORT_BUSIMP || u == PartType.FLUID_EXPORT_BUSIMP)) {
+            return GuiText.IOBusesFluidsImp.getUnlocalized();
         }
+
+
 
         return null;
     }

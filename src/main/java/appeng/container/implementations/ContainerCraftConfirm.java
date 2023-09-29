@@ -295,17 +295,11 @@ public class ContainerCraftConfirm extends AEBaseContainer {
 
         if (ah instanceof PartTerminal) {
             originalGui = GuiBridge.GUI_ME;
-        }
-
-        if (ah instanceof PartCraftingTerminal) {
+        } else if (ah instanceof PartCraftingTerminal) {
             originalGui = GuiBridge.GUI_CRAFTING_TERMINAL;
-        }
-
-        if (ah instanceof PartPatternTerminal) {
+        } else if (ah instanceof PartPatternTerminal) {
             originalGui = GuiBridge.GUI_PATTERN_TERMINAL;
-        }
-
-        if (ah instanceof PartExpandedProcessingPatternTerminal) {
+        } else if (ah instanceof PartExpandedProcessingPatternTerminal) {
             originalGui = GuiBridge.GUI_EXPANDED_PROCESSING_PATTERN_TERMINAL;
         }
 
