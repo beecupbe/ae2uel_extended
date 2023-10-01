@@ -153,7 +153,7 @@ public class GuiUpgradeable extends AEBaseGui implements IJEIGhostIngredients {
             this.drawTexturedModalRect(offsetX + 178, offsetY + this.ySize - 90, 178, this.ySize - 90, 68, 68);
         }
         if (this.drawIterfacePattNewSlots()) {
-            this.drawTexturedModalRect(offsetX + 178, 87, 178, this.ySize - 90, 68, 68);
+            this.drawTexturedModalRect(offsetX + 178, offsetY + this.ySize - 172, 178, this.ySize - 90, 68, 68);
         }
     }
 
