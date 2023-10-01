@@ -619,6 +619,7 @@ item.appliedenergistics2.multi_part.cable_covered.name=ME Covered Cable
 item.appliedenergistics2.multi_part.cable_x64.name=ME Improved dense cable
 item.appliedenergistics2.multi_part.cable_x128.name=ME Advanced dense cable
 item.appliedenergistics2.multi_part.cable_x256.name=ME Perfect dense cable
+item.appliedenergistics2.multi_part.cable_creative.name=ME Creative cable
 
 item.appliedenergistics2.multi_part.cable_glass.name=ME Glass Cable
 item.appliedenergistics2.multi_part.cable_smart.name=ME Smart Cable

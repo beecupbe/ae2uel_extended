@@ -160,6 +160,10 @@ public class GridConnection implements IGridConnection, IPathItem {
     public boolean canSupportX256Channels() {
         return this.getLastUsedChannels() < AEConfig.instance().getX256CableCapacity();
     }
+    @Override
+    public boolean isCreativeCable() {
+        return this.getLastUsedChannels() < Integer.MAX_VALUE;
+    }
 
     @Override
     public IReadOnlyCollection<IPathItem> getPossibleOptions() {

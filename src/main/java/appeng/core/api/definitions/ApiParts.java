@@ -43,6 +43,7 @@ public final class ApiParts implements IParts {
     private final AEColoredItemDefinition cableGlass;
     private final AEColoredItemDefinition cableDenseCovered;
     private final AEColoredItemDefinition cableDenseSmart;
+    //private final AEColoredItemDefinition cableCreative; - soon
     private final IItemDefinition quartzFiber;
     private final IItemDefinition toggleBus;
     private final IItemDefinition invertedToggleBus;
@@ -198,6 +199,7 @@ public final class ApiParts implements IParts {
     public AEColoredItemDefinition cableDenseSmart() {
         return this.cableDenseSmart;
     }
+
     @Override
     public AEColoredItemDefinition lumenCableSmart() {
         throw new MissingDefinitionException("Lumen Smart Cable has yet to be implemented.");

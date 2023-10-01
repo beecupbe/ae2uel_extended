@@ -112,7 +112,7 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     // Wireless
     private double wirelessBaseCost = 8;
     private double wirelessCostMultiplier = 1;
-    private double wirelessTerminalDrainMultiplier = 1;
+    private double wirelessTerminalDrainMultiplier = 8;
     private double wirelessBaseRange = 16;
     private double wirelessBoosterRangeMultiplier = 1;
     private double wirelessBoosterExp = 1.5;
@@ -333,7 +333,7 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     }
 
     public double wireless_getDrainRate(final double range) {
-        return this.wirelessTerminalDrainMultiplier * range;
+        return this.wirelessTerminalDrainMultiplier;
     }
 
     public double wireless_getMaxRange(final int boosters) {

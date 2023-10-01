@@ -129,6 +129,8 @@ public enum AEFeature {
     COVERED_CABLES("CoveredCables", Constants.CATEGORY_CABLES),
     SMART_CABLES("SmartCables", Constants.CATEGORY_CABLES),
     DENSE_CABLES("DenseCables", Constants.CATEGORY_CABLES),
+    CREATIVE_CABLES("CreativeCables", Constants.CATEGORY_CABLES),
+
     //shhh!
     //DENSE_X64_CABLES("X64Cables", Constants.CATEGORY_CABLES),
     //DENSE_X128_CABLES("X128Cables", Constants.CATEGORY_CABLES),

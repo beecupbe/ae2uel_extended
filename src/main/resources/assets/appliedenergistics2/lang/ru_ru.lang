@@ -618,6 +618,7 @@ item.appliedenergistics2.multi_part.cable_covered.name=МЭ Закрытый к�
 item.appliedenergistics2.multi_part.cable_x64.name=МЭ Улучшенный плотный кабель
 item.appliedenergistics2.multi_part.cable_x128.name=МЭ Продвинутый плотный кабель
 item.appliedenergistics2.multi_part.cable_x256.name=МЭ Совершенный плотный кабель
+item.appliedenergistics2.multi_part.cable_creative.name=МЭ Творческий кабель
 
 item.appliedenergistics2.multi_part.cable_glass.name=МЭ Стеклянный кабель
 item.appliedenergistics2.multi_part.cable_smart.name=МЭ Умный кабель
@@ -688,10 +689,10 @@ item.appliedenergistics2.entropy_manipulator.name=Манипулятор энт�
 item.appliedenergistics2.matter_cannon.name=Материальная пушка
 item.appliedenergistics2.memory_card.name=Карта памяти
 item.appliedenergistics2.color_applicator.name=Аппликатор цвета
-item.appliedenergistics2.wireless_terminal.name=Беспроводной терминал
-item.appliedenergistics2.wireless_crafting_terminal.name=Беспроводной терминал изготовления
-item.appliedenergistics2.wireless_pattern_terminal.name=Беспроводной терминал шаблонов
-item.appliedenergistics2.wireless_fluid_terminal.name=Беспроводной жидкостный терминал
+item.appliedenergistics2.wireless_terminal.name=Терминал
+item.appliedenergistics2.wireless_crafting_terminal.name=Терминал
+item.appliedenergistics2.wireless_pattern_terminal.name=Терминал
+item.appliedenergistics2.wireless_fluid_terminal.name=Терминал
 item.appliedenergistics2.biometric_card.name=Биометрическая карта
 
 item.appliedenergistics2.debug_card.name=Отладочная карта разработчика

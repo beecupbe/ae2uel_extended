@@ -150,6 +150,7 @@ public enum PartType {
     },
 
 
+
     TOGGLE_BUS(80, "toggle_bus", EnumSet.of(AEFeature.TOGGLE_BUS), EnumSet.noneOf(IntegrationType.class), PartToggleBus.class),
 
     INVERTED_TOGGLE_BUS(100, "inverted_toggle_bus", EnumSet.of(AEFeature.TOGGLE_BUS), EnumSet.noneOf(IntegrationType.class), PartInvertedToggleBus.class),

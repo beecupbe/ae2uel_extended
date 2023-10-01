@@ -61,6 +61,9 @@ public enum GridFlags
 	X64_CAPACITY,
 	X128_CAPACITY,
 	X256_CAPACITY,
+	/**
+	 * :thinking:
+	 */
 	CREATIVE_CAPACITY,
 
 	/**

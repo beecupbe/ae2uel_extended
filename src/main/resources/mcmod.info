@@ -5,7 +5,7 @@
         "description": "A fork of mod about Matter, Energy and using them to conquer the world..",
         "version": "${version}",
         "mcversion": "${mcversion}",
-        "url": "https://github.com/PrototypeTrousers/Applied-Energistics-2",
+        "url": "https://github.com/beecupbe/ae2uel_extended",
         "updateUrl": "",
         "authorList": [
             "AlgorithmX2"

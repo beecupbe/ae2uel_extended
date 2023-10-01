@@ -40,9 +40,9 @@ public class ChannelInfoProvider implements IPartProbInfoProvider {
         if (!AEConfig.instance().isFeatureEnabled(AEFeature.CHANNELS)) {
             return;
         }
-        if (part instanceof PartCableSmart || part instanceof PartDenseCableSmart || part instanceof PartX64CableCoverted || part instanceof PartX128CableCoverted || part instanceof PartX256CableCoverted) {
+        if (part instanceof PartCableSmart || part instanceof PartDenseCableSmart || part instanceof PartX64CableCoverted || part instanceof PartX128CableCoverted || part instanceof PartX256CableCoverted || part instanceof CreativeCablePart) {
             final int usedChannels;
-            final int maxChannels = (part instanceof PartDenseCableSmart) ? AEConfig.instance().getDenseChannelCapacity() : (part instanceof PartX64CableCoverted) ? AEConfig.instance().getX64CableCapacity() : (part instanceof PartX128CableCoverted) ? AEConfig.instance().getX128CableCapacity() : (part instanceof PartX256CableCoverted) ? AEConfig.instance().getX256CableCapacity() : AEConfig.instance().getNormalChannelCapacity();
+            final int maxChannels = (part instanceof PartDenseCableSmart) ? AEConfig.instance().getDenseChannelCapacity() : (part instanceof PartX64CableCoverted) ? AEConfig.instance().getX64CableCapacity() : (part instanceof PartX128CableCoverted) ? AEConfig.instance().getX128CableCapacity() : (part instanceof PartX256CableCoverted) ? AEConfig.instance().getX256CableCapacity() : (part instanceof CreativeCablePart) ? Integer.MAX_VALUE : AEConfig.instance().getNormalChannelCapacity();
 
             if (part.getGridNode().isActive()) {
                 final NBTTagCompound tmp = new NBTTagCompound();

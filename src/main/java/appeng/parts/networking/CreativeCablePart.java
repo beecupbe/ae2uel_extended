@@ -31,7 +31,7 @@ public class CreativeCablePart extends PartCreativeCable {
 
     @Override
     public AECableType getCableConnectionType() {
-        return AECableType.CABLE_X256;
+        return AECableType.DENSE_COVERED;
     }
 
 }

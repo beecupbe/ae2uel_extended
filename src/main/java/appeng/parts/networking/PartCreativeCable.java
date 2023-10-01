@@ -42,7 +42,7 @@ public abstract class PartCreativeCable extends PartCable {
 
     @Override
     public BusSupport supportsBuses() {
-        return BusSupport.CABLE;
+        return BusSupport.DENSE_CABLE;
     }
 
     @Override

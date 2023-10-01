@@ -530,6 +530,10 @@ public class GridNode implements IGridNode, IPathItem {
     public boolean canSupportX256Channels() {
         return this.getUsedChannels() < this.getMaxChannels();
     }
+    @Override
+    public boolean isCreativeCable() {
+        return this.getUsedChannels() < Integer.MAX_VALUE;
+    }
 
     private int getMaxChannels() {
         final EnumSet<GridFlags> gf = this.gridProxy.getFlags();
