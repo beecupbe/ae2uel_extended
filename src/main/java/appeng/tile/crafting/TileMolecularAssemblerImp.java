@@ -422,8 +422,6 @@ public class TileMolecularAssemblerImp extends AENetworkInvTile implements IUpgr
             return TickRateModulation.SLEEP;
         }
             final ItemStack output = this.myPlan.getOutput(this.craftingInv, this.getWorld());
-            final int outnum = this.myPlan.getCondensedInputs().length;
-                for (int job = 0; job < outnum; job++) {
                     for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
                         this.craftingInv.setInventorySlotContents(x, this.gridInv.getStackInSlot(x));
                     }
@@ -432,7 +430,6 @@ public class TileMolecularAssemblerImp extends AENetworkInvTile implements IUpgr
                         this.gridInv.setStackInSlot(x, Platform.getContainerItem(this.craftingInv.getStackInSlot(x)));
                     }
                     this.ejectHeldItems();
-                }
                 try {
                     final TargetPoint where = new TargetPoint(this.world.provider.getDimension(), this.pos.getX(), this.pos.getY(), this.pos.getZ(), 32);
                     final IAEItemStack item = AEItemStack.fromItemStack(output);
