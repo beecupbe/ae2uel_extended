@@ -303,16 +303,16 @@ gui.appliedenergistics2.IOBusesImp=ME発展型入力/出力バス
 gui.appliedenergistics2.IOBusesFluidsImp=ME発展型液体入力/出力バス
 
 gui.appliedenergistics2.CreativeCoProcessorJEI=並列処理ユニットのクリエイティブ版で、取り付けるとCoプロセッサの数が2,147,483,646個に増加する。またプロセッサ1基につき1つ以上設置することは非推奨です。
-gui.appliedenergistics2.DriveImpJEI=MEドライブの改良版で、最大30個のストレージセルを搭載することが可能。
-gui.appliedenergistics2.IOImpJEI=ME IOポートの改良版で、最大10,485,760のアイテムを毎秒転送することが可能。
-gui.appliedenergistics2.InterfaceImpJEI=MEインターフェイスの改良版で、アイテム配送のスロットが増加(18スロットから9スロットに)。
+gui.appliedenergistics2.DriveImpJEI=MEドライブの発展版で、最大30個のストレージセルを搭載することが可能。
+gui.appliedenergistics2.IOImpJEI=ME IOポートの発展版で、最大10,485,760のアイテムを毎秒転送することが可能。
+gui.appliedenergistics2.InterfaceImpJEI=MEインターフェイスの発展版で、アイテム配送のスロットが増加(18スロットから9スロットに)。
 gui.appliedenergistics2.InterfaceAdvJEI=更に多くのスロットを備えたME転送インターフェースの精鋭版(18スロットから27スロットに)。
 gui.appliedenergistics2.InterfacePerJEI=最大スロット数を備えたME転送インターフェースの究極版(18スロットから36スロットに)。
-gui.appliedenergistics2.InterfacePattJEI=最大72のエンコード済みパターンを保存できるMEインターフェイスの改良版。
-gui.appliedenergistics2.ImpBusesJEI=バスの改良版で、最大20,480のアイテムを毎秒転送することが可能。
+gui.appliedenergistics2.InterfacePattJEI=最大72のエンコード済みパターンを保存できるMEインターフェイスの発展版。
+gui.appliedenergistics2.ImpBusesJEI=バスの発展版で、最大20,480のアイテムを毎秒転送することが可能。
 gui.appliedenergistics2.MACCreativeJEI=分子組立機のクリエイティブ版で、設定ファイルで指定した速さを掛けて動作することが可能。
-gui.appliedenergistics2.MACImpJEI=分子組立機の改良版で、並列処理ユニットを必要無しに従来の2倍の速さで動作することが可能。
-gui.appliedenergistics2.ImpBusesFluidJEI=液体バスの改良版で、最大128倍の流体を転送することが可能。
+gui.appliedenergistics2.MACImpJEI=分子組立機の発展版で、並列処理ユニットを必要無しに従来の2倍の速さで動作することが可能。
+gui.appliedenergistics2.ImpBusesFluidJEI=液体バスの発展版で、最大128倍の流体を転送することが可能。
 
 // GUI Tooltips
 gui.tooltips.appliedenergistics2.Stash=アイテムを保存
