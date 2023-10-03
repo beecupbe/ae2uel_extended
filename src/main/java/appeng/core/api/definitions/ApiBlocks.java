@@ -731,8 +731,6 @@ public final class ApiBlocks implements IBlocks {
                 })
                 .build();
 
-        Verify.verify(stairs.maybeBlock().isPresent());
-
         return stairs;
     }
 

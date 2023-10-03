@@ -669,11 +669,11 @@ public class DualityInterfacePatt implements IGridTickable, IStorageMonitorable,
                     targetTE = (IInterfaceHost) ((TileCableBus) te).getPart(s.getOpposite());
                 }
 
-                if (!targetTE.getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
+                if (!targetTE.getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
                     IStorageMonitorableAccessor mon = te.getCapability(Capabilities.STORAGE_MONITORABLE_ACCESSOR, s.getOpposite());
                     if (mon != null) {
                         IStorageMonitorable sm = mon.getInventory(this.mySource);
-                        if (sm != null && Platform.canAccess(targetTE.getInterfaceDuality().gridProxy, this.mySource)) {
+                        if (sm != null && Platform.canAccess(targetTE.getInterfaceDualityPatt().gridProxy, this.mySource)) {
                             IMEMonitor<IAEItemStack> inv = sm.getInventory(AEApi.instance().storage().getStorageChannel(IItemStorageChannel.class));
                             if (inv != null) {
                                 final Iterator<ItemStack> i = this.waitingToSendFacing.get(s).iterator();
@@ -967,13 +967,13 @@ public class DualityInterfacePatt implements IGridTickable, IStorageMonitorable,
                         targetTE = (IInterfaceHost) ((TileCableBus) te).getPart(s.getOpposite());
                     }
 
-                    if (targetTE.getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
+                    if (targetTE.getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
                         continue;
                     } else {
                         IStorageMonitorableAccessor mon = te.getCapability(Capabilities.STORAGE_MONITORABLE_ACCESSOR, s.getOpposite());
                         if (mon != null) {
                             IStorageMonitorable sm = mon.getInventory(this.mySource);
-                            if (sm != null && Platform.canAccess(targetTE.getInterfaceDuality().gridProxy, this.mySource)) {
+                            if (sm != null && Platform.canAccess(targetTE.getInterfaceDualityPatt().gridProxy, this.mySource)) {
                                 if (this.isBlocking() && sm.getInventory(AEApi.instance().storage().getStorageChannel(IItemStorageChannel.class)).getStorageList().size() > 0) {
                                     continue;
                                 } else {
@@ -1086,13 +1086,13 @@ public class DualityInterfacePatt implements IGridTickable, IStorageMonitorable,
                             targetTE = (IInterfaceHost) ((TileCableBus) te).getPart(s.getOpposite());
                         }
 
-                        if (targetTE.getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
+                        if (targetTE.getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
                             continue;
                         } else {
                             IStorageMonitorableAccessor mon = te.getCapability(Capabilities.STORAGE_MONITORABLE_ACCESSOR, s.getOpposite());
                             if (mon != null) {
                                 IStorageMonitorable sm = mon.getInventory(this.mySource);
-                                if (sm != null && Platform.canAccess(targetTE.getInterfaceDuality().gridProxy, this.mySource)) {
+                                if (sm != null && Platform.canAccess(targetTE.getInterfaceDualityPatt().gridProxy, this.mySource)) {
                                     if (sm.getInventory(AEApi.instance().storage().getStorageChannel(IItemStorageChannel.class)).getStorageList().isEmpty()) {
                                         allAreBusy = false;
                                         break;
@@ -1271,7 +1271,7 @@ public class DualityInterfacePatt implements IGridTickable, IStorageMonitorable,
 
             if (directedTile instanceof IInterfaceHost) {
                 try {
-                    if (((IInterfaceHost) directedTile).getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
+                    if (((IInterfaceHost) directedTile).getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
                         continue;
                     }
                 } catch (final GridAccessException e) {

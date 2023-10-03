@@ -689,10 +689,10 @@ item.appliedenergistics2.entropy_manipulator.name=Манипулятор энт�
 item.appliedenergistics2.matter_cannon.name=Материальная пушка
 item.appliedenergistics2.memory_card.name=Карта памяти
 item.appliedenergistics2.color_applicator.name=Аппликатор цвета
-item.appliedenergistics2.wireless_terminal.name=Терминал
-item.appliedenergistics2.wireless_crafting_terminal.name=Терминал
-item.appliedenergistics2.wireless_pattern_terminal.name=Терминал
-item.appliedenergistics2.wireless_fluid_terminal.name=Терминал
+item.appliedenergistics2.wireless_terminal.name=Беспроводной терминал
+item.appliedenergistics2.wireless_crafting_terminal.name=Беспроводной терминал крафта
+item.appliedenergistics2.wireless_pattern_terminal.name=Беспроводной терминал шаблонов
+item.appliedenergistics2.wireless_fluid_terminal.name=Беспроводной терминал жидкостей
 item.appliedenergistics2.biometric_card.name=Биометрическая карта
 
 item.appliedenergistics2.debug_card.name=Отладочная карта разработчика
