@@ -302,7 +302,7 @@ gui.appliedenergistics2.InterfacePatt=MEパターンインターフェース
 gui.appliedenergistics2.IOBusesImp=ME発展型入力/出力バス
 gui.appliedenergistics2.IOBusesFluidsImp=ME発展型液体入力/出力バス
 
-gui.appliedenergistics2.CreativeCoProcessorJEI=Creative version of the Co-Processor Unit. When installed, it increases the number of crafting co-processors to 2,147,483,646. Not recommended to install more than 1 creative processing block per 1 processor structure. //TODO
+gui.appliedenergistics2.CreativeCoProcessorJEI=並列処理ユニットのクリエイティブ版で、取り付けるとCoプロセッサの数が2,147,483,646個に増加する。またプロセッサ1基につき1つ以上設置することは非推奨です。
 gui.appliedenergistics2.DriveImpJEI=MEドライブの改良版で、最大30個のストレージセルを搭載することが可能。
 gui.appliedenergistics2.IOImpJEI=ME IOポートの改良版で、最大10,485,760のアイテムを毎秒転送することが可能。
 gui.appliedenergistics2.InterfaceImpJEI=MEインターフェイスの改良版で、アイテム配送のスロットが増加(18スロットから9スロットに)。
