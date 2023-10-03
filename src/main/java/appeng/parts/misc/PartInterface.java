@@ -45,10 +45,7 @@ import appeng.api.util.IConfigManager;
 import appeng.core.AppEng;
 import appeng.core.localization.PlayerMessages;
 import appeng.core.sync.GuiBridge;
-import appeng.helpers.DualityInterface;
-import appeng.helpers.IInterfaceHost;
-import appeng.helpers.IPriorityHost;
-import appeng.helpers.Reflected;
+import appeng.helpers.*;
 import appeng.items.misc.ItemEncodedPattern;
 import appeng.items.parts.PartModels;
 import appeng.parts.PartBasicState;
@@ -199,6 +196,26 @@ public class PartInterface extends PartBasicState implements IGridTickable, ISto
     @Override
     public DualityInterface getInterfaceDuality() {
         return this.duality;
+    }
+
+    @Override
+    public DualityInterfaceImp getInterfaceDualityImp() {
+        return null;
+    }
+
+    @Override
+    public DualityInterfaceAdv getInterfaceDualityAdv() {
+        return null;
+    }
+
+    @Override
+    public DualityInterfacePer getInterfaceDualityPer() {
+        return null;
+    }
+
+    @Override
+    public DualityInterfacePatt getInterfaceDualityPatt() {
+        return null;
     }
 
     @Override

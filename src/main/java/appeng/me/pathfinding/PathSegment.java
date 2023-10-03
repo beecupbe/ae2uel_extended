@@ -22,6 +22,7 @@ package appeng.me.pathfinding;
 import appeng.api.networking.GridFlags;
 import appeng.api.networking.IGridMultiblock;
 import appeng.api.networking.IGridNode;
+import appeng.me.Grid;
 import appeng.me.cache.PathGridCache;
 
 import java.util.*;
@@ -67,6 +68,8 @@ public class PathSegment {
                                 worked = this.useX128Channel(pi);
                             } else if (flags.contains(GridFlags.X256_CAPACITY)) {
                                 worked = this.useX256Channel(pi);
+                            } else if (flags.contains(GridFlags.CREATIVE_CAPACITY))  {
+                                worked = this.useCreativeChannel(pi);
                             } else {
                                 worked = this.useChannel(pi);
                             }
@@ -159,6 +162,26 @@ public class PathSegment {
         IPathItem pi = start;
         while (pi != null) {
             if (!pi.canSupportX256Channels() || pi.getFlags().contains(GridFlags.CANNOT_CARRY_COMPRESSED)) {
+                return false;
+            }
+
+            pi = pi.getControllerRoute();
+        }
+
+        pi = start;
+        while (pi != null) {
+            this.pgc.setChannelsByBlocks(this.pgc.getChannelsByBlocks() + 1);
+            pi.incrementChannelCount(1);
+            pi = pi.getControllerRoute();
+        }
+
+        this.pgc.setChannelsInUse(this.pgc.getChannelsInUse() + 1);
+        return true;
+    }
+    private boolean useCreativeChannel(final IPathItem start) {
+        IPathItem pi = start;
+        while (pi != null) {
+            if (!pi.isCreativeCable() || pi.getFlags().contains(GridFlags.CANNOT_CARRY_COMPRESSED)) {
                 return false;
             }
 

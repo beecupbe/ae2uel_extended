@@ -48,6 +48,7 @@ public class ApiClientHelper implements IClientHelper {
             lines.add(cellInventory.getStoredItemTypes() + " " + GuiText.Of.getLocal() + ' ' + cellInventory.getTotalItemTypes() + ' ' + GuiText.Types
                     .getLocal());
         }
+        lines.add(GuiText.ShiftForDetails.getLocal() + "");
 
         IItemList<?> itemList = cellInventory.getChannel().createList();
 
@@ -60,13 +61,14 @@ public class ApiClientHelper implements IClientHelper {
                 lines.add("[" + GuiText.Partitioned.getLocal() + "]" + " - " + list + ' ' + GuiText.Precise.getLocal());
             }
 
-            if (Minecraft.getMinecraft().gameSettings.advancedItemTooltips || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
                 IItemHandler inv = cellInventory.getConfigInventory();
                 cellInventory.getAvailableItems((IItemList) itemList);
                 for (int i = 0; i < inv.getSlots(); i++) {
                     final ItemStack is = inv.getStackInSlot(i);
                     if (!is.isEmpty()) {
                         if (cellInventory.getChannel() instanceof IItemStorageChannel) {
+                            lines.remove(GuiText.ShiftForDetails.getLocal() + "");
                             if (!handler.isFuzzy()) {
                                 final IAEItemStack ais = AEItemStack.fromItemStack(is);
                                 IAEItemStack stocked = ((IItemList<IAEItemStack>) itemList).findPrecise(ais);
@@ -92,6 +94,7 @@ public class ApiClientHelper implements IClientHelper {
                                 }
                             }
                         } else if (cellInventory.getChannel() instanceof IFluidStorageChannel) {
+                            lines.remove(GuiText.ShiftForDetails.getLocal() + "");
                             final AEFluidStack ais;
                             if (is.getItem() instanceof FluidDummyItem) {
                                 ais = AEFluidStack.fromFluidStack(((FluidDummyItem) is.getItem()).getFluidStack(is));
@@ -105,7 +108,8 @@ public class ApiClientHelper implements IClientHelper {
                 }
             }
         } else {
-            if (Minecraft.getMinecraft().gameSettings.advancedItemTooltips || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
+                lines.remove(GuiText.ShiftForDetails.getLocal() + "");
                 cellInventory.getAvailableItems((IItemList) itemList);
                 for (IAEStack<?> s : itemList) {
                     if (s instanceof IAEItemStack) {

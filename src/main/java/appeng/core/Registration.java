@@ -343,6 +343,27 @@ final class Registration {
         Upgrades.CAPACITY.registerItem(parts.importBus(), 2);
         Upgrades.SPEED.registerItem(parts.importBus(), 4);
 
+        // Imp Import Bus
+        Upgrades.FUZZY.registerItem(parts.importBusImp(), 1);
+        Upgrades.REDSTONE.registerItem(parts.importBusImp(), 1);
+        Upgrades.CAPACITY.registerItem(parts.importBusImp(), 2);
+
+        // Imp Export Bus
+        Upgrades.FUZZY.registerItem(parts.exportBusImp(), 1);
+        Upgrades.REDSTONE.registerItem(parts.exportBusImp(), 1);
+        Upgrades.CAPACITY.registerItem(parts.exportBusImp(), 2);
+        Upgrades.CRAFTING.registerItem(parts.exportBusImp(), 1);
+
+        // Imp Fluid Import Bus
+        Upgrades.FUZZY.registerItem(parts.fluidImportBusImp(), 1);
+        Upgrades.REDSTONE.registerItem(parts.fluidImportBusImp(), 1);
+        Upgrades.CAPACITY.registerItem(parts.fluidImportBusImp(), 2);
+
+        // Imp Fluid Export Bus
+        Upgrades.FUZZY.registerItem(parts.fluidExportBusImp(), 1);
+        Upgrades.REDSTONE.registerItem(parts.fluidExportBusImp(), 1);
+        Upgrades.CAPACITY.registerItem(parts.fluidExportBusImp(), 2);
+
         // Fluid Import Bus
         Upgrades.CAPACITY.registerItem(parts.fluidImportBus(), 2);
         Upgrades.REDSTONE.registerItem(parts.fluidImportBus(), 1);

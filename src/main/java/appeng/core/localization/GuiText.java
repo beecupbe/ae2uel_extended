@@ -41,6 +41,10 @@ public enum  GuiText {
     Terminal,
 
     Interface,
+    InterfaceImp,
+    InterfaceAdv,
+    InterfacePer,
+    InterfacePatt,
     FluidInterface,
     Config,
     StoredItems,
@@ -51,11 +55,18 @@ public enum  GuiText {
     ExportBus,
     ExportBusFluids,
 
+    ImportImp,
+    ExportImp,
+    ImportImpFluids,
+    ExportImpFluids,
+
     CellWorkbench,
     NetworkDetails,
     StorageCells,
     IOBuses,
+    IOBusesImp,
     IOBusesFluids,
+    IOBusesFluidsImp,
 
     IOPort,
     BytesUsed,
@@ -124,6 +135,7 @@ public enum  GuiText {
     No,
 
     MolecularAssembler,
+    MACImp,
 
     StoredPower,
     MaxPower,
@@ -202,7 +214,23 @@ public enum  GuiText {
     LargeFontCraft,
 
     // Used in a ME Interface when no appropriate TileEntity was detected near it
-    Nothing;
+    Nothing,
+
+    //new
+    ShiftForDetails,
+    ClearAll,
+    MACCreativeJEI,
+    DriveImpJEI,
+    ImpBusesJEI,
+    ImpBusesFluidJEI,
+    MACImpJEI,
+    IOImpJEI,
+    InterfaceImpJEI,
+    InterfaceAdvJEI,
+    InterfacePerJEI,
+    InterfacePattJEI,
+    CellsJEI,
+    CreativeCoProcessorJEI;
 
     private final String root;
 

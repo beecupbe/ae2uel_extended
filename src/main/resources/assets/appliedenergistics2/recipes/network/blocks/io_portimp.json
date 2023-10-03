@@ -1,0 +1,46 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:io_portimp"
+                },
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:io_port"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.logic_processor"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:io_portimp"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "aaa",
+        "bbb",
+        "ded"
+    ],
+    "key": {
+        "a": {
+            "item": "#appliedenergistics2:glass"
+        },
+        "d": {
+            "type": "forge:ore_dict",
+            "ore": "blockIron"
+        },
+        "b": {
+            "item": "appliedenergistics2:io_port"
+        },
+        "e": {
+            "type": "appliedenergistics2:part",
+            "part": "material.logic_processor"
+        }
+    }
+}

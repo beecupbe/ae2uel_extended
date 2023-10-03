@@ -26,13 +26,13 @@ public enum TickRates {
 
     Interface(1, 1),
 
-    ImportBus(2, 30),
+    ImportBus(4, 35),
 
-    FluidImportBus(2, 30),
+    FluidImportBus(4, 35),
 
-    ExportBus(2, 30),
+    ExportBus(4, 35),
 
-    FluidExportBus(2, 35),
+    FluidExportBus(4, 35),
 
     AnnihilationPlane(3, 80),
 
@@ -40,19 +40,19 @@ public enum TickRates {
 
     Inscriber(1, 1),
 
-    Charger(1, 15),
+    Charger(1, 10),
 
     IOPort(1, 1),
 
     VibrationChamber(10, 40),
 
-    StorageBus(2, 45),
+    StorageBus(4, 35),
 
-    FluidStorageBus(2, 45),
+    FluidStorageBus(4, 35),
 
-    ItemTunnel(5, 60),
+    ItemTunnel(3, 60),
 
-    LightTunnel(5, 60),
+    LightTunnel(3, 60),
 
     OpenComputersTunnel(1, 5),
 

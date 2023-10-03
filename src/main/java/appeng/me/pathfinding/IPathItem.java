@@ -38,6 +38,7 @@ public interface IPathItem {
     boolean canSupportX64Channels();
     boolean canSupportX128Channels();
     boolean canSupportX256Channels();
+    boolean isCreativeCable();
 
     /**
      * find possible choices for other pathing.

@@ -29,14 +29,21 @@ import appeng.container.interfaces.IJEIGhostIngredients;
 import appeng.container.slot.IJEITargetSlot;
 import appeng.container.slot.SlotFake;
 import appeng.core.localization.GuiText;
+import appeng.core.sync.GuiBridge;
 import appeng.core.sync.network.NetworkHandler;
 import appeng.core.sync.packets.PacketConfigButton;
 import appeng.core.sync.packets.PacketInventoryAction;
 import appeng.fluids.client.gui.widgets.GuiFluidSlot;
+import appeng.fluids.parts.PartFluidExportBusImp;
+import appeng.fluids.parts.PartFluidImportBus;
+import appeng.fluids.parts.PartFluidImportBusImp;
 import appeng.fluids.util.AEFluidStack;
 import appeng.helpers.InventoryAction;
 import appeng.parts.automation.PartExportBus;
+import appeng.parts.automation.PartExportBusImp;
 import appeng.parts.automation.PartImportBus;
+import appeng.parts.automation.PartImportBusImp;
+import appeng.tile.misc.TileInterfacePatt;
 import appeng.util.item.AEItemStack;
 import mezz.jei.api.gui.IGhostIngredientHandler.Target;
 import net.minecraft.client.gui.GuiButton;
@@ -72,7 +79,7 @@ public class GuiUpgradeable extends AEBaseGui implements IJEIGhostIngredients {
         this.cvb = te;
 
         this.bc = (IUpgradeableHost) te.getTarget();
-        this.xSize = this.hasToolbox() ? 246 : 211;
+        this.xSize = this.hasToolbox() || this.drawIterfacePattNewSlots() ? 246 : 211;
         this.ySize = 184;
     }
 
@@ -145,6 +152,9 @@ public class GuiUpgradeable extends AEBaseGui implements IJEIGhostIngredients {
         if (this.hasToolbox()) {
             this.drawTexturedModalRect(offsetX + 178, offsetY + this.ySize - 90, 178, this.ySize - 90, 68, 68);
         }
+        if (this.drawIterfacePattNewSlots()) {
+            this.drawTexturedModalRect(offsetX + 178, offsetY + this.ySize - 172, 178, this.ySize - 90, 68, 68);
+        }
     }
 
     protected void handleButtonVisibility() {
@@ -170,8 +180,12 @@ public class GuiUpgradeable extends AEBaseGui implements IJEIGhostIngredients {
         return true;
     }
 
+    protected boolean drawIterfacePattNewSlots() {
+        return this.bc instanceof TileInterfacePatt;
+    }
+
     protected GuiText getName() {
-        return this.bc instanceof PartImportBus ? GuiText.ImportBus : GuiText.ExportBus;
+        return this.bc instanceof PartImportBus ? GuiText.ImportBus : this.bc instanceof PartExportBus ? GuiText.ExportBus : this.bc instanceof PartImportBusImp ? GuiText.ImportImp : this.bc instanceof PartExportBusImp ? GuiText.ExportImp : this.bc instanceof PartFluidImportBusImp ? GuiText.ImportImpFluids : this.bc instanceof PartFluidExportBusImp ? GuiText.ExportImpFluids : this.bc instanceof PartFluidImportBus ? GuiText.ImportBusFluids : GuiText.ExportBusFluids;
     }
 
     @Override

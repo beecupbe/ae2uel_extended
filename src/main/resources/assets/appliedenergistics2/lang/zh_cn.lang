@@ -8,14 +8,27 @@ tile.appliedenergistics2.controller.name=ME控制器
 tile.appliedenergistics2.crank.name=木质曲柄
 tile.appliedenergistics2.creative_energy_cell.name=创造能源元件
 tile.appliedenergistics2.dense_energy_cell.name=致密能源元件
+
+tile.appliedenergistics2.improved_energy_cell.name=进阶致密能源元件
+tile.appliedenergistics2.advanced_energy_cell.name=高级致密能源元件
+tile.appliedenergistics2.perfect_energy_cell.name=完美致密能源元件
+
 tile.appliedenergistics2.energy_cell.name=能源元件
 tile.appliedenergistics2.drive.name=ME驱动器
+
+tile.appliedenergistics2.driveImp.name=进阶ME驱动器
+
 tile.appliedenergistics2.energy_acceptor.name=能源接收器
 tile.appliedenergistics2.grindstone.name=石英磨具
 tile.appliedenergistics2.matrix_frame.name=矩阵框架
 tile.appliedenergistics2.io_port.name=ME-IO端口
+tile.appliedenergistics2.io_portimp.name=进阶ME-IO端口
 tile.appliedenergistics2.inscriber.name=压印器
 tile.appliedenergistics2.interface.name=ME接口
+tile.appliedenergistics2.interfaceimp.name=进阶ME接口
+tile.appliedenergistics2.interfaceadv.name=高级ME接口
+tile.appliedenergistics2.interfaceper.name=完美ME接口
+tile.appliedenergistics2.interface_patterns.name=ME样板接口
 tile.appliedenergistics2.fluid_interface.name=ME流体接口
 tile.appliedenergistics2.quantum_link.name=ME量子链接仓
 tile.appliedenergistics2.quantum_ring.name=ME量子环
@@ -48,9 +61,30 @@ tile.appliedenergistics2.crafting_storage_1k.name=1k合成存储器
 tile.appliedenergistics2.crafting_storage_4k.name=4k合成存储器
 tile.appliedenergistics2.crafting_storage_16k.name=16k合成存储器
 tile.appliedenergistics2.crafting_storage_64k.name=64k合成存储器
+
+tile.appliedenergistics2.crafting_storage_1mb.name=§d1mb§r合成存储器
+tile.appliedenergistics2.crafting_storage_4mb.name=§54mb§r合成存储器
+tile.appliedenergistics2.crafting_storage_16mb.name=§916mb§r合成存储器
+tile.appliedenergistics2.crafting_storage_64mb.name=§364mb§r合成存储器
+tile.appliedenergistics2.crafting_storage_256mb.name=§a256mb§r合成存储器
+tile.appliedenergistics2.crafting_storage_1gb.name=§61gb§r合成存储器
+tile.appliedenergistics2.crafting_storage_15gb.name=§42gb§r合成存储器
+
 tile.appliedenergistics2.crafting_accelerator.name=并行处理单元
+
+tile.appliedenergistics2.crafting_accelerator_4x.name=§6X4§r并行处理单元
+tile.appliedenergistics2.crafting_accelerator_16x.name=§eX16§r并行处理单元
+tile.appliedenergistics2.crafting_accelerator_64x.name=§aX64§r并行处理单元
+tile.appliedenergistics2.crafting_accelerator_128x.name=§6X128§r并行处理单元
+tile.appliedenergistics2.crafting_accelerator_256x.name=§bX256§r并行处理单元
+tile.appliedenergistics2.crafting_accelerator_512x.name=§dX512§r并行处理单元
+tile.appliedenergistics2.crafting_accelerator_1024x.name=§5X1024§r并行处理单元
+tile.appliedenergistics2.crafting_accelerator_creative.name=§4创造§r并行处理单元
+
 tile.appliedenergistics2.crafting_unit.name=合成单元
 tile.appliedenergistics2.molecular_assembler.name=分子装配室
+tile.appliedenergistics2.molecular_assemblerimp.name=进阶分子装配室
+tile.appliedenergistics2.molecular_assembler_creative.name=创造分子装配室
 
 // Stairs
 tile.appliedenergistics2.fluix_stairs.name=錾制赛特斯石英楼梯
@@ -151,10 +185,13 @@ gui.appliedenergistics2.Chest=ME箱子
 gui.appliedenergistics2.Condenser=物质聚合器
 gui.appliedenergistics2.Config=配置
 gui.appliedenergistics2.Drive=ME驱动器
+gui.appliedenergistics2.DriveImp=进阶ME驱动器
 gui.appliedenergistics2.ExportBus=ME输出总线
 gui.appliedenergistics2.ExportBusFluids=ME流体输出总线
 gui.appliedenergistics2.GrindStone=磨具
 gui.appliedenergistics2.ImportBus=ME输入总线
+gui.appliedenergistics2.ImportImp=进阶ME输入总线
+gui.appliedenergistics2.ExportImp=进阶ME输出总线
 gui.appliedenergistics2.ImportBusFluids=ME流体输入总线
 gui.appliedenergistics2.Interface=ME接口
 gui.appliedenergistics2.FluidInterface=ME流体接口
@@ -251,6 +288,27 @@ gui.appliedenergistics2.SmallFontCraft=Craft
 gui.appliedenergistics2.LargeFontCraft=+
 gui.appliedenergistics2.Renamer=自定义名称（按下Enter以设定）
 gui.appliedenergistics2.Nothing=无
+gui.appliedenergistics2.ShiftForDetails=按住Shift键查看详细信息
+gui.appliedenergistics2.ClearAll=清除
+gui.appliedenergistics2.InterfaceImp=进阶ME接口
+gui.appliedenergistics2.InterfaceAdv=高级ME接口
+gui.appliedenergistics2.InterfacePer=完美ME接口
+gui.appliedenergistics2.InterfacePatt=ME样板接口
+gui.appliedenergistics2.IOBusesImp=进阶ME输入/输出总线
+gui.appliedenergistics2.IOBusesFluidsImp=进阶ME流体输入/输出总线
+
+gui.appliedenergistics2.CreativeCoProcessorJEI=并行处理单元的创造版本。安装后，它会将并行处理单元的数量增加到2,147,483,646个。不建议每1个处理器结构安装1个以上的创造并行处理单元。
+gui.appliedenergistics2.DriveImpJEI=可容纳30个存储单元的进阶ME驱动器。
+gui.appliedenergistics2.IOImpJEI=可传输高达10,485,760个物品的进阶ME-IO端口。
+gui.appliedenergistics2.InterfaceImpJEI=具有更多物品传输槽位的进阶ME接口。（18个槽位而不是9个）
+gui.appliedenergistics2.InterfaceAdvJEI=具有更多槽位的高级ME接口。（27个槽位而不是18个）
+gui.appliedenergistics2.InterfacePerJEI=具有最大槽位数的完美ME接口。（36个槽位而不是27个）
+gui.appliedenergistics2.InterfacePattJEI=可存储高达72个样板的ME样板接口。
+gui.appliedenergistics2.ImpBusesJEI=可传输高达20,480个物品的进阶总线。
+gui.appliedenergistics2.MACCreativeJEI=可将制作的物品数量乘以配置文件中指定的数字的创造分子装配室。（默认为两倍）
+gui.appliedenergistics2.MACImpJEI=进阶分子装配室，速度是前代的两倍，不需要加速卡。
+gui.appliedenergistics2.ImpBusesFluidJEI=进阶总线，每秒可以传输前代的128倍的流体。
+
 
 // GUI Tooltips
 gui.tooltips.appliedenergistics2.Stash=存储物品
@@ -376,6 +434,9 @@ gui.tooltips.appliedenergistics2.ToggleShowFullInterfaces=显示满样板的接�
 gui.tooltips.appliedenergistics2.ToggleShowFullInterfacesOnDesc=显示所有接口
 gui.tooltips.appliedenergistics2.ToggleShowFullInterfacesOffDesc=仅显示有样板位的接口
 gui.tooltips.appliedenergistics2.HighlightInterface=高亮接口
+gui.tooltips.appliedenergistics2.PartialTransfer=将存储的物品移动到制作格中
+gui.tooltips.appliedenergistics2.MissingItem=§c缺少物品
+gui.tooltips.appliedenergistics2.CraftableItem=§9制作物品
 
 // Units
 gui.appliedenergistics2.units.appliedenergstics=AE
@@ -443,10 +504,24 @@ item.appliedenergistics2.storage_cell_1k.name=1k-ME存储元件
 item.appliedenergistics2.storage_cell_4k.name=4k-ME存储元件
 item.appliedenergistics2.storage_cell_16k.name=16k-ME存储元件
 item.appliedenergistics2.storage_cell_64k.name=64k-ME存储元件
+
+item.appliedenergistics2.storage_cell_1mb.name=§d1mb§r-ME存储元件（1024K）
+item.appliedenergistics2.storage_cell_4mb.name=§54mb§r-ME存储元件（4096K）
+item.appliedenergistics2.storage_cell_16mb.name=§916mb§r-ME存储元件（16384K）
+item.appliedenergistics2.storage_cell_64mb.name=§364mb§r-ME存储元件（65536K）
+item.appliedenergistics2.storage_cell_256mb.name=§a256mb§r-ME存储元件（262144K）
+
 item.appliedenergistics2.fluid_storage_cell_1k.name=1k-ME流体储存元件
 item.appliedenergistics2.fluid_storage_cell_4k.name=4k-ME流体储存元件
 item.appliedenergistics2.fluid_storage_cell_16k.name=16k-ME流体储存元件
 item.appliedenergistics2.fluid_storage_cell_64k.name=64k-ME流体储存元件
+
+item.appliedenergistics2.fluid_storage_cell_1mb.name=§d1mb§r-ME流体储存元件（1024K）
+item.appliedenergistics2.fluid_storage_cell_4mb.name=§54mb§r-ME流体储存元件（4096K）
+item.appliedenergistics2.fluid_storage_cell_16mb.name=§916mb§r-ME流体储存元件（16384K）
+item.appliedenergistics2.fluid_storage_cell_64mb.name=§364mb§r-ME流体储存元件（65536K）
+item.appliedenergistics2.fluid_storage_cell_256mb.name=§a256mb§r-ME流体储存元件（262144K）
+
 item.appliedenergistics2.creative_storage_cell.name=创造型ME存储元件
 item.appliedenergistics2.encoded_pattern.name=编码样板
 item.appliedenergistics2.view_cell.name=显示元件
@@ -478,10 +553,26 @@ item.appliedenergistics2.material.cell1k_part.name=1k-ME存储组件
 item.appliedenergistics2.material.cell4k_part.name=4k-ME存储组件
 item.appliedenergistics2.material.cell16k_part.name=16k-ME存储组件
 item.appliedenergistics2.material.cell64k_part.name=64k-ME存储组件
+
+item.appliedenergistics2.material.cell1mb_part.name=§d1mb§r-ME存储组件
+item.appliedenergistics2.material.cell4mb_part.name=§54mb§r-ME存储组件
+item.appliedenergistics2.material.cell16mb_part.name=§916mb§r-ME存储组件
+item.appliedenergistics2.material.cell64mb_part.name=§364mb§r-ME存储组件
+item.appliedenergistics2.material.cell256mb_part.name=§a256mb§r-ME存储组件
+item.appliedenergistics2.material.cell1gb_part.name=§61gb§r-ME存储组件
+item.appliedenergistics2.material.cell2gb_part.name=§42gb§r-ME存储组件
+
 item.appliedenergistics2.material.fluid_cell1k_part.name=1k-ME流体存储组件
 item.appliedenergistics2.material.fluid_cell4k_part.name=4k-ME流体存储组件
 item.appliedenergistics2.material.fluid_cell16k_part.name=16k-ME流体存储组件
 item.appliedenergistics2.material.fluid_cell64k_part.name=64k-ME流体存储组件
+
+item.appliedenergistics2.material.fluid_cell1mb_part.name=§d1mb§r-ME流体存储组件
+item.appliedenergistics2.material.fluid_cell4mb_part.name=§54mb§r-ME流体存储组件
+item.appliedenergistics2.material.fluid_cell16mb_part.name=§916mb§r-ME流体存储组件
+item.appliedenergistics2.material.fluid_cell64mb_part.name=§364mb§r-ME流体存储组件
+item.appliedenergistics2.material.fluid_cell256mb_part.name=§a256mb§r-ME流体存储组件
+
 item.appliedenergistics2.material.certus_quartz_crystal.name=赛特斯石英水晶
 item.appliedenergistics2.material.certus_quartz_crystal_charged.name=充能赛特斯石英水晶
 item.appliedenergistics2.material.certus_quartz_dust.name=赛特斯石英粉
@@ -525,6 +616,11 @@ item.appliedenergistics2.multi_part.fluid_annihilation_plane.name=ME流体破坏
 item.appliedenergistics2.multi_part.identity_annihilation_plane.name=ME精准破坏面板
 item.appliedenergistics2.multi_part.cable_anchor.name=线缆锚
 item.appliedenergistics2.multi_part.cable_covered.name=ME包层线缆
+
+item.appliedenergistics2.multi_part.cable_x64.name=进阶ME致密线缆（X64）
+item.appliedenergistics2.multi_part.cable_x128.name=高级ME致密线缆（X128）
+item.appliedenergistics2.multi_part.cable_x256.name=完美ME致密线缆（X256）
+
 item.appliedenergistics2.multi_part.cable_glass.name=ME玻璃线缆
 item.appliedenergistics2.multi_part.cable_smart.name=ME智能线缆
 item.appliedenergistics2.multi_part.cable_dense_covered.name=ME致密包层线缆
@@ -540,7 +636,11 @@ item.appliedenergistics2.multi_part.fluid_export_bus.name=ME流体输出总线
 item.appliedenergistics2.multi_part.formation_plane.name=ME成型面板
 item.appliedenergistics2.multi_part.fluid_formation_plane.name=ME流体成型面板
 item.appliedenergistics2.multi_part.import_bus.name=ME输入总线
+item.appliedenergistics2.multi_part.import_busimp.name=进阶ME输入总线
+item.appliedenergistics2.multi_part.export_busimp.name=进阶ME输出总线
 item.appliedenergistics2.multi_part.fluid_import_bus.name=ME流体输入总线
+item.appliedenergistics2.multi_part.fluid_import_busimp.name=进阶ME流体输入总线
+item.appliedenergistics2.multi_part.fluid_export_busimp.name=进阶ME流体输出总线
 item.appliedenergistics2.multi_part.interface.name=ME接口
 item.appliedenergistics2.multi_part.fluid_interface.name=ME流体接口
 item.appliedenergistics2.multi_part.level_emitter.name=ME标准发信器

@@ -1,0 +1,47 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:interface"
+                },
+				{
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:interface_patterns"
+                },
+				{
+					"type": "appliedenergistics2:material_exists",
+                    "material": "material.blank_pattern"
+				}
+            ]
+        }
+    ],
+    "result": {
+        "item": "appliedenergistics2:interface_patterns"
+    },
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "aba",
+        "cec",
+        "aba"
+    ],
+    "key": {
+        "b": {
+            "type": "appliedenergistics2:part",
+            "part": "material.cell1k_part"
+        },
+        "a": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        },
+        "c": {
+            "item": "appliedenergistics2:interface"
+        },
+        "e": {
+			"type": "appliedenergistics2:part",
+			"part": "material.blank_pattern"
+        }
+    }
+}

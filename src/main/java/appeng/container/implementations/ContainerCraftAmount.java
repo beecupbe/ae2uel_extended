@@ -43,8 +43,7 @@ public class ContainerCraftAmount extends AEBaseContainer {
 
     public ContainerCraftAmount(final InventoryPlayer ip, final ITerminalHost te) {
         super(ip, te);
-
-        this.craftingItem = new SlotInaccessible(new AppEngInternalInventory(null, 1), 0, 34, 53);
+        this.craftingItem = new SlotInaccessible(new AppEngInternalInventory(null, 1), 0, 21, 17);
         this.addSlotToContainer(this.getCraftingItem());
     }
 

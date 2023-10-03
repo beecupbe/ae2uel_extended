@@ -124,19 +124,23 @@ public abstract class PartSharedFluidBus extends PartUpgradeable implements IGri
         double amount = this.getChannel().transferFactor();
         switch (this.getInstalledUpgrades(Upgrades.SPEED)) {
             case 4:
-                amount = amount * 1.5;
+                amount = amount * 8;
             case 3:
-                amount = amount * 2;
+                amount = amount * 6;
             case 2:
                 amount = amount * 4;
             case 1:
-                amount = amount * 8;
+                amount = amount * 2;
             case 0:
             default:
                 return MathHelper.floor(amount);
         }
     }
-
+    protected int calculateAmountToSendImp() {
+        double amount = this.getChannel().transferFactor();
+                amount += amount * 1024;
+                return MathHelper.floor(amount);
+        }
     @Override
     public void readFromNBT(NBTTagCompound extra) {
         super.readFromNBT(extra);

@@ -21,9 +21,7 @@ package appeng.integration.modules.jei;
 
 import appeng.api.AEApi;
 import appeng.api.config.CondenserOutput;
-import appeng.api.definitions.IDefinitions;
-import appeng.api.definitions.IItemDefinition;
-import appeng.api.definitions.IMaterials;
+import appeng.api.definitions.*;
 import appeng.api.features.IGrinderRecipe;
 import appeng.api.features.IInscriberRecipe;
 import appeng.client.gui.AEGuiHandler;
@@ -96,6 +94,8 @@ public class JEIPlugin implements IModPlugin {
 
     private void registerDescriptions(IDefinitions definitions, IModRegistry registry) {
         IMaterials materials = definitions.materials();
+        IBlocks blocks = definitions.blocks();
+        IParts parts = definitions.parts();
 
         final String message;
         if (AEConfig.instance().isFeatureEnabled(AEFeature.CERTUS_QUARTZ_WORLD_GEN)) {
@@ -125,6 +125,45 @@ public class JEIPlugin implements IModPlugin {
             this.addDescription(registry, materials.purifiedFluixCrystal(), GuiText.inWorldPurificationFluix.getLocal());
         }
 
+        //new
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.MOLECULAR_ASSEMBLERCREATIVE)) {
+            this.addDescription(registry, blocks.molecularAssemblerCreative(), GuiText.MACCreativeJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.MOLECULAR_ASSEMBLERIMP)) {
+            this.addDescription(registry, blocks.molecularAssemblerImp(), GuiText.MACImpJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.ME_DRIVE_IMP)) {
+            this.addDescription(registry, blocks.driveImp(), GuiText.DriveImpJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.IMPORT_BUSIMP)) {
+            this.addDescription(registry, parts.importBusImp(), GuiText.ImpBusesJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.EXPORT_BUSIMP)) {
+            this.addDescription(registry, parts.exportBusImp(), GuiText.ImpBusesJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.FLUID_EXPORT_BUSIMP)) {
+            this.addDescription(registry, parts.fluidExportBusImp(), GuiText.ImpBusesFluidJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.FLUID_IMPORT_BUSIMP)) {
+            this.addDescription(registry, parts.fluidImportBusImp(), GuiText.ImpBusesFluidJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.INTERFACEIMP)) {
+            this.addDescription(registry, blocks.ifaceImp(), GuiText.InterfaceImpJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.INTERFACEADV)) {
+            this.addDescription(registry, blocks.ifaceAdv(), GuiText.InterfaceAdvJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.INTERFACEPER)) {
+            this.addDescription(registry, blocks.ifacePer(), GuiText.InterfacePerJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.INTERFACEPATT)) {
+            this.addDescription(registry, blocks.ifacePatterns(), GuiText.InterfacePattJEI.getLocal());
+        }
+        if (AEConfig.instance().isFeatureEnabled(AEFeature.IO_PORTIMP)) {
+            this.addDescription(registry, blocks.iOPortImp(), GuiText.IOImpJEI.getLocal());
+        }
+
+        this.addDescription(registry, blocks.craftingAcceleratorCreative(), GuiText.CreativeCoProcessorJEI.getLocal());
     }
 
     private void addDescription(IModRegistry registry, IItemDefinition itemDefinition, String message) {

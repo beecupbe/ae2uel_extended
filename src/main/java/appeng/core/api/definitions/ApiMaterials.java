@@ -444,6 +444,7 @@ public final class ApiMaterials implements IMaterials {
         return this.cardSpeed;
     }
 
+
     @Override
     public IItemDefinition cardCapacity() {
         return this.cardCapacity;

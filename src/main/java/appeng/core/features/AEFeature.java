@@ -78,6 +78,10 @@ public enum AEFeature {
     CHANNELS("Channels", Constants.CATEGORY_NETWORK_FEATURES),
 
     INTERFACE("Interface", Constants.CATEGORY_NETWORK_BUSES),
+    INTERFACEIMP("InterfaceIMP", Constants.CATEGORY_NETWORK_BUSES),
+    INTERFACEADV("InterfaceADV", Constants.CATEGORY_NETWORK_BUSES),
+    INTERFACEPER("InterfacePER", Constants.CATEGORY_NETWORK_BUSES),
+    INTERFACEPATT("InterfacePATTERNS", Constants.CATEGORY_NETWORK_BUSES),
     FLUID_INTERFACE("FluidInterface", Constants.CATEGORY_NETWORK_BUSES),
     LEVEL_EMITTER("LevelEmitter", Constants.CATEGORY_NETWORK_BUSES),
     FLUID_LEVEL_EMITTER("FluidLevelEmitter", Constants.CATEGORY_NETWORK_BUSES),
@@ -92,9 +96,13 @@ public enum AEFeature {
     IDENTITY_ANNIHILATION_PLANE("IdentityAnnihilationPlane", Constants.CATEGORY_NETWORK_BUSES),
     FLUID_ANNIHILATION_PLANE("FluidAnnihilationPlane", Constants.CATEGORY_NETWORK_BUSES),
     IMPORT_BUS("ImportBus", Constants.CATEGORY_NETWORK_BUSES),
+    IMPORT_BUSIMP("ImportBusIMP", Constants.CATEGORY_NETWORK_BUSES),
     FLUID_IMPORT_BUS("FluidImportBus", Constants.CATEGORY_NETWORK_BUSES),
+    FLUID_IMPORT_BUSIMP("FluidImportBusIMP", Constants.CATEGORY_NETWORK_BUSES),
     EXPORT_BUS("ExportBus", Constants.CATEGORY_NETWORK_BUSES),
+    EXPORT_BUSIMP("ExportBusIMP", Constants.CATEGORY_NETWORK_BUSES),
     FLUID_EXPORT_BUS("FluidExportBus", Constants.CATEGORY_NETWORK_BUSES),
+    FLUID_EXPORT_BUSIMP("FluidExportBusIMP", Constants.CATEGORY_NETWORK_BUSES),
     STORAGE_BUS("StorageBus", Constants.CATEGORY_NETWORK_BUSES),
     FLUID_STORAGE_BUS("FluidStorageBus", Constants.CATEGORY_NETWORK_BUSES),
     PART_CONVERSION_MONITOR("PartConversionMonitor", Constants.CATEGORY_NETWORK_BUSES),
@@ -121,6 +129,8 @@ public enum AEFeature {
     COVERED_CABLES("CoveredCables", Constants.CATEGORY_CABLES),
     SMART_CABLES("SmartCables", Constants.CATEGORY_CABLES),
     DENSE_CABLES("DenseCables", Constants.CATEGORY_CABLES),
+    CREATIVE_CABLES("CreativeCables", Constants.CATEGORY_CABLES),
+
     //shhh!
     //DENSE_X64_CABLES("X64Cables", Constants.CATEGORY_CABLES),
     //DENSE_X128_CABLES("X128Cables", Constants.CATEGORY_CABLES),
@@ -172,6 +182,8 @@ public enum AEFeature {
     PAINT_BALLS("PaintBalls", Constants.CATEGORY_TOOLS),
 
     MOLECULAR_ASSEMBLER("MolecularAssembler", Constants.CATEGORY_CRAFTING_FEATURES),
+    MOLECULAR_ASSEMBLERIMP("MolecularAssemblerIMP", Constants.CATEGORY_CRAFTING_FEATURES),
+    MOLECULAR_ASSEMBLERCREATIVE("MolecularAssemblerCreative", Constants.CATEGORY_CRAFTING_FEATURES),
     PATTERNS("Patterns", Constants.CATEGORY_CRAFTING_FEATURES),
     CRAFTING_CPU("CraftingCPU", Constants.CATEGORY_CRAFTING_FEATURES),
 

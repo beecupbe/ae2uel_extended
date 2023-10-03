@@ -61,6 +61,10 @@ public enum GridFlags
 	X64_CAPACITY,
 	X128_CAPACITY,
 	X256_CAPACITY,
+	/**
+	 * :thinking:
+	 */
+	CREATIVE_CAPACITY,
 
 	/**
 	 * This block is part of a multiblock, used in conjunction with REQUIRE_CHANNEL, and {@link IGridMultiblock} see

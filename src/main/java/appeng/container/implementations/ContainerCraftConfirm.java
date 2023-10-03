@@ -79,7 +79,7 @@ public class ContainerCraftConfirm extends AEBaseContainer {
     @GuiSync(1)
     public long cpuBytesAvail;
     @GuiSync(2)
-    public int cpuCoProcessors;
+    public long cpuCoProcessors;
     @GuiSync(3)
     public boolean autoStart = false;
     @GuiSync(4)
@@ -295,17 +295,11 @@ public class ContainerCraftConfirm extends AEBaseContainer {
 
         if (ah instanceof PartTerminal) {
             originalGui = GuiBridge.GUI_ME;
-        }
-
-        if (ah instanceof PartCraftingTerminal) {
+        } else if (ah instanceof PartCraftingTerminal) {
             originalGui = GuiBridge.GUI_CRAFTING_TERMINAL;
-        }
-
-        if (ah instanceof PartPatternTerminal) {
+        } else if (ah instanceof PartPatternTerminal) {
             originalGui = GuiBridge.GUI_PATTERN_TERMINAL;
-        }
-
-        if (ah instanceof PartExpandedProcessingPatternTerminal) {
+        } else if (ah instanceof PartExpandedProcessingPatternTerminal) {
             originalGui = GuiBridge.GUI_EXPANDED_PROCESSING_PATTERN_TERMINAL;
         }
 
@@ -388,11 +382,11 @@ public class ContainerCraftConfirm extends AEBaseContainer {
         this.cpuBytesAvail = cpuBytesAvail;
     }
 
-    public int getCpuCoProcessors() {
+    public long getCpuCoProcessors() {
         return this.cpuCoProcessors;
     }
 
-    private void setCpuCoProcessors(final int cpuCoProcessors) {
+    private void setCpuCoProcessors(final long cpuCoProcessors) {
         this.cpuCoProcessors = cpuCoProcessors;
     }
 

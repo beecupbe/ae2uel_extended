@@ -67,10 +67,7 @@ import appeng.entity.EntityTinyTNTPrimed;
 import appeng.fluids.block.BlockFluidInterface;
 import appeng.fluids.tile.TileFluidInterface;
 import appeng.hooks.DispenserBehaviorTinyTNT;
-import appeng.tile.crafting.TileCraftingMonitorTile;
-import appeng.tile.crafting.TileCraftingStorageTile;
-import appeng.tile.crafting.TileCraftingTile;
-import appeng.tile.crafting.TileMolecularAssembler;
+import appeng.tile.crafting.*;
 import appeng.tile.grindstone.TileCrank;
 import appeng.tile.grindstone.TileGrinder;
 import appeng.tile.misc.*;
@@ -132,6 +129,10 @@ public final class ApiBlocks implements IBlocks {
     private final ITileDefinition driveImp;
     private final ITileDefinition chest;
     private final ITileDefinition iface;
+    private final ITileDefinition ifaceImp;
+    private final ITileDefinition ifaceAdv;
+    private final ITileDefinition ifacePer;
+    private final ITileDefinition ifacePatterns;
     private final ITileDefinition fluidIface;
     private final ITileDefinition cellWorkbench;
     private final ITileDefinition iOPort;
@@ -174,6 +175,8 @@ public final class ApiBlocks implements IBlocks {
 
     private final ITileDefinition craftingMonitor;
     private final ITileDefinition molecularAssembler;
+    private final ITileDefinition molecularAssemblerImp;
+    private final ITileDefinition molecularAssemblerCreative;
     private final ITileDefinition lightDetector;
     private final ITileDefinition paint;
     private final IBlockDefinition skyStoneStairs;
@@ -357,7 +360,7 @@ public final class ApiBlocks implements IBlocks {
                 .build();
 
         this.driveImp = registry.block("driveImp", BlockDriveImproved::new)
-                .features(AEFeature.STORAGE_CELLS, AEFeature.ME_DRIVE)
+                .features(AEFeature.STORAGE_CELLS, AEFeature.ME_DRIVE_IMP)
                 .tileEntity(new TileEntityDefinition(TileDriveImproved.class))
                 .useCustomItemModel()
                 .rendering(new DriveRendering())
@@ -373,6 +376,23 @@ public final class ApiBlocks implements IBlocks {
                 .features(AEFeature.INTERFACE)
                 .tileEntity(new TileEntityDefinition(TileInterface.class))
                 .build();
+        this.ifaceImp = registry.block("interfaceimp", BlockInterfaceImp::new)
+                .features(AEFeature.INTERFACE)
+                .tileEntity(new TileEntityDefinition(TileInterfaceImp.class))
+                .build();
+        this.ifaceAdv = registry.block("interfaceadv", BlockInterfaceAdv::new)
+                .features(AEFeature.INTERFACE)
+                .tileEntity(new TileEntityDefinition(TileInterfaceAdv.class))
+                .build();
+        this.ifacePer = registry.block("interfaceper", BlockInterfacePer::new)
+                .features(AEFeature.INTERFACE)
+                .tileEntity(new TileEntityDefinition(TileInterfacePer.class))
+                .build();
+        this.ifacePatterns = registry.block("interface_patterns", BlockInterfacePatterns::new)
+                .features(AEFeature.INTERFACE)
+                .tileEntity(new TileEntityDefinition(TileInterfacePatt.class))
+                .build();
+
         this.fluidIface = registry.block("fluid_interface", BlockFluidInterface::new)
                 .features(AEFeature.FLUID_INTERFACE)
                 .tileEntity(new TileEntityDefinition(TileFluidInterface.class))
@@ -573,6 +593,16 @@ public final class ApiBlocks implements IBlocks {
                 .features(AEFeature.MOLECULAR_ASSEMBLER)
                 .tileEntity(new TileEntityDefinition(TileMolecularAssembler.class))
                 .build();
+        this.molecularAssemblerImp = registry.block("molecular_assemblerimp", BlockMolecularAssemblerImp::new)
+                .features(AEFeature.MOLECULAR_ASSEMBLERIMP)
+                .tileEntity(new TileEntityDefinition(TileMolecularAssemblerImp.class))
+                .build();
+        this.molecularAssemblerCreative = registry.block("molecular_assembler_creative", BlockMolecularAssemblerCreative::new)
+                .features(AEFeature.MOLECULAR_ASSEMBLERCREATIVE)
+                .tileEntity(new TileEntityDefinition(TileMolecularAssemblerCreative.class))
+                .build();
+
+
         this.lightDetector = registry.block("light_detector", BlockLightDetector::new)
                 .features(AEFeature.LIGHT_DETECTOR)
                 .tileEntity(new TileEntityDefinition(TileLightDetector.class))
@@ -700,8 +730,6 @@ public final class ApiBlocks implements IBlocks {
                     }
                 })
                 .build();
-
-        Verify.verify(stairs.maybeBlock().isPresent());
 
         return stairs;
     }
@@ -956,6 +984,23 @@ public final class ApiBlocks implements IBlocks {
     public ITileDefinition iface() {
         return this.iface;
     }
+    @Override
+    public ITileDefinition ifaceImp() {
+        return this.ifaceImp;
+    }
+    @Override
+    public ITileDefinition ifaceAdv() {
+        return this.ifaceAdv;
+    }
+    @Override
+    public ITileDefinition ifacePer() {
+        return this.ifacePer;
+    }
+    @Override
+    public ITileDefinition ifacePatterns() {
+        return this.ifacePatterns;
+    }
+
 
     @Override
     public ITileDefinition fluidIface() {
@@ -1126,6 +1171,16 @@ public final class ApiBlocks implements IBlocks {
     public ITileDefinition molecularAssembler() {
         return this.molecularAssembler;
     }
+    @Override
+    public ITileDefinition molecularAssemblerImp() {
+        return this.molecularAssemblerImp;
+    }
+
+    @Override
+    public ITileDefinition molecularAssemblerCreative() {
+        return this.molecularAssemblerCreative;
+    }
+
 
     @Override
     public ITileDefinition lightDetector() {

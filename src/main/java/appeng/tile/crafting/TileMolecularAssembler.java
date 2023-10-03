@@ -101,7 +101,6 @@ public class TileMolecularAssembler extends AENetworkInvTile implements IUpgrade
     private boolean isAwake = false;
     private boolean forcePlan = false;
     private boolean reboot = true;
-    private boolean fastTick;
     private final IActionSource mySrc = new MachineSource(this);
 
     public TileMolecularAssembler() {
@@ -464,30 +463,25 @@ public class TileMolecularAssembler extends AENetworkInvTile implements IUpgrade
         switch (this.upgrades.getInstalledUpgrades(Upgrades.SPEED)) {
             case 0:
                 this.progress += this.userPower(ticksSinceLastCall, speed = 10, 1.0);
-                fastTick = false;
                 break;
             case 1:
                 this.progress += this.userPower(ticksSinceLastCall, speed = 15, 1.3);
-                fastTick = false;
                 break;
             case 2:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 25, 1.7);
-                fastTick = false;
+                this.progress += this.userPower(ticksSinceLastCall, speed = 20, 1.7);
                 break;
             case 3:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 50, 2.0);
-                fastTick = false;
+                this.progress += this.userPower(ticksSinceLastCall, speed = 27, 2.0);
                 break;
             case 4:
-                this.progress += this.userPower(ticksSinceLastCall, speed = 100, 2.5);
-                fastTick = false;
+                this.progress += this.userPower(ticksSinceLastCall, speed = 35, 2.5);
                 break;
             case 5:
-                fastTick = true;
+                this.progress += this.userPower(ticksSinceLastCall, speed = 50, 2.5);
                 break;
         }
 
-        if ((this.progress >= 100 || this.fastTick)) {
+        if ((this.progress >= 100)) {
             for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
                 this.craftingInv.setInventorySlotContents(x, this.gridInv.getStackInSlot(x));
             }
@@ -500,12 +494,6 @@ public class TileMolecularAssembler extends AENetworkInvTile implements IUpgrade
                 for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
                     this.gridInv.setStackInSlot(x, Platform.getContainerItem(this.craftingInv.getStackInSlot(x)));
                 }
-
-                //if (ItemHandlerUtil.isEmpty(this.patternInv)) {
-                //    this.forcePlan = false;
-                //    this.myPlan = null;
-                //    this.pushDirection = AEPartLocation.INTERNAL;
-                //}
 
                 this.ejectHeldItems();
 
