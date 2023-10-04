@@ -1,7 +1,7 @@
 # Japanese translate by GTModpackTeam
 # 日本語ローカライズ担当： GTModpackTeam
-# Corresponding Version: v0.55.22-0.2.2-rv6-stable-7
-# 対応バージョン: v0.55.22-0.2.2-rv6-stable-7
+# Corresponding Version: v0.55.23b-0.3.1.4-rv6-stable-7
+# 対応バージョン: v0.55.23b-0.3.1.4-rv6-stable-7
 
 // Blocks
 tile.appliedenergistics2.cable_bus.name=AE2ケーブル または バス
@@ -30,6 +30,10 @@ tile.appliedenergistics2.io_port.name=ME入出力ポート
 tile.appliedenergistics2.io_portimp.name=ME発展型入出力ポート
 tile.appliedenergistics2.inscriber.name=刻印機
 tile.appliedenergistics2.interface.name=MEインターフェース
+tile.appliedenergistics2.interfaceimp.name=ME発展型転送インターフェース
+tile.appliedenergistics2.interfaceadv.name=ME精鋭型転送インターフェース
+tile.appliedenergistics2.interfaceper.name=ME究極型転送インターフェース
+tile.appliedenergistics2.interface_patterns.name=MEパターンインターフェース
 tile.appliedenergistics2.fluid_interface.name=ME液体インターフェース
 tile.appliedenergistics2.quantum_link.name=ME量子リンクチャンバー
 tile.appliedenergistics2.quantum_ring.name=ME量子フィールドリンク
@@ -84,6 +88,8 @@ tile.appliedenergistics2.crafting_accelerator_creative.name=§4Creative§r ク�
 
 tile.appliedenergistics2.crafting_unit.name=クラフティングユニット
 tile.appliedenergistics2.molecular_assembler.name=分子組立機
+tile.appliedenergistics2.molecular_assemblerimp.name=発展型分子組立機
+tile.appliedenergistics2.molecular_assembler_creative.name=クリエイティブ分子組立機
 
 // Stairs
 tile.appliedenergistics2.fluix_stairs.name=フルーシュの階段
@@ -189,6 +195,8 @@ gui.appliedenergistics2.ExportBus=ME出力バス
 gui.appliedenergistics2.ExportBusFluids=ME液体出力バス
 gui.appliedenergistics2.GrindStone=手動粉砕機
 gui.appliedenergistics2.ImportBus=ME入力バス
+gui.appliedenergistics2.ImportImp=ME発展型入力バス
+gui.appliedenergistics2.ExportImp=ME発展型出力バス
 gui.appliedenergistics2.ImportBusFluids=ME液体入力バス
 gui.appliedenergistics2.Interface=MEインターフェース
 gui.appliedenergistics2.FluidInterface=ME液体インターフェース
@@ -285,6 +293,26 @@ gui.appliedenergistics2.SmallFontCraft=クラフト
 gui.appliedenergistics2.LargeFontCraft=+
 gui.appliedenergistics2.Renamer=カスタム名称: (Enterで設定)
 gui.appliedenergistics2.Nothing=なし
+gui.appliedenergistics2.ShiftForDetails=シフトキー長押しで詳細を確認
+gui.appliedenergistics2.ClearAll=リセット
+gui.appliedenergistics2.InterfaceImp=ME発展型転送インターフェース
+gui.appliedenergistics2.InterfaceAdv=ME精鋭型転送インターフェース
+gui.appliedenergistics2.InterfacePer=ME究極型転送インターフェース
+gui.appliedenergistics2.InterfacePatt=MEパターンインターフェース
+gui.appliedenergistics2.IOBusesImp=ME発展型入力/出力バス
+gui.appliedenergistics2.IOBusesFluidsImp=ME発展型液体入力/出力バス
+
+gui.appliedenergistics2.CreativeCoProcessorJEI=並列処理ユニットのクリエイティブ版で、取り付けるとCoプロセッサの数が2,147,483,646個に増加する。またプロセッサ1基につき1つ以上設置することは非推奨です。
+gui.appliedenergistics2.DriveImpJEI=MEドライブの発展版で、最大30個のストレージセルを搭載することが可能。
+gui.appliedenergistics2.IOImpJEI=ME IOポートの発展版で、最大10,485,760のアイテムを毎秒転送することが可能。
+gui.appliedenergistics2.InterfaceImpJEI=MEインターフェイスの発展版で、アイテム配送のスロットが増加(18スロットから9スロットに)。
+gui.appliedenergistics2.InterfaceAdvJEI=更に多くのスロットを備えたME転送インターフェースの精鋭版(18スロットから27スロットに)。
+gui.appliedenergistics2.InterfacePerJEI=最大スロット数を備えたME転送インターフェースの究極版(18スロットから36スロットに)。
+gui.appliedenergistics2.InterfacePattJEI=最大72のエンコード済みパターンを保存できるMEインターフェイスの発展版。
+gui.appliedenergistics2.ImpBusesJEI=バスの発展版で、最大20,480のアイテムを毎秒転送することが可能。
+gui.appliedenergistics2.MACCreativeJEI=分子組立機のクリエイティブ版で、設定ファイルで指定した速さを掛けて動作することが可能。
+gui.appliedenergistics2.MACImpJEI=分子組立機の発展版で、並列処理ユニットを必要無しに従来の2倍の速さで動作することが可能。
+gui.appliedenergistics2.ImpBusesFluidJEI=液体バスの発展版で、最大128倍の流体を転送することが可能。
 
 // GUI Tooltips
 gui.tooltips.appliedenergistics2.Stash=アイテムを保存
@@ -596,6 +624,7 @@ item.appliedenergistics2.multi_part.cable_covered.name=MEカバーケーブル
 item.appliedenergistics2.multi_part.cable_x64.name=ME発展型高密度ケーブル
 item.appliedenergistics2.multi_part.cable_x128.name=ME精鋭型高密度ケーブル
 item.appliedenergistics2.multi_part.cable_x256.name=ME究極型高密度ケーブル
+item.appliedenergistics2.multi_part.cable_creative.name=MEクリエイティブケーブル
 
 item.appliedenergistics2.multi_part.cable_glass.name=MEガラスケーブル
 item.appliedenergistics2.multi_part.cable_smart.name=MEスマートケーブル
@@ -612,7 +641,11 @@ item.appliedenergistics2.multi_part.fluid_export_bus.name=ME液体出力バス
 item.appliedenergistics2.multi_part.formation_plane.name=ME形成プレーン
 item.appliedenergistics2.multi_part.fluid_formation_plane.name=ME液体形成プレーン
 item.appliedenergistics2.multi_part.import_bus.name=ME入力バス
+item.appliedenergistics2.multi_part.import_busimp.name=ME発展型入力バス
+item.appliedenergistics2.multi_part.export_busimp.name=ME発展型出力バス
 item.appliedenergistics2.multi_part.fluid_import_bus.name=ME液体入力バス
+item.appliedenergistics2.multi_part.fluid_import_busimp.name=ME発展型液体入力バス
+item.appliedenergistics2.multi_part.fluid_export_busimp.name=ME発展型液体出力バス
 item.appliedenergistics2.multi_part.interface.name=MEインターフェース
 item.appliedenergistics2.multi_part.fluid_interface.name=ME液体インターフェース
 item.appliedenergistics2.multi_part.level_emitter.name=MEレベルエミッタ
