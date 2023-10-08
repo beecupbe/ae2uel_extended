@@ -171,8 +171,8 @@ public class ToolEntropyManipulator extends AEBasePoweredItem implements IBlockT
 
     @Override
     public boolean hitEntity(final ItemStack item, final EntityLivingBase target, final EntityLivingBase hitter) {
-        if (this.getAECurrentPower(item) > 1600) {
-            this.extractAEPower(item, 1600, Actionable.MODULATE);
+        if (this.getAECurrentPower(item) > 160) {
+            this.extractAEPower(item, 160, Actionable.MODULATE);
             target.setFire(8);
         }
 
@@ -206,7 +206,7 @@ public class ToolEntropyManipulator extends AEBasePoweredItem implements IBlockT
 
     @Override
     public EnumActionResult onItemUse(ItemStack item, EntityPlayer p, World w, BlockPos pos, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
-        if (this.getAECurrentPower(item) > 1600) {
+        if (this.getAECurrentPower(item) > 160) {
             if (!p.canPlayerEdit(pos, side, item)) {
                 return EnumActionResult.FAIL;
             }
@@ -216,7 +216,7 @@ public class ToolEntropyManipulator extends AEBasePoweredItem implements IBlockT
 
             if (p.isSneaking()) {
                 if (this.canCool(state)) {
-                    this.extractAEPower(item, 1600, Actionable.MODULATE);
+                    this.extractAEPower(item, 160, Actionable.MODULATE);
                     this.cool(state, w, pos);
                     return EnumActionResult.SUCCESS;
                 }
@@ -234,7 +234,7 @@ public class ToolEntropyManipulator extends AEBasePoweredItem implements IBlockT
                 }
 
                 if (this.canHeat(state)) {
-                    this.extractAEPower(item, 1600, Actionable.MODULATE);
+                    this.extractAEPower(item, 160, Actionable.MODULATE);
                     this.heat(state, w, pos);
                     return EnumActionResult.SUCCESS;
                 }
@@ -263,7 +263,7 @@ public class ToolEntropyManipulator extends AEBasePoweredItem implements IBlockT
                 }
 
                 if (hasFurnaceable && canFurnaceable) {
-                    this.extractAEPower(item, 1600, Actionable.MODULATE);
+                    this.extractAEPower(item, 160, Actionable.MODULATE);
                     final InWorldToolOperationResult or = InWorldToolOperationResult.getBlockOperationResult(out.toArray(new ItemStack[out.size()]));
                     w.playSound(p, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.PLAYERS, 1.0F,
                             itemRand.nextFloat() * 0.4F + 0.8F);
@@ -287,7 +287,7 @@ public class ToolEntropyManipulator extends AEBasePoweredItem implements IBlockT
                     }
 
                     if (w.isAirBlock(offsetPos)) {
-                        this.extractAEPower(item, 1600, Actionable.MODULATE);
+                        this.extractAEPower(item, 100, Actionable.MODULATE);
                         w.playSound(p, offsetPos.getX() + 0.5D, offsetPos.getY() + 0.5D, offsetPos.getZ() + 0.5D, SoundEvents.ITEM_FLINTANDSTEEL_USE,
                                 SoundCategory.PLAYERS, 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
                         w.setBlockState(offsetPos, Blocks.FIRE.getDefaultState());

@@ -13,7 +13,7 @@
                 },
                 {
                     "type": "appliedenergistics2:material_exists",
-                    "material": "material.cell1k_part"
+                    "material": "material.cell16mb_part"
                 }
             ]
         }
@@ -34,7 +34,7 @@
         },
         "b": {
             "type": "appliedenergistics2:part",
-            "part": "material.cell1k_part"
+            "part": "material.cell16mb_part"
         }
     }
 }

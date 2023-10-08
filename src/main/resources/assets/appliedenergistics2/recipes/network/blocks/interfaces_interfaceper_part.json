@@ -1,0 +1,18 @@
+{
+    "conditions": [
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:interfaceper"
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.interfaceper"
+    },
+    "type": "appliedenergistics2:part_shapeless",
+    "ingredients": [
+        {
+            "item": "appliedenergistics2:interfaceper"
+        }
+    ]
+}

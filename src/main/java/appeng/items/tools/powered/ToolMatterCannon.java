@@ -94,7 +94,7 @@ public class ToolMatterCannon extends AEBasePoweredItem implements IStorageCell<
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(final World w, final EntityPlayer p, final @Nullable EnumHand hand) {
-        if (this.getAECurrentPower(p.getHeldItem(hand)) > 1600) {
+        if (this.getAECurrentPower(p.getHeldItem(hand)) > 160) {
             int shots = 1;
 
             final CellUpgrades cu = (CellUpgrades) this.getUpgradesInventory(p.getHeldItem(hand));
@@ -115,7 +115,7 @@ public class ToolMatterCannon extends AEBasePoweredItem implements IStorageCell<
                     shots = Math.min(shots, (int) req.getStackSize());
                     for (int sh = 0; sh < shots; sh++) {
                         IAEItemStack aeAmmo = req.copy();
-                        this.extractAEPower(p.getHeldItem(hand), 1600, Actionable.MODULATE);
+                        this.extractAEPower(p.getHeldItem(hand), 160, Actionable.MODULATE);
 
                         if (Platform.isClient()) {
                             return new ActionResult<>(EnumActionResult.SUCCESS, p.getHeldItem(hand));
@@ -389,12 +389,12 @@ public class ToolMatterCannon extends AEBasePoweredItem implements IStorageCell<
 
     @Override
     public int getBytes(final ItemStack cellItem) {
-        return 512;
+        return 1024;
     }
 
     @Override
     public int getBytesPerType(final ItemStack cellItem) {
-        return 8;
+        return 1;
     }
 
     @Override
@@ -424,7 +424,7 @@ public class ToolMatterCannon extends AEBasePoweredItem implements IStorageCell<
 
     @Override
     public double getIdleDrain() {
-        return 0.5;
+        return 0.1;
     }
 
     @Override

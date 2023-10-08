@@ -122,7 +122,7 @@ public class ToolColorApplicator extends AEBasePoweredItem implements IStorageCe
                 return EnumActionResult.FAIL;
             }
 
-            final double powerPerUse = 100;
+            final double powerPerUse = 16;
             if (!paintBall.isEmpty() && paintBall.getItem() instanceof ItemSnowball) {
                 final TileEntity te = w.getTileEntity(pos);
                 // clean cables.

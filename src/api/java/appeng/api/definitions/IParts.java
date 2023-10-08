@@ -68,6 +68,10 @@ public interface IParts {
     IItemDefinition exportBusImp();
 
     IItemDefinition iface();
+    IItemDefinition ifaceImp();
+    IItemDefinition ifaceAdv();
+    IItemDefinition ifacePer();
+    IItemDefinition ifacePatt();
 
     IItemDefinition fluidIface();
 

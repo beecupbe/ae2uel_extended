@@ -149,15 +149,19 @@ public class JEIPlugin implements IModPlugin {
         }
         if (AEConfig.instance().isFeatureEnabled(AEFeature.INTERFACEIMP)) {
             this.addDescription(registry, blocks.ifaceImp(), GuiText.InterfaceImpJEI.getLocal());
+            this.addDescription(registry, parts.ifaceImp(), GuiText.InterfaceImpJEI.getLocal());
         }
         if (AEConfig.instance().isFeatureEnabled(AEFeature.INTERFACEADV)) {
             this.addDescription(registry, blocks.ifaceAdv(), GuiText.InterfaceAdvJEI.getLocal());
+            this.addDescription(registry, parts.ifaceAdv(), GuiText.InterfaceAdvJEI.getLocal());
         }
         if (AEConfig.instance().isFeatureEnabled(AEFeature.INTERFACEPER)) {
             this.addDescription(registry, blocks.ifacePer(), GuiText.InterfacePerJEI.getLocal());
+            this.addDescription(registry, parts.ifacePer(), GuiText.InterfacePerJEI.getLocal());
         }
         if (AEConfig.instance().isFeatureEnabled(AEFeature.INTERFACEPATT)) {
             this.addDescription(registry, blocks.ifacePatterns(), GuiText.InterfacePattJEI.getLocal());
+            this.addDescription(registry, parts.ifacePatt(), GuiText.InterfacePattJEI.getLocal());
         }
         if (AEConfig.instance().isFeatureEnabled(AEFeature.IO_PORTIMP)) {
             this.addDescription(registry, blocks.iOPortImp(), GuiText.IOImpJEI.getLocal());

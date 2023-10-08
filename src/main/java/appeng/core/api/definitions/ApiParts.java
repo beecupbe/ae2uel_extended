@@ -54,6 +54,10 @@ public final class ApiParts implements IParts {
     private final IItemDefinition exportBus;
     private final IItemDefinition exportBusImp;
     private final IItemDefinition iface;
+    private final IItemDefinition ifaceImp;
+    private final IItemDefinition ifaceAdv;
+    private final IItemDefinition ifacePer;
+    private final IItemDefinition ifacePatt;
     private final IItemDefinition fluidIface;
     private final IItemDefinition levelEmitter;
     private final IItemDefinition fluidLevelEmitter;
@@ -105,11 +109,6 @@ public final class ApiParts implements IParts {
         this.cableGlass = constructColoredDefinition(itemPart, PartType.CABLE_GLASS);
         this.cableDenseCovered = constructColoredDefinition(itemPart, PartType.CABLE_DENSE_COVERED);
         this.cableDenseSmart = constructColoredDefinition(itemPart, PartType.CABLE_DENSE_SMART);
-
-        // this.lumenCableSmart = Optional.absent(); // has yet to be implemented, no PartType defined for it yet
-        // this.lumenCableCovered = Optional.absent(); // has yet to be implemented, no PartType defined for it yet
-        // this.lumenCableGlass = Optional.absent(); // has yet to be implemented, no PartType defined for it yet
-        // this.lumenCableDense = Optional.absent(); // has yet to be implemented, no PartType defined for it yet
         this.quartzFiber = new DamagedItemDefinition("part.quartz_fiber", itemPart.createPart(PartType.QUARTZ_FIBER));
         this.toggleBus = new DamagedItemDefinition("part.toggle_bus", itemPart.createPart(PartType.TOGGLE_BUS));
         this.invertedToggleBus = new DamagedItemDefinition("part.toggle_bus.inverted", itemPart.createPart(PartType.INVERTED_TOGGLE_BUS));
@@ -122,6 +121,10 @@ public final class ApiParts implements IParts {
         this.exportBusImp = new DamagedItemDefinition("part.bus.exportimp", itemPart.createPart(PartType.EXPORT_BUSIMP));
 
         this.iface = new DamagedItemDefinition("part.interface", itemPart.createPart(PartType.INTERFACE));
+        this.ifaceImp = new DamagedItemDefinition("part.interfaceimp", itemPart.createPart(PartType.INTERFACEIMP));
+        this.ifaceAdv = new DamagedItemDefinition("part.interfaceadv", itemPart.createPart(PartType.INTERFACEADV));
+        this.ifacePer = new DamagedItemDefinition("part.interfaceper", itemPart.createPart(PartType.INTERFACEPER));
+        this.ifacePatt = new DamagedItemDefinition("part.interfacepatt", itemPart.createPart(PartType.INTERFACEPATT));
         this.fluidIface = new DamagedItemDefinition("part.fluid_interface", itemPart.createPart(PartType.FLUID_INTERFACE));
         this.levelEmitter = new DamagedItemDefinition("part.level_emitter", itemPart.createPart(PartType.LEVEL_EMITTER));
         this.fluidLevelEmitter = new DamagedItemDefinition("part.fluid_level_emitter", itemPart.createPart(PartType.FLUID_LEVEL_EMITTER));
@@ -138,8 +141,6 @@ public final class ApiParts implements IParts {
         this.p2PTunnelFE = new DamagedItemDefinition("part.tunnel.fe", itemPart.createPart(PartType.P2P_TUNNEL_FE));
         this.p2PTunnelGTEU = new DamagedItemDefinition("part.tunnel.gteu", itemPart.createPart(PartType.P2P_TUNNEL_GTEU));
         this.p2PTunnelLight = new DamagedItemDefinition("part.tunnel.light", itemPart.createPart(PartType.P2P_TUNNEL_LIGHT));
-        // this.p2PTunnelOpenComputers = new DamagedItemDefinition( itemMultiPart.createPart(
-        // PartType.P2PTunnelOpenComputers ) );
         this.cableAnchor = new DamagedItemDefinition("part.cable_anchor", itemPart.createPart(PartType.CABLE_ANCHOR));
         this.monitor = new DamagedItemDefinition("part.monitor", itemPart.createPart(PartType.MONITOR));
         this.semiDarkMonitor = new DamagedItemDefinition("part.monitor.semi_dark", itemPart.createPart(PartType.SEMI_DARK_MONITOR));
@@ -267,6 +268,26 @@ public final class ApiParts implements IParts {
     @Override
     public IItemDefinition exportBusImp() {
         return this.exportBusImp;
+    }
+
+    @Override
+    public IItemDefinition ifaceImp() {
+        return this.ifaceImp;
+    }
+
+    @Override
+    public IItemDefinition ifaceAdv() {
+        return this.ifaceAdv;
+    }
+
+    @Override
+    public IItemDefinition ifacePer() {
+        return this.ifacePer;
+    }
+
+    @Override
+    public IItemDefinition ifacePatt() {
+        return this.ifacePatt;
     }
 
     @Override

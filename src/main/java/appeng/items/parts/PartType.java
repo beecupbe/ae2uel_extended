@@ -207,6 +207,11 @@ public enum PartType {
     CONVERSION_MONITOR(420, "conversion_monitor", EnumSet.of(AEFeature.PART_CONVERSION_MONITOR), EnumSet.noneOf(IntegrationType.class), PartConversionMonitor.class),
 
     INTERFACE(440, "interface", EnumSet.of(AEFeature.INTERFACE), EnumSet.noneOf(IntegrationType.class), PartInterface.class),
+    INTERFACEIMP(620, "interfaceimp", EnumSet.of(AEFeature.INTERFACEIMP), EnumSet.noneOf(IntegrationType.class), PartInterfaceImp.class),
+    INTERFACEADV(621, "interfaceadv", EnumSet.of(AEFeature.INTERFACEADV), EnumSet.noneOf(IntegrationType.class), PartInterfaceAdv.class),
+    INTERFACEPER(622, "interfaceper", EnumSet.of(AEFeature.INTERFACEPER), EnumSet.noneOf(IntegrationType.class), PartInterfacePer.class),
+    INTERFACEPATT(623, "interfacepatt", EnumSet.of(AEFeature.INTERFACEPATT), EnumSet.noneOf(IntegrationType.class), PartInterfacePatt.class),
+
     FLUID_INTERFACE(441, "fluid_interface", EnumSet.of(AEFeature.FLUID_INTERFACE), EnumSet.noneOf(IntegrationType.class), PartFluidInterface.class),
 
     P2P_TUNNEL_ME(460, "p2p_tunnel_me", EnumSet.of(AEFeature.P2P_TUNNEL, AEFeature.P2P_TUNNEL_ME), EnumSet.noneOf(IntegrationType.class), PartP2PTunnelME.class, GuiText.METunnel) {
@@ -264,9 +269,6 @@ public enum PartType {
             return "p2p_tunnel";
         }
     },
-
-    // P2PTunnelOpenComputers( 468, EnumSet.of( AEFeature.P2PTunnel, AEFeature.P2PTunnelOpenComputers ), EnumSet.of(
-    // IntegrationType.OpenComputers ), PartP2POpenComputers.class, GuiText.OCTunnel ),
 
     INTERFACE_TERMINAL(480, "interface_terminal", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceTerminal.class),
 
