@@ -18,6 +18,7 @@ tile.appliedenergistics2.drive.name=ME Drive
 
 tile.appliedenergistics2.driveImp.name=Improved ME Drive
 
+tile.appliedenergistics2.crank_imp.name=Improved Wooden Crank
 tile.appliedenergistics2.energy_acceptor.name=Energy Acceptor
 tile.appliedenergistics2.grindstone.name=Quartz Grindstone
 tile.appliedenergistics2.matrix_frame.name=Matrix Frame
@@ -308,6 +309,7 @@ gui.appliedenergistics2.ImpBusesJEI=Improved version of the previous bus that ca
 gui.appliedenergistics2.MACCreativeJEI=Creative version of the Molecular assembler that can multiply crafted items by the number specified in the config file. (defaults to doubling)
 gui.appliedenergistics2.MACImpJEI=Improved version of the Molecular assembler that works twice as fast as its predecessor and does not require accelerators.
 gui.appliedenergistics2.ImpBusesFluidJEI=Improved version of the previous bus that can transfer 128 times more fluid per second.
+gui.appliedenergistics2.CrankImpJEI=Improved version of the wooden crank, which speeds up the operation of the quartz grindstone.
 
 // GUI Tooltips
 gui.tooltips.appliedenergistics2.Stash=Store Items

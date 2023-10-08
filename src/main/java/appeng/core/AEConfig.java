@@ -91,7 +91,7 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     private double spatialPowerMultiplier = 1250.0;
     // Grindstone
     private String[] grinderOres = Stream.of(ORES_VANILLA, ORES_AE, ORES_COMMON, ORES_MISC).flatMap(Stream::of).toArray(String[]::new);
-    private double oreDoublePercentage = 99.0;
+    private double oreDoublePercentage = 100.0;
     // Batteries
     private int wirelessTerminalBattery = 1600000;
     private int entropyManipulatorBattery = 200000;

@@ -369,7 +369,6 @@ dependencies {
 
     if (includeCommonDevEnvMods.toBoolean()) {
         implementation 'mezz.jei:jei_1.12.2:4.16.1.302'
-        implementation fileTree ('libs')
         //noinspection DependencyNotationArgument
         implementation rfg.deobf('curse.maven:top-245211:2667280') // TOP 1.4.28
     }

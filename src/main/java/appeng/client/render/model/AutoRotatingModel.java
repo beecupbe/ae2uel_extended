@@ -128,9 +128,11 @@ public class AutoRotatingModel implements IBakedModel, IResourceManagerReloadLis
 
     @Override
     public List<BakedQuad> getQuads(IBlockState state, EnumFacing side, long rand) {
-        if (!(state instanceof IExtendedBlockState extState)) {
+        if (!(state instanceof IExtendedBlockState)) {
             return this.parent.getQuads(state, side, rand);
         }
+
+        IExtendedBlockState extState = (IExtendedBlockState) state;
 
         EnumFacing forward = extState.getValue(AEBaseTileBlock.FORWARD);
         EnumFacing up = extState.getValue(AEBaseTileBlock.UP);

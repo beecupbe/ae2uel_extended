@@ -162,7 +162,7 @@ public class JEIPlugin implements IModPlugin {
         if (AEConfig.instance().isFeatureEnabled(AEFeature.IO_PORTIMP)) {
             this.addDescription(registry, blocks.iOPortImp(), GuiText.IOImpJEI.getLocal());
         }
-
+        this.addDescription(registry, blocks.crankImp(), GuiText.CrankImpJEI.getLocal());
         this.addDescription(registry, blocks.craftingAcceleratorCreative(), GuiText.CreativeCoProcessorJEI.getLocal());
     }
 

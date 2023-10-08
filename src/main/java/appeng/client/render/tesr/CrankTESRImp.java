@@ -21,6 +21,7 @@ package appeng.client.render.tesr;
 
 import appeng.client.render.FacingToRotation;
 import appeng.tile.grindstone.TileCrank;
+import appeng.tile.grindstone.TileCrankImp;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
@@ -38,10 +39,10 @@ import org.lwjgl.opengl.GL11;
  * normal model.
  */
 @SideOnly(Side.CLIENT)
-public class CrankTESR extends TileEntitySpecialRenderer<TileCrank> {
+public class CrankTESRImp extends TileEntitySpecialRenderer<TileCrankImp> {
 
     @Override
-    public void render(TileCrank te, double x, double y, double z, float partialTicks, int destroyStage, float p_render_10_) {
+    public void render(TileCrankImp te, double x, double y, double z, float partialTicks, int destroyStage, float p_render_10_) {
         // Most of this is blatantly copied from FastTESR
         Tessellator tessellator = Tessellator.getInstance();
         this.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);

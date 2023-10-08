@@ -23,7 +23,7 @@ import appeng.api.implementations.tiles.ICrankable;
 import appeng.block.AEBaseTileBlock;
 import appeng.core.stats.Stats;
 import appeng.tile.AEBaseTile;
-import appeng.tile.grindstone.TileCrank;
+import appeng.tile.grindstone.TileCrankImp;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -38,26 +38,25 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.FakePlayer;
 
 import javax.annotation.Nullable;
 
 
-public class BlockCrank extends AEBaseTileBlock {
+public class BlockCrankImp extends AEBaseTileBlock {
 
-    public BlockCrank() {
+    public BlockCrankImp() {
         super(Material.WOOD);
 
         this.setLightOpacity(0);
-        this.setHarvestLevel("axe", 0);
+        this.setHarvestLevel("axe", 1);
         this.setFullSize(this.setOpaque(false));
     }
 
     @Override
     public boolean onActivated(final World w, final BlockPos pos, final EntityPlayer player, final EnumHand hand, final @Nullable ItemStack heldItem, final EnumFacing side, final float hitX, final float hitY, final float hitZ) {
         final AEBaseTile tile = this.getTileEntity(w, pos);
-        if (tile instanceof TileCrank) {
-            if (((TileCrank) tile).power()) {
+        if (tile instanceof TileCrankImp) {
+            if (((TileCrankImp) tile).power()) {
                 Stats.TurnedCranks.addToPlayer(player, 1);
             }
         }
@@ -88,7 +87,7 @@ public class BlockCrank extends AEBaseTileBlock {
     @Override
     public boolean isValidOrientation(final World w, final BlockPos pos, final EnumFacing forward, final EnumFacing up) {
         final TileEntity te = w.getTileEntity(pos);
-        return !(te instanceof TileCrank) || this.isCrankable(w, pos, up.getOpposite());
+        return !(te instanceof TileCrankImp) || this.isCrankable(w, pos, up.getOpposite());
     }
 
     private EnumFacing findCrankable(final World world, final BlockPos pos) {

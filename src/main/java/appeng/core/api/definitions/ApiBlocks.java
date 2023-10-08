@@ -26,9 +26,7 @@ import appeng.api.definitions.ITileDefinition;
 import appeng.block.AEBaseItemBlockChargeable;
 import appeng.block.crafting.*;
 import appeng.block.crafting.BlockCraftingUnit.CraftingUnitType;
-import appeng.block.grindstone.BlockCrank;
-import appeng.block.grindstone.BlockGrinder;
-import appeng.block.grindstone.CrankRendering;
+import appeng.block.grindstone.*;
 import appeng.block.misc.*;
 import appeng.block.networking.*;
 import appeng.block.paint.BlockPaint;
@@ -69,6 +67,7 @@ import appeng.fluids.tile.TileFluidInterface;
 import appeng.hooks.DispenserBehaviorTinyTNT;
 import appeng.tile.crafting.*;
 import appeng.tile.grindstone.TileCrank;
+import appeng.tile.grindstone.TileCrankImp;
 import appeng.tile.grindstone.TileGrinder;
 import appeng.tile.misc.*;
 import appeng.tile.networking.*;
@@ -114,6 +113,7 @@ public final class ApiBlocks implements IBlocks {
     private final IBlockDefinition skyCompass;
     private final ITileDefinition grindstone;
     private final ITileDefinition crank;
+    private final ITileDefinition crankImp;
     private final ITileDefinition inscriber;
     private final ITileDefinition wirelessAccessPoint;
     private final ITileDefinition charger;
@@ -280,10 +280,17 @@ public final class ApiBlocks implements IBlocks {
                 .features(AEFeature.GRIND_STONE)
                 .tileEntity(new TileEntityDefinition(TileGrinder.class))
                 .build();
+
         this.crank = registry.block("crank", BlockCrank::new)
                 .features(AEFeature.GRIND_STONE)
                 .tileEntity(new TileEntityDefinition(TileCrank.class))
                 .rendering(new CrankRendering())
+                .useCustomItemModel()
+                .build();
+        this.crankImp = registry.block("crank_imp", BlockCrankImp::new)
+                .features(AEFeature.GRIND_STONE)
+                .tileEntity(new TileEntityDefinition(TileCrankImp.class))
+                .rendering(new CrankRenderingImp())
                 .useCustomItemModel()
                 .build();
         this.inscriber = registry.block("inscriber", BlockInscriber::new)
@@ -904,10 +911,16 @@ public final class ApiBlocks implements IBlocks {
         return this.grindstone;
     }
 
+
     @Override
     public ITileDefinition crank() {
         return this.crank;
     }
+    @Override
+    public ITileDefinition crankImp() {
+        return this.crankImp;
+    }
+
 
     @Override
     public ITileDefinition inscriber() {

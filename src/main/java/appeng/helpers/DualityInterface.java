@@ -121,7 +121,7 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
     private static final Collection<Block> BAD_BLOCKS = new HashSet<>(100);
     private final IAEItemStack[] requireWork = {null, null, null, null, null, null, null, null, null};
     private final MultiCraftingTracker craftingTracker;
-    public final AENetworkProxy gridProxy;
+    private final AENetworkProxy gridProxy;
     private final IInterfaceHost iHost;
     private final IActionSource mySource;
     private final IActionSource interfaceRequestSource;
@@ -1149,7 +1149,7 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
         return invIsCustomBlocking(blockingInventoryAdaptor);
     }
 
-    public boolean sameGrid(final IGrid grid) throws GridAccessException {
+    private boolean sameGrid(final IGrid grid) throws GridAccessException {
         return grid == this.gridProxy.getGrid();
     }
 

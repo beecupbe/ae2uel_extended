@@ -87,17 +87,17 @@ public class ToolPortableCell extends AEBasePoweredItem implements IStorageCell<
 
     @Override
     public int getBytes(final ItemStack cellItem) {
-        return 512;
+        return 16777216;
     }
 
     @Override
     public int getBytesPerType(final ItemStack cellItem) {
-        return 8;
+        return 1;
     }
 
     @Override
     public int getTotalTypes(final ItemStack cellItem) {
-        return 27;
+        return 127;
     }
 
     @Override
@@ -117,7 +117,7 @@ public class ToolPortableCell extends AEBasePoweredItem implements IStorageCell<
 
     @Override
     public double getIdleDrain() {
-        return 0.5;
+        return 0.1;
     }
 
     @Override
