@@ -57,9 +57,9 @@ import java.util.List;
 
 
 public class TileCharger extends AENetworkPowerTile implements ICrankable, IGridTickable {
-    private static final int POWER_MAXIMUM_AMOUNT = 1600;
+    private static final int POWER_MAXIMUM_AMOUNT = 8000;
     private static final int POWER_THRESHOLD = POWER_MAXIMUM_AMOUNT - 1;
-    private static final int POWER_PER_CRANK_TURN = 160;
+    private static final int POWER_PER_CRANK_TURN = 256;
 
     private final AppEngInternalInventory inv = new AppEngInternalInventory(this, 1, 1, new ChargerInvFilter());
 
@@ -220,14 +220,9 @@ public class TileCharger extends AENetworkPowerTile implements ICrankable, IGrid
                     }
                 }
             } else if (this.getInternalCurrentPower() > POWER_THRESHOLD && (materials.certusQuartzCrystal().isSameAs(myItem) || AEItemStack.fromItemStack(myItem).sameOre(AEItemStack.fromItemStack(materials.certusQuartzCrystal().maybeStack(1).orElse(ItemStack.EMPTY))))) {
-                if (Platform.getRandomFloat() > 0.8f) // simulate wait
-                {
                     this.extractAEPower(this.getInternalMaxPower(), Actionable.MODULATE, PowerMultiplier.CONFIG);
-
                     materials.certusQuartzCrystalCharged().maybeStack(myItem.getCount()).ifPresent(charged -> this.inv.setStackInSlot(0, charged));
-
                     changed = true;
-                }
             }
         }
 
