@@ -20,7 +20,6 @@ package appeng.container.slot;
 
 
 import appeng.util.helpers.ItemHandlerUtil;
-import appeng.util.inv.WrapperInvItemHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
@@ -133,14 +132,16 @@ public class AppEngCraftingSlot extends AppEngSlot {
 
     @Override
     public ItemStack onTake(final EntityPlayer playerIn, final ItemStack stack) {
-        net.minecraftforge.fml.common.FMLCommonHandler.instance().firePlayerCraftingEvent(playerIn, stack, new WrapperInvItemHandler(this.craftMatrix));
         this.onCrafting(stack);
-        net.minecraftforge.common.ForgeHooks.setCraftingPlayer(playerIn);
+        stack.getItem().onCreated(stack, playerIn.world, playerIn);
         final InventoryCrafting ic = new InventoryCrafting(this.getContainer(), 3, 3);
 
         for (int x = 0; x < this.craftMatrix.getSlots(); x++) {
             ic.setInventorySlotContents(x, this.craftMatrix.getStackInSlot(x));
         }
+
+        net.minecraftforge.fml.common.FMLCommonHandler.instance().firePlayerCraftingEvent(playerIn, stack, ic);
+        net.minecraftforge.common.ForgeHooks.setCraftingPlayer(playerIn);
 
         final NonNullList<ItemStack> aitemstack = this.getRemainingItems(ic, playerIn.world);
 

@@ -392,7 +392,7 @@ public class GuiFluidInterfaceConfigurationTerminal extends AEBaseGui implements
             return false;
         }
 
-        boolean foundMatchingItemStack = false;
+        boolean foundMatchingFluidStack = false;
 
         final String displayName = Platform.getFluidDisplayName(iaeFluidStack).toLowerCase();
 
@@ -403,10 +403,12 @@ public class GuiFluidInterfaceConfigurationTerminal extends AEBaseGui implements
                     return false;
                 }
             } else if (displayName.contains(term)) {
-                foundMatchingItemStack = true;
+                foundMatchingFluidStack = true;
+            } else {
+                return false;
             }
         }
-        return foundMatchingItemStack;
+        return foundMatchingFluidStack;
     }
 
     /**

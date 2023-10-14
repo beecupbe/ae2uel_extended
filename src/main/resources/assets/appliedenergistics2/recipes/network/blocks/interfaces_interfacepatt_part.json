@@ -2,7 +2,7 @@
     "conditions": [
         {
             "type": "minecraft:item_exists",
-            "item": "appliedenergistics2:interfacepatt"
+            "item": "appliedenergistics2:interface_patterns"
         }
     ],
     "result": {
@@ -12,7 +12,7 @@
     "type": "appliedenergistics2:part_shapeless",
     "ingredients": [
         {
-            "item": "appliedenergistics2:interfacepatt"
+            "item": "appliedenergistics2:interface_patterns"
         }
     ]
 }

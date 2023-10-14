@@ -53,6 +53,7 @@ import appeng.api.util.AEPartLocation;
 import appeng.api.util.DimensionalCoord;
 import appeng.api.util.IConfigManager;
 import appeng.capabilities.Capabilities;
+import appeng.core.localization.GuiText;
 import appeng.core.settings.TickRates;
 import appeng.me.GridAccessException;
 import appeng.me.helpers.AENetworkProxy;
@@ -1326,7 +1327,7 @@ public class DualityInterfaceAdv implements IGridTickable, IStorageMonitorable, 
             }
         }
 
-        return "Nothing";
+        return GuiText.Nothing.getLocal();
     }
 
     public long getSortValue() {

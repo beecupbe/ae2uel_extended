@@ -38,8 +38,6 @@ public class ContainerOreDictStorageBus extends AEBaseContainer {
     public ContainerOreDictStorageBus(final InventoryPlayer ip, final PartOreDicStorageBus anchor) {
         super(ip, anchor);
         this.part = anchor;
-
-        this.bindPlayerInventory(ip, 14, 256 - /* height of player inventory */82);
     }
 
     @Override

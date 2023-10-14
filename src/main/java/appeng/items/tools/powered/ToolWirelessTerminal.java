@@ -20,13 +20,7 @@ package appeng.items.tools.powered;
 
 
 import appeng.api.AEApi;
-import appeng.api.config.Actionable;
-import appeng.api.config.FuzzyMode;
-import appeng.api.config.Settings;
-import appeng.api.config.SortDir;
-import appeng.api.config.SortOrder;
-import appeng.api.config.Upgrades;
-import appeng.api.config.ViewItems;
+import appeng.api.config.*;
 import appeng.api.features.IWirelessTermHandler;
 import appeng.api.util.IConfigManager;
 import appeng.core.AEConfig;
@@ -51,7 +45,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Optional;
@@ -196,7 +189,7 @@ public class ToolWirelessTerminal extends AEBasePoweredItem implements IWireless
                     ItemStack is = siu.getStackInSlot(s);
                     if (AEApi.instance().definitions().materials().cardMagnet().isSameAs(is)) {
                         NBTTagCompound tag = is.getTagCompound();
-                        if (tag != null && !tag.getBoolean("enabled")) {
+                        if (tag != null && tag.hasKey("enabled") && !tag.getBoolean("enabled")) {
                             return;
                         }
                         ItemMaterial im = (ItemMaterial) is.getItem();

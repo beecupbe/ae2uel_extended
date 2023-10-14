@@ -69,13 +69,11 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fml.common.Optional;
-import net.minecraftforge.items.SlotItemHandler;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
-import yalter.mousetweaks.api.IMTModGuiContainer2;
+import yalter.mousetweaks.api.MouseTweaksIgnore;
 
-import javax.annotation.Nonnull;
 import java.awt.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -88,8 +86,9 @@ import static appeng.integration.modules.jei.JEIPlugin.aeGuiHandler;
 import static appeng.integration.modules.jei.JEIPlugin.runtime;
 
 
-@Optional.Interface(iface = "yalter.mousetweaks.api.IMTModGuiContainer2", modid = "mousetweaks")
-public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContainer2 {
+@MouseTweaksIgnore
+
+public abstract class AEBaseGui extends GuiContainer {
     private final List<InternalSlotME> meSlots = new ArrayList<>();
     // drag y
     private final Set<Slot> drag_click = new HashSet<>();
@@ -569,9 +568,9 @@ public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContain
                     stack = ((SlotME) slot).getAEStack();
 
                     if (stack != null
-                        && action == InventoryAction.PICKUP_OR_SET_DOWN
-                        && (stack.getStackSize() == 0 || GuiScreen.isAltKeyDown())
-                        && player.inventory.getItemStack().isEmpty()) {
+                            && action == InventoryAction.PICKUP_OR_SET_DOWN
+                            && (stack.getStackSize() == 0 || GuiScreen.isAltKeyDown())
+                            && player.inventory.getItemStack().isEmpty()) {
                         action = InventoryAction.AUTO_CRAFT;
                     }
 
@@ -903,6 +902,7 @@ public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContain
                         final ItemStack out = iep.getOutput(is);
                         if (!out.isEmpty()) {
                             AppEngSlot appEngSlot = ((AppEngSlot) s);
+                            if (s.getStack().isEmpty()) return;
                             appEngSlot.setDisplay(true);
                             appEngSlot.setReturnAsSingleStack(true);
 
@@ -930,6 +930,10 @@ public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContain
                         super.drawSlot(s);
                     }
                 } else if (s instanceof AppEngSlot appEngSlot) {
+                    if (s.getStack().isEmpty()) {
+                        super.drawSlot(s);
+                        return;
+                    }
                     appEngSlot.setDisplay(true);
                     appEngSlot.setReturnAsSingleStack(true);
 
@@ -981,47 +985,4 @@ public abstract class AEBaseGui extends GuiContainer implements IMTModGuiContain
     protected List<InternalSlotME> getMeSlots() {
         return this.meSlots;
     }
-
-    @Override
-    @Optional.Method(modid = "mousetweaks")
-    public boolean MT_isMouseTweaksDisabled() {
-        return false;
-    }
-
-    @Override
-    @Optional.Method(modid = "mousetweaks")
-    public boolean MT_isWheelTweakDisabled() {
-        return true;
-    }
-
-    @Override
-    @Optional.Method(modid = "mousetweaks")
-    public Container MT_getContainer() {
-        return this.inventorySlots;
-    }
-
-    @Override
-    @Optional.Method(modid = "mousetweaks")
-    public Slot MT_getSlotUnderMouse() {
-        return getSlotUnderMouse();
-    }
-
-    @Override
-    @Optional.Method(modid = "mousetweaks")
-    public boolean MT_isCraftingOutput(Slot slot) {
-        return slot instanceof SlotOutput || slot instanceof AppEngCraftingSlot;
-    }
-
-    @Override
-    @Optional.Method(modid = "mousetweaks")
-    public boolean MT_isIgnored(Slot slot) {
-        return false;
-    }
-
-    @Override
-    @Optional.Method(modid = "mousetweaks")
-    public boolean MT_disableRMBDraggingFunctionality() {
-        return false;
-    }
-
 }

@@ -2,11 +2,11 @@
     "conditions": [
         {
             "type": "minecraft:item_exists",
-            "item": "appliedenergistics2:interfacepatt"
+            "item": "appliedenergistics2:interface_patterns"
         }
     ],
     "result": {
-        "item": "appliedenergistics2:interfacepatt"
+        "item": "appliedenergistics2:interface_patterns"
     },
     "type": "forge:ore_shapeless",
     "ingredients": [
