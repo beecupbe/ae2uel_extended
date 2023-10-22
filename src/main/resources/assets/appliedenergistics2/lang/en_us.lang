@@ -312,7 +312,7 @@ gui.appliedenergistics2.ImpBusesFluidJEI=Improved version of the previous bus th
 gui.appliedenergistics2.CrankImpJEI=Improved version of the wooden crank, which speeds up the operation of the quartz grindstone.
 gui.appliedenergistics2.NewTerminals=An improved version of the terminal interfaces, displaying new interfaces.
 gui.appliedenergistics2.NewTerminalsItem=An improved version of the interface configuration terminal, displaying new interfaces.
-gui.appliedenergistics2.MegaWB=By installing 64 boosters into a wireless access point, you will be able to use your terminals in any dimensions and at any distance!
+gui.appliedenergistics2.MegaWB=By installing 64 boosters into a wireless access point, you will be able to use your terminals in any dimensions and at any distance.
 
 // GUI Tooltips
 gui.tooltips.appliedenergistics2.Stash=Store Items
