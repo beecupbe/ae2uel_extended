@@ -307,9 +307,11 @@ gui.appliedenergistics2.InterfacePerJEI=Perfect version of the ME Delivery inter
 gui.appliedenergistics2.InterfacePattJEI=Improved version of the ME interface that can store up to 72 crafting patterns.
 gui.appliedenergistics2.ImpBusesJEI=Improved version of the previous bus that can transfer up to 20,480 items per second.
 gui.appliedenergistics2.MACCreativeJEI=Creative version of the Molecular assembler that can multiply crafted items by the number specified in the config file. (defaults to doubling)
-gui.appliedenergistics2.MACImpJEI=Improved version of the Molecular assembler that works twice as fast as its predecessor and does not require accelerators.
+gui.appliedenergistics2.MACImpJEI=Improved version of the Molecular assembler that works twice as fast as its predecessor and does not require accelerators. Does not have a GUI - does not require acceleration cards.
 gui.appliedenergistics2.ImpBusesFluidJEI=Improved version of the previous bus that can transfer 128 times more fluid per second.
 gui.appliedenergistics2.CrankImpJEI=Improved version of the wooden crank, which speeds up the operation of the quartz grindstone.
+gui.appliedenergistics2.NewTerminals=An improved version of the terminal interfaces, displaying new interfaces.
+gui.appliedenergistics2.NewTerminalsItem=An improved version of the interface configuration terminal, displaying new interfaces.
 
 // GUI Tooltips
 gui.tooltips.appliedenergistics2.Stash=Store Items
@@ -663,7 +665,15 @@ item.appliedenergistics2.multi_part.inverted_toggle_bus.name=ME Inverted Toggle 
 item.appliedenergistics2.multi_part.toggle_bus.name=ME Toggle Bus
 item.appliedenergistics2.multi_part.crafting_monitor.name=ME Crafting Monitor
 item.appliedenergistics2.multi_part.interface_terminal.name=ME Interface Terminal
+
+item.appliedenergistics2.multi_part.interface_terminalimp.name=ME Delivery Interface Terminal
+item.appliedenergistics2.multi_part.interface_terminaladv.name=ME Advanced Delivery Interface Terminal
+item.appliedenergistics2.multi_part.interface_terminalpatt.name=ME Patterns Interface Terminal
 item.appliedenergistics2.multi_part.interface_configuration_terminal.name=ME Interface Configuration Terminal
+
+item.appliedenergistics2.multi_part.interface_configuration_terminalimp.name=ME Delivery Interface Configuration Terminal
+item.appliedenergistics2.multi_part.interface_configuration_terminaladv.name=ME Advanced Delivery Interface Configuration Terminal
+item.appliedenergistics2.multi_part.interface_configuration_terminalper.name=ME Perfect Delivery Interface Configuration Terminal
 item.appliedenergistics2.multi_part.fluid_interface_configuration_terminal.name=ME Fluid Interface Configuration Terminal
 item.appliedenergistics2.multi_part.fluid_terminal.name=ME Fluid Terminal
 item.appliedenergistics2.multi_part.invalid_type.name=Disabled Item

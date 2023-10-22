@@ -102,7 +102,8 @@ import net.minecraftforge.items.wrapper.RangedWrapper;
 import javax.annotation.Nullable;
 import java.util.*;
 
-import static appeng.helpers.ItemStackHelper.*;
+import static appeng.helpers.ItemStackHelper.stackFromNBT;
+import static appeng.helpers.ItemStackHelper.stackToNBT;
 
 
 public class DualityInterface implements IGridTickable, IStorageMonitorable, IInventoryDestination, IAEAppEngInventory, IConfigManagerHost, ICraftingProvider, IUpgradeableHost {
@@ -976,7 +977,15 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
                         targetTE = (IInterfaceHost) ((TileCableBus) te).getPart(s.getOpposite());
                     }
 
-                    if (targetTE.getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
+                    if (targetTE.getInterfaceDualityPer().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDualityAdv().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDualityImp().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
                         continue;
                     } else {
                         IStorageMonitorableAccessor mon = te.getCapability(Capabilities.STORAGE_MONITORABLE_ACCESSOR, s.getOpposite());
@@ -1150,7 +1159,7 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
         return invIsCustomBlocking(blockingInventoryAdaptor);
     }
 
-    private boolean sameGrid(final IGrid grid) throws GridAccessException {
+    public boolean sameGrid(final IGrid grid) throws GridAccessException {
         return grid == this.gridProxy.getGrid();
     }
 
@@ -1276,16 +1285,6 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
 
             if (directedTile == null) {
                 continue;
-            }
-
-            if (directedTile instanceof IInterfaceHost) {
-                try {
-                    if (((IInterfaceHost) directedTile).getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
-                        continue;
-                    }
-                } catch (final GridAccessException e) {
-                    continue;
-                }
             }
 
             final InventoryAdaptor adaptor = InventoryAdaptor.getAdaptor(directedTile, direction.getOpposite());

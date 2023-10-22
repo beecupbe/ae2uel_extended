@@ -307,9 +307,12 @@ gui.appliedenergistics2.InterfacePerJEI=Совершенная версия МЭ
 gui.appliedenergistics2.InterfacePattJEI=Улучшенная версия МЭ интерфейса, которая позволяет хранить до 72 шаблонов крафта.
 gui.appliedenergistics2.ImpBusesJEI=Улучшенная версия прошлой шины, позволяющая передавать до 20480 предметов в секунду.
 gui.appliedenergistics2.MACCreativeJEI=Творческая версия молекулярного сборщика, которая может умножать крафтящиеся предметы числом, заданным в config файле. (по умолчанию умножает в 2 раза)
-gui.appliedenergistics2.MACImpJEI=Улучшенная версия молекулярного сборщика, которая работает в 2 раза быстрее его предшественника и не требует ускорителей.
+gui.appliedenergistics2.MACImpJEI=Улучшенная версия молекулярного сборщика, которая работает в 2 раза быстрее его предшественника и не требует ускорителей. Не имеет интерфейса - не требует ускорителей.
 gui.appliedenergistics2.ImpBusesFluidJEI=Улучшенная версия прошлой шины, позволяющая передавать в 128 раз больше жидкости в секунду.
 gui.appliedenergistics2.CrankImpJEI=Улучшенная версия деревянной рукоятки, ускоряющая работу кварцевого дробителя.
+gui.appliedenergistics2.NewTerminals=Улучшенная версия терминала интерфейсов, отображающая новые интерфейсы.
+gui.appliedenergistics2.NewTerminalsItem=Улучшенная версия терминала конфигурации интерфейсов, отображающая новые интерфейсы.
+
 
 // GUI Tooltips
 gui.tooltips.appliedenergistics2.Stash=Очистить сетку крафта
@@ -662,7 +665,17 @@ item.appliedenergistics2.multi_part.inverted_toggle_bus.name=МЭ Инверти
 item.appliedenergistics2.multi_part.toggle_bus.name=МЭ Шина переключения
 item.appliedenergistics2.multi_part.crafting_monitor.name=МЭ Монитор крафта
 item.appliedenergistics2.multi_part.interface_terminal.name=МЭ Терминал интерфейсов
+
+item.appliedenergistics2.multi_part.interface_terminalimp.name=МЭ Терминал Улучшенных интерфейсов
+item.appliedenergistics2.multi_part.interface_terminaladv.name=МЭ Терминал Провинутых интерфейсов
+item.appliedenergistics2.multi_part.interface_terminalpatt.name=МЭ Терминал Шаблонных интерфейсов
+
 item.appliedenergistics2.multi_part.interface_configuration_terminal.name=МЭ Терминал конфигурации интерфейсов
+
+item.appliedenergistics2.multi_part.interface_configuration_terminalimp.name=МЭ Терминал конфигурации Улучшенных интерфейсов
+item.appliedenergistics2.multi_part.interface_configuration_terminaladv.name=МЭ Терминал конфигурации Продвинутых интерфейсов
+item.appliedenergistics2.multi_part.interface_configuration_terminalper.name=МЭ Терминал конфигурации Совершенных интерфейсов
+
 item.appliedenergistics2.multi_part.fluid_interface_configuration_terminal.name=МЭ Терминал жидкостной конфигурации интерфейсов
 item.appliedenergistics2.multi_part.fluid_terminal.name=МЭ Жидкостный терминал
 item.appliedenergistics2.multi_part.invalid_type.name=Неизвестный/отключенный предмет

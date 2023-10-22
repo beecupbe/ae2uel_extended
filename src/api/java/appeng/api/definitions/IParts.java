@@ -110,12 +110,20 @@ public interface IParts {
     IItemDefinition darkMonitor();
 
     IItemDefinition interfaceTerminal();
+    IItemDefinition interfaceTerminalImp();
+    IItemDefinition interfaceTerminalAdv();
+    IItemDefinition interfaceTerminalPatt();
+
 
     IItemDefinition patternTerminal();
 
     IItemDefinition expandedProcessingPatternTerminal();
 
     IItemDefinition interfaceConfigurationTerminal();
+    IItemDefinition interfaceConfigurationTerminalImp();
+    IItemDefinition interfaceConfigurationTerminalAdv();
+    IItemDefinition interfaceConfigurationTerminalPer();
+
 
     IItemDefinition fluidInterfaceConfigurationTerminal();
 

@@ -272,10 +272,20 @@ public enum PartType {
 
     INTERFACE_TERMINAL(480, "interface_terminal", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceTerminal.class),
 
+    INTERFACE_TERMINALIMP(644, "interface_terminalimp", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceTerminalImp.class),
+    INTERFACE_TERMINALADV(645, "interface_terminaladv", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceTerminalAdv.class),
+    INTERFACE_TERMINALPATT(647, "interface_terminalpatt", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceTerminalPatt.class),
+
     FLUID_TERMINAL(520, "fluid_terminal", EnumSet.of(AEFeature.FLUID_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartFluidTerminal.class),
     INTERFACE_CONFIGURATION_TERMINAL(521, "interface_configuration_terminal", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceConfigurationTerminal.class),
+
+    INTERFACE_CONFIGURATION_TERMINALIMP(640, "interface_configuration_terminalimp", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceConfigurationTerminalImp.class),
+    INTERFACE_CONFIGURATION_TERMINALADV(641, "interface_configuration_terminaladv", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceConfigurationTerminalAdv.class),
+    INTERFACE_CONFIGURATION_TERMINALPER(642, "interface_configuration_terminalper", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceConfigurationTerminalPer.class),
+
     FLUID_INTERFACE_CONFIGURATION_TERMINAL(522, "fluid_interface_configuration_terminal", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartFluidInterfaceConfigurationTerminal.class);
 
+    //last metaValue = 647
 
     private final int baseDamage;
     private final Set<AEFeature> features;

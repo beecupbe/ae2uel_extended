@@ -1,0 +1,19 @@
+{
+    "conditions": [
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:interfaceadv"
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.interface_terminaladv"
+    },
+    "type": "appliedenergistics2:part_shapeless",
+    "ingredients": [
+        {
+            "type": "appliedenergistics2:part",
+            "part": "part.interface_configuration_terminaladv"
+        }
+    ]
+}

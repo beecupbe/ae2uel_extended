@@ -1,0 +1,42 @@
+{
+    "conditions": [
+        {
+            "type": "forge:and",
+            "values": [
+                {
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.interface_terminalimp"
+                },
+				{
+                    "type": "minecraft:item_exists",
+                    "item": "appliedenergistics2:storage_cell_1k"
+                },
+				{
+                    "type": "appliedenergistics2:part_exists",
+                    "part": "part.interface_terminaladv"
+                },
+                {
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.engineering_processor"
+                }
+            ]
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.interface_terminaladv"
+    },
+    "type": "appliedenergistics2:part_shapeless",
+    "ingredients": [
+        {
+            "type": "appliedenergistics2:part",
+            "part": "part.interface_terminalimp"
+        },
+        {
+			"item": "appliedenergistics2:storage_cell_4k"
+        },
+        {
+            "item": "#appliedenergistics2:interfaceadv"
+        }
+    ]
+}

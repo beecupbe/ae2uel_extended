@@ -88,6 +88,10 @@ public class PartInterfacePatt extends PartBasicState implements IGridTickable, 
     public static final PartModel MODELS_HAS_CHANNEL = new PartModel(MODEL_BASE, new ResourceLocation(AppEng.MOD_ID, "part/interface_has_channel"));
 
     private final DualityInterfacePatt duality = new DualityInterfacePatt(this.getProxy(), this);
+    private final DualityInterfacePer duality2 = new DualityInterfacePer(this.getProxy(), this);
+    private final DualityInterfaceAdv duality3 = new DualityInterfaceAdv(this.getProxy(), this);
+    private final DualityInterfaceImp duality4 = new DualityInterfaceImp(this.getProxy(), this);
+    private final DualityInterface duality5 = new DualityInterface(this.getProxy(), this);
 
     @Reflected
     public PartInterfacePatt(final ItemStack is) {
@@ -195,22 +199,22 @@ public class PartInterfacePatt extends PartBasicState implements IGridTickable, 
 
     @Override
     public DualityInterface getInterfaceDuality() {
-        return null;
+        return this.duality5;
     }
 
     @Override
     public DualityInterfaceImp getInterfaceDualityImp() {
-        return null;
+        return this.duality4;
     }
 
     @Override
     public DualityInterfaceAdv getInterfaceDualityAdv() {
-        return null;
+        return this.duality3;
     }
 
     @Override
     public DualityInterfacePer getInterfaceDualityPer() {
-        return null;
+        return this.duality2;
     }
 
     @Override
@@ -291,7 +295,7 @@ public class PartInterfacePatt extends PartBasicState implements IGridTickable, 
 
     @Override
     public ItemStack getItemStackRepresentation() {
-        return AEApi.instance().definitions().parts().iface().maybeStack(1).orElse(ItemStack.EMPTY);
+        return AEApi.instance().definitions().parts().ifacePatt().maybeStack(1).orElse(ItemStack.EMPTY);
     }
 
     @Override

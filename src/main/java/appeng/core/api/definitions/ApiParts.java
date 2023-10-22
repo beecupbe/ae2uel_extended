@@ -80,8 +80,15 @@ public final class ApiParts implements IParts {
     private final IItemDefinition semiDarkMonitor;
     private final IItemDefinition darkMonitor;
     private final IItemDefinition interfaceTerminal;
+    private final IItemDefinition interfaceTerminalImp;
+    private final IItemDefinition interfaceTerminalAdv;
+    private final IItemDefinition interfaceTerminalPatt;
     private final IItemDefinition patternTerminal;
     private final IItemDefinition expandedProcessingPatternTerminal;
+    private final IItemDefinition interfaceConfigurationTerminalImp;
+    private final IItemDefinition interfaceConfigurationTerminalAdv;
+    private final IItemDefinition interfaceConfigurationTerminalPer;
+
     private final IItemDefinition interfaceConfigurationTerminal;
     private final IItemDefinition fluidInterfaceConfigurationTerminal;
     private final IItemDefinition craftingTerminal;
@@ -145,10 +152,20 @@ public final class ApiParts implements IParts {
         this.monitor = new DamagedItemDefinition("part.monitor", itemPart.createPart(PartType.MONITOR));
         this.semiDarkMonitor = new DamagedItemDefinition("part.monitor.semi_dark", itemPart.createPart(PartType.SEMI_DARK_MONITOR));
         this.darkMonitor = new DamagedItemDefinition("part.monitor.dark", itemPart.createPart(PartType.DARK_MONITOR));
+
         this.interfaceTerminal = new DamagedItemDefinition("part.terminal.interface", itemPart.createPart(PartType.INTERFACE_TERMINAL));
+        this.interfaceTerminalImp = new DamagedItemDefinition("part.terminal.interfaceimp", itemPart.createPart(PartType.INTERFACE_TERMINALIMP));
+        this.interfaceTerminalAdv = new DamagedItemDefinition("part.terminal.interfaceadv", itemPart.createPart(PartType.INTERFACE_TERMINALADV));
+        this.interfaceTerminalPatt = new DamagedItemDefinition("part.terminal.interfacepatt", itemPart.createPart(PartType.INTERFACE_TERMINALPATT));
+
         this.patternTerminal = new DamagedItemDefinition("part.terminal.pattern", itemPart.createPart(PartType.PATTERN_TERMINAL));
         this.expandedProcessingPatternTerminal = new DamagedItemDefinition("part.terminal.expanded_processing_pattern", itemPart.createPart(PartType.EXPANDED_PROCESSING_PATTERN_TERMINAL));
+
         this.interfaceConfigurationTerminal = new DamagedItemDefinition("part.terminal.interface_configuration_terminal", itemPart.createPart(PartType.INTERFACE_CONFIGURATION_TERMINAL));
+        this.interfaceConfigurationTerminalImp = new DamagedItemDefinition("part.terminal.interface_configuration_terminalimp", itemPart.createPart(PartType.INTERFACE_CONFIGURATION_TERMINALIMP));
+        this.interfaceConfigurationTerminalAdv = new DamagedItemDefinition("part.terminal.interface_configuration_terminaladv", itemPart.createPart(PartType.INTERFACE_CONFIGURATION_TERMINALADV));
+        this.interfaceConfigurationTerminalPer = new DamagedItemDefinition("part.terminal.interface_configuration_terminalper", itemPart.createPart(PartType.INTERFACE_CONFIGURATION_TERMINALPER));
+
         this.fluidInterfaceConfigurationTerminal = new DamagedItemDefinition("part.terminal.fluid_interface_configuration_terminal", itemPart.createPart(PartType.FLUID_INTERFACE_CONFIGURATION_TERMINAL));
         this.craftingTerminal = new DamagedItemDefinition("part.terminal.crafting", itemPart.createPart(PartType.CRAFTING_TERMINAL));
         this.terminal = new DamagedItemDefinition("part.terminal", itemPart.createPart(PartType.TERMINAL));
@@ -383,6 +400,18 @@ public final class ApiParts implements IParts {
     public IItemDefinition interfaceTerminal() {
         return this.interfaceTerminal;
     }
+    @Override
+    public IItemDefinition interfaceTerminalImp() {
+        return this.interfaceTerminalImp;
+    }
+    @Override
+    public IItemDefinition interfaceTerminalAdv() {
+        return this.interfaceTerminalAdv;
+    }
+    @Override
+    public IItemDefinition interfaceTerminalPatt() {
+        return this.interfaceTerminalPatt;
+    }
 
     @Override
     public IItemDefinition patternTerminal() {
@@ -397,6 +426,21 @@ public final class ApiParts implements IParts {
     @Override
     public IItemDefinition interfaceConfigurationTerminal() {
         return this.interfaceConfigurationTerminal;
+    }
+
+    @Override
+    public IItemDefinition interfaceConfigurationTerminalImp() {
+        return interfaceConfigurationTerminalImp;
+    }
+
+    @Override
+    public IItemDefinition interfaceConfigurationTerminalAdv() {
+        return interfaceConfigurationTerminalAdv;
+    }
+
+    @Override
+    public IItemDefinition interfaceConfigurationTerminalPer() {
+        return interfaceConfigurationTerminalPer;
     }
 
     @Override

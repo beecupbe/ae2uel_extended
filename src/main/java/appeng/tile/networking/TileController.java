@@ -48,7 +48,7 @@ public class TileController extends AENetworkPowerTile {
     private boolean isValid = false;
 
     public TileController() {
-        this.setInternalMaxPower(12000);
+        this.setInternalMaxPower(32000);
         this.setInternalPublicPowerStorage(true);
         this.getProxy().setIdlePowerUsage(3);
         this.getProxy().setFlags(GridFlags.CANNOT_CARRY, GridFlags.DENSE_CAPACITY);
@@ -69,10 +69,6 @@ public class TileController extends AENetworkPowerTile {
         final boolean xx = this.checkController(this.pos.offset(EnumFacing.EAST)) && this.checkController(this.pos.offset(EnumFacing.WEST));
         final boolean yy = this.checkController(this.pos.offset(EnumFacing.UP)) && this.checkController(this.pos.offset(EnumFacing.DOWN));
         final boolean zz = this.checkController(this.pos.offset(EnumFacing.NORTH)) && this.checkController(this.pos.offset(EnumFacing.SOUTH));
-
-        // int meta = world.getBlockMetadata( xCoord, yCoord, zCoord );
-        // boolean hasPower = meta > 0;
-        // boolean isConflict = meta == 2;
 
         final boolean oldValid = this.isValid;
 

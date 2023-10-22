@@ -44,7 +44,6 @@ import appeng.container.ContainerNull;
 import appeng.container.ContainerOpenContext;
 import appeng.container.implementations.*;
 import appeng.container.implementations.ContainerDriveImproved;
-import appeng.container.interfaces.IInventorySlotAware;
 import appeng.fluids.container.*;
 import appeng.fluids.helper.IFluidInterfaceHost;
 import appeng.fluids.parts.PartFluidFormationPlane;
@@ -181,9 +180,18 @@ public enum GuiBridge implements IGuiHandler {
 
     GUI_INTERFACE_TERMINAL(ContainerInterfaceTerminal.class, PartInterfaceTerminal.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
+    GUI_INTERFACE_TERMINALIMP(ContainerInterfaceTerminalImp.class, PartInterfaceTerminalImp.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+    GUI_INTERFACE_TERMINALADV(ContainerInterfaceTerminalAdv.class, PartInterfaceTerminalAdv.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+    GUI_INTERFACE_TERMINALPATT(ContainerInterfaceTerminalPatt.class, PartInterfaceTerminalPatt.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+
+
     GUI_CRAFTING_STATUS(ContainerCraftingStatus.class, ITerminalHost.class, GuiHostType.ITEM_OR_WORLD, SecurityPermissions.CRAFT),
 
     GUI_INTERFACE_CONFIGURATION_TERMINAL(ContainerInterfaceConfigurationTerminal.class, PartInterfaceConfigurationTerminal.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+
+    GUI_INTERFACE_CONFIGURATION_TERMINALIMP(ContainerInterfaceConfigurationTerminalImp.class, PartInterfaceConfigurationTerminalImp.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+    GUI_INTERFACE_CONFIGURATION_TERMINALADV(ContainerInterfaceConfigurationTerminalAdv.class, PartInterfaceConfigurationTerminalAdv.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
+    GUI_INTERFACE_CONFIGURATION_TERMINALPER(ContainerInterfaceConfigurationTerminalPer.class, PartInterfaceConfigurationTerminalPer.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
     GUI_FLUID_INTERFACE_CONFIGURATION_TERMINAL(ContainerFluidInterfaceConfigurationTerminal.class, PartFluidInterfaceConfigurationTerminal.class, GuiHostType.WORLD, SecurityPermissions.BUILD),
 
     GUI_RENAMER(ContainerRenamer.class, ICustomNameObject.class, GuiHostType.WORLD, SecurityPermissions.BUILD);

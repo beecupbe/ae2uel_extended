@@ -19,9 +19,11 @@
 package appeng.tile.networking;
 
 
+import appeng.core.AEConfig;
+
 public class TilePerfectEnergyCell extends TileEnergyCell {
 
     public TilePerfectEnergyCell() {
-        this.setInternalMaxPower(200000 * 64);
+        this.setInternalMaxPower(AEConfig.instance().getPerEnergyCellCap());
     }
 }

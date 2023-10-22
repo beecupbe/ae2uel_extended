@@ -970,7 +970,15 @@ public class DualityInterfaceImp implements IGridTickable, IStorageMonitorable, 
                         targetTE = (IInterfaceHost) ((TileCableBus) te).getPart(s.getOpposite());
                     }
 
-                    if (targetTE.getInterfaceDualityImp().sameGrid(this.gridProxy.getGrid())) {
+                    if (targetTE.getInterfaceDualityPer().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDualityAdv().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDualityImp().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
                         continue;
                     } else {
                         IStorageMonitorableAccessor mon = te.getCapability(Capabilities.STORAGE_MONITORABLE_ACCESSOR, s.getOpposite());
@@ -1144,7 +1152,7 @@ public class DualityInterfaceImp implements IGridTickable, IStorageMonitorable, 
         return invIsCustomBlocking(blockingInventoryAdaptor);
     }
 
-    private boolean sameGrid(final IGrid grid) throws GridAccessException {
+    public boolean sameGrid(final IGrid grid) throws GridAccessException {
         return grid == this.gridProxy.getGrid();
     }
 
@@ -1270,16 +1278,6 @@ public class DualityInterfaceImp implements IGridTickable, IStorageMonitorable, 
 
             if (directedTile == null) {
                 continue;
-            }
-
-            if (directedTile instanceof IInterfaceHost) {
-                try {
-                    if (((IInterfaceHost) directedTile).getInterfaceDualityImp().sameGrid(this.gridProxy.getGrid())) {
-                        continue;
-                    }
-                } catch (final GridAccessException e) {
-                    continue;
-                }
             }
 
             final InventoryAdaptor adaptor = InventoryAdaptor.getAdaptor(directedTile, direction.getOpposite());

@@ -71,6 +71,10 @@ import java.util.List;
 public class TileInterfaceImp extends AENetworkInvTile implements IGridTickable, IInventoryDestination, IInterfaceHost, IPriorityHost {
 
     private final DualityInterfaceImp duality = new DualityInterfaceImp(this.getProxy(), this);
+    private final DualityInterfacePer duality2 = new DualityInterfacePer(this.getProxy(), this);
+    private final DualityInterfaceAdv duality3 = new DualityInterfaceAdv(this.getProxy(), this);
+    private final DualityInterfacePatt duality4 = new DualityInterfacePatt(this.getProxy(), this);
+    private final DualityInterface duality5 = new DualityInterface(this.getProxy(), this);
 
     // Indicates that this interface has no specific direction set
     private boolean omniDirectional = true;
@@ -142,7 +146,7 @@ public class TileInterfaceImp extends AENetworkInvTile implements IGridTickable,
 
         super.onReady();
         this.duality.initialize();
-        this.getProxy().setIdlePowerUsage(Math.pow(4, (this.getInstalledUpgrades(Upgrades.PATTERN_EXPANSION))));
+        this.getProxy().setIdlePowerUsage(2);
     }
 
     @Override
@@ -217,7 +221,7 @@ public class TileInterfaceImp extends AENetworkInvTile implements IGridTickable,
 
     @Override
     public DualityInterface getInterfaceDuality() {
-        return null;
+        return this.duality5;
     }
 
     @Override
@@ -227,17 +231,17 @@ public class TileInterfaceImp extends AENetworkInvTile implements IGridTickable,
 
     @Override
     public DualityInterfaceAdv getInterfaceDualityAdv() {
-        return null;
+        return this.duality3;
     }
 
     @Override
     public DualityInterfacePer getInterfaceDualityPer() {
-        return null;
+        return this.duality2;
     }
 
     @Override
     public DualityInterfacePatt getInterfaceDualityPatt() {
-        return null;
+        return this.duality4;
     }
 
     @Override
@@ -326,7 +330,7 @@ public class TileInterfaceImp extends AENetworkInvTile implements IGridTickable,
 
     @Override
     public ItemStack getItemStackRepresentation() {
-        return AEApi.instance().definitions().blocks().iface().maybeStack(1).orElse(ItemStack.EMPTY);
+        return AEApi.instance().definitions().blocks().ifaceImp().maybeStack(1).orElse(ItemStack.EMPTY);
     }
 
     @Override
@@ -356,7 +360,7 @@ public class TileInterfaceImp extends AENetworkInvTile implements IGridTickable,
             PlayerMainInvWrapper playerInv = new PlayerMainInvWrapper(player.inventory);
             final IMaterials materials = AEApi.instance().definitions().materials();
             int missingPatternsToEncode = 0;
-            int amountPatternSlots = 8 + this.getInstalledUpgrades(Upgrades.PATTERN_EXPANSION) * 9;
+            int amountPatternSlots = 36;
 
             for (int i = 0; i < inv.getSlots(); i++) {
                 if (target.getStackInSlot(i).getItem() instanceof ItemEncodedPattern) {

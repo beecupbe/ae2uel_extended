@@ -57,7 +57,7 @@ public class PathGridCache implements IPathingGrid {
     private boolean updateNetwork = true;
     private boolean booting = false;
     private ControllerState controllerState = ControllerState.NO_CONTROLLER;
-    private int ticksUntilReady = 20;
+    private int ticksUntilReady = 10;
     private int lastChannels = 0;
     private HashSet<IPathItem> semiOpen = new HashSet<>();
 
@@ -90,17 +90,14 @@ public class PathGridCache implements IPathingGrid {
                 final int nodes = this.myGrid.getNodes().size();
                 this.setChannelsInUse(used);
 
-                this.ticksUntilReady = 20 + Math.max(0, nodes / 100 - 20);
                 this.setChannelsByBlocks(nodes * used);
                 this.setChannelPowerUsage(this.getChannelsByBlocks() / 128.0);
 
                 this.myGrid.getPivot().beginVisit(new AdHocChannelUpdater(used));
             } else if (this.controllerState == ControllerState.CONTROLLER_CONFLICT) {
-                this.ticksUntilReady = 20;
                 this.myGrid.getPivot().beginVisit(new AdHocChannelUpdater(0));
             } else {
                 final int nodes = this.myGrid.getNodes().size();
-                this.ticksUntilReady = 20 + Math.max(0, nodes / 100 - 20);
                 final HashSet<IPathItem> closedList = new HashSet<>();
                 this.semiOpen = new HashSet<>();
 

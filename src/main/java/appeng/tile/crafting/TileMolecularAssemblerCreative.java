@@ -423,7 +423,6 @@ public class TileMolecularAssemblerCreative extends AENetworkInvTile implements 
             return TickRateModulation.SLEEP;
         }
             final ItemStack output = this.myPlan.getOutput(this.craftingInv, this.getWorld());
-            final int outnum = this.myPlan.getCondensedInputs().length;
                 for (int job = 0; job < AEConfig.instance().getMACCreativeScale(); job++) {
                     for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
                         this.craftingInv.setInventorySlotContents(x, this.gridInv.getStackInSlot(x));
