@@ -24,11 +24,9 @@ import appeng.api.config.Actionable;
 import appeng.api.config.PowerUnits;
 import appeng.api.definitions.IBlockDefinition;
 import appeng.api.implementations.items.IAEItemPowerStorage;
-import appeng.block.networking.BlockImprovedEnergyCell;
 import appeng.core.Api;
 import appeng.core.localization.GuiText;
 import appeng.util.Platform;
-import appeng.block.AEBaseBlock;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -62,7 +60,7 @@ public class AEBaseItemBlockChargeable extends AEBaseItemBlock implements IAEIte
             final double percent = internalCurrentPower / internalMaxPower;
 
             lines.add(GuiText.StoredEnergy.getLocal() + ':' + MessageFormat.format(" {0,number,#} ", internalCurrentPower) + Platform
-                    .gui_localize(PowerUnits.AE.unlocalizedName) + " - " + MessageFormat.format(" {0,number,#.##%} ", percent));
+                    .gui_localize(PowerUnits.AE.unlocalizedName) + " -" + MessageFormat.format(" {0,number,#.##%} ", percent));
         }
     }
 

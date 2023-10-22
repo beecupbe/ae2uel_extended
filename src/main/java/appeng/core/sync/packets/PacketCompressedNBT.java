@@ -19,9 +19,7 @@
 package appeng.core.sync.packets;
 
 
-import appeng.client.gui.implementations.GuiFluidInterfaceConfigurationTerminal;
-import appeng.client.gui.implementations.GuiInterfaceConfigurationTerminal;
-import appeng.client.gui.implementations.GuiInterfaceTerminal;
+import appeng.client.gui.implementations.*;
 import appeng.core.sync.AppEngPacket;
 import appeng.core.sync.network.INetworkInfo;
 import io.netty.buffer.ByteBuf;
@@ -98,9 +96,21 @@ public class PacketCompressedNBT extends AppEngPacket {
 
         if (gs instanceof GuiInterfaceTerminal) {
             ((GuiInterfaceTerminal) gs).postUpdate(this.in);
+        } else if (gs instanceof GuiInterfaceTerminalImp) {
+            ((GuiInterfaceTerminalImp) gs).postUpdate(this.in);
+        } else if (gs instanceof GuiInterfaceTerminalAdv) {
+            ((GuiInterfaceTerminalAdv) gs).postUpdate(this.in);
+        } else if (gs instanceof GuiInterfaceTerminalPatt) {
+            ((GuiInterfaceTerminalPatt) gs).postUpdate(this.in);
         } else if (gs instanceof GuiInterfaceConfigurationTerminal) {
             ((GuiInterfaceConfigurationTerminal) gs).postUpdate(this.in);
-        } else if (gs instanceof GuiFluidInterfaceConfigurationTerminal) {
+        } else if (gs instanceof GuiInterfaceConfigurationTerminalImp) {
+            ((GuiInterfaceConfigurationTerminalImp) gs).postUpdate(this.in);
+        } else if (gs instanceof GuiInterfaceConfigurationTerminalAdv) {
+            ((GuiInterfaceConfigurationTerminalAdv) gs).postUpdate(this.in);
+        } else if (gs instanceof GuiInterfaceConfigurationTerminalPer) {
+            ((GuiInterfaceConfigurationTerminalPer) gs).postUpdate(this.in);
+        }  else if (gs instanceof GuiFluidInterfaceConfigurationTerminal) {
             ((GuiFluidInterfaceConfigurationTerminal) gs).postUpdate(this.in);
         }
     }

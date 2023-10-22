@@ -41,7 +41,7 @@ import java.util.*;
 
 public class EnergyGridCache implements IEnergyGrid {
 
-    private static final double MAX_BUFFER_STORAGE = 800;
+    private static final double MAX_BUFFER_STORAGE = 8192;
     private static final Comparator<IEnergyGridProvider> COMPARATOR_HIGHEST_AMOUNT_STORED_FIRST = (o1, o2) -> Double.compare(o2.getProviderStoredEnergy(), o1.getProviderStoredEnergy());
 
     private static final Comparator<IEnergyGridProvider> COMPARATOR_LOWEST_PERCENTAGE_FIRST = (o1, o2) -> {

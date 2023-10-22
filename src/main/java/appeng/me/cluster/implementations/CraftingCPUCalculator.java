@@ -25,6 +25,7 @@ import appeng.api.networking.IGridNode;
 import appeng.api.networking.events.MENetworkCraftingCpuChange;
 import appeng.api.util.AEPartLocation;
 import appeng.api.util.WorldCoord;
+import appeng.core.AEConfig;
 import appeng.me.cluster.IAECluster;
 import appeng.me.cluster.IAEMultiBlock;
 import appeng.me.cluster.MBCalculator;
@@ -47,15 +48,15 @@ public class CraftingCPUCalculator extends MBCalculator {
 
     @Override
     public boolean checkMultiblockScale(final WorldCoord min, final WorldCoord max) {
-        if (max.x - min.x > 16) {
+        if (max.x - min.x > AEConfig.instance().getCpusStructureMaxSizeX()) {
             return false;
         }
 
-        if (max.y - min.y > 16) {
+        if (max.y - min.y > AEConfig.instance().getCpusStructureMaxSizeY()) {
             return false;
         }
 
-        return max.z - min.z <= 16;
+        return max.z - min.z <= AEConfig.instance().getCpusStructureMaxSizeZ();
     }
 
     @Override

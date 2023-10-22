@@ -35,46 +35,20 @@ public class TileCraftingStorageTile extends TileCraftingTile {
         final IBlocks blocks = AEApi.instance().definitions().blocks();
         final int storage = ((TileCraftingTile) obj).getStorageBytes() / KILO_SCALAR;
 
-        Optional<ItemStack> is;
-
-        switch (storage) {
-            case 1:
-                is = blocks.craftingStorage1k().maybeStack(1);
-                break;
-            case 4:
-                is = blocks.craftingStorage4k().maybeStack(1);
-                break;
-            case 16:
-                is = blocks.craftingStorage16k().maybeStack(1);
-                break;
-            case 64:
-                is = blocks.craftingStorage64k().maybeStack(1);
-                break;
-            case 1024:
-                is = blocks.craftingStorage1mb().maybeStack(1);
-                break;
-            case 4096:
-                is = blocks.craftingStorage4mb().maybeStack(1);
-                break;
-            case 16384:
-                is = blocks.craftingStorage16mb().maybeStack(1);
-                break;
-            case 65536:
-                is = blocks.craftingStorage64mb().maybeStack(1);
-                break;
-            case 262144:
-                is = blocks.craftingStorage256mb().maybeStack(1);
-                break;
-            case 1048576:
-                is = blocks.craftingStorage1gb().maybeStack(1);
-                break;
-            case 2097151:
-                is = blocks.craftingStorage15gb().maybeStack(1);
-                break;
-            default:
-                is = Optional.empty();
-                break;
-        }
+        Optional<ItemStack> is = switch (storage) {
+            case 1 -> blocks.craftingStorage1k().maybeStack(1);
+            case 4 -> blocks.craftingStorage4k().maybeStack(1);
+            case 16 -> blocks.craftingStorage16k().maybeStack(1);
+            case 64 -> blocks.craftingStorage64k().maybeStack(1);
+            case 1024 -> blocks.craftingStorage1mb().maybeStack(1);
+            case 4096 -> blocks.craftingStorage4mb().maybeStack(1);
+            case 16384 -> blocks.craftingStorage16mb().maybeStack(1);
+            case 65536 -> blocks.craftingStorage64mb().maybeStack(1);
+            case 262144 -> blocks.craftingStorage256mb().maybeStack(1);
+            case 1048576 -> blocks.craftingStorage1gb().maybeStack(1);
+            case 2097151 -> blocks.craftingStorage15gb().maybeStack(1);
+            default -> Optional.empty();
+        };
 
         return is.orElseGet(() -> super.getItemFromTile(obj));
     }
@@ -131,30 +105,18 @@ public class TileCraftingStorageTile extends TileCraftingTile {
         }
 
         final BlockCraftingUnit unit = (BlockCraftingUnit) this.world.getBlockState(this.pos).getBlock();
-        switch (unit.type) {
-            default:
-            case STORAGE_1K:
-                return KILO_SCALAR;
-            case STORAGE_4K:
-                return 4 * KILO_SCALAR;
-            case STORAGE_16K:
-                return 16 * KILO_SCALAR;
-            case STORAGE_64K:
-                return 64 * KILO_SCALAR;
-            case STORAGE_1MB:
-                return 1024 * KILO_SCALAR;
-            case STORAGE_4MB:
-                return 4096 * KILO_SCALAR;
-            case STORAGE_16MB:
-                return 16384 * KILO_SCALAR;
-            case STORAGE_64MB:
-                return 65536 * KILO_SCALAR;
-            case STORAGE_256MB:
-                return 262144 * KILO_SCALAR;
-            case STORAGE_1GB:
-                return 1048576 * KILO_SCALAR;
-            case STORAGE_15GB:
-                return 2097151 * KILO_SCALAR;
-        }
+        return switch (unit.type) {
+            default -> KILO_SCALAR;
+            case STORAGE_4K -> 4 * KILO_SCALAR;
+            case STORAGE_16K -> 16 * KILO_SCALAR;
+            case STORAGE_64K -> 64 * KILO_SCALAR;
+            case STORAGE_1MB -> 1024 * KILO_SCALAR;
+            case STORAGE_4MB -> 4096 * KILO_SCALAR;
+            case STORAGE_16MB -> 16384 * KILO_SCALAR;
+            case STORAGE_64MB -> 65536 * KILO_SCALAR;
+            case STORAGE_256MB -> 262144 * KILO_SCALAR;
+            case STORAGE_1GB -> 1048576 * KILO_SCALAR;
+            case STORAGE_15GB -> Integer.MAX_VALUE;
+        };
     }
 }

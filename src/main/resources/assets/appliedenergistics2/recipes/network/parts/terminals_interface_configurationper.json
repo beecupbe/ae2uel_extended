@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "type": "minecraft:item_exists",
+            "item": "appliedenergistics2:interfacepatt"
+        }
+    ],
+    "result": {
+        "type": "appliedenergistics2:part",
+        "part": "part.interface_terminalpatt"
+    },
+    "type": "appliedenergistics2:part_shapeless",
+    "ingredients": [
+        {
+            "type": "appliedenergistics2:part",
+            "part": "part.interface_configuration_terminalper"
+        },
+		{
+            "item": "#appliedenergistics2:interfacepatt"
+        }
+    ]
+}

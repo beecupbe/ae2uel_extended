@@ -109,7 +109,7 @@ public enum MaterialType {
 
     WIRELESS(41, "material_wireless", EnumSet.of(AEFeature.WIRELESS_ACCESS_TERMINAL)),
     WIRELESS_BOOSTER(42, "material_wireless_booster", EnumSet.of(AEFeature.WIRELESS_ACCESS_TERMINAL)),
-
+    WIRELESS_BOOSTERIMP(650, "material_wireless_boosterimp", EnumSet.of(AEFeature.WIRELESS_ACCESS_TERMINAL)),
     FORMATION_CORE(43, "material_formation_core", EnumSet.of(AEFeature.CORES)),
     ANNIHILATION_CORE(44, "material_annihilation_core", EnumSet.of(AEFeature.CORES)),
 

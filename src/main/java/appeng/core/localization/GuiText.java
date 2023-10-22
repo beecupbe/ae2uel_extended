@@ -230,7 +230,10 @@ public enum  GuiText {
     InterfacePerJEI,
     InterfacePattJEI,
     CreativeCoProcessorJEI,
-    CrankImpJEI;
+    CrankImpJEI,
+    NewTerminals,
+    NewTerminalsItem,
+    MegaWB;
 
     private final String root;
 

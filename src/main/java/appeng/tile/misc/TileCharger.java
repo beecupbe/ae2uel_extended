@@ -57,9 +57,9 @@ import java.util.List;
 
 
 public class TileCharger extends AENetworkPowerTile implements ICrankable, IGridTickable {
-    private static final int POWER_MAXIMUM_AMOUNT = 8000;
+    private static final int POWER_MAXIMUM_AMOUNT = 16384;
     private static final int POWER_THRESHOLD = POWER_MAXIMUM_AMOUNT - 1;
-    private static final int POWER_PER_CRANK_TURN = 256;
+    private static final int POWER_PER_CRANK_TURN = 384;
 
     private final AppEngInternalInventory inv = new AppEngInternalInventory(this, 1, 1, new ChargerInvFilter());
 

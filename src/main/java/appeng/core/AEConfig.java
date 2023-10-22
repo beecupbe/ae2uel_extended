@@ -79,7 +79,6 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     private boolean enableEffects = true;
     private boolean useLargeFonts = false;
     private boolean useColoredCraftingStatus;
-    private boolean disableColoredCableRecipesInJEI = true;
     private int craftingCalculationTimePerTick = 5;
     private PowerUnits selectedPowerUnit = PowerUnits.AE;
     private boolean showCraftableTooltip = true;
@@ -119,13 +118,13 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     // Autocrafting
     private boolean enableCraftingSubstitutes = false;
     // Controller sizes
-    private int maxControllerSizeX = 7;
-    private int maxControllerSizeY = 7;
-    private int maxControllerSizeZ = 7;
+    private int maxControllerSizeX = 16;
+    private int maxControllerSizeY = 16;
+    private int maxControllerSizeZ = 16;
 
     //shhh!
-    private final int normalChannelCapacity = 8;
-    private final int denseChannelCapacity = 256;
+    private int normalChannelCapacity = 8;
+    private int denseChannelCapacity = 256;
 
 
     private int smallCableCap = 8;
@@ -134,6 +133,14 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     private final int x128CableCap = 128;
     private final int x256CableCap = 256;
     private int macCreativeScale = 2;
+
+    private int impEnergyCellCap = 200000 * 16;
+    private int advEnergyCellCap = 200000 * 32;
+    private int perEnergyCellCap = 200000 * 64;
+
+    private int cpusStructureMaxSizeX = 16;
+    private int cpusStructureMaxSizeY = 16;
+    private int cpusStructureMaxSizeZ = 16;
 
 
     private AEConfig(final File configFile) {
@@ -153,8 +160,16 @@ public final class AEConfig extends Configuration implements IConfigurableObject
         CondenserOutput.SINGULARITY.requiredPower = this.get("Condenser", "Singularity", 256000).getInt(256000);
 
         this.removeCrashingItemsOnLoad = this.get("general", "removeCrashingItemsOnLoad", false, "Will auto-remove items that crash when being loaded from storage. This will destroy those items instead of crashing the game!").getBoolean();
-        this.smallCableCap = Math.min(this.get("general", "smallCableCapacity", this.normalChannelCapacity, "Channels capacity for small cables").getInt(this.normalChannelCapacity), 2147483647);
-        this.denseCableCap = Math.min(this.get("general", "denseCableCapacity", this.denseChannelCapacity, "Channels capacity for dense cables").getInt(this.denseChannelCapacity), 2147483647);
+        this.normalChannelCapacity = Math.min(this.get("general", "smallCableCapacity", this.normalChannelCapacity, "Channels capacity for small cables").getInt(this.normalChannelCapacity), Integer.MAX_VALUE);
+        this.denseChannelCapacity = Math.min(this.get("general", "denseCableCapacity", this.denseChannelCapacity, "Channels capacity for dense cables").getInt(this.denseChannelCapacity), Integer.MAX_VALUE);
+        this.impEnergyCellCap = Math.min(this.get("general", "impEnergyCellCap", this.impEnergyCellCap, "Improved Energy Cell Capacity").getInt(this.impEnergyCellCap), Integer.MAX_VALUE);
+        this.advEnergyCellCap = Math.min(this.get("general", "advEnergyCellCap", this.advEnergyCellCap, "Advanced Energy Cell Capacity").getInt(this.advEnergyCellCap), Integer.MAX_VALUE);
+        this.perEnergyCellCap = Math.min(this.get("general", "perEnergyCellCap", this.perEnergyCellCap, "Perfect Energy Cell Capacity").getInt(this.perEnergyCellCap), Integer.MAX_VALUE);
+
+        this.cpusStructureMaxSizeX = Math.min(Math.max(this.get("general", "cpusStructureMaxSizeX", this.cpusStructureMaxSizeX, "Max CPUs structure size. (values greater than 16 may cause unexpected errors and crash the game.)").getInt(this.cpusStructureMaxSizeX), 1), 1024);
+        this.cpusStructureMaxSizeY = Math.min(Math.max(this.get("general", "cpusStructureMaxSizeY", this.cpusStructureMaxSizeY, "Max CPUs structure size. (values greater than 16 may cause unexpected errors and crash the game.)").getInt(this.cpusStructureMaxSizeY), 1), 1024);
+        this.cpusStructureMaxSizeZ = Math.min(Math.max(this.get("general", "cpusStructureMaxSizeZ", this.cpusStructureMaxSizeZ, "Max CPUs structure size. (values greater than 16 may cause unexpected errors and crash the game.)").getInt(this.cpusStructureMaxSizeZ), 1), 1024);
+
         this.setCategoryComment("BlockingMode", "Map of items to not block when blockingmode is enabled.\n[modid]\nmodid:item:metadata(optional,default:0)\nSupports more than one modid, so you can block different things between, for example, gregtech or enderio");
         this.nonBlockingItems = this.get("BlockingMode", "nonBlockingItems", nonBlockingItems, "NonBlockingItems").getStringList();
 
@@ -200,9 +215,9 @@ public final class AEConfig extends Configuration implements IConfigurableObject
         this.enableCraftingSubstitutes = this.get("autocrafting", "EnableAutocraftinSubstitutes", this.enableCraftingSubstitutes).getBoolean(this.enableCraftingSubstitutes);
 
         this.addCustomCategoryComment("ControllerSize", "Set the max size of a controller in any of the 3 axis.\nEach is between [1, 64)");
-        this.maxControllerSizeX = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeX", this.maxControllerSizeX).getInt(this.maxControllerSizeX), 1), 63);
-        this.maxControllerSizeY = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeY", this.maxControllerSizeY).getInt(this.maxControllerSizeY), 1), 63);
-        this.maxControllerSizeZ = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeZ", this.maxControllerSizeZ).getInt(this.maxControllerSizeZ), 1), 63);
+        this.maxControllerSizeX = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeX", this.maxControllerSizeX).getInt(this.maxControllerSizeX), 1), Integer.MAX_VALUE);
+        this.maxControllerSizeY = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeY", this.maxControllerSizeY).getInt(this.maxControllerSizeY), 1), Integer.MAX_VALUE);
+        this.maxControllerSizeZ = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeZ", this.maxControllerSizeZ).getInt(this.maxControllerSizeZ), 1), Integer.MAX_VALUE);
         this.macCreativeScale = Math.min(this.get("general", "molecularAssemblerCreativeOutputScaling", this.macCreativeScale, "This number multiplies the number of items that comes out after autocrafting the item-s (adjust with care!)")
                 .getInt(this.macCreativeScale), Integer.MAX_VALUE);
 
@@ -262,7 +277,6 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     }
 
     private void clientSync() {
-        this.disableColoredCableRecipesInJEI = this.get("Client", "disableColoredCableRecipesInJEI", true).getBoolean(true);
         this.enableEffects = this.get("Client", "enableEffects", true).getBoolean(true);
         this.useLargeFonts = this.get("Client", "useTerminalUseLargeFont", false).getBoolean(false);
         this.useColoredCraftingStatus = this.get("Client", "useColoredCraftingStatus", true).getBoolean(true);
@@ -340,15 +354,15 @@ public final class AEConfig extends Configuration implements IConfigurableObject
         if (boosters == 64) {
             return Long.MAX_VALUE;
         } else {
-            return this.wirelessBaseRange * (boosters * 8);
+            return this.wirelessBaseRange * (boosters * 8) * this.wirelessBoosterRangeMultiplier;
         }
     }
 
     public double wireless_getPowerDrain(final int boosters) {
         if (boosters == 64) {
-            return 1024;
+            return this.wirelessBaseCost * this.wirelessCostMultiplier + (wirelessCostMultiplier * 1024);
         } else {
-            return this.wirelessBaseCost + (boosters * 4);
+            return this.wirelessBaseCost * this.wirelessCostMultiplier + (boosters * 4);
         }
     }
 
@@ -384,10 +398,6 @@ public final class AEConfig extends Configuration implements IConfigurableObject
         if (eventArgs.getModID().equals(AppEng.MOD_ID)) {
             this.clientSync();
         }
-    }
-
-    public boolean disableColoredCableRecipesInJEI() {
-        return this.disableColoredCableRecipesInJEI;
     }
 
     public String getFilePath() {
@@ -530,10 +540,6 @@ public final class AEConfig extends Configuration implements IConfigurableObject
 
     public boolean isShowCraftableTooltip() {
         return this.showCraftableTooltip;
-    }
-
-    public boolean isDisableColoredCableRecipesInJEI() {
-        return this.disableColoredCableRecipesInJEI;
     }
 
     public int getCraftingCalculationTimePerTick() {
@@ -728,6 +734,25 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     }
     public int getMACCreativeScale() {
         return this.macCreativeScale;
+    }
+    public int getImpEnergyCellCap() {
+        return this.impEnergyCellCap;
+    }
+    public int getAdvEnergyCellCap() {
+        return this.advEnergyCellCap;
+    }
+    public int getPerEnergyCellCap() {
+        return this.perEnergyCellCap;
+    }
+
+    public int getCpusStructureMaxSizeX() {
+        return this.cpusStructureMaxSizeX;
+    }
+    public int getCpusStructureMaxSizeY() {
+        return this.cpusStructureMaxSizeY;
+    }
+    public int getCpusStructureMaxSizeZ() {
+        return this.cpusStructureMaxSizeZ;
     }
 
 }

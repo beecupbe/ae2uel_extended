@@ -168,6 +168,16 @@ public class JEIPlugin implements IModPlugin {
         }
         this.addDescription(registry, blocks.crankImp(), GuiText.CrankImpJEI.getLocal());
         this.addDescription(registry, blocks.craftingAcceleratorCreative(), GuiText.CreativeCoProcessorJEI.getLocal());
+
+        this.addDescription(registry, parts.interfaceTerminalImp(), GuiText.NewTerminals.getLocal());
+        this.addDescription(registry, parts.interfaceTerminalAdv(), GuiText.NewTerminals.getLocal());
+        this.addDescription(registry, parts.interfaceTerminalPatt(), GuiText.NewTerminals.getLocal());
+        this.addDescription(registry, parts.interfaceConfigurationTerminalImp(), GuiText.NewTerminalsItem.getLocal());
+        this.addDescription(registry, parts.interfaceConfigurationTerminalAdv(), GuiText.NewTerminalsItem.getLocal());
+        this.addDescription(registry, parts.interfaceConfigurationTerminalPer(), GuiText.NewTerminalsItem.getLocal());
+
+        this.addDescription(registry, materials.wirelessBooster(), GuiText.MegaWB.getLocal());
+
     }
 
     private void addDescription(IModRegistry registry, IItemDefinition itemDefinition, String message) {

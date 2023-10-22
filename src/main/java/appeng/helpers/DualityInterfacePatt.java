@@ -146,7 +146,7 @@ public class DualityInterfacePatt implements IGridTickable, IStorageMonitorable,
         this.cm.registerSetting(Settings.INTERFACE_TERMINAL, YesNo.YES);
 
         this.iHost = ih;
-        this.craftingTracker = new MultiCraftingTracker(this.iHost, 9);
+        this.craftingTracker = new MultiCraftingTracker(this.iHost, 72);
 
         final MachineSource actionSource = new MachineSource(this.iHost);
         this.mySource = actionSource;
@@ -968,7 +968,15 @@ public class DualityInterfacePatt implements IGridTickable, IStorageMonitorable,
                         targetTE = (IInterfaceHost) ((TileCableBus) te).getPart(s.getOpposite());
                     }
 
-                    if (targetTE.getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
+                    if (targetTE.getInterfaceDualityPer().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDualityAdv().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDualityImp().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
+                        continue;
+                    } else if (targetTE.getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
                         continue;
                     } else {
                         IStorageMonitorableAccessor mon = te.getCapability(Capabilities.STORAGE_MONITORABLE_ACCESSOR, s.getOpposite());
@@ -1142,7 +1150,7 @@ public class DualityInterfacePatt implements IGridTickable, IStorageMonitorable,
         return invIsCustomBlocking(blockingInventoryAdaptor);
     }
 
-    private boolean sameGrid(final IGrid grid) throws GridAccessException {
+    public boolean sameGrid(final IGrid grid) throws GridAccessException {
         return grid == this.gridProxy.getGrid();
     }
 
@@ -1270,15 +1278,6 @@ public class DualityInterfacePatt implements IGridTickable, IStorageMonitorable,
                 continue;
             }
 
-            if (directedTile instanceof IInterfaceHost) {
-                try {
-                    if (((IInterfaceHost) directedTile).getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
-                        continue;
-                    }
-                } catch (final GridAccessException e) {
-                    continue;
-                }
-            }
 
             final InventoryAdaptor adaptor = InventoryAdaptor.getAdaptor(directedTile, direction.getOpposite());
             if (directedTile instanceof ICraftingMachine || adaptor != null) {
