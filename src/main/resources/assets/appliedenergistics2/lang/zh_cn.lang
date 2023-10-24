@@ -17,7 +17,7 @@ tile.appliedenergistics2.energy_cell.name=能源元件
 tile.appliedenergistics2.drive.name=ME驱动器
 
 tile.appliedenergistics2.driveImp.name=进阶ME驱动器
-
+tile.appliedenergistics2.crank_imp.name=改进的木质曲柄
 tile.appliedenergistics2.energy_acceptor.name=能源接收器
 tile.appliedenergistics2.grindstone.name=石英磨具
 tile.appliedenergistics2.matrix_frame.name=矩阵框架
@@ -96,7 +96,7 @@ tile.appliedenergistics2.sky_stone_brick_stairs.name=陨石石砖楼梯
 tile.appliedenergistics2.sky_stone_small_brick_stairs.name=陨石砖块楼梯
 tile.appliedenergistics2.sky_stone_stairs.name=陨石楼梯
 
-// Slabs
+// Slab
 tile.appliedenergistics2.chiseled_quartz_slab.name=錾制赛特斯石英台阶
 tile.appliedenergistics2.fluix_slab.name=福鲁伊克斯台阶
 tile.appliedenergistics2.quartz_pillar_slab.name=竖纹赛特斯石英台阶
@@ -306,8 +306,12 @@ gui.appliedenergistics2.InterfacePerJEI=具有最大槽位数的完美ME接口�
 gui.appliedenergistics2.InterfacePattJEI=可存储高达72个样板的ME样板接口。
 gui.appliedenergistics2.ImpBusesJEI=可传输高达20,480个物品的进阶总线。
 gui.appliedenergistics2.MACCreativeJEI=可将制作的物品数量乘以配置文件中指定的数字的创造分子装配室。（默认为两倍）
-gui.appliedenergistics2.MACImpJEI=进阶分子装配室，速度是前代的两倍，不需要加速卡。
+gui.appliedenergistics2.MACImpJEI=进阶分子装配室，速度是前代的两倍，不需要加速卡。没有GUI-不需要加速卡。
 gui.appliedenergistics2.ImpBusesFluidJEI=进阶总线，每秒可以传输前代的128倍的流体。
+gui.appliedenergistics2.CrankImpJEI=改进的木质曲柄，加快了石英磨具的运行速度。
+gui.appliedenergistics2.NewTerminals=ME接口终端的改进版本，显示新界面
+gui.appliedenergistics2.NewTerminalsItem=ME接口配置终端的改进版本，显示新界面。
+gui.appliedenergistics2.MegaWB=通过在无线接收器中安装64个无线信号增幅器，您将能够在任何维度和任何距离使用您的终端。
 
 
 // GUI Tooltips
@@ -642,6 +646,10 @@ item.appliedenergistics2.multi_part.fluid_import_bus.name=ME流体输入总线
 item.appliedenergistics2.multi_part.fluid_import_busimp.name=进阶ME流体输入总线
 item.appliedenergistics2.multi_part.fluid_export_busimp.name=进阶ME流体输出总线
 item.appliedenergistics2.multi_part.interface.name=ME接口
+item.appliedenergistics2.multi_part.interfaceimp.name=进阶ME接口
+item.appliedenergistics2.multi_part.interfaceadv.name=高级ME接口
+item.appliedenergistics2.multi_part.interfaceper.name=完美ME接口
+item.appliedenergistics2.multi_part.interfacepatt.name=ME样板接口
 item.appliedenergistics2.multi_part.fluid_interface.name=ME流体接口
 item.appliedenergistics2.multi_part.level_emitter.name=ME标准发信器
 item.appliedenergistics2.multi_part.fluid_level_emitter.name=ME流体标准发信器
@@ -657,7 +665,15 @@ item.appliedenergistics2.multi_part.inverted_toggle_bus.name=ME反相触发总�
 item.appliedenergistics2.multi_part.toggle_bus.name=ME触发总线
 item.appliedenergistics2.multi_part.crafting_monitor.name=ME合成监控器
 item.appliedenergistics2.multi_part.interface_terminal.name=ME接口终端
+
+item.appliedenergistics2.multi_part.interface_terminalimp.name=进阶ME接口终端
+item.appliedenergistics2.multi_part.interface_terminaladv.name=高级ME接口终端
+item.appliedenergistics2.multi_part.interface_terminalpatt.name=ME样板接口终端
 item.appliedenergistics2.multi_part.interface_configuration_terminal.name=ME接口配置终端
+
+item.appliedenergistics2.multi_part.interface_configuration_terminalimp.name=进阶ME接口配置终端
+item.appliedenergistics2.multi_part.interface_configuration_terminaladv.name=高级ME接口配置终端
+item.appliedenergistics2.multi_part.interface_configuration_terminalper.name=完美ME接口配置终端
 item.appliedenergistics2.multi_part.fluid_interface_configuration_terminal.name=ME流体接口配置终端
 item.appliedenergistics2.multi_part.fluid_terminal.name=ME流体终端
 item.appliedenergistics2.multi_part.invalid_type.name=已禁用
