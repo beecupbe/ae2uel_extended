@@ -88,6 +88,10 @@ public class PartInterface extends PartBasicState implements IGridTickable, ISto
     public static final PartModel MODELS_HAS_CHANNEL = new PartModel(MODEL_BASE, new ResourceLocation(AppEng.MOD_ID, "part/interface_has_channel"));
 
     private final DualityInterface duality = new DualityInterface(this.getProxy(), this);
+    private final DualityInterfacePer duality2 = new DualityInterfacePer(this.getProxy(), this);
+    private final DualityInterfacePatt duality3 = new DualityInterfacePatt(this.getProxy(), this);
+    private final DualityInterfaceImp duality4 = new DualityInterfaceImp(this.getProxy(), this);
+    private final DualityInterfaceAdv duality5 = new DualityInterfaceAdv(this.getProxy(), this);
 
     @Reflected
     public PartInterface(final ItemStack is) {
@@ -200,22 +204,22 @@ public class PartInterface extends PartBasicState implements IGridTickable, ISto
 
     @Override
     public DualityInterfaceImp getInterfaceDualityImp() {
-        return null;
+        return this.duality4;
     }
 
     @Override
     public DualityInterfaceAdv getInterfaceDualityAdv() {
-        return null;
+        return this.duality5;
     }
 
     @Override
     public DualityInterfacePer getInterfaceDualityPer() {
-        return null;
+        return this.duality2;
     }
 
     @Override
     public DualityInterfacePatt getInterfaceDualityPatt() {
-        return null;
+        return this.duality3;
     }
 
     @Override

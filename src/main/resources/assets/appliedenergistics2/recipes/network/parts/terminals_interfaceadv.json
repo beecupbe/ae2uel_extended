@@ -8,16 +8,12 @@
                     "part": "part.interface_terminalimp"
                 },
 				{
-                    "type": "minecraft:item_exists",
-                    "item": "appliedenergistics2:storage_cell_1k"
+                    "type": "appliedenergistics2:material_exists",
+                    "material": "material.cell1k_part"
                 },
 				{
                     "type": "appliedenergistics2:part_exists",
                     "part": "part.interface_terminaladv"
-                },
-                {
-                    "type": "appliedenergistics2:material_exists",
-                    "material": "material.engineering_processor"
                 }
             ]
         }
@@ -33,10 +29,11 @@
             "part": "part.interface_terminalimp"
         },
         {
-			"item": "appliedenergistics2:storage_cell_4k"
+			"type": "appliedenergistics2:part",
+			"part": "material.cell4k_part"
         },
         {
-            "item": "#appliedenergistics2:interfaceadv"
+            "item": "appliedenergistics2:interfaceadv"
         }
     ]
 }

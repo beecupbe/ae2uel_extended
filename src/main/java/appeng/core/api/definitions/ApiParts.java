@@ -84,6 +84,7 @@ public final class ApiParts implements IParts {
     private final IItemDefinition interfaceTerminalAdv;
     private final IItemDefinition interfaceTerminalPatt;
     private final IItemDefinition patternTerminal;
+    private final IItemDefinition avaritiaPatternTerminal;
     private final IItemDefinition expandedProcessingPatternTerminal;
     private final IItemDefinition interfaceConfigurationTerminalImp;
     private final IItemDefinition interfaceConfigurationTerminalAdv;
@@ -159,6 +160,7 @@ public final class ApiParts implements IParts {
         this.interfaceTerminalPatt = new DamagedItemDefinition("part.terminal.interfacepatt", itemPart.createPart(PartType.INTERFACE_TERMINALPATT));
 
         this.patternTerminal = new DamagedItemDefinition("part.terminal.pattern", itemPart.createPart(PartType.PATTERN_TERMINAL));
+        this.avaritiaPatternTerminal = new DamagedItemDefinition("part.avaritia.terminal.pattern", itemPart.createPart(PartType.AVARITIA_PATTERN_TERMINAL));
         this.expandedProcessingPatternTerminal = new DamagedItemDefinition("part.terminal.expanded_processing_pattern", itemPart.createPart(PartType.EXPANDED_PROCESSING_PATTERN_TERMINAL));
 
         this.interfaceConfigurationTerminal = new DamagedItemDefinition("part.terminal.interface_configuration_terminal", itemPart.createPart(PartType.INTERFACE_CONFIGURATION_TERMINAL));
@@ -416,6 +418,11 @@ public final class ApiParts implements IParts {
     @Override
     public IItemDefinition patternTerminal() {
         return this.patternTerminal;
+    }
+
+    @Override
+    public IItemDefinition avaritiaPatternTerminal() {
+        return this.avaritiaPatternTerminal;
     }
 
     @Override

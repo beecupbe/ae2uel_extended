@@ -662,6 +662,7 @@ item.appliedenergistics2.multi_part.storage_bus.name=МЭ Шина хранен�
 item.appliedenergistics2.multi_part.oredict_storage_bus.name=МЭ Шина хранения по словарю руд
 item.appliedenergistics2.multi_part.fluid_storage_bus.name=МЭ Жидкостная шина хранения
 item.appliedenergistics2.multi_part.terminal.name=МЭ Терминал
+item.appliedenergistics2.multi_part.avaritia_pattern_terminal.name=МЭ 9x9 Терминал шаблонов (в разработке)
 item.appliedenergistics2.multi_part.inverted_toggle_bus.name=МЭ Инвертированная шина переключения
 item.appliedenergistics2.multi_part.toggle_bus.name=МЭ Шина переключения
 item.appliedenergistics2.multi_part.crafting_monitor.name=МЭ Монитор крафта

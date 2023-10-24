@@ -130,13 +130,6 @@ public enum AEFeature {
     SMART_CABLES("SmartCables", Constants.CATEGORY_CABLES),
     DENSE_CABLES("DenseCables", Constants.CATEGORY_CABLES),
     CREATIVE_CABLES("CreativeCables", Constants.CATEGORY_CABLES),
-
-    //shhh!
-    //DENSE_X64_CABLES("X64Cables", Constants.CATEGORY_CABLES),
-    //DENSE_X128_CABLES("X128Cables", Constants.CATEGORY_CABLES),
-    //DENSE_X256_CABLES("X256Cables", Constants.CATEGORY_CABLES),
-
-
     ENERGY_CELLS("EnergyCells", Constants.CATEGORY_ENERGY),
     ENERGY_ACCEPTOR("EnergyAcceptor", Constants.CATEGORY_ENERGY),
     DENSE_ENERGY_CELLS("DenseEnergyCells", Constants.CATEGORY_ENERGY),

@@ -16,7 +16,7 @@
             "part": "part.interface_configuration_terminalper"
         },
 		{
-            "item": "#appliedenergistics2:interfacepatt"
+            "item": "appliedenergistics2:interfacepatt"
         }
     ]
 }

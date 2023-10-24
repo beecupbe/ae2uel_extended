@@ -195,6 +195,7 @@ public enum PartType {
     FLUID_FORMATION_PLANE(321, "fluid_formation_plane", EnumSet.of(AEFeature.FLUID_FORMATION_PLANE), EnumSet.noneOf(IntegrationType.class), PartFluidFormationPlane.class),
 
     PATTERN_TERMINAL(340, "pattern_terminal", EnumSet.of(AEFeature.PATTERNS), EnumSet.noneOf(IntegrationType.class), PartPatternTerminal.class),
+    AVARITIA_PATTERN_TERMINAL(648, "avaritia_pattern_terminal", EnumSet.of(AEFeature.UNSUPPORTED_DEVELOPER_TOOLS), EnumSet.noneOf(IntegrationType.class), PartAvaritiaPatternTerminal.class),
 
     EXPANDED_PROCESSING_PATTERN_TERMINAL(341, "expanded_processing_pattern_terminal", EnumSet.of(AEFeature.PATTERNS), EnumSet.noneOf(IntegrationType.class), PartExpandedProcessingPatternTerminal.class),
 
@@ -285,7 +286,7 @@ public enum PartType {
 
     FLUID_INTERFACE_CONFIGURATION_TERMINAL(522, "fluid_interface_configuration_terminal", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartFluidInterfaceConfigurationTerminal.class);
 
-    //last metaValue = 647
+    //last metaValue = 648
 
     private final int baseDamage;
     private final Set<AEFeature> features;

@@ -116,6 +116,7 @@ public interface IParts {
 
 
     IItemDefinition patternTerminal();
+    IItemDefinition avaritiaPatternTerminal();
 
     IItemDefinition expandedProcessingPatternTerminal();
 

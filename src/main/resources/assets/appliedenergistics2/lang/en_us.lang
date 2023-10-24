@@ -656,6 +656,7 @@ item.appliedenergistics2.multi_part.level_emitter.name=ME Level Emitter
 item.appliedenergistics2.multi_part.fluid_level_emitter.name=ME Fluid Level Emitter
 item.appliedenergistics2.multi_part.p2p_tunnel.name=P2P Tunnel
 item.appliedenergistics2.multi_part.pattern_terminal.name=ME Pattern Terminal
+item.appliedenergistics2.multi_part.avaritia_pattern_terminal.name=ME Avaritia 9x9 Pattern Terminal (WIP)
 item.appliedenergistics2.multi_part.expanded_processing_pattern_terminal.name=ME Extended Processing Pattern Terminal
 item.appliedenergistics2.multi_part.quartz_fiber.name=Quartz Fiber
 item.appliedenergistics2.multi_part.storage_bus.name=ME Storage Bus

@@ -71,6 +71,10 @@ import java.util.List;
 public class TileInterface extends AENetworkInvTile implements IGridTickable, IInventoryDestination, IInterfaceHost, IPriorityHost {
 
     private final DualityInterface duality = new DualityInterface(this.getProxy(), this);
+    private final DualityInterfacePer duality2 = new DualityInterfacePer(this.getProxy(), this);
+    private final DualityInterfacePatt duality3 = new DualityInterfacePatt(this.getProxy(), this);
+    private final DualityInterfaceImp duality4 = new DualityInterfaceImp(this.getProxy(), this);
+    private final DualityInterfaceAdv duality5 = new DualityInterfaceAdv(this.getProxy(), this);
 
     // Indicates that this interface has no specific direction set
     private boolean omniDirectional = true;
@@ -222,22 +226,22 @@ public class TileInterface extends AENetworkInvTile implements IGridTickable, II
 
     @Override
     public DualityInterfaceImp getInterfaceDualityImp() {
-        return null;
+        return this.duality4;
     }
 
     @Override
     public DualityInterfaceAdv getInterfaceDualityAdv() {
-        return null;
+        return this.duality5;
     }
 
     @Override
     public DualityInterfacePer getInterfaceDualityPer() {
-        return null;
+        return this.duality2;
     }
 
     @Override
     public DualityInterfacePatt getInterfaceDualityPatt() {
-        return null;
+        return this.duality3;
     }
 
     @Override

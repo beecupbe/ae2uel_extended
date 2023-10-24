@@ -8,12 +8,8 @@
                     "part": "part.interface_terminaladv"
                 },
 				{
-                    "type": "minecraft:item_exists",
-                    "item": "appliedenergistics2:storage_cell_1k"
-                },
-				{
                     "type": "appliedenergistics2:part_exists",
-                    "part": "part.interface_terminaladv"
+                    "part": "part.interface_terminalpatt"
                 },
                 {
                     "type": "appliedenergistics2:material_exists",
@@ -35,9 +31,6 @@
         {
 			"type": "appliedenergistics2:part",
 			"part": "material.blank_pattern"
-        },
-        {
-            "item": "#appliedenergistics2:interfacepatt"
         }
     ]
 }
