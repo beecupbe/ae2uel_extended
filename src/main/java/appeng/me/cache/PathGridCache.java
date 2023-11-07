@@ -57,7 +57,7 @@ public class PathGridCache implements IPathingGrid {
     private boolean updateNetwork = true;
     private boolean booting = false;
     private ControllerState controllerState = ControllerState.NO_CONTROLLER;
-    private int ticksUntilReady = 10;
+    private int ticksUntilReady = AEConfig.instance().getControllerCooldown();
     private int lastChannels = 0;
     private HashSet<IPathItem> semiOpen = new HashSet<>();
 

@@ -135,6 +135,7 @@ public class PartImportBusImp extends PartSharedItemBusImp implements IInventory
             return TickRateModulation.IDLE;
         }
 
+        this.itemsToSend = this.itemsImpToSend();
         this.worked = false;
 
         final InventoryAdaptor myAdaptor = this.getHandler();
@@ -217,7 +218,7 @@ public class PartImportBusImp extends PartSharedItemBusImp implements IInventory
     }
 
     private int calculateMaximumAmountToImport(final InventoryAdaptor myAdaptor, final IAEItemStack whatToImport, final IMEMonitor<IAEItemStack> inv, final FuzzyMode fzMode) {
-        final int toSend = Math.min(this.itemsToSend, 64);
+        final int toSend = this.itemsToSend;
         final ItemStack itemStackToImport;
 
         if (whatToImport == null) {

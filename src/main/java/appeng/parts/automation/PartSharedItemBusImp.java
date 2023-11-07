@@ -23,6 +23,7 @@ import appeng.api.config.RedstoneMode;
 import appeng.api.config.Upgrades;
 import appeng.api.networking.ticking.IGridTickable;
 import appeng.api.networking.ticking.TickRateModulation;
+import appeng.core.AEConfig;
 import appeng.me.GridAccessException;
 import appeng.tile.inventory.AppEngInternalAEInventory;
 import appeng.util.InventoryAdaptor;
@@ -101,9 +102,10 @@ public abstract class PartSharedItemBusImp extends PartUpgradeableImp implements
         return Math.min(1 + this.getInstalledUpgrades(Upgrades.CAPACITY) * 4, this.getConfig().getSlots());
     }
 
-    protected int calculateItemsToSend() {
-        return 4096;
+    protected int itemsImpToSend() {
+        return AEConfig.instance().getImpBusesItemsLimit();
     }
+
 
     /**
      * Checks if the bus can actually do something.

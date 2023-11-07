@@ -28,7 +28,6 @@ import appeng.api.parts.IPartModel;
 import appeng.api.storage.IMEMonitor;
 import appeng.api.storage.data.IAEFluidStack;
 import appeng.core.AppEng;
-import appeng.core.settings.TickRates;
 import appeng.fluids.util.AEFluidStack;
 import appeng.items.parts.PartModels;
 import appeng.me.GridAccessException;
@@ -93,7 +92,7 @@ public class PartFluidImportBusImp extends PartSharedFluidBus {
                 final IMEMonitor<IAEFluidStack> inv = this.getProxy().getStorage().getInventory(this.getChannel());
 
                 if (fh != null) {
-                    final FluidStack fluidStack = fh.drain(this.calculateAmountToSendImp(), false);
+                    final FluidStack fluidStack = fh.drain(this.amountFluidsToSendImp(), false);
 
                     if (this.filterEnabled() && !this.isInFilter(fluidStack)) {
                         return TickRateModulation.SLOWER;

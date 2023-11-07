@@ -38,7 +38,6 @@ import appeng.api.storage.data.IAEItemStack;
 import appeng.api.util.AECableType;
 import appeng.core.AELog;
 import appeng.core.AppEng;
-import appeng.core.settings.TickRates;
 import appeng.core.sync.GuiBridge;
 import appeng.helpers.MultiCraftingTracker;
 import appeng.helpers.Reflected;
@@ -109,7 +108,7 @@ public class PartExportBusImp extends PartSharedItemBusImp implements ICraftingR
             return TickRateModulation.IDLE;
         }
 
-        this.itemToSend = this.calculateItemsToSend();
+        this.itemToSend = this.itemsImpToSend();
         this.didSomething = false;
 
         try {
@@ -168,7 +167,7 @@ public class PartExportBusImp extends PartSharedItemBusImp implements ICraftingR
             // :P
         }
 
-        return this.didSomething ? TickRateModulation.FASTER : TickRateModulation.SLOWER;
+        return this.didSomething ? TickRateModulation.URGENT : TickRateModulation.SLOWER;
     }
 
     @Override

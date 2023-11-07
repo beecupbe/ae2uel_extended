@@ -29,7 +29,6 @@ import appeng.api.parts.IPartModel;
 import appeng.api.storage.IMEMonitor;
 import appeng.api.storage.data.IAEFluidStack;
 import appeng.core.AppEng;
-import appeng.core.settings.TickRates;
 import appeng.items.parts.PartModels;
 import appeng.me.GridAccessException;
 import appeng.me.helpers.MachineSource;
@@ -102,7 +101,7 @@ public class PartFluidExportBusImp extends PartSharedFluidBus {
                         if (fluid != null) {
                             final IAEFluidStack toExtract = fluid.copy();
 
-                            toExtract.setStackSize(this.calculateAmountToSendImp());
+                            toExtract.setStackSize(this.amountFluidsToSendImp());
 
                             final IAEFluidStack out = inv.extractItems(toExtract, Actionable.SIMULATE, this.source);
 

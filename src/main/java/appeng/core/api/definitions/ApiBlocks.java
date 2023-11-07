@@ -367,10 +367,10 @@ public final class ApiBlocks implements IBlocks {
                 .build();
 
         this.driveImp = registry.block("driveImp", BlockDriveImproved::new)
-                .features(AEFeature.STORAGE_CELLS, AEFeature.ME_DRIVE_IMP)
+                .features(AEFeature.STORAGE_CELLS, AEFeature.ME_DRIVE)
                 .tileEntity(new TileEntityDefinition(TileDriveImproved.class))
                 .useCustomItemModel()
-                .rendering(new DriveRendering())
+                .rendering(new DriveRenderingImp())
                 .build();
 
         this.chest = registry.block("chest", BlockChest::new)

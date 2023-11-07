@@ -113,7 +113,7 @@ public class PartP2PFEPower extends PartP2PTunnel<PartP2PFEPower> {
                     return 0;
                 }
 
-                final int amountPerOutput = maxReceive / outputTunnels;
+                final int amountPerOutput = Math.max(1, maxReceive / outputTunnels);
                 int overflow = 0;
 
                 for (PartP2PFEPower o : PartP2PFEPower.this.getOutputs())
@@ -126,6 +126,11 @@ public class PartP2PFEPower extends PartP2PTunnel<PartP2PFEPower> {
 
                     overflow += amountPerOutput - received;
                     total += received;
+
+                    if (total >= maxReceive) {
+                        outputs.clear();
+                        break;
+                    }
                 }
 
                 if (overflow > 0) {

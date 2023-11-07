@@ -1,5 +1,5 @@
 {
-    "parent": "appliedenergistics2:block/drive_base",
+    "parent": "appliedenergistics2:block/driveimp_base",
     "textures": {
         "front": "appliedenergistics2:blocks/drive_front_flat"
     }

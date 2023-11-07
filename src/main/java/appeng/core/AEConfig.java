@@ -133,6 +133,7 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     private final int x128CableCap = 128;
     private final int x256CableCap = 256;
     private int macCreativeScale = 2;
+    private int controllerCooldown = 10;
 
     private int impEnergyCellCap = 200000 * 16;
     private int advEnergyCellCap = 200000 * 32;
@@ -142,6 +143,7 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     private int cpusStructureMaxSizeY = 16;
     private int cpusStructureMaxSizeZ = 16;
 
+    private int impBusesItemsLimit = 16384;
 
     private AEConfig(final File configFile) {
         super(configFile);
@@ -165,6 +167,8 @@ public final class AEConfig extends Configuration implements IConfigurableObject
         this.impEnergyCellCap = Math.min(this.get("general", "impEnergyCellCap", this.impEnergyCellCap, "Improved Energy Cell Capacity").getInt(this.impEnergyCellCap), Integer.MAX_VALUE);
         this.advEnergyCellCap = Math.min(this.get("general", "advEnergyCellCap", this.advEnergyCellCap, "Advanced Energy Cell Capacity").getInt(this.advEnergyCellCap), Integer.MAX_VALUE);
         this.perEnergyCellCap = Math.min(this.get("general", "perEnergyCellCap", this.perEnergyCellCap, "Perfect Energy Cell Capacity").getInt(this.perEnergyCellCap), Integer.MAX_VALUE);
+
+        this.impBusesItemsLimit = Math.min(this.get("general", "improvedBusesItemsLimit", this.impBusesItemsLimit, "Items limit for Improved import/export buses").getInt(this.impBusesItemsLimit), Integer.MAX_VALUE);
 
         this.cpusStructureMaxSizeX = Math.min(Math.max(this.get("general", "cpusStructureMaxSizeX", this.cpusStructureMaxSizeX, "Max CPUs structure size. (values greater than 16 may cause unexpected errors and crash the game.)").getInt(this.cpusStructureMaxSizeX), 1), 1024);
         this.cpusStructureMaxSizeY = Math.min(Math.max(this.get("general", "cpusStructureMaxSizeY", this.cpusStructureMaxSizeY, "Max CPUs structure size. (values greater than 16 may cause unexpected errors and crash the game.)").getInt(this.cpusStructureMaxSizeY), 1), 1024);
@@ -214,12 +218,14 @@ public final class AEConfig extends Configuration implements IConfigurableObject
         this.addCustomCategoryComment("autocrafting", "Enable patterns with substitutions on to have their substitutes to be auto craftable.\nThis changes the crafting tree, and can show missing ingredients for the substitute, instead of the patterned item");
         this.enableCraftingSubstitutes = this.get("autocrafting", "EnableAutocraftinSubstitutes", this.enableCraftingSubstitutes).getBoolean(this.enableCraftingSubstitutes);
 
-        this.addCustomCategoryComment("ControllerSize", "Set the max size of a controller in any of the 3 axis.\nEach is between [1, 64)");
+        this.addCustomCategoryComment("ControllerSize", "Set the max size of a controller in any of the 3 axis.");
         this.maxControllerSizeX = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeX", this.maxControllerSizeX).getInt(this.maxControllerSizeX), 1), Integer.MAX_VALUE);
         this.maxControllerSizeY = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeY", this.maxControllerSizeY).getInt(this.maxControllerSizeY), 1), Integer.MAX_VALUE);
         this.maxControllerSizeZ = Math.min(Math.max(this.get("ControllerSize", "maxControllerSizeZ", this.maxControllerSizeZ).getInt(this.maxControllerSizeZ), 1), Integer.MAX_VALUE);
         this.macCreativeScale = Math.min(this.get("general", "molecularAssemblerCreativeOutputScaling", this.macCreativeScale, "This number multiplies the number of items that comes out after autocrafting the item-s (adjust with care!)")
                 .getInt(this.macCreativeScale), Integer.MAX_VALUE);
+        this.controllerCooldown = Math.min(this.get("general", "controllersVisitCooldown", this.controllerCooldown, "This number specifies the number of ticks, that the controller will wait before starting the process of turning on and detecting devices.\nValues greater than 20 will greatly slow down the speed of the entire ME network")
+                .getInt(this.controllerCooldown), Integer.MAX_VALUE);
 
         this.clientSync();
 
@@ -754,5 +760,10 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     public int getCpusStructureMaxSizeZ() {
         return this.cpusStructureMaxSizeZ;
     }
-
+    public int getImpBusesItemsLimit() {
+        return this.impBusesItemsLimit;
+    }
+    public int getControllerCooldown() {
+        return this.controllerCooldown;
+    }
 }
