@@ -86,7 +86,7 @@ public abstract class BlockQuantumBase extends AEBaseTileBlock implements ICusto
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 

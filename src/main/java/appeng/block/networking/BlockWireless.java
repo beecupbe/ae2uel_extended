@@ -68,7 +68,7 @@ public class BlockWireless extends AEBaseTileBlock implements ICustomCollision {
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 
