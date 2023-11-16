@@ -35,7 +35,7 @@ public final class PartAccessor {
     public Optional<IPart> getMaybePart(final TileEntity te, final IProbeHitData data) {
         if (te instanceof final IPartHost host) {
             BlockPos pos = data.getPos();
-            final Vec3d position = data.getHitVec().addVector(-pos.getX(), -pos.getY(), -pos.getZ());
+            final Vec3d position = data.getHitVec().add(-pos.getX(), -pos.getY(), -pos.getZ());
             final SelectedPart sp = host.selectPart(position);
 
             if (sp.part != null) {

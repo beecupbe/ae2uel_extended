@@ -208,7 +208,7 @@ public final class ItemMaterial extends AEBaseItem implements IStorageComponent,
     }
 
     @Override
-    public String getUnlocalizedName(final ItemStack is) {
+    public String getTranslationKey(final ItemStack is) {
         return "item.appliedenergistics2.material." + this.nameOf(is).toLowerCase();
     }
 

@@ -148,22 +148,15 @@ class GlassBakedModel implements IBakedModel {
      * Creates the bitmask that indicates, in which directions (in terms of u,v space) a border should be drawn.
      */
     private static int makeBitmask(GlassState state, EnumFacing side) {
-        switch (side) {
-            case DOWN:
-                return makeBitmask(state, EnumFacing.SOUTH, EnumFacing.EAST, EnumFacing.NORTH, EnumFacing.WEST);
-            case UP:
-                return makeBitmask(state, EnumFacing.SOUTH, EnumFacing.WEST, EnumFacing.NORTH, EnumFacing.EAST);
-            case NORTH:
-                return makeBitmask(state, EnumFacing.UP, EnumFacing.WEST, EnumFacing.DOWN, EnumFacing.EAST);
-            case SOUTH:
-                return makeBitmask(state, EnumFacing.UP, EnumFacing.EAST, EnumFacing.DOWN, EnumFacing.WEST);
-            case WEST:
-                return makeBitmask(state, EnumFacing.UP, EnumFacing.SOUTH, EnumFacing.DOWN, EnumFacing.NORTH);
-            case EAST:
-                return makeBitmask(state, EnumFacing.UP, EnumFacing.NORTH, EnumFacing.DOWN, EnumFacing.SOUTH);
-            default:
-                throw new IllegalArgumentException("Unsupported side!");
-        }
+        return switch (side) {
+            case DOWN -> makeBitmask(state, EnumFacing.SOUTH, EnumFacing.EAST, EnumFacing.NORTH, EnumFacing.WEST);
+            case UP -> makeBitmask(state, EnumFacing.SOUTH, EnumFacing.WEST, EnumFacing.NORTH, EnumFacing.EAST);
+            case NORTH -> makeBitmask(state, EnumFacing.UP, EnumFacing.WEST, EnumFacing.DOWN, EnumFacing.EAST);
+            case SOUTH -> makeBitmask(state, EnumFacing.UP, EnumFacing.EAST, EnumFacing.DOWN, EnumFacing.WEST);
+            case WEST -> makeBitmask(state, EnumFacing.UP, EnumFacing.SOUTH, EnumFacing.DOWN, EnumFacing.NORTH);
+            case EAST -> makeBitmask(state, EnumFacing.UP, EnumFacing.NORTH, EnumFacing.DOWN, EnumFacing.SOUTH);
+            default -> throw new IllegalArgumentException("Unsupported side!");
+        };
     }
 
     private static int makeBitmask(GlassState state, EnumFacing up, EnumFacing right, EnumFacing down, EnumFacing left) {

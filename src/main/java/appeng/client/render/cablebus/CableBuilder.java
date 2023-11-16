@@ -78,35 +78,17 @@ class CableBuilder {
     }
 
     static ResourceLocation getConnectionTexture(AECableType cableType, AEColor color) {
-        String textureFolder;
-        switch (cableType) {
-            case GLASS:
-                textureFolder = "parts/cable/glass/";
-                break;
-            case COVERED:
-                textureFolder = "parts/cable/covered/";
-                break;
-            case SMART:
-                textureFolder = "parts/cable/smart/";
-                break;
-            case DENSE_COVERED:
-                textureFolder = "parts/cable/dense_covered/";
-                break;
-            case DENSE_SMART:
-                textureFolder = "parts/cable/dense_smart/";
-                break;
-            case CABLE_X64:
-                textureFolder = "parts/cable/x64/";
-                break;
-            case CABLE_X128:
-                textureFolder = "parts/cable/x128/";
-                break;
-            case CABLE_X256:
-                textureFolder = "parts/cable/x256/";
-                break;
-            default:
-                throw new IllegalStateException("Cable type " + cableType + " does not support connections.");
-        }
+        String textureFolder = switch (cableType) {
+            case GLASS -> "parts/cable/glass/";
+            case COVERED -> "parts/cable/covered/";
+            case SMART -> "parts/cable/smart/";
+            case DENSE_COVERED -> "parts/cable/dense_covered/";
+            case DENSE_SMART -> "parts/cable/dense_smart/";
+            case CABLE_X64 -> "parts/cable/x64/";
+            case CABLE_X128 -> "parts/cable/x128/";
+            case CABLE_X256 -> "parts/cable/x256/";
+            default -> throw new IllegalStateException("Cable type " + cableType + " does not support connections.");
+        };
 
         return new ResourceLocation(AppEng.MOD_ID, textureFolder + color.name().toLowerCase());
     }

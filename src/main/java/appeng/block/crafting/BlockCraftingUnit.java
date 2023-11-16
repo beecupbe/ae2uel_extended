@@ -43,6 +43,8 @@ import net.minecraftforge.common.property.ExtendedBlockState;
 import net.minecraftforge.common.property.IExtendedBlockState;
 import net.minecraftforge.common.property.IUnlistedProperty;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.EnumSet;
 
 
@@ -111,7 +113,8 @@ public class BlockCraftingUnit extends AEBaseTileBlock {
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    @NotNull
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 
