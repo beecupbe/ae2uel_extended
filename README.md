@@ -1,4 +1,4 @@
-Forked from: https://github.com/PrototypeTrousers/Applied-Energistics-2
+Forked from: https://github.com/AE2-UEL/Applied-Energistics-2
 ## License
 * Applied Energistics 2 API
   - (c) 2013 - 2018 AlgorithmX2 et al
@@ -31,10 +31,13 @@ This is a fork of AE2 Unofficial Extended Life which adds some improvements and 
 
 - ME drive that can store up to 30 cells.
 
--  And also, now dense cables, P2P ME tunnels and controllers can transmit up to 256 channels:
+-  Dense cables, P2P ME tunnels and controllers now can transmit up to 256 channels:
 
 
 ![4](https://github.com/beecupbe/ae2uel_extended/assets/115642276/97ebf4a0-b436-456c-a6a0-e31d997c60cb)
+
+- And more other things!
+
 
 It is recommended to use this mod together with AE2 Stuff: Extended!: https://github.com/beecupbe/ae2stuff_extended
 
@@ -42,7 +45,7 @@ RU:
 
 # AE2 UEL: Extended - Сломай лимиты!
 
-Этот мод - форк AE2 Unofficial Extended Life (https://github.com/PrototypeTrousers/Applied-Energistics-2), который добавляет новый контент и улучшения:
+Этот мод - форк AE2 Unofficial Extended Life, который добавляет новый контент и улучшения:
 
 
  - Улучшенные хранилища крафта:
@@ -59,8 +62,10 @@ RU:
 
 - МЭ Накопитель, который позволяет хранить до 30 ячеек!
 
-- Также, плотные кабеля, P2P туннели и контроллеры теперь могут передавать до 256 каналов:
+- Плотные кабеля, P2P туннели и контроллеры теперь могут передавать до 256 каналов:
 
 ![4](https://github.com/beecupbe/ae2uel_extended/assets/115642276/97ebf4a0-b436-456c-a6a0-e31d997c60cb)
+
+- И много других крутых вещей!
 
 Рекомендуется использовать вместе с AE2 Stuff: Extended!: https://github.com/beecupbe/ae2stuff_extended
