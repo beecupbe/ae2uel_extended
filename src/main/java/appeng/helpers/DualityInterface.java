@@ -27,6 +27,7 @@ import appeng.api.config.YesNo;
 import appeng.api.implementations.ICraftingPatternItem;
 import appeng.api.implementations.IUpgradeableHost;
 import appeng.api.implementations.tiles.ICraftingMachine;
+import appeng.api.implementations.tiles.IImprovedMAC;
 import appeng.api.networking.GridFlags;
 import appeng.api.networking.IGrid;
 import appeng.api.networking.IGridNode;
@@ -53,6 +54,7 @@ import appeng.api.util.AEPartLocation;
 import appeng.api.util.DimensionalCoord;
 import appeng.api.util.IConfigManager;
 import appeng.capabilities.Capabilities;
+import appeng.core.AEConfig;
 import appeng.core.localization.GuiText;
 import appeng.core.settings.TickRates;
 import appeng.me.GridAccessException;
@@ -109,8 +111,6 @@ import static appeng.helpers.ItemStackHelper.stackToNBT;
 public class DualityInterface implements IGridTickable, IStorageMonitorable, IInventoryDestination, IAEAppEngInventory, IConfigManagerHost, ICraftingProvider, IUpgradeableHost {
     public static final int NUMBER_OF_STORAGE_SLOTS = 9;
     public static final int NUMBER_OF_STORAGE_SLOTSIMP = 18;
-    public static final int NUMBER_OF_STORAGE_SLOTSADV = 27;
-    public static final int NUMBER_OF_STORAGE_SLOTSPER = 36;
 
     public static final int NUMBER_OF_CONFIG_SLOTS = 9;
     public static final int NUMBER_OF_CONFIG_SLOTSIMP = 18;
@@ -130,7 +130,7 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
     private final ConfigManager cm = new ConfigManager(this);
     private final AppEngInternalAEInventory config = new AppEngInternalAEInventory(this, NUMBER_OF_CONFIG_SLOTS, 512);
     private final AppEngInternalInventory storage = new AppEngInternalOversizedInventory(this, NUMBER_OF_STORAGE_SLOTS, 512);
-    private final AppEngInternalInventory patterns = new AppEngInternalInventory(this, NUMBER_OF_PATTERN_SLOTS);
+    private final AppEngInternalInventory patterns = new AppEngInternalInventory(this, NUMBER_OF_PATTERN_SLOTS, 1);
     private final MEMonitorPassThrough<IAEItemStack> items = new MEMonitorPassThrough<>(new NullInventory<IAEItemStack>(), AEApi.instance().storage().getStorageChannel(IItemStorageChannel.class));
     private final MEMonitorPassThrough<IAEFluidStack> fluids = new MEMonitorPassThrough<>(new NullInventory<IAEFluidStack>(), AEApi.instance().storage().getStorageChannel(IFluidStorageChannel.class));
     private final UpgradeInventory upgrades;
@@ -977,15 +977,12 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
                         targetTE = (IInterfaceHost) ((TileCableBus) te).getPart(s.getOpposite());
                     }
 
-                    if (targetTE.getInterfaceDualityPer().sameGrid(this.gridProxy.getGrid())) {
-                        continue;
-                    } else if (targetTE.getInterfaceDualityAdv().sameGrid(this.gridProxy.getGrid())) {
-                        continue;
-                    } else if (targetTE.getInterfaceDualityImp().sameGrid(this.gridProxy.getGrid())) {
-                        continue;
-                    } else if (targetTE.getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())) {
-                        continue;
-                    } else if (targetTE.getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
+                    if (targetTE.getInterfaceDualityPer().sameGrid(this.gridProxy.getGrid())
+                            || targetTE.getInterfaceDualityImp().sameGrid(this.gridProxy.getGrid())
+                            || targetTE.getInterfaceDualityAdv().sameGrid(this.gridProxy.getGrid())
+                            || targetTE.getInterfaceDualityPer().sameGrid(this.gridProxy.getGrid())
+                            || targetTE.getInterfaceDualityPatt().sameGrid(this.gridProxy.getGrid())
+                            || targetTE.getInterfaceDuality().sameGrid(this.gridProxy.getGrid())) {
                         continue;
                     } else {
                         IStorageMonitorableAccessor mon = te.getCapability(Capabilities.STORAGE_MONITORABLE_ACCESSOR, s.getOpposite());
@@ -1028,6 +1025,14 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
                 if (cm.acceptsPlans()) {
                     visitedFaces.remove(s);
                     if (cm.pushPattern(patternDetails, table, s.getOpposite())) {
+                        return true;
+                    }
+                    continue;
+                }
+            } else if (te instanceof final IImprovedMAC impMac) {
+                if (impMac.acceptsPlans()) {
+                    visitedFaces.remove(s);
+                    if (impMac.pushPattern(patternDetails, table, s.getOpposite())) {
                         return true;
                     }
                     continue;
@@ -1219,6 +1224,13 @@ public class DualityInterface implements IGridTickable, IStorageMonitorable, IIn
 
         for (final ItemStack is : this.storage) {
             if (!is.isEmpty()) {
+                int maxStackSize = is.getMaxStackSize();
+                while (is.getCount() > maxStackSize) {
+                    ItemStack portionedStack = is.copy();
+                    portionedStack.setCount(maxStackSize);
+                    is.shrink(maxStackSize);
+                    drops.add(portionedStack);
+                }
                 drops.add(is);
             }
         }

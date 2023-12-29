@@ -39,12 +39,18 @@ import appeng.api.storage.data.IAEItemStack;
 import appeng.api.storage.data.IItemList;
 import appeng.api.util.WorldCoord;
 import appeng.container.ContainerNull;
+import appeng.core.AEConfig;
 import appeng.core.AELog;
+import appeng.core.features.AEFeature;
+import appeng.core.sync.network.NetworkHandler;
+import appeng.core.sync.packets.PacketCraftingToast;
 import appeng.crafting.*;
 import appeng.helpers.PatternHelper;
+import appeng.helpers.PlayerHelper;
 import appeng.me.cache.CraftingGridCache;
 import appeng.me.cluster.IAECluster;
 import appeng.me.helpers.MachineSource;
+import appeng.me.helpers.PlayerSource;
 import appeng.tile.crafting.TileCraftingMonitorTile;
 import appeng.tile.crafting.TileCraftingTile;
 import appeng.util.Platform;
@@ -57,6 +63,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.world.World;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
@@ -97,6 +104,7 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
     private long elapsedTime;
     private long startItemCount;
     private long remainingItemCount;
+    private UUID requestingPlayerUUID;
 
     public CraftingCPUCluster(final WorldCoord min, final WorldCoord max) {
         this.min = min;
@@ -181,7 +189,11 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
         this.tiles.add(0, te);
 
         if (te.isStorage()) {
-            this.availableStorage += te.getStorageBytes();
+            if (te.getStorageBytesLong() > 0 || this.availableStorage == Long.MAX_VALUE) {
+                this.availableStorage = Long.MAX_VALUE;
+            } else {
+                this.availableStorage += te.getStorageBytes();
+            }
             this.storage.add(te);
         } else if (te.isStatus()) {
             this.status.add((TileCraftingMonitorTile) te);
@@ -392,6 +404,23 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
         this.lastTime = 0;
         this.elapsedTime = 0;
         this.isComplete = true;
+
+        notifyRequester(false);
+        this.requestingPlayerUUID = null;
+    }
+
+    private void notifyRequester(boolean cancelled) {
+        if (!Platform.isServer()) return;
+        if (this.requestingPlayerUUID == null) return;
+        if (this.finalOutput == null) return;
+        if (!AEConfig.instance().isFeatureEnabled(AEFeature.CRAFTING_TOASTS)) return;
+
+        var player = PlayerHelper.getPlayerByUUID(this.requestingPlayerUUID);
+        if (player != null) {
+            try {
+                NetworkHandler.instance().sendTo(new PacketCraftingToast(this.finalOutput, cancelled), player);
+            } catch (IOException ignored) {}
+        }
     }
 
     private void updateCPU() {
@@ -535,6 +564,8 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
             this.postCraftingStatusChange(is);
         }
 
+        notifyRequester(true);
+        this.requestingPlayerUUID = null;
         this.finalOutput = null;
         this.updateCPU();
 
@@ -816,6 +847,14 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
                 this.finalOutput = job.getOutput();
                 this.waiting = false;
                 this.isComplete = false;
+
+                // Store the requesting player if present.
+                if (src instanceof PlayerSource playerSource && playerSource.player().isPresent()) {
+                    this.requestingPlayerUUID = playerSource.player().get().getUniqueID();
+                } else {
+                    this.requestingPlayerUUID = null;
+                }
+
                 this.markDirty();
 
                 this.updateCPU();
@@ -1053,6 +1092,10 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
         data.setLong("elapsedTime", this.getElapsedTime());
         data.setLong("startItemCount", this.getStartItemCount());
         data.setLong("remainingItemCount", this.getRemainingItemCount());
+
+        if (Platform.isServer() && this.requestingPlayerUUID != null) {
+            data.setUniqueId("requestingPlayerUUID", this.requestingPlayerUUID);
+        }
     }
 
     private NBTTagCompound writeItem(final IAEItemStack finalOutput2) {
@@ -1127,6 +1170,10 @@ public final class CraftingCPUCluster implements IAECluster, ICraftingCPU {
         this.elapsedTime = data.getLong("elapsedTime");
         this.startItemCount = data.getLong("startItemCount");
         this.remainingItemCount = data.getLong("remainingItemCount");
+
+        if (Platform.isServer() && data.hasUniqueId("requestingPlayerUUID")) {
+            this.requestingPlayerUUID = data.getUniqueId("requestingPlayerUUID");
+        }
     }
 
     public void updateName() {

@@ -6,12 +6,18 @@ tile.appliedenergistics2.chest.name=ME Chest
 tile.appliedenergistics2.condenser.name=Matter Condenser
 tile.appliedenergistics2.controller.name=ME Controller
 tile.appliedenergistics2.crank.name=Wooden Crank
-tile.appliedenergistics2.creative_energy_cell.name=Creative Energy Cell
-tile.appliedenergistics2.dense_energy_cell.name=Dense Energy Cell
+tile.appliedenergistics2.creative_energy_cell.name=§dCreative§r Energy Cell
+tile.appliedenergistics2.dense_energy_cell.name=§5Dense§r Energy Cell
 
-tile.appliedenergistics2.improved_energy_cell.name=Improved Energy Cell
-tile.appliedenergistics2.advanced_energy_cell.name=Advanced Energy Cell
-tile.appliedenergistics2.perfect_energy_cell.name=Perfect Energy Cell
+tile.appliedenergistics2.solar_panel_basic.name=§3ME Basic Solar Panel
+tile.appliedenergistics2.solar_panel_imp.name=§5ME Improved Solar Panel
+tile.appliedenergistics2.solar_panel_adv.name=§dME Advanced Solar Panel
+tile.appliedenergistics2.solar_panel_per.name=§cME Perfect Solar Panel
+
+
+tile.appliedenergistics2.improved_energy_cell.name=§4Improved§r Energy Cell
+tile.appliedenergistics2.advanced_energy_cell.name=§aAdvanced§r Energy Cell
+tile.appliedenergistics2.perfect_energy_cell.name=§9Perfect§r Energy Cell
 
 tile.appliedenergistics2.energy_cell.name=Energy Cell
 tile.appliedenergistics2.drive.name=ME Drive
@@ -26,9 +32,9 @@ tile.appliedenergistics2.io_port.name=ME IO Port
 tile.appliedenergistics2.io_portimp.name=Improved ME IO Port
 tile.appliedenergistics2.inscriber.name=Inscriber
 tile.appliedenergistics2.interface.name=ME Interface
-tile.appliedenergistics2.interfaceimp.name=ME Delivery interface
-tile.appliedenergistics2.interfaceadv.name=Advanced ME Delivery interface
-tile.appliedenergistics2.interfaceper.name=Perfect ME Delivery interface
+tile.appliedenergistics2.interfaceimp.name=§aME Delivery§r interface
+tile.appliedenergistics2.interfaceadv.name=§eAdvanced ME Delivery§r interface
+tile.appliedenergistics2.interfaceper.name=§cPerfect ME Delivery§r interface
 tile.appliedenergistics2.interface_patterns.name=ME Patterns interface
 tile.appliedenergistics2.fluid_interface.name=ME Fluid Interface
 tile.appliedenergistics2.quantum_link.name=ME Quantum Link Chamber
@@ -70,6 +76,7 @@ tile.appliedenergistics2.crafting_storage_64mb.name=§364mb§r Crafting Storage
 tile.appliedenergistics2.crafting_storage_256mb.name=§a256mb§r Crafting Storage
 tile.appliedenergistics2.crafting_storage_1gb.name=§61gb§r Crafting Storage
 tile.appliedenergistics2.crafting_storage_15gb.name=§42gb§r Crafting Storage
+tile.appliedenergistics2.crafting_storage_creative.name=§8Creative§r Crafting Storage
 
 tile.appliedenergistics2.crafting_accelerator.name=Crafting Co-Processing Unit
 
@@ -80,7 +87,7 @@ tile.appliedenergistics2.crafting_accelerator_128x.name=§6X128§r Crafting Co-P
 tile.appliedenergistics2.crafting_accelerator_256x.name=§bX256§r Crafting Co-Processing Unit
 tile.appliedenergistics2.crafting_accelerator_512x.name=§dX512§r Crafting Co-Processing Unit
 tile.appliedenergistics2.crafting_accelerator_1024x.name=§5X1024§r Crafting Co-Processing Unit
-tile.appliedenergistics2.crafting_accelerator_creative.name=§4Creative§r Crafting Co-Processing Unit
+tile.appliedenergistics2.crafting_accelerator_creative.name=§8Creative§r Crafting Co-Processing Unit
 
 tile.appliedenergistics2.crafting_unit.name=Crafting Unit
 tile.appliedenergistics2.molecular_assembler.name=Molecular Assembler
@@ -291,12 +298,19 @@ gui.appliedenergistics2.Renamer=Custom Name: (Enter to set)
 gui.appliedenergistics2.Nothing=Nothing
 gui.appliedenergistics2.ShiftForDetails=Hold Shift for details
 gui.appliedenergistics2.ClearAll=Clear
-gui.appliedenergistics2.InterfaceImp=ME Delivery interface
-gui.appliedenergistics2.InterfaceAdv=Advanced ME Delivery interface
-gui.appliedenergistics2.InterfacePer=Perfect ME Delivery interface
-gui.appliedenergistics2.InterfacePatt=ME Patterns interface
+gui.appliedenergistics2.InterfaceImp=§aME Delivery interface
+gui.appliedenergistics2.InterfaceAdv=§eAdvanced ME Delivery interface
+gui.appliedenergistics2.InterfacePer=§cPerfect ME Delivery interface
+gui.appliedenergistics2.InterfacePatt=§8ME Patterns interface
 gui.appliedenergistics2.IOBusesImp=Improved Import/Export buses
 gui.appliedenergistics2.IOBusesFluidsImp=Improved Fluids Import/Export buses
+gui.appliedenergistics2.CraftingToastDone=Crafting job done!
+gui.appliedenergistics2.CraftingToastCancelled=Crafting job cancelled!
+gui.appliedenergistics2.FluidTerminal=Fluid Terminal
+gui.appliedenergistics2.PassiveGenerationDay=Generation Day:
+gui.appliedenergistics2.PassiveGenerationNight=Generation Day:
+gui.appliedenergistics2.MaxSolarCapacity=Capacity:
+gui.appliedenergistics2.UseNetToolToControlSolars=§fUse Network Tool to control your solar panel
 
 gui.appliedenergistics2.CreativeCoProcessorJEI=Creative version of the Co-Processor Unit. When installed, it increases the number of crafting co-processors to 2,147,483,646. Not recommended to install more than 1 creative processing block per 1 processor structure.
 gui.appliedenergistics2.DriveImpJEI=Improved version of the ME Drive that can hold up to 30 storage cells.
@@ -442,6 +456,7 @@ gui.tooltips.appliedenergistics2.PartialTransfer=Move stored items into the craf
 gui.tooltips.appliedenergistics2.MissingItem=§cMissing item
 gui.tooltips.appliedenergistics2.CraftableItem=§9Craftable item
 
+
 // Units
 gui.appliedenergistics2.units.appliedenergstics=AE
 gui.appliedenergistics2.units.ic2=Energy Units
@@ -450,22 +465,22 @@ gui.appliedenergistics2.units.gteu=GTEU
 
 // Colors
 gui.appliedenergistics2.White=White
-gui.appliedenergistics2.Orange=Orange
-gui.appliedenergistics2.Magenta=Magenta
-gui.appliedenergistics2.LightBlue=Light Blue
-gui.appliedenergistics2.Yellow=Yellow
-gui.appliedenergistics2.Lime=Lime
-gui.appliedenergistics2.Pink=Pink
-gui.appliedenergistics2.Gray=Gray
-gui.appliedenergistics2.LightGray=Light Gray
-gui.appliedenergistics2.Cyan=Cyan
-gui.appliedenergistics2.Purple=Purple
-gui.appliedenergistics2.Blue=Blue
-gui.appliedenergistics2.Brown=Brown
-gui.appliedenergistics2.Green=Green
-gui.appliedenergistics2.Red=Red
-gui.appliedenergistics2.Black=Black
-gui.appliedenergistics2.Fluix=Fluix
+gui.appliedenergistics2.Orange=§6Orange§r
+gui.appliedenergistics2.Magenta=§dMagenta§r
+gui.appliedenergistics2.LightBlue=§bLight Blue§r
+gui.appliedenergistics2.Yellow=§eYellow§r
+gui.appliedenergistics2.Lime=§aLime§r
+gui.appliedenergistics2.Pink=§dPink§r
+gui.appliedenergistics2.Gray=§8Gray§r
+gui.appliedenergistics2.LightGray=§7Light Gray§r
+gui.appliedenergistics2.Cyan=§3Cyan§r
+gui.appliedenergistics2.Purple=§5Purple§r
+gui.appliedenergistics2.Blue=§1Blue§r
+gui.appliedenergistics2.Brown=§6Brown§r
+gui.appliedenergistics2.Green=§2Green§r
+gui.appliedenergistics2.Red=§cRed§r
+gui.appliedenergistics2.Black=§0Black§r
+gui.appliedenergistics2.Fluix=§5Fluix§r
 
 // Waila
 waila.appliedenergistics2.Crafting=Crafting
@@ -510,10 +525,10 @@ item.appliedenergistics2.storage_cell_16k.name=§a16k§r ME Storage Cell
 item.appliedenergistics2.storage_cell_64k.name=§b64k§r ME Storage Cell
 
 item.appliedenergistics2.storage_cell_1mb.name=§d1mb§r ME Storage Cell
-item.appliedenergistics2.storage_cell_4mb.name=§54mb§r ME Storage Cell
-item.appliedenergistics2.storage_cell_16mb.name=§916mb§r ME Storage Cell
-item.appliedenergistics2.storage_cell_64mb.name=§364mb§r ME Storage Cell
-item.appliedenergistics2.storage_cell_256mb.name=§a256mb§r ME Storage Cell
+item.appliedenergistics2.storage_cell_4mb.name=§a4mb§r ME Storage Cell
+item.appliedenergistics2.storage_cell_16mb.name=§316mb§r ME Storage Cell
+item.appliedenergistics2.storage_cell_64mb.name=§e64mb§r ME Storage Cell
+item.appliedenergistics2.storage_cell_256mb.name=§c256mb§r ME Storage Cell
 
 item.appliedenergistics2.fluid_storage_cell_1k.name=§61k§r ME Fluid Storage Cell
 item.appliedenergistics2.fluid_storage_cell_4k.name=§e4k§r ME Fluid Storage Cell
@@ -521,12 +536,12 @@ item.appliedenergistics2.fluid_storage_cell_16k.name=§a16k§r ME Fluid Storage 
 item.appliedenergistics2.fluid_storage_cell_64k.name=§b64k§r ME Fluid Storage Cell
 
 item.appliedenergistics2.fluid_storage_cell_1mb.name=§d1mb§r ME Fluid Storage Cell
-item.appliedenergistics2.fluid_storage_cell_4mb.name=§54mb§r ME Fluid Storage Cell
-item.appliedenergistics2.fluid_storage_cell_16mb.name=§916mb§r ME Fluid Storage Cell
-item.appliedenergistics2.fluid_storage_cell_64mb.name=§364mb§r ME Fluid Storage Cell
-item.appliedenergistics2.fluid_storage_cell_256mb.name=§a256mb§r ME Fluid Storage Cell
+item.appliedenergistics2.fluid_storage_cell_4mb.name=§a4mb§r ME Fluid Storage Cell
+item.appliedenergistics2.fluid_storage_cell_16mb.name=§316mb§r ME Fluid Storage Cell
+item.appliedenergistics2.fluid_storage_cell_64mb.name=§e64mb§r ME Fluid Storage Cell
+item.appliedenergistics2.fluid_storage_cell_256mb.name=§c256mb§r ME Fluid Storage Cell
 
-item.appliedenergistics2.creative_storage_cell.name=Creative ME Storage Cell
+item.appliedenergistics2.creative_storage_cell.name=§dCreative ME Storage Cell
 item.appliedenergistics2.encoded_pattern.name=Encoded Pattern
 item.appliedenergistics2.view_cell.name=View Cell
 item.appliedenergistics2.facade.name=Cable Facade
@@ -559,10 +574,10 @@ item.appliedenergistics2.material.cell16k_part.name=§a16k§r ME Storage Compone
 item.appliedenergistics2.material.cell64k_part.name=§b64k§r ME Storage Component
 
 item.appliedenergistics2.material.cell1mb_part.name=§d1mb§r ME Storage Component
-item.appliedenergistics2.material.cell4mb_part.name=§54mb§r ME Storage Component
-item.appliedenergistics2.material.cell16mb_part.name=§916mb§r ME Storage Component
-item.appliedenergistics2.material.cell64mb_part.name=§364mb§r ME Storage Component
-item.appliedenergistics2.material.cell256mb_part.name=§a256mb§r ME Storage Component
+item.appliedenergistics2.material.cell4mb_part.name=§a4mb§r ME Storage Component
+item.appliedenergistics2.material.cell16mb_part.name=§316mb§r ME Storage Component
+item.appliedenergistics2.material.cell64mb_part.name=§e64mb§r ME Storage Component
+item.appliedenergistics2.material.cell256mb_part.name=§c256mb§r ME Storage Component
 item.appliedenergistics2.material.cell1gb_part.name=§61gb§r ME Storage Component
 item.appliedenergistics2.material.cell2gb_part.name=§42gb§r ME Storage Component
 
@@ -572,10 +587,10 @@ item.appliedenergistics2.material.fluid_cell16k_part.name=§a16k§r ME Fluid Sto
 item.appliedenergistics2.material.fluid_cell64k_part.name=§b64k§r ME Fluid Storage Component
 
 item.appliedenergistics2.material.fluid_cell1mb_part.name=§d1mb§r ME Fluid Storage Component
-item.appliedenergistics2.material.fluid_cell4mb_part.name=§54mb§r ME Fluid Storage Component
-item.appliedenergistics2.material.fluid_cell16mb_part.name=§916mb§r ME Fluid Storage Component
-item.appliedenergistics2.material.fluid_cell64mb_part.name=§364mb§r ME Fluid Storage Component
-item.appliedenergistics2.material.fluid_cell256mb_part.name=§a256mb§r ME Fluid Storage Component
+item.appliedenergistics2.material.fluid_cell4mb_part.name=§a4mb§r ME Fluid Storage Component
+item.appliedenergistics2.material.fluid_cell16mb_part.name=§316mb§r ME Fluid Storage Component
+item.appliedenergistics2.material.fluid_cell64mb_part.name=§e64mb§r ME Fluid Storage Component
+item.appliedenergistics2.material.fluid_cell256mb_part.name=§c256mb§r ME Fluid Storage Component
 
 item.appliedenergistics2.material.certus_quartz_crystal.name=Certus Quartz Crystal
 item.appliedenergistics2.material.certus_quartz_crystal_charged.name=Charged Certus Quartz Crystal
@@ -621,6 +636,7 @@ item.appliedenergistics2.multi_part.identity_annihilation_plane.name=ME Identity
 item.appliedenergistics2.multi_part.cable_anchor.name=Cable Anchor
 item.appliedenergistics2.multi_part.cable_covered.name=ME Covered Cable
 
+//ununsed
 item.appliedenergistics2.multi_part.cable_x64.name=ME Improved dense cable
 item.appliedenergistics2.multi_part.cable_x128.name=ME Advanced dense cable
 item.appliedenergistics2.multi_part.cable_x256.name=ME Perfect dense cable
@@ -641,16 +657,16 @@ item.appliedenergistics2.multi_part.fluid_export_bus.name=ME Fluid Export Bus
 item.appliedenergistics2.multi_part.formation_plane.name=ME Formation Plane
 item.appliedenergistics2.multi_part.fluid_formation_plane.name=ME Fluid Formation Plane
 item.appliedenergistics2.multi_part.import_bus.name=ME Import Bus
-item.appliedenergistics2.multi_part.import_busimp.name=Improved ME Import Bus
-item.appliedenergistics2.multi_part.export_busimp.name=Improved ME Export Bus
+item.appliedenergistics2.multi_part.import_busimp.name=§eImproved§r ME Import Bus
+item.appliedenergistics2.multi_part.export_busimp.name=§eExport§r ME Export Bus
 item.appliedenergistics2.multi_part.fluid_import_bus.name=ME Fluid Import Bus
-item.appliedenergistics2.multi_part.fluid_import_busimp.name=Improved ME Fluid Import Bus
-item.appliedenergistics2.multi_part.fluid_export_busimp.name=Improved ME Fluid Export Bus
+item.appliedenergistics2.multi_part.fluid_import_busimp.name=§bImproved§r ME Fluid Import Bus
+item.appliedenergistics2.multi_part.fluid_export_busimp.name=§bExport§r ME Fluid Export Bus
 item.appliedenergistics2.multi_part.interface.name=ME Interface
-item.appliedenergistics2.multi_part.interfaceimp.name=ME Delivery interface
-item.appliedenergistics2.multi_part.interfaceadv.name=Advanced ME Delivery interface
-item.appliedenergistics2.multi_part.interfaceper.name=Perfect ME Delivery interface
-item.appliedenergistics2.multi_part.interfacepatt.name=ME Patterns interface
+item.appliedenergistics2.multi_part.interfaceimp.name=§aME Delivery interface
+item.appliedenergistics2.multi_part.interfaceadv.name=§eAdvanced ME Delivery interface
+item.appliedenergistics2.multi_part.interfaceper.name=§cPerfect ME Delivery interface
+item.appliedenergistics2.multi_part.interfacepatt.name=§8ME Patterns interface
 item.appliedenergistics2.multi_part.fluid_interface.name=ME Fluid Interface
 item.appliedenergistics2.multi_part.level_emitter.name=ME Level Emitter
 item.appliedenergistics2.multi_part.fluid_level_emitter.name=ME Fluid Level Emitter
@@ -668,14 +684,14 @@ item.appliedenergistics2.multi_part.toggle_bus.name=ME Toggle Bus
 item.appliedenergistics2.multi_part.crafting_monitor.name=ME Crafting Monitor
 item.appliedenergistics2.multi_part.interface_terminal.name=ME Interface Terminal
 
-item.appliedenergistics2.multi_part.interface_terminalimp.name=ME Delivery Interface Terminal
-item.appliedenergistics2.multi_part.interface_terminaladv.name=ME Advanced Delivery Interface Terminal
-item.appliedenergistics2.multi_part.interface_terminalpatt.name=ME Patterns Interface Terminal
+item.appliedenergistics2.multi_part.interface_terminalimp.name=ME §aDelivery§r Interface Terminal
+item.appliedenergistics2.multi_part.interface_terminaladv.name=ME §eAdvanced Delivery§r Interface Terminal
+item.appliedenergistics2.multi_part.interface_terminalpatt.name=ME §8Patterns§r Interface Terminal
 item.appliedenergistics2.multi_part.interface_configuration_terminal.name=ME Interface Configuration Terminal
 
-item.appliedenergistics2.multi_part.interface_configuration_terminalimp.name=ME Delivery Interface Configuration Terminal
-item.appliedenergistics2.multi_part.interface_configuration_terminaladv.name=ME Advanced Delivery Interface Configuration Terminal
-item.appliedenergistics2.multi_part.interface_configuration_terminalper.name=ME Perfect Delivery Interface Configuration Terminal
+item.appliedenergistics2.multi_part.interface_configuration_terminalimp.name=ME §aDelivery§r Interface Configuration Terminal
+item.appliedenergistics2.multi_part.interface_configuration_terminaladv.name=ME §eAdvanced Delivery§r Interface Configuration Terminal
+item.appliedenergistics2.multi_part.interface_configuration_terminalper.name=ME §cPerfect Delivery§r Interface Configuration Terminal
 item.appliedenergistics2.multi_part.fluid_interface_configuration_terminal.name=ME Fluid Interface Configuration Terminal
 item.appliedenergistics2.multi_part.fluid_terminal.name=ME Fluid Terminal
 item.appliedenergistics2.multi_part.invalid_type.name=Disabled Item

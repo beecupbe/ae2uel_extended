@@ -98,7 +98,7 @@ import java.util.Optional;
 
 public class DualityFluidInterface implements IGridTickable, IStorageMonitorable, IAEFluidInventory, IAEAppEngInventory, IUpgradeableHost, IConfigManagerHost, IConfigurableFluidInventory {
     public static final int NUMBER_OF_TANKS = 9;
-    public static final int TANK_CAPACITY = Fluid.BUCKET_VOLUME * 4;
+    public static final int TANK_CAPACITY = Fluid.BUCKET_VOLUME * 8;
     private static final Collection<Block> BAD_BLOCKS = new HashSet<>(100);
     private final ConfigManager cm = new ConfigManager(this);
     private final AENetworkProxy gridProxy;

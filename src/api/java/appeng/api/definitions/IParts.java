@@ -40,7 +40,15 @@ public interface IParts {
     AEColoredItemDefinition cableDenseCovered();
 
     AEColoredItemDefinition cableDenseSmart();
-    //AEColoredItemDefinition cableCreative();
+
+    /* when????
+
+    AEColoredItemDefinition cableX64();
+    AEColoredItemDefinition cableX128();
+    AEColoredItemDefinition cableX256();
+    AEColoredItemDefinition cableCreative();
+
+     */
 
 
     AEColoredItemDefinition lumenCableSmart();
@@ -98,8 +106,6 @@ public interface IParts {
     IItemDefinition p2PTunnelGTEU();
 
     IItemDefinition p2PTunnelLight();
-
-    // IItemDefinition p2PTunnelOpenComputers();
 
     IItemDefinition cableAnchor();
 

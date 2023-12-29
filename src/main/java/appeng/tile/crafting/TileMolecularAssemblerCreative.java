@@ -96,20 +96,15 @@ public class TileMolecularAssemblerCreative extends AENetworkInvTile implements 
     private AEPartLocation pushDirection = AEPartLocation.INTERNAL;
     private ItemStack myPattern = ItemStack.EMPTY;
     private ICraftingPatternDetails myPlan = null;
-    private ICraftingJob job = null;
-    private double progress = 0;
     private boolean isAwake = false;
     private boolean forcePlan = false;
     private final IActionSource mySrc = new MachineSource(this);
 
     public TileMolecularAssemblerCreative() {
-        final ITileDefinition assembler = AEApi.instance().definitions().blocks().molecularAssemblerImp();
-
         this.settings = new ConfigManager(this);
         this.settings.registerSetting(Settings.REDSTONE_CONTROLLED, RedstoneMode.IGNORE);
         this.getProxy().setIdlePowerUsage(0.0);
         this.craftingInv = new InventoryCrafting(new ContainerNull(), 3, 3);
-
     }
 
     public void updateNeighbors() {
@@ -387,10 +382,6 @@ public class TileMolecularAssemblerCreative extends AENetworkInvTile implements 
         }
     }
 
-    public int getCraftingProgress() {
-        return (int) this.progress;
-    }
-
     @Override
     public void getDrops(final World w, final BlockPos pos, final List<ItemStack> drops) {
         super.getDrops(w, pos, drops);
@@ -422,27 +413,27 @@ public class TileMolecularAssemblerCreative extends AENetworkInvTile implements 
             this.updateSleepiness();
             return TickRateModulation.SLEEP;
         }
-            final ItemStack output = this.myPlan.getOutput(this.craftingInv, this.getWorld());
-                for (int job = 0; job < AEConfig.instance().getMACCreativeScale(); job++) {
-                    for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
-                        this.craftingInv.setInventorySlotContents(x, this.gridInv.getStackInSlot(x));
-                    }
-                    this.pushOut(output);
-                    for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
-                        this.gridInv.setStackInSlot(x, Platform.getContainerItem(this.craftingInv.getStackInSlot(x)));
-                    }
-                    this.ejectHeldItems();
-                }
-                try {
-                    final TargetPoint where = new TargetPoint(this.world.provider.getDimension(), this.pos.getX(), this.pos.getY(), this.pos.getZ(), 32);
-                    final IAEItemStack item = AEItemStack.fromItemStack(output);
-                    NetworkHandler.instance().sendToAllAround(new PacketAssemblerAnimation(this.pos, (byte) 100, item), where);
-                } catch (final IOException e) {
-                    // ;P
-                }
-                this.saveChanges();
-                this.updateSleepiness();
-                return this.isAwake ? TickRateModulation.IDLE : TickRateModulation.SLEEP;
+        final ItemStack output = this.myPlan.getOutput(this.craftingInv, this.getWorld());
+        for (int job = 0; job < AEConfig.instance().getMACCreativeScale(); job++) {
+            for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
+                this.craftingInv.setInventorySlotContents(x, this.gridInv.getStackInSlot(x));
+            }
+            this.pushOut(output);
+            for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
+                this.gridInv.setStackInSlot(x, Platform.getContainerItem(this.craftingInv.getStackInSlot(x)));
+            }
+            this.ejectHeldItems();
+        }
+        try {
+            final TargetPoint where = new TargetPoint(this.world.provider.getDimension(), this.pos.getX(), this.pos.getY(), this.pos.getZ(), 32);
+            final IAEItemStack item = AEItemStack.fromItemStack(output);
+            NetworkHandler.instance().sendToAllAround(new PacketAssemblerAnimation(this.pos, (byte) 100, item), where);
+        } catch (final IOException e) {
+            // ;P
+        }
+        this.saveChanges();
+        this.updateSleepiness();
+        return this.isAwake ? TickRateModulation.IDLE : TickRateModulation.SLEEP;
     }
 
     private void ejectHeldItems() {
@@ -458,14 +449,6 @@ public class TileMolecularAssemblerCreative extends AENetworkInvTile implements 
                     }
                 }
             }
-        }
-    }
-
-    private int userPower(final int ticksPassed, final int bonusValue, final double acceleratorTax) {
-        try {
-            return (int) (this.getProxy().getEnergy().extractAEPower(ticksPassed * bonusValue * acceleratorTax, Actionable.MODULATE, PowerMultiplier.CONFIG) / acceleratorTax);
-        } catch (final GridAccessException e) {
-            return 0;
         }
     }
 

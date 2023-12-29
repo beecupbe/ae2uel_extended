@@ -112,43 +112,6 @@ public enum PartType {
             return Arrays.stream(AEColor.values()).map(color -> modelFromBaseName(baseName + "_" + color.name().toLowerCase())).collect(Collectors.toList());
         }
     },
-    CABLE_X64(523, "cable_x64", EnumSet.of(AEFeature.COVERED_CABLES), EnumSet.noneOf(IntegrationType.class), PartX64CableCoverted.class) {
-        @Override
-        public boolean isCable() {
-            return true;
-        }
-
-        @Override
-        @SideOnly(Side.CLIENT)
-        protected List<ModelResourceLocation> createItemModels(String baseName) {
-            return Arrays.stream(AEColor.values()).map(color -> modelFromBaseName(baseName + "_" + color.name().toLowerCase())).collect(Collectors.toList());
-        }
-    },
-    CABLE_X128(555, "cable_x128", EnumSet.of(AEFeature.COVERED_CABLES), EnumSet.noneOf(IntegrationType.class), PartX128CableCoverted.class) {
-        @Override
-        public boolean isCable() {
-            return true;
-        }
-
-        @Override
-        @SideOnly(Side.CLIENT)
-        protected List<ModelResourceLocation> createItemModels(String baseName) {
-            return Arrays.stream(AEColor.values()).map(color -> modelFromBaseName(baseName + "_" + color.name().toLowerCase())).collect(Collectors.toList());
-        }
-    },
-    CABLE_X256(588, "cable_x256", EnumSet.of(AEFeature.COVERED_CABLES), EnumSet.noneOf(IntegrationType.class), PartX256CableCoverted.class) {
-        @Override
-        public boolean isCable() {
-            return true;
-        }
-
-        @Override
-        @SideOnly(Side.CLIENT)
-        protected List<ModelResourceLocation> createItemModels(String baseName) {
-            return Arrays.stream(AEColor.values()).map(color -> modelFromBaseName(baseName + "_" + color.name().toLowerCase())).collect(Collectors.toList());
-        }
-    },
-
 
 
     TOGGLE_BUS(80, "toggle_bus", EnumSet.of(AEFeature.TOGGLE_BUS), EnumSet.noneOf(IntegrationType.class), PartToggleBus.class),
@@ -285,8 +248,6 @@ public enum PartType {
     INTERFACE_CONFIGURATION_TERMINALPER(642, "interface_configuration_terminalper", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartInterfaceConfigurationTerminalPer.class),
 
     FLUID_INTERFACE_CONFIGURATION_TERMINAL(522, "fluid_interface_configuration_terminal", EnumSet.of(AEFeature.INTERFACE_TERMINAL), EnumSet.noneOf(IntegrationType.class), PartFluidInterfaceConfigurationTerminal.class);
-
-    //last metaValue = 648
 
     private final int baseDamage;
     private final Set<AEFeature> features;

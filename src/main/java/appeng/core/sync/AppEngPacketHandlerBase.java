@@ -73,6 +73,9 @@ public class AppEngPacketHandlerBase {
         PACKET_TARGET_FLUID(PacketTargetFluidStack.class),
 
         PACKET_CRAFTING_REQUEST(PacketCraftRequest.class),
+        PACKET_TERMINAL_KEYBIND(PacketTerminalUse.class),
+
+        PACKET_CRAFTING_TOAST(PacketCraftingToast.class),
 
         PACKET_ASSEMBLER_ANIMATION(PacketAssemblerAnimation.class),
 
@@ -84,10 +87,7 @@ public class AppEngPacketHandlerBase {
 
         PACKET_INFORM_PLAYER(PacketInformPlayer.class),
 
-        PACKET_CRAFTING_CPUS_UPDATE(PacketCraftingCPUsUpdate.class),
-
-        PACKET_TERMINAL_KEYBIND(PacketTerminalUse.class);
-
+        PACKET_CRAFTING_CPUS_UPDATE(PacketCraftingCPUsUpdate.class);
 
         private final Class<? extends AppEngPacket> packetClass;
         private final Constructor<? extends AppEngPacket> packetConstructor;

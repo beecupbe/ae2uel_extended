@@ -145,6 +145,23 @@ public final class AEConfig extends Configuration implements IConfigurableObject
 
     private int impBusesItemsLimit = 16384;
 
+    //SolarPanels
+    private double basicSolarPanelGenPerTick = 32;
+    private double basicSolarPanelGenPerTickNight = 16;
+    private double basicSolarPanelCapacity = 100000;
+
+    private double improvedSolarPanelGenPerTick = 256;
+    private double improvedSolarPanelGenPerTickNight = 128;
+    private double improvedSolarPanelCapacity = 500000;
+
+    private double advancedSolarPanelGenPerTick = 2048;
+    private double advancedSolarPanelGenPerTickNight = 1024;
+    private double advancedSolarPanelCapacity = 5000000;
+
+    private double perfectSolarPanelGenPerTick = 32768;
+    private double perfectSolarPanelGenPerTickNight = 16384;
+    private double perfectSolarPanelCapacity = 15000000;
+
     private AEConfig(final File configFile) {
         super(configFile);
         this.configFile = configFile;
@@ -167,6 +184,24 @@ public final class AEConfig extends Configuration implements IConfigurableObject
         this.impEnergyCellCap = Math.min(this.get("general", "impEnergyCellCap", this.impEnergyCellCap, "Improved Energy Cell Capacity").getInt(this.impEnergyCellCap), Integer.MAX_VALUE);
         this.advEnergyCellCap = Math.min(this.get("general", "advEnergyCellCap", this.advEnergyCellCap, "Advanced Energy Cell Capacity").getInt(this.advEnergyCellCap), Integer.MAX_VALUE);
         this.perEnergyCellCap = Math.min(this.get("general", "perEnergyCellCap", this.perEnergyCellCap, "Perfect Energy Cell Capacity").getInt(this.perEnergyCellCap), Integer.MAX_VALUE);
+
+
+        this.basicSolarPanelGenPerTick = Math.min(this.get("solarPanelBasic", "basicSolarPanelGenPerTick", this.basicSolarPanelGenPerTick, "Basic solar panel generation per tick").getDouble(this.basicSolarPanelGenPerTick), Double.MAX_VALUE);
+        this.basicSolarPanelGenPerTickNight = Math.min(this.get("solarPanelBasic", "basicSolarPanelGenPerTickNight", this.basicSolarPanelGenPerTickNight, "Basic solar panel generation per tick at night").getDouble(this.basicSolarPanelGenPerTickNight), Double.MAX_VALUE);
+        this.basicSolarPanelCapacity = Math.min(this.get("solarPanelBasic", "basicSolarPanelCapacity", this.basicSolarPanelCapacity, "Basic solar panel capacity").getDouble(this.basicSolarPanelCapacity), Double.MAX_VALUE);
+
+        this.improvedSolarPanelGenPerTick = Math.min(this.get("solarPanelImproved", "improvedSolarPanelGenPerTick", this.improvedSolarPanelGenPerTick, "Improved solar panel generation per tick").getDouble(this.improvedSolarPanelGenPerTick), Double.MAX_VALUE);
+        this.improvedSolarPanelGenPerTickNight = Math.min(this.get("solarPanelImproved", "improvedSolarPanelGenPerTickNight", this.improvedSolarPanelGenPerTickNight, "Improved solar panel generation per tick at night").getDouble(this.improvedSolarPanelGenPerTickNight), Double.MAX_VALUE);
+        this.improvedSolarPanelCapacity = Math.min(this.get("solarPanelImproved", "improvedSolarPanelCapacity", this.improvedSolarPanelCapacity, "Improved solar panel capacity").getDouble(this.improvedSolarPanelCapacity), Double.MAX_VALUE);
+
+        this.advancedSolarPanelGenPerTick = Math.min(this.get("solarPanelAdvanced", "advancedSolarPanelGenPerTick", this.advancedSolarPanelGenPerTick, "Advanced solar panel generation per tick").getDouble(this.advancedSolarPanelGenPerTick), Double.MAX_VALUE);
+        this.advancedSolarPanelGenPerTickNight = Math.min(this.get("solarPanelAdvanced", "advancedSolarPanelGenPerTickNight", this.advancedSolarPanelGenPerTickNight, "Advanced solar panel generation per tick at night").getDouble(this.advancedSolarPanelGenPerTickNight), Double.MAX_VALUE);
+        this.advancedSolarPanelCapacity = Math.min(this.get("solarPanelAdvanced", "advancedSolarPanelCapacity", this.advancedSolarPanelCapacity, "Advanced solar panel capacity").getDouble(this.advancedSolarPanelCapacity), Double.MAX_VALUE);
+
+        this.perfectSolarPanelGenPerTick = Math.min(this.get("solarPanelPerfect", "perfectSolarPanelGenPerTick", this.perfectSolarPanelGenPerTick, "Perfect solar panel generation per tick").getDouble(this.perfectSolarPanelGenPerTick), Double.MAX_VALUE);
+        this.perfectSolarPanelGenPerTickNight = Math.min(this.get("solarPanelPerfect", "perfectSolarPanelGenPerTickNight", this.perfectSolarPanelGenPerTickNight, "Perfect solar panel generation per tick at night").getDouble(this.perfectSolarPanelGenPerTickNight), Double.MAX_VALUE);
+        this.perfectSolarPanelCapacity = Math.min(this.get("solarPanelPerfect", "perfectSolarPanelCapacity", this.perfectSolarPanelCapacity, "Perfect solar panel capacity").getDouble(this.perfectSolarPanelCapacity), Double.MAX_VALUE);
+
 
         this.impBusesItemsLimit = Math.min(this.get("general", "improvedBusesItemsLimit", this.impBusesItemsLimit, "Items limit for Improved import/export buses").getInt(this.impBusesItemsLimit), Integer.MAX_VALUE);
 
@@ -766,4 +801,47 @@ public final class AEConfig extends Configuration implements IConfigurableObject
     public int getControllerCooldown() {
         return this.controllerCooldown;
     }
+
+    public double getBasicSolarPanelGenPerTick() {
+        return this.basicSolarPanelGenPerTick;
+    }
+    public double getBasicSolarPanelGenPerTickNight() {
+        return this.basicSolarPanelGenPerTickNight;
+    }
+    public double getBasicSolarPanelCapacity() {
+        return this.basicSolarPanelCapacity;
+    }
+
+
+    public double getImprovedSolarPanelGenPerTick() {
+        return this.improvedSolarPanelGenPerTick;
+    }
+    public double getImprovedSolarPanelGenPerTickNight() {
+        return this.improvedSolarPanelGenPerTickNight;
+    }
+    public double getImprovedSolarPanelCapacity() {
+        return this.improvedSolarPanelCapacity;
+    }
+
+
+    public double getAdvancedSolarPanelGenPerTick() {
+        return this.advancedSolarPanelGenPerTick;
+    }
+    public double getAdvancedSolarPanelGenPerTickNight() {
+        return this.advancedSolarPanelGenPerTickNight;
+    }
+    public double getAdvancedSolarPanelCapacity() {
+        return this.advancedSolarPanelCapacity;
+    }
+
+    public double getPerfectSolarPanelGenPerTick() {
+        return this.perfectSolarPanelGenPerTick;
+    }
+    public double getPerfectSolarPanelGenPerTickNight() {
+        return this.perfectSolarPanelGenPerTickNight;
+    }
+    public double getPerfectSolarPanelCapacity() {
+        return this.perfectSolarPanelCapacity;
+    }
+
 }

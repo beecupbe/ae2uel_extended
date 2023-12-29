@@ -34,22 +34,27 @@ public class TileCraftingStorageTile extends TileCraftingTile {
     protected ItemStack getItemFromTile(final Object obj) {
         final IBlocks blocks = AEApi.instance().definitions().blocks();
         final int storage = ((TileCraftingTile) obj).getStorageBytes() / KILO_SCALAR;
+        final long storageLong = ((TileCraftingTile) obj).getStorageBytesLong();
+        Optional<ItemStack> is;
 
-        Optional<ItemStack> is = switch (storage) {
-            case 1 -> blocks.craftingStorage1k().maybeStack(1);
-            case 4 -> blocks.craftingStorage4k().maybeStack(1);
-            case 16 -> blocks.craftingStorage16k().maybeStack(1);
-            case 64 -> blocks.craftingStorage64k().maybeStack(1);
-            case 1024 -> blocks.craftingStorage1mb().maybeStack(1);
-            case 4096 -> blocks.craftingStorage4mb().maybeStack(1);
-            case 16384 -> blocks.craftingStorage16mb().maybeStack(1);
-            case 65536 -> blocks.craftingStorage64mb().maybeStack(1);
-            case 262144 -> blocks.craftingStorage256mb().maybeStack(1);
-            case 1048576 -> blocks.craftingStorage1gb().maybeStack(1);
-            case 2097151 -> blocks.craftingStorage15gb().maybeStack(1);
-            default -> Optional.empty();
-        };
-
+        if (storageLong != 0) {
+            is = blocks.craftingStorage2gb().maybeStack(1);
+        } else {
+            is = switch (storage) {
+                case 1 -> blocks.craftingStorage1k().maybeStack(1);
+                case 4 -> blocks.craftingStorage4k().maybeStack(1);
+                case 16 -> blocks.craftingStorage16k().maybeStack(1);
+                case 64 -> blocks.craftingStorage64k().maybeStack(1);
+                case 1024 -> blocks.craftingStorage1mb().maybeStack(1);
+                case 4096 -> blocks.craftingStorage4mb().maybeStack(1);
+                case 16384 -> blocks.craftingStorage16mb().maybeStack(1);
+                case 65536 -> blocks.craftingStorage64mb().maybeStack(1);
+                case 262144 -> blocks.craftingStorage256mb().maybeStack(1);
+                case 1048576 -> blocks.craftingStorage1gb().maybeStack(1);
+                case 2097151 -> blocks.craftingStorage2gb().maybeStack(1);
+                default -> Optional.empty();
+            };
+        }
         return is.orElseGet(() -> super.getItemFromTile(obj));
     }
 
@@ -91,8 +96,6 @@ public class TileCraftingStorageTile extends TileCraftingTile {
         return false;
     }
 
-
-
     @Override
     public boolean isStorage() {
         return true;
@@ -116,7 +119,21 @@ public class TileCraftingStorageTile extends TileCraftingTile {
             case STORAGE_64MB -> 65536 * KILO_SCALAR;
             case STORAGE_256MB -> 262144 * KILO_SCALAR;
             case STORAGE_1GB -> 1048576 * KILO_SCALAR;
-            case STORAGE_15GB -> Integer.MAX_VALUE;
+            case STORAGE_2GB -> Integer.MAX_VALUE;
         };
+    }
+
+    @Override
+    public long getStorageBytesLong() {
+        if (this.world == null || this.notLoaded() || this.isInvalid()) {
+            return 0;
+        }
+
+        final BlockCraftingUnit unit = (BlockCraftingUnit) this.world.getBlockState(this.pos).getBlock();
+        if (unit.type != BlockCraftingUnit.CraftingUnitType.STORAGE_CREATIVE) {
+            return 0;
+        } else {
+            return Long.MAX_VALUE;
+        }
     }
 }

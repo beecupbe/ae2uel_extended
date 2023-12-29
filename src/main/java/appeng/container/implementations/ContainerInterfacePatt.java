@@ -26,15 +26,10 @@ import appeng.api.config.YesNo;
 import appeng.api.util.IConfigManager;
 import appeng.container.guisync.GuiSync;
 import appeng.container.slot.*;
-import appeng.helpers.DualityInterface;
 import appeng.helpers.DualityInterfacePatt;
 import appeng.helpers.IInterfaceHost;
-import appeng.tile.inventory.AppEngInternalOversizedInventory;
 import appeng.util.Platform;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.ClickType;
-import net.minecraft.item.ItemStack;
 
 
 public class ContainerInterfacePatt extends ContainerUpgradeable implements IOptionalSlotHost {
@@ -61,30 +56,11 @@ public class ContainerInterfacePatt extends ContainerUpgradeable implements IOpt
                         .getPatterns(), this, x + row * 9, 8 + 18 * x, 25 + (18 * row), row, this.getInventoryPlayer()).setStackLimit(1));
             }
         }
-
-        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 0, 186, 92));
-        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 1, 204, 92));
-        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 2, 222, 92));
-        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 3, 186, 92 + 18));
-        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 4, 204, 92 + 18));
-        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 5, 222, 92 + 18));
-        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 6, 186, 92 + 18 * 2));
-        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 7, 204, 92 + 18 * 2));
-        this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), 8, 222, 92 + 18 * 2));
-
-    }
-
-    @Override
-    public ItemStack slotClick(int slotId, int dragType, ClickType clickTypeIn, EntityPlayer player) {
-        if (slotId >= 0 && slotId < this.inventorySlots.size()) {
-            if (this.inventorySlots.get(slotId) instanceof SlotOversized) {
-                ((AppEngInternalOversizedInventory) ((SlotOversized) this.inventorySlots.get(slotId)).getItemHandler()).limitExtraction(true);
-                ItemStack ret = super.slotClick(slotId, dragType, clickTypeIn, player);
-                ((AppEngInternalOversizedInventory) ((SlotOversized) this.inventorySlots.get(slotId)).getItemHandler()).limitExtraction(false);
-                return ret;
+        for (int i = 0; i < 3; i++) {
+            for (int x = 0; x < 3; x++) {
+                this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), x + i * 3, 186 + (18 * x), 92 + (18 * i)));
             }
         }
-        return super.slotClick(slotId, dragType, clickTypeIn, player);
     }
 
     @Override

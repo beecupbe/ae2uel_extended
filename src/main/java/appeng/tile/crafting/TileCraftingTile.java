@@ -70,7 +70,7 @@ public class TileCraftingTile extends AENetworkTile implements IAEMultiBlock, IP
 
     @Override
     protected ItemStack getItemFromTile(final Object obj) {
-        Optional<ItemStack> is = Optional.empty();
+        Optional<ItemStack> is;
 
         if (((TileCraftingTile) obj).isAccelerator()) {
             is = AEApi.instance().definitions().blocks().craftingAccelerator().maybeStack(1);
@@ -311,6 +311,10 @@ public class TileCraftingTile extends AENetworkTile implements IAEMultiBlock, IP
     }
 
     public int getStorageBytes() {
+        return 0;
+    }
+
+    public long getStorageBytesLong() {
         return 0;
     }
 

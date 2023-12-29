@@ -186,6 +186,7 @@ public enum  GuiText {
     Missing,
 
     InterfaceTerminal,
+    FluidTerminal,
     InterfaceConfigurationTerminal,
     FluidInterfaceConfigurationTerminal,
     NoCraftingCPUs,
@@ -216,6 +217,11 @@ public enum  GuiText {
     // Used in a ME Interface when no appropriate TileEntity was detected near it
     Nothing,
 
+
+    // Used in Crafting Toasts
+    CraftingToastDone,
+    CraftingToastCancelled,
+
     //new
     ShiftForDetails,
     ClearAll,
@@ -233,7 +239,12 @@ public enum  GuiText {
     CrankImpJEI,
     NewTerminals,
     NewTerminalsItem,
-    MegaWB;
+    MegaWB,
+
+    PassiveGenerationDay,
+    PassiveGenerationNight,
+    MaxSolarCapacity,
+    UseNetToolToControlSolars;
 
     private final String root;
 
