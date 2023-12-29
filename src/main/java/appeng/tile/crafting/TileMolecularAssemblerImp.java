@@ -95,20 +95,15 @@ public class TileMolecularAssemblerImp extends AENetworkInvTile implements IUpgr
     private AEPartLocation pushDirection = AEPartLocation.INTERNAL;
     private ItemStack myPattern = ItemStack.EMPTY;
     private ICraftingPatternDetails myPlan = null;
-    private ICraftingJob job = null;
-    private double progress = 0;
     private boolean isAwake = false;
     private boolean forcePlan = false;
     private final IActionSource mySrc = new MachineSource(this);
 
     public TileMolecularAssemblerImp() {
-        final ITileDefinition assembler = AEApi.instance().definitions().blocks().molecularAssemblerImp();
-
         this.settings = new ConfigManager(this);
         this.settings.registerSetting(Settings.REDSTONE_CONTROLLED, RedstoneMode.IGNORE);
         this.getProxy().setIdlePowerUsage(0.0);
         this.craftingInv = new InventoryCrafting(new ContainerNull(), 3, 3);
-
     }
 
     public void updateNeighbors() {
@@ -387,7 +382,7 @@ public class TileMolecularAssemblerImp extends AENetworkInvTile implements IUpgr
     }
 
     public int getCraftingProgress() {
-        return (int) this.progress;
+        return 100;
     }
 
     @Override

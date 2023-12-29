@@ -42,6 +42,7 @@ import appeng.fluids.container.slots.IMEFluidSlot;
 import appeng.helpers.InventoryAction;
 import appeng.util.IConfigManagerHost;
 import appeng.util.Platform;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.ClickType;
@@ -127,7 +128,7 @@ public class GuiFluidTerminal extends AEBaseMEGui implements ISortSource, IConfi
 
     @Override
     public void drawFG(int offsetX, int offsetY, int mouseX, int mouseY) {
-        this.fontRenderer.drawString(this.getGuiDisplayName("Fluid Terminal"), 8, 6, 4210752);
+        this.fontRenderer.drawString(GuiText.FluidTerminal.getLocal(), 8, 6, 4210752);
         this.fontRenderer.drawString(GuiText.inventory.getLocal(), 8, this.ySize - 96 + 3, 4210752);
     }
 

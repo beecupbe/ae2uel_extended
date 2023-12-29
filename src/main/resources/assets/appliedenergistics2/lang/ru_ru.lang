@@ -6,12 +6,17 @@ tile.appliedenergistics2.chest.name=МЭ Сундук
 tile.appliedenergistics2.condenser.name=Конденсатор материи
 tile.appliedenergistics2.controller.name=МЭ Контроллер
 tile.appliedenergistics2.crank.name=Деревянная рукоятка
-tile.appliedenergistics2.creative_energy_cell.name=Творческая энергетическая ячейка
-tile.appliedenergistics2.dense_energy_cell.name=Плотная энергетическая ячейка
+tile.appliedenergistics2.creative_energy_cell.name=§dТворческая§r энергетическая ячейка
+tile.appliedenergistics2.dense_energy_cell.name=§5Плотная§r энергетическая ячейка
 
-tile.appliedenergistics2.improved_energy_cell.name=Улучшенная энергетическая ячейка
-tile.appliedenergistics2.advanced_energy_cell.name=Продвинутая энергетическая ячейка
-tile.appliedenergistics2.perfect_energy_cell.name=Совершенная энергетическая ячейка
+tile.appliedenergistics2.solar_panel_basic.name=§3Базовая§r солнечная панель
+tile.appliedenergistics2.solar_panel_imp.name=§5Улучшеная§r солнечная панель
+tile.appliedenergistics2.solar_panel_adv.name=§dПродвинутая§r солнечная панель
+tile.appliedenergistics2.solar_panel_per.name=§cСовершенная§r солнечная панель
+
+tile.appliedenergistics2.improved_energy_cell.name=§4Улучшенная§r энергетическая ячейка
+tile.appliedenergistics2.advanced_energy_cell.name=§aПродвинутая§r энергетическая ячейка
+tile.appliedenergistics2.perfect_energy_cell.name=§9Совершенная§r энергетическая ячейка
 
 tile.appliedenergistics2.energy_cell.name=Энергетическая ячейка
 
@@ -25,10 +30,10 @@ tile.appliedenergistics2.io_port.name=МЭ Порт ввода\вывода
 tile.appliedenergistics2.io_portimp.name=Улучшенный МЭ Порт ввода\вывода
 tile.appliedenergistics2.inscriber.name=Высекатель
 tile.appliedenergistics2.interface.name=МЭ Интерфейс
-tile.appliedenergistics2.interfaceimp.name=МЭ Интерфейс поставки предметов
-tile.appliedenergistics2.interfaceadv.name=МЭ Продвинутый Интерфейс поставки предметов
-tile.appliedenergistics2.interfaceper.name=МЭ Совершенный Интерфейс поставки предметов
-tile.appliedenergistics2.interface_patterns.name=МЭ Шаблонный интерфейс
+tile.appliedenergistics2.interfaceimp.name=§aМЭ Интерфейс поставки предметов
+tile.appliedenergistics2.interfaceadv.name=§eМЭ Продвинутый Интерфейс поставки предметов
+tile.appliedenergistics2.interfaceper.name=§cМЭ Совершенный Интерфейс поставки предметов
+tile.appliedenergistics2.interface_patterns.name=§8МЭ Шаблонный интерфейс
 tile.appliedenergistics2.fluid_interface.name=МЭ Жидкостный интерфейс
 tile.appliedenergistics2.quantum_link.name=МЭ Камера квантовой связи
 tile.appliedenergistics2.quantum_ring.name=МЭ Квантовое кольцо
@@ -69,17 +74,18 @@ tile.appliedenergistics2.crafting_storage_64mb.name=§364mb§r Хранилищ�
 tile.appliedenergistics2.crafting_storage_256mb.name=§a256mb§r Хранилище крафта
 tile.appliedenergistics2.crafting_storage_1gb.name=§61gb§r Хранилище крафта
 tile.appliedenergistics2.crafting_storage_15gb.name=§42gb§r Хранилище крафта
+tile.appliedenergistics2.crafting_storage_creative.name=§8Творческое§r Хранилище крафта
 
-tile.appliedenergistics2.crafting_accelerator.name=Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator.name=§5Блок обработки крафта
 
-tile.appliedenergistics2.crafting_accelerator_4x.name=§6X4§r Блок обработки крафта
-tile.appliedenergistics2.crafting_accelerator_16x.name=§eX16§r Блок обработки крафта
-tile.appliedenergistics2.crafting_accelerator_64x.name=§aX64§r Блок обработки крафта
-tile.appliedenergistics2.crafting_accelerator_128x.name=§6X128§r Блок обработки крафта
-tile.appliedenergistics2.crafting_accelerator_256x.name=§bX256§r Блок обработки крафта
-tile.appliedenergistics2.crafting_accelerator_512x.name=§dX512§r Блок обработки крафта
-tile.appliedenergistics2.crafting_accelerator_1024x.name=§5X1024§r Блок обработки крафта
-tile.appliedenergistics2.crafting_accelerator_creative.name=§4Творческий§r блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_4x.name=§5X4§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_16x.name=§dX16§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_64x.name=§dX64§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_128x.name=§bX128§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_256x.name=§aX256§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_512x.name=§6X512§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_1024x.name=§dX1024§r Блок обработки крафта
+tile.appliedenergistics2.crafting_accelerator_creative.name=§8Творческий§r Блок обработки крафта
 
 
 tile.appliedenergistics2.crafting_unit.name=Блок крафта
@@ -287,16 +293,23 @@ gui.appliedenergistics2.Excluded=Не принимать
 gui.appliedenergistics2.Partitioned=Размечена
 gui.appliedenergistics2.Precise=Точная
 gui.appliedenergistics2.Fuzzy=Неточная
-gui.appliedenergistics2.SmallFontCraft=Сделать
+gui.appliedenergistics2.SmallFontCraft=Создать
 gui.appliedenergistics2.LargeFontCraft=+
 gui.appliedenergistics2.Renamer=Пользовательское имя: (Введите, чтобы установить)
 gui.appliedenergistics2.Nothing=Ничего
 gui.appliedenergistics2.ShiftForDetails=Удерживайте Shift для информации о ресурсах
 gui.appliedenergistics2.ClearAll=Очистить
 gui.appliedenergistics2.InterfaceImp=МЭ Интерфейс поставки предметов
-gui.appliedenergistics2.InterfaceAdv=МЭ Продвинутый Интерфейс поставки
-gui.appliedenergistics2.InterfacePer=МЭ Совершенный Интерфейс поставки
-gui.appliedenergistics2.InterfacePatt=МЭ Шаблонный интерфейс
+gui.appliedenergistics2.InterfaceAdv=МЭ Интерфейс поставки предметов
+gui.appliedenergistics2.InterfacePer=МЭ Интерфейс поставки предметов
+gui.appliedenergistics2.InterfacePatt=МЭ Интерфейс шаблонов
+gui.appliedenergistics2.CraftingToastDone=Крафт завершен!
+gui.appliedenergistics2.CraftingToastCancelled=Крафт остановлен!
+gui.appliedenergistics2.FluidTerminal=Жидкостный терминал
+gui.appliedenergistics2.PassiveGenerationDay=Генерирует днём:
+gui.appliedenergistics2.PassiveGenerationNight=Генерирует ночью:
+gui.appliedenergistics2.MaxSolarCapacity=Внутренний буфер:
+gui.appliedenergistics2.UseNetToolToControlSolars=§fИспользуйте сетевой инструмент для контроля над панелью
 
 gui.appliedenergistics2.CreativeCoProcessorJEI=Творческая версия блока обработки. При установке увеличивает количество сопроцессоров крафта до 2.147.483.646. Не рекомендуется ставить на 1 структуру процессора больше 1 творческого блока обработки.
 gui.appliedenergistics2.DriveImpJEI=Улучшенная версия МЭ накопителя, которая позволяет держать в себе до 30 ячеек хранения.
@@ -441,6 +454,7 @@ gui.tooltips.appliedenergistics2.ToggleShowFullInterfacesOffDesc=Показан�
 gui.tooltips.appliedenergistics2.HighlightInterface=Подсветка интерфейса
 
 
+
 // Units
 gui.appliedenergistics2.units.appliedenergstics=AE
 gui.appliedenergistics2.units.ic2=EU
@@ -449,22 +463,22 @@ gui.appliedenergistics2.units.gteu=GTEU
 
 // Colors
 gui.appliedenergistics2.White=Белый
-gui.appliedenergistics2.Orange=Оранжевый
-gui.appliedenergistics2.Magenta=Сиреневый
-gui.appliedenergistics2.LightBlue=Светло-синий
-gui.appliedenergistics2.Yellow=Жёлтый
-gui.appliedenergistics2.Lime=Лаймовый
-gui.appliedenergistics2.Pink=Розовый
-gui.appliedenergistics2.Gray=Серый
-gui.appliedenergistics2.LightGray=Светло-серый
-gui.appliedenergistics2.Cyan=Бирюзовый
-gui.appliedenergistics2.Purple=Фиолетовый
-gui.appliedenergistics2.Blue=Синий
-gui.appliedenergistics2.Brown=Коричневый
-gui.appliedenergistics2.Green=Зелёный
-gui.appliedenergistics2.Red=Красный
-gui.appliedenergistics2.Black=Чёрный
-gui.appliedenergistics2.Fluix=Изменчивый
+gui.appliedenergistics2.Orange=§6Оранжевый§r
+gui.appliedenergistics2.Magenta=§dСиреневый§r
+gui.appliedenergistics2.LightBlue=§bСветло-синий§r
+gui.appliedenergistics2.Yellow=§eЖёлтый§r
+gui.appliedenergistics2.Lime=§aЛаймовый§r
+gui.appliedenergistics2.Pink=§dРозовый§r
+gui.appliedenergistics2.Gray=§8Серый§r
+gui.appliedenergistics2.LightGray=§7Светло-серый§r
+gui.appliedenergistics2.Cyan=§3Бирюзовый§r
+gui.appliedenergistics2.Purple=§5Фиолетовый§r
+gui.appliedenergistics2.Blue=§1Синий§r
+gui.appliedenergistics2.Brown=§6Коричневый§r
+gui.appliedenergistics2.Green=§2Зелёный§r
+gui.appliedenergistics2.Red=§cКрасный§r
+gui.appliedenergistics2.Black=§0Чёрный§r
+gui.appliedenergistics2.Fluix=§5Изменчивый§r
 
 // Waila
 waila.appliedenergistics2.Crafting=Крафт
@@ -508,7 +522,7 @@ item.appliedenergistics2.storage_cell_4k.name=§e4k§r МЭ Ячейка хра�
 item.appliedenergistics2.storage_cell_16k.name=§a16k§r МЭ Ячейка хранения
 item.appliedenergistics2.storage_cell_64k.name=§b64k§r МЭ Ячейка хранения
 
-item.appliedenergistics2.storage_cell_1mb.name=§b1mb§r МЭ Ячейка хранения
+item.appliedenergistics2.storage_cell_1mb.name=§d1mb§r МЭ Ячейка хранения
 item.appliedenergistics2.storage_cell_4mb.name=§a4mb§r МЭ Ячейка хранения
 item.appliedenergistics2.storage_cell_16mb.name=§316mb§r МЭ Ячейка хранения
 item.appliedenergistics2.storage_cell_64mb.name=§e64mb§r МЭ Ячейка хранения
@@ -571,10 +585,10 @@ item.appliedenergistics2.material.fluid_cell16k_part.name=§a16k§r МЭ Жид�
 item.appliedenergistics2.material.fluid_cell64k_part.name=§b64k§r МЭ Жидкостный компонент хранения
 
 item.appliedenergistics2.material.fluid_cell1mb_part.name=§d1mb§r МЭ Жидкостный компонент хранения
-item.appliedenergistics2.material.fluid_cell4mb_part.name=§54mb§r МЭ Жидкостный компонент хранения
-item.appliedenergistics2.material.fluid_cell16mb_part.name=§916mb§r МЭ Жидкостный компонент хранения
-item.appliedenergistics2.material.fluid_cell64mb_part.name=§364mb§r МЭ Жидкостный компонент хранения
-item.appliedenergistics2.material.fluid_cell256mb_part.name=§a256mb§r МЭ Жидкостный компонент хранения
+item.appliedenergistics2.material.fluid_cell4mb_part.name=§a4mb§r МЭ Жидкостный компонент хранения
+item.appliedenergistics2.material.fluid_cell16mb_part.name=§316mb§r МЭ Жидкостный компонент хранения
+item.appliedenergistics2.material.fluid_cell64mb_part.name=§e64mb§r МЭ Жидкостный компонент хранения
+item.appliedenergistics2.material.fluid_cell256mb_part.name=§c256mb§r МЭ Жидкостный компонент хранения
 
 
 item.appliedenergistics2.material.certus_quartz_crystal.name=Кристалл истинного кварца
@@ -621,6 +635,7 @@ item.appliedenergistics2.multi_part.identity_annihilation_plane.name=МЭ ID п�
 item.appliedenergistics2.multi_part.cable_anchor.name=Кабельный якорь
 item.appliedenergistics2.multi_part.cable_covered.name=МЭ Закрытый кабель
 
+//unused
 item.appliedenergistics2.multi_part.cable_x64.name=МЭ Улучшенный плотный кабель
 item.appliedenergistics2.multi_part.cable_x128.name=МЭ Продвинутый плотный кабель
 item.appliedenergistics2.multi_part.cable_x256.name=МЭ Совершенный плотный кабель
@@ -640,17 +655,17 @@ item.appliedenergistics2.multi_part.export_bus.name=МЭ Шина экспорт
 item.appliedenergistics2.multi_part.fluid_export_bus.name=МЭ Жидкостная шина экспорта
 item.appliedenergistics2.multi_part.formation_plane.name=МЭ Плоскость формирования
 item.appliedenergistics2.multi_part.fluid_formation_plane.name=МЭ Жидкостная плоскость формирования
-item.appliedenergistics2.multi_part.import_busimp.name=Улучшенная МЭ Шина импорта
-item.appliedenergistics2.multi_part.export_busimp.name=Улучшенная МЭ Шина экспорта
+item.appliedenergistics2.multi_part.import_busimp.name=§eУлучшенная§r МЭ Шина импорта
+item.appliedenergistics2.multi_part.export_busimp.name=§eУлучшенная§r МЭ Шина экспорта
 item.appliedenergistics2.multi_part.import_bus.name=МЭ Шина импорта
 item.appliedenergistics2.multi_part.fluid_import_bus.name=МЭ Жидкостная шина импорта
-item.appliedenergistics2.multi_part.fluid_import_busimp.name=Улучшенная МЭ Жидкостная шина импорта
-item.appliedenergistics2.multi_part.fluid_export_busimp.name=Улучшенная МЭ Жидкостная шина экспорта
+item.appliedenergistics2.multi_part.fluid_import_busimp.name=§bУлучшенная§r МЭ Жидкостная шина импорта
+item.appliedenergistics2.multi_part.fluid_export_busimp.name=§bУлучшенная§r МЭ Жидкостная шина экспорта
 item.appliedenergistics2.multi_part.interface.name=МЭ Интерфейс
-item.appliedenergistics2.multi_part.interfaceimp.name=МЭ Интерфейс поставки предметов
-item.appliedenergistics2.multi_part.interfaceadv.name=МЭ Продвинутый Интерфейс поставки предметов
-item.appliedenergistics2.multi_part.interfaceper.name=МЭ Совершенный Интерфейс поставки предметов
-item.appliedenergistics2.multi_part.interfacepatt.name=МЭ Шаблонный интерфейс
+item.appliedenergistics2.multi_part.interfaceimp.name=§aМЭ Интерфейс поставки предметов
+item.appliedenergistics2.multi_part.interfaceadv.name=§eМЭ Продвинутый Интерфейс поставки предметов
+item.appliedenergistics2.multi_part.interfaceper.name=§cМЭ Совершенный Интерфейс поставки предметов
+item.appliedenergistics2.multi_part.interfacepatt.name=§8МЭ Шаблонный интерфейс
 item.appliedenergistics2.multi_part.fluid_interface.name=МЭ Жидкостый интерфейс
 item.appliedenergistics2.multi_part.level_emitter.name=МЭ Предметный излучатель уровня
 item.appliedenergistics2.multi_part.fluid_level_emitter.name=МЭ Жидкостный излучатель уровня
@@ -668,15 +683,15 @@ item.appliedenergistics2.multi_part.toggle_bus.name=МЭ Шина переклю
 item.appliedenergistics2.multi_part.crafting_monitor.name=МЭ Монитор крафта
 item.appliedenergistics2.multi_part.interface_terminal.name=МЭ Терминал интерфейсов
 
-item.appliedenergistics2.multi_part.interface_terminalimp.name=МЭ Терминал Улучшенных интерфейсов
-item.appliedenergistics2.multi_part.interface_terminaladv.name=МЭ Терминал Провинутых интерфейсов
-item.appliedenergistics2.multi_part.interface_terminalpatt.name=МЭ Терминал Шаблонных интерфейсов
+item.appliedenergistics2.multi_part.interface_terminalimp.name=МЭ Терминал §aУлучшенных§r интерфейсов
+item.appliedenergistics2.multi_part.interface_terminaladv.name=МЭ Терминал §eПровинутых§r интерфейсов
+item.appliedenergistics2.multi_part.interface_terminalpatt.name=МЭ Терминал §8Шаблонных§r интерфейсов
 
 item.appliedenergistics2.multi_part.interface_configuration_terminal.name=МЭ Терминал конфигурации интерфейсов
 
-item.appliedenergistics2.multi_part.interface_configuration_terminalimp.name=МЭ Терминал конфигурации Улучшенных интерфейсов
-item.appliedenergistics2.multi_part.interface_configuration_terminaladv.name=МЭ Терминал конфигурации Продвинутых интерфейсов
-item.appliedenergistics2.multi_part.interface_configuration_terminalper.name=МЭ Терминал конфигурации Совершенных интерфейсов
+item.appliedenergistics2.multi_part.interface_configuration_terminalimp.name=МЭ Терминал Конфигурации §aУлучшенных§r интерфейсов
+item.appliedenergistics2.multi_part.interface_configuration_terminaladv.name=МЭ Терминал Конфигурации §eПродвинутых§r интерфейсов
+item.appliedenergistics2.multi_part.interface_configuration_terminalper.name=МЭ Терминал Конфигурации §cСовершенных§r интерфейсов
 
 item.appliedenergistics2.multi_part.fluid_interface_configuration_terminal.name=МЭ Терминал жидкостной конфигурации интерфейсов
 item.appliedenergistics2.multi_part.fluid_terminal.name=МЭ Жидкостный терминал
@@ -728,8 +743,8 @@ commands.ae2.ChunkLoggerOff=Логирование чанков выключен
 commands.ae2.Supporters=Отображает список поддержавших AE2
 
 // Achievements
-achievement.ae2.Root=Applied Energistics
-achievement.ae2.Root.desc=Когда сундука уже не хватает...
+achievement.ae2.Root=AE2 UEL: Extended
+achievement.ae2.Root.desc=Когда обычного AE2 уже не хватает...
 achievement.ae2.Compass=Охотник за метеоритами!
 achievement.ae2.Compass.desc=Сделайте метеоритный компас!
 achievement.ae2.Presses=Неведомая технология!

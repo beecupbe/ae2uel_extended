@@ -52,7 +52,7 @@ public class BlockDriveImproved extends AEBaseTileBlock {
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 

@@ -134,6 +134,8 @@ public final class ApiMaterials implements IMaterials {
     private final IItemDefinition fluidCell1mbPart;
     private final IItemDefinition fluidCell4mbPart;
     private final IItemDefinition fluidCell16mbPart;
+    private final IItemDefinition fluidCell64mbPart;
+    private final IItemDefinition fluidCell256mbPart;
 
 
     public ApiMaterials(FeatureFactory registry) {
@@ -269,6 +271,8 @@ public final class ApiMaterials implements IMaterials {
         this.fluidCell1mbPart = new DamagedItemDefinition("material.cell.storage.1mb", materials.createMaterial(MaterialType.FLUID_CELL1MB_PART));
         this.fluidCell4mbPart = new DamagedItemDefinition("material.cell.storage.4mb", materials.createMaterial(MaterialType.FLUID_CELL4MB_PART));
         this.fluidCell16mbPart = new DamagedItemDefinition("material.cell.storage.16mb", materials.createMaterial(MaterialType.FLUID_CELL16MB_PART));
+        this.fluidCell64mbPart = new DamagedItemDefinition("material.cell.storage.64mb", materials.createMaterial(MaterialType.FLUID_CELL64MB_PART));
+        this.fluidCell256mbPart = new DamagedItemDefinition("material.cell.storage.256mb", materials.createMaterial(MaterialType.FLUID_CELL256MB_PART));
     }
 
     @Override
@@ -608,5 +612,13 @@ public final class ApiMaterials implements IMaterials {
     }
     public IItemDefinition fluidCell16mbPart() {
         return this.fluidCell16mbPart;
+    }
+
+    public IItemDefinition fluidCell64mbPart() {
+        return this.fluidCell64mbPart;
+    }
+
+    public IItemDefinition fluidCell256mbPart() {
+        return this.fluidCell256mbPart;
     }
 }

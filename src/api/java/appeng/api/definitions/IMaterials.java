@@ -157,5 +157,8 @@ public interface IMaterials {
     IItemDefinition fluidCell1mbPart();
     IItemDefinition fluidCell4mbPart();
     IItemDefinition fluidCell16mbPart();
+    IItemDefinition fluidCell64mbPart();
+    IItemDefinition fluidCell256mbPart();
+
 
 }

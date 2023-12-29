@@ -43,6 +43,8 @@ import net.minecraftforge.common.property.ExtendedBlockState;
 import net.minecraftforge.common.property.IExtendedBlockState;
 import net.minecraftforge.common.property.IUnlistedProperty;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.EnumSet;
 
 
@@ -111,7 +113,8 @@ public class BlockCraftingUnit extends AEBaseTileBlock {
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    @NotNull
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 
@@ -142,6 +145,6 @@ public class BlockCraftingUnit extends AEBaseTileBlock {
     }
 
     public enum CraftingUnitType {
-        UNIT, ACCELERATOR, ACCELERATOR_4X, ACCELERATOR_16X, ACCELERATOR_64X, ACCELERATOR_128X, ACCELERATOR_256X, ACCELERATOR_512X, ACCELERATOR_1024X, ACCELERATOR_CREATIVE, STORAGE_1K, STORAGE_4K, STORAGE_16K, STORAGE_64K, STORAGE_1MB, STORAGE_4MB, STORAGE_16MB, STORAGE_64MB, STORAGE_256MB, STORAGE_1GB, STORAGE_15GB, MONITOR
+        UNIT, ACCELERATOR, ACCELERATOR_4X, ACCELERATOR_16X, ACCELERATOR_64X, ACCELERATOR_128X, ACCELERATOR_256X, ACCELERATOR_512X, ACCELERATOR_1024X, ACCELERATOR_CREATIVE, STORAGE_1K, STORAGE_4K, STORAGE_16K, STORAGE_64K, STORAGE_1MB, STORAGE_4MB, STORAGE_16MB, STORAGE_64MB, STORAGE_256MB, STORAGE_1GB, STORAGE_2GB, STORAGE_CREATIVE, MONITOR
     }
 }

@@ -26,6 +26,10 @@ import appeng.api.definitions.ITileDefinition;
 import appeng.block.AEBaseItemBlockChargeable;
 import appeng.block.crafting.*;
 import appeng.block.crafting.BlockCraftingUnit.CraftingUnitType;
+import appeng.block.solars.BlockPanelAdvanced;
+import appeng.block.solars.BlockPanelBasic;
+import appeng.block.solars.BlockPanelImproved;
+import appeng.block.solars.BlockPanelPerfect;
 import appeng.block.grindstone.*;
 import appeng.block.misc.*;
 import appeng.block.networking.*;
@@ -66,6 +70,10 @@ import appeng.fluids.block.BlockFluidInterface;
 import appeng.fluids.tile.TileFluidInterface;
 import appeng.hooks.DispenserBehaviorTinyTNT;
 import appeng.tile.crafting.*;
+import appeng.tile.solars.TileEnergyPanelAdvanced;
+import appeng.tile.solars.TileEnergyPanelBasic;
+import appeng.tile.solars.TileEnergyPanelImproved;
+import appeng.tile.solars.TileEnergyPanelPerfect;
 import appeng.tile.grindstone.TileCrank;
 import appeng.tile.grindstone.TileCrankImp;
 import appeng.tile.grindstone.TileGrinder;
@@ -171,7 +179,8 @@ public final class ApiBlocks implements IBlocks {
     private final ITileDefinition craftingStorage64mb;
     private final ITileDefinition craftingStorage256mb;
     private final ITileDefinition craftingStorage1gb;
-    private final ITileDefinition craftingStorage15gb;
+    private final ITileDefinition craftingStorage2gb;
+    private final ITileDefinition craftingStorageCreative;
 
     private final ITileDefinition craftingMonitor;
     private final ITileDefinition molecularAssembler;
@@ -202,6 +211,12 @@ public final class ApiBlocks implements IBlocks {
     private final IBlockDefinition phantomNode;
     private final IBlockDefinition cubeGenerator;
     private final IBlockDefinition energyGenerator;
+
+    private final ITileDefinition energyPanelBasic;
+    private final ITileDefinition energyPanelImproved;
+    private final ITileDefinition energyPanelAdvanced;
+    private final ITileDefinition energyPanelPerfect;
+
 
     public ApiBlocks(FeatureFactory registry, PartModels partModels) {
         // this.quartzOre = new BlockDefinition( "ore.quartz", new OreQuartz() );
@@ -583,13 +598,18 @@ public final class ApiBlocks implements IBlocks {
                 .rendering(new CraftingCubeRendering("crafting_storage_1gb", CraftingUnitType.STORAGE_1GB))
                 .useCustomItemModel()
                 .build();
-        this.craftingStorage15gb = crafting.block("crafting_storage_15gb", () -> new BlockCraftingStorage(CraftingUnitType.STORAGE_15GB))
+        this.craftingStorage2gb = crafting.block("crafting_storage_15gb", () -> new BlockCraftingStorage(CraftingUnitType.STORAGE_2GB))
                 .item(ItemCraftingStorage::new)
                 .tileEntity(new TileEntityDefinition(TileCraftingStorageTile.class, "crafting_storage"))
-                .rendering(new CraftingCubeRendering("crafting_storage_15gb", CraftingUnitType.STORAGE_15GB))
+                .rendering(new CraftingCubeRendering("crafting_storage_15gb", CraftingUnitType.STORAGE_2GB))
                 .useCustomItemModel()
                 .build();
-
+        this.craftingStorageCreative = crafting.block("crafting_storage_creative", () -> new BlockCraftingStorage(CraftingUnitType.STORAGE_CREATIVE))
+                .item(ItemCraftingStorage::new)
+                .tileEntity(new TileEntityDefinition(TileCraftingStorageTile.class, "crafting_storage"))
+                .rendering(new CraftingCubeRendering("crafting_storage_creative", CraftingUnitType.STORAGE_CREATIVE))
+                .useCustomItemModel()
+                .build();
         this.craftingMonitor = crafting.block("crafting_monitor", BlockCraftingMonitor::new)
                 .tileEntity(new TileEntityDefinition(TileCraftingMonitorTile.class))
                 .rendering(new CraftingCubeRendering("crafting_monitor", CraftingUnitType.MONITOR))
@@ -670,6 +690,26 @@ public final class ApiBlocks implements IBlocks {
         this.energyGenerator = registry.block("debug_energy_gen", BlockEnergyGenerator::new)
                 .features(AEFeature.UNSUPPORTED_DEVELOPER_TOOLS, AEFeature.CREATIVE)
                 .tileEntity(new TileEntityDefinition(TileEnergyGenerator.class))
+                .useCustomItemModel()
+                .build();
+        this.energyPanelBasic = registry.block("solar_panel_basic", BlockPanelBasic::new)
+                .features(AEFeature.ENERGY_CELLS, AEFeature.ENERGY_CELLS)
+                .tileEntity(new TileEntityDefinition(TileEnergyPanelBasic.class))
+                .useCustomItemModel()
+                .build();
+        this.energyPanelImproved = registry.block("solar_panel_imp", BlockPanelImproved::new)
+                .features(AEFeature.ENERGY_CELLS, AEFeature.ENERGY_CELLS)
+                .tileEntity(new TileEntityDefinition(TileEnergyPanelImproved.class))
+                .useCustomItemModel()
+                .build();
+        this.energyPanelAdvanced = registry.block("solar_panel_adv", BlockPanelAdvanced::new)
+                .features(AEFeature.ENERGY_CELLS, AEFeature.ENERGY_CELLS)
+                .tileEntity(new TileEntityDefinition(TileEnergyPanelAdvanced.class))
+                .useCustomItemModel()
+                .build();
+        this.energyPanelPerfect = registry.block("solar_panel_per", BlockPanelPerfect::new)
+                .features(AEFeature.ENERGY_CELLS, AEFeature.ENERGY_CELLS)
+                .tileEntity(new TileEntityDefinition(TileEnergyPanelPerfect.class))
                 .useCustomItemModel()
                 .build();
     }
@@ -1177,8 +1217,13 @@ public final class ApiBlocks implements IBlocks {
         return this.craftingStorage1gb;
     }
     @Override
-    public ITileDefinition craftingStorage15gb() {
-        return this.craftingStorage15gb;
+    public ITileDefinition craftingStorage2gb() {
+        return this.craftingStorage2gb;
+    }
+
+    @Override
+    public ITileDefinition craftingStorageCreative() {
+        return craftingStorageCreative;
     }
 
     @Override
@@ -1210,6 +1255,24 @@ public final class ApiBlocks implements IBlocks {
     public ITileDefinition paint() {
         return this.paint;
     }
+
+    @Override
+    public ITileDefinition energyPanelBasic() {
+        return this.energyPanelBasic;
+    }
+    @Override
+    public ITileDefinition energyPanelImproved() {
+        return this.energyPanelImproved;
+    }
+    @Override
+    public ITileDefinition energyPanelAdvanced() {
+        return this.energyPanelAdvanced;
+    }
+    @Override
+    public ITileDefinition energyPanelPerfect() {
+        return this.energyPanelPerfect;
+    }
+
 
     public IBlockDefinition chunkLoader() {
         return this.chunkLoader;

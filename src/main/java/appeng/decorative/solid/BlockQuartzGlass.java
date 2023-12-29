@@ -77,7 +77,7 @@ public class BlockQuartzGlass extends AEBaseBlock {
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 

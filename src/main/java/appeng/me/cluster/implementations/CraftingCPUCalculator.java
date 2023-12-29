@@ -78,7 +78,8 @@ public class CraftingCPUCalculator extends MBCalculator {
                     }
 
                     if (!storage && te instanceof TileCraftingTile) {
-                        storage = ((TileCraftingTile) te).getStorageBytes() > 0;
+                        storage = ((TileCraftingTile) te).getStorageBytes() > 0
+                                || ((TileCraftingTile) te).getStorageBytesLong() > 0;
                     }
                 }
             }

@@ -208,7 +208,8 @@ public interface IBlocks
 	ITileDefinition craftingStorage64mb();
 	ITileDefinition craftingStorage256mb();
 	ITileDefinition craftingStorage1gb();
-	ITileDefinition craftingStorage15gb();
+	ITileDefinition craftingStorage2gb();
+	ITileDefinition craftingStorageCreative();
 
 	ITileDefinition craftingMonitor();
 
@@ -219,4 +220,10 @@ public interface IBlocks
 	ITileDefinition lightDetector();
 
 	ITileDefinition paint();
+
+	ITileDefinition energyPanelBasic();
+	ITileDefinition energyPanelImproved();
+	ITileDefinition energyPanelAdvanced();
+	ITileDefinition energyPanelPerfect();
+
 }

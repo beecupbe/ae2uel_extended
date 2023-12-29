@@ -18,7 +18,7 @@
 
 package appeng.block.storage;
 
-
+import appeng.api.config.Upgrades;
 import appeng.api.util.AEPartLocation;
 import appeng.block.AEBaseTileBlock;
 import appeng.core.sync.GuiBridge;
@@ -27,12 +27,15 @@ import appeng.tile.storage.TileIOPortImp;
 import appeng.util.Platform;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -40,15 +43,34 @@ import javax.annotation.Nullable;
 
 public class BlockIOPortImp extends AEBaseTileBlock {
 
+    public static final PropertyBool POWERED = PropertyBool.create("powered");
+
     public BlockIOPortImp() {
         super(Material.IRON);
+        setDefaultState(getDefaultState().withProperty(POWERED, false));
+    }
+
+    @Override
+    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+        TileIOPortImp te = this.getTileEntity(worldIn, pos);
+        boolean powred = te != null && te.isActive();
+
+        return super.getActualState(state, worldIn, pos)
+                .withProperty(POWERED, powred);
+    }
+
+    @Override
+    protected IProperty[] getAEStates() {
+        return new IProperty[]{POWERED};
     }
 
     @Override
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block blockIn, BlockPos fromPos) {
         final TileIOPortImp te = this.getTileEntity(world, pos);
         if (te != null) {
-            te.updateRedstoneState();
+            if (te.getInstalledUpgrades(Upgrades.REDSTONE) != 0) {
+                te.updateRedstoneState();
+            }
         }
     }
 

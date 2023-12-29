@@ -56,7 +56,15 @@ public enum TickRates {
 
     OpenComputersTunnel(1, 5),
 
-    PressureTunnel(1, 120);
+    PressureTunnel(1, 120),
+
+    //SolarPanels
+
+    SolarBasic(1,4),
+    SolarImproved(1,4),
+    SolarAdvanced(1,4),
+    SolarPerfect(1,4);
+
 
     private int min;
     private int max;

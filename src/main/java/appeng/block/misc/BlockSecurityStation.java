@@ -56,7 +56,7 @@ public class BlockSecurityStation extends AEBaseTileBlock {
     }
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 

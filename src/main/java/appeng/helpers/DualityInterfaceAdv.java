@@ -123,7 +123,7 @@ public class DualityInterfaceAdv implements IGridTickable, IStorageMonitorable, 
     private final ConfigManager cm = new ConfigManager(this);
     private final AppEngInternalAEInventory config = new AppEngInternalAEInventory(this, NUMBER_OF_CONFIG_SLOTS, 512);
     private final AppEngInternalInventory storage = new AppEngInternalOversizedInventory(this, NUMBER_OF_STORAGE_SLOTS, 512);
-    private final AppEngInternalInventory patterns = new AppEngInternalInventory(this, NUMBER_OF_PATTERN_SLOTS);
+    private final AppEngInternalInventory patterns = new AppEngInternalInventory(this, NUMBER_OF_PATTERN_SLOTS, 1);
     private final MEMonitorPassThrough<IAEItemStack> items = new MEMonitorPassThrough<>(new NullInventory<IAEItemStack>(), AEApi.instance().storage().getStorageChannel(IItemStorageChannel.class));
     private final MEMonitorPassThrough<IAEFluidStack> fluids = new MEMonitorPassThrough<>(new NullInventory<IAEFluidStack>(), AEApi.instance().storage().getStorageChannel(IFluidStorageChannel.class));
     private final UpgradeInventory upgrades;
@@ -260,7 +260,7 @@ public class DualityInterfaceAdv implements IGridTickable, IStorageMonitorable, 
                     final NBTTagCompound c = w.getCompoundTagAt(x);
                     if (c != null) {
                         final ItemStack is = stackFromNBT(c);
-                        this.addToSendListFacing(is, EnumFacing.getFront(s.getIndex()));
+                        this.addToSendListFacing(is, EnumFacing.byIndex(s.getIndex()));
                     }
                 }
             }
@@ -1035,14 +1035,14 @@ public class DualityInterfaceAdv implements IGridTickable, IStorageMonitorable, 
                         phantomTE = ((IPhantomTile) te);
                         if (phantomTE.hasBoundPosition()) {
                             TileEntity phantom = w.getTileEntity(phantomTE.getBoundPosition());
-                            if (NonBlockingItems.INSTANCE.getMap().containsKey(w.getBlockState(phantomTE.getBoundPosition()).getBlock().getRegistryName().getResourceDomain())) {
+                            if (NonBlockingItems.INSTANCE.getMap().containsKey(w.getBlockState(phantomTE.getBoundPosition()).getBlock().getRegistryName().getNamespace())) {
                                 if (isCustomInvBlocking(phantom, s)) {
                                     visitedFaces.remove(s);
                                     continue;
                                 }
                             }
                         }
-                    } else if (NonBlockingItems.INSTANCE.getMap().containsKey(w.getBlockState(tile.getPos().offset(s)).getBlock().getRegistryName().getResourceDomain())) {
+                    } else if (NonBlockingItems.INSTANCE.getMap().containsKey(w.getBlockState(tile.getPos().offset(s)).getBlock().getRegistryName().getNamespace())) {
                         if (isCustomInvBlocking(te, s)) {
                             visitedFaces.remove(s);
                             continue;
@@ -1122,14 +1122,14 @@ public class DualityInterfaceAdv implements IGridTickable, IStorageMonitorable, 
                     if (Loader.isModLoaded("actuallyadditions") && Platform.GTLoaded && te instanceof IPhantomTile phantomTE) {
                         if (phantomTE.hasBoundPosition()) {
                             TileEntity phantom = w.getTileEntity(phantomTE.getBoundPosition());
-                            if (NonBlockingItems.INSTANCE.getMap().containsKey(w.getBlockState(phantomTE.getBoundPosition()).getBlock().getRegistryName().getResourceDomain())) {
+                            if (NonBlockingItems.INSTANCE.getMap().containsKey(w.getBlockState(phantomTE.getBoundPosition()).getBlock().getRegistryName().getNamespace())) {
                                 if (!isCustomInvBlocking(phantom, s)) {
                                     allAreBusy = false;
                                     break;
                                 }
                             }
                         }
-                    } else if (NonBlockingItems.INSTANCE.getMap().containsKey(w.getBlockState(tile.getPos().offset(s)).getBlock().getRegistryName().getResourceDomain())) {
+                    } else if (NonBlockingItems.INSTANCE.getMap().containsKey(w.getBlockState(tile.getPos().offset(s)).getBlock().getRegistryName().getNamespace())) {
                         if (!isCustomInvBlocking(te, s)) {
                             allAreBusy = false;
                             break;
@@ -1212,6 +1212,13 @@ public class DualityInterfaceAdv implements IGridTickable, IStorageMonitorable, 
 
         for (final ItemStack is : this.storage) {
             if (!is.isEmpty()) {
+                int maxStackSize = is.getMaxStackSize();
+                while (is.getCount() > maxStackSize) {
+                    ItemStack portionedStack = is.copy();
+                    portionedStack.setCount(maxStackSize);
+                    is.shrink(maxStackSize);
+                    drops.add(portionedStack);
+                }
                 drops.add(is);
             }
         }
@@ -1300,8 +1307,8 @@ public class DualityInterfaceAdv implements IGridTickable, IStorageMonitorable, 
 
                 try {
                     Vec3d from = new Vec3d(hostTile.getPos().getX() + 0.5, hostTile.getPos().getY() + 0.5, hostTile.getPos().getZ() + 0.5);
-                    from = from.addVector(direction.getFrontOffsetX() * 0.501, direction.getFrontOffsetY() * 0.501, direction.getFrontOffsetZ() * 0.501);
-                    final Vec3d to = from.addVector(direction.getFrontOffsetX(), direction.getFrontOffsetY(), direction.getFrontOffsetZ());
+                    from = from.add(direction.getXOffset() * 0.501, direction.getYOffset() * 0.501, direction.getZOffset() * 0.501);
+                    final Vec3d to = from.add(direction.getXOffset(), direction.getYOffset(), direction.getZOffset());
                     final RayTraceResult mop = hostWorld.rayTraceBlocks(from, to, true);
                     if (mop != null && !BAD_BLOCKS.contains(directedBlock)) {
                         if (mop.getBlockPos().equals(directedTile.getPos())) {
@@ -1321,7 +1328,7 @@ public class DualityInterfaceAdv implements IGridTickable, IStorageMonitorable, 
 
                 final Item item = Item.getItemFromBlock(directedBlock);
                 if (item == Items.AIR) {
-                    return directedBlock.getUnlocalizedName();
+                    return directedBlock.getTranslationKey();
                 }
             }
         }
