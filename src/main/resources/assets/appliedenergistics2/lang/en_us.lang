@@ -308,7 +308,7 @@ gui.appliedenergistics2.CraftingToastDone=Crafting job done!
 gui.appliedenergistics2.CraftingToastCancelled=Crafting job cancelled!
 gui.appliedenergistics2.FluidTerminal=Fluid Terminal
 gui.appliedenergistics2.PassiveGenerationDay=Generation Day:
-gui.appliedenergistics2.PassiveGenerationNight=Generation Day:
+gui.appliedenergistics2.PassiveGenerationNight=Generation Night:
 gui.appliedenergistics2.MaxSolarCapacity=Capacity:
 gui.appliedenergistics2.UseNetToolToControlSolars=§fUse Network Tool to control your solar panel
 
