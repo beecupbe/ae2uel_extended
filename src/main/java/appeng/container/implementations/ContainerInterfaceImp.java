@@ -29,12 +29,8 @@ import appeng.container.slot.*;
 import appeng.helpers.DualityInterface;
 import appeng.helpers.DualityInterfaceImp;
 import appeng.helpers.IInterfaceHost;
-import appeng.tile.inventory.AppEngInternalOversizedInventory;
 import appeng.util.Platform;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.ClickType;
-import net.minecraft.item.ItemStack;
 
 
 public class ContainerInterfaceImp extends ContainerUpgradeable implements IOptionalSlotHost {

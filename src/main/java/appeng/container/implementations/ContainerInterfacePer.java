@@ -25,16 +25,14 @@ import appeng.api.config.Upgrades;
 import appeng.api.config.YesNo;
 import appeng.api.util.IConfigManager;
 import appeng.container.guisync.GuiSync;
-import appeng.container.slot.*;
+import appeng.container.slot.IOptionalSlotHost;
+import appeng.container.slot.SlotFake;
+import appeng.container.slot.SlotOversized;
 import appeng.helpers.DualityInterface;
 import appeng.helpers.DualityInterfacePer;
 import appeng.helpers.IInterfaceHost;
-import appeng.tile.inventory.AppEngInternalOversizedInventory;
 import appeng.util.Platform;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.ClickType;
-import net.minecraft.item.ItemStack;
 
 
 public class ContainerInterfacePer extends ContainerUpgradeable implements IOptionalSlotHost {
