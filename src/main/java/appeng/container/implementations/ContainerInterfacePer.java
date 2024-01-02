@@ -25,7 +25,10 @@ import appeng.api.config.Upgrades;
 import appeng.api.config.YesNo;
 import appeng.api.util.IConfigManager;
 import appeng.container.guisync.GuiSync;
-import appeng.container.slot.*;
+import appeng.container.slot.IOptionalSlotHost;
+import appeng.container.slot.SlotFake;
+import appeng.container.slot.SlotOversized;
+import appeng.helpers.DualityInterface;
 import appeng.helpers.DualityInterfacePer;
 import appeng.helpers.IInterfaceHost;
 import appeng.util.Platform;
@@ -50,12 +53,32 @@ public class ContainerInterfacePer extends ContainerUpgradeable implements IOpti
 
         this.myDuality = te.getInterfaceDualityPer();
 
-        for (int i = 0; i < 4; i++) {
-            for (int y = 0; y < 9; y++) {
-                this.addSlotToContainer(new SlotFake(this.myDuality.getConfig(), y + i * 9, 8 + (18 * y), 23 + (36 * i)));
-                this.addSlotToContainer(new SlotOversized(this.myDuality.getConfig(), y + i * 9, 8 + (18 * y), 23 + 18 + (36 * i)));
-            }
+        for (int x = 0; x < DualityInterface.NUMBER_OF_CONFIG_SLOTSPER / 4; x++) {
+            this.addSlotToContainer(new SlotFake(this.myDuality.getConfig(), x, 8 + 18 * x, 23));
         }
+        for (int x = 0; x < DualityInterface.NUMBER_OF_CONFIG_SLOTSPER / 4; x++) {
+            this.addSlotToContainer(new SlotFake(this.myDuality.getConfig(), x + 9, 8 + 18 * x, 59));
+        }
+        for (int x = 0; x < DualityInterface.NUMBER_OF_CONFIG_SLOTSPER / 4; x++) {
+            this.addSlotToContainer(new SlotFake(this.myDuality.getConfig(), x + 18, 8 + 18 * x, 95));
+        }
+        for (int x = 0; x < DualityInterface.NUMBER_OF_CONFIG_SLOTSPER / 4; x++) {
+            this.addSlotToContainer(new SlotFake(this.myDuality.getConfig(), x + 27, 8 + 18 * x, 131));
+        }
+
+        for (int x = 0; x < DualityInterface.NUMBER_OF_CONFIG_SLOTSPER / 4; x++) {
+            this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), x, 8 + 18 * x, 23 + 18));
+        }
+        for (int x = 0; x < DualityInterface.NUMBER_OF_CONFIG_SLOTSPER / 4; x++) {
+            this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), x + 9, 8 + 18 * x, 59 + 18));
+        }
+        for (int x = 0; x < DualityInterface.NUMBER_OF_CONFIG_SLOTSPER / 4; x++) {
+            this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), x + 18, 8 + 18 * x, 95 + 18));
+        }
+        for (int x = 0; x < DualityInterface.NUMBER_OF_CONFIG_SLOTSPER / 4; x++) {
+            this.addSlotToContainer(new SlotOversized(this.myDuality.getStorage(), x + 27, 8 + 18 * x, 131 + 18));
+        }
+
     }
 
     @Override
