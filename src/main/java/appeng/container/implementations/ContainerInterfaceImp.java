@@ -80,19 +80,6 @@ public class ContainerInterfaceImp extends ContainerUpgradeable implements IOpti
     }
 
     @Override
-    public ItemStack slotClick(int slotId, int dragType, ClickType clickTypeIn, EntityPlayer player) {
-        if (slotId >= 0 && slotId < this.inventorySlots.size()) {
-            if (this.inventorySlots.get(slotId) instanceof SlotOversized) {
-                ((AppEngInternalOversizedInventory) ((SlotOversized) this.inventorySlots.get(slotId)).getItemHandler()).limitExtraction(true);
-                ItemStack ret = super.slotClick(slotId, dragType, clickTypeIn, player);
-                ((AppEngInternalOversizedInventory) ((SlotOversized) this.inventorySlots.get(slotId)).getItemHandler()).limitExtraction(false);
-                return ret;
-            }
-        }
-        return super.slotClick(slotId, dragType, clickTypeIn, player);
-    }
-
-    @Override
     protected int getHeight() {
         return 256;
     }
