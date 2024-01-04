@@ -106,7 +106,7 @@ public class TileCrankImp extends AEBaseTile implements ICustomCollision, ITicka
             return false;
         }
 
-        if (this.rotation < 3) {
+        if (this.rotation < 5) {
             final ICrankable g = this.getGrinder();
             if (g != null) {
                 if (g.canTurn()) {

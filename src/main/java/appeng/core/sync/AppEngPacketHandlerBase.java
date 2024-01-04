@@ -75,7 +75,6 @@ public class AppEngPacketHandlerBase {
         PACKET_CRAFTING_REQUEST(PacketCraftRequest.class),
         PACKET_TERMINAL_KEYBIND(PacketTerminalUse.class),
 
-        PACKET_CRAFTING_TOAST(PacketCraftingToast.class),
 
         PACKET_ASSEMBLER_ANIMATION(PacketAssemblerAnimation.class),
 
