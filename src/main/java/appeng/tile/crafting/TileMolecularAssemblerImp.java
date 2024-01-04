@@ -21,12 +21,10 @@ package appeng.tile.crafting;
 
 import appeng.api.AEApi;
 import appeng.api.config.*;
-import appeng.api.definitions.ITileDefinition;
 import appeng.api.implementations.IPowerChannelState;
 import appeng.api.implementations.IUpgradeableHost;
 import appeng.api.implementations.tiles.ICraftingMachine;
 import appeng.api.networking.IGridNode;
-import appeng.api.networking.crafting.ICraftingJob;
 import appeng.api.networking.crafting.ICraftingPatternDetails;
 import appeng.api.networking.events.MENetworkEventSubscribe;
 import appeng.api.networking.events.MENetworkPowerStatusChange;
@@ -416,25 +414,26 @@ public class TileMolecularAssemblerImp extends AENetworkInvTile implements IUpgr
             this.updateSleepiness();
             return TickRateModulation.SLEEP;
         }
-            final ItemStack output = this.myPlan.getOutput(this.craftingInv, this.getWorld());
-                    for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
-                        this.craftingInv.setInventorySlotContents(x, this.gridInv.getStackInSlot(x));
-                    }
-                    this.pushOut(output);
-                    for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
-                        this.gridInv.setStackInSlot(x, Platform.getContainerItem(this.craftingInv.getStackInSlot(x)));
-                    }
-                    this.ejectHeldItems();
-                try {
-                    final TargetPoint where = new TargetPoint(this.world.provider.getDimension(), this.pos.getX(), this.pos.getY(), this.pos.getZ(), 32);
-                    final IAEItemStack item = AEItemStack.fromItemStack(output);
-                    NetworkHandler.instance().sendToAllAround(new PacketAssemblerAnimation(this.pos, (byte) 100, item), where);
-                } catch (final IOException e) {
-                    // ;P
-                }
-                this.saveChanges();
-                this.updateSleepiness();
-                return this.isAwake ? TickRateModulation.IDLE : TickRateModulation.SLEEP;
+
+        final ItemStack output = this.myPlan.getOutput(this.craftingInv, this.getWorld());
+        for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
+            this.craftingInv.setInventorySlotContents(x, this.gridInv.getStackInSlot(x));
+        }
+        this.pushOut(output);
+        for (int x = 0; x < this.craftingInv.getSizeInventory(); x++) {
+            this.gridInv.setStackInSlot(x, Platform.getContainerItem(this.craftingInv.getStackInSlot(x)));
+        }
+        this.ejectHeldItems();
+        try {
+            final TargetPoint where = new TargetPoint(this.world.provider.getDimension(), this.pos.getX(), this.pos.getY(), this.pos.getZ(), 32);
+            final IAEItemStack item = AEItemStack.fromItemStack(output);
+            NetworkHandler.instance().sendToAllAround(new PacketAssemblerAnimation(this.pos, (byte) 100, item), where);
+        } catch (final IOException e) {
+            // ;P
+        }
+        this.saveChanges();
+        this.updateSleepiness();
+        return this.isAwake ? TickRateModulation.IDLE : TickRateModulation.SLEEP;
     }
 
     private void ejectHeldItems() {
